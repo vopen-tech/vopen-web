@@ -1,0 +1,17 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "vopen-web", "vopen-web.csproj", "{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

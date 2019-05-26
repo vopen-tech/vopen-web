@@ -1,0 +1,9 @@
+@import "styles";
+
+.agenda {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  justify-content: center;
+  flex: 1;
+}

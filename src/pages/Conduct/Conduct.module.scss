@@ -1,0 +1,18 @@
+@import "styles";
+
+.conduct {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  flex: 1;
+}
+
+.title {
+  text-transform: uppercase;
+}
+
+.text {
+  font-size: 18px;
+  column-count: 2;
+  margin: 0 100px;
+}

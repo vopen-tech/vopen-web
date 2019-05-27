@@ -35,11 +35,11 @@ export default class GlobalApp extends React.PureComponent {
           <Route path="/team" component={Team} />
           {/* Footer */}
           <footer className={styles.footer}>
-            <SocialIcon type="twitter" url="https://twitter.com/vopen" />
-            <SocialIcon type="linkedin" url="https://linkedin.com/vopen" />
-            <SocialIcon type="facebook" url="https://facebook.com/vopen" />
-            <SocialIcon type="instagram" url="https://instagram.com/vopen" />
-            <SocialIcon type="youtube" url="https://youtube.com/vopen" />
+            <SocialIcon type="twitter" url="https://twitter.com/vopentech" />
+            <SocialIcon type="linkedin" url="https://linkedin.com/vopentech" />
+            <SocialIcon type="facebook" url="https://facebook.com/vopentech" />
+            <SocialIcon type="instagram" url="https://instagram.com/vopentech" />
+            <SocialIcon type="youtube" url="https://youtube.com/vopentech" />
             <div className={styles.separator} />
             <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/conduct">
               Código de conducta

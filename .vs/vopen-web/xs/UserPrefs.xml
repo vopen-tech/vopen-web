@@ -1,8 +1,11 @@
 ﻿<Properties StartupConfiguration="{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}|Default">
   <MonoDevelop.Ide.ItemProperties.vopen-web PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="website/src/pages/Team/Team.tsx">
+  <MonoDevelop.Ide.Workbench ActiveDocument="website/src/pages/GlobalApp/GlobalApp.tsx">
     <Files>
-      <File FileName="website/src/pages/Team/Team.tsx" Line="16" Column="47" />
+      <File FileName="website/src/components/SocialIcon/SocialIcon.tsx" Line="1" Column="1" />
+      <File FileName="website/src/pages/Home/Home.tsx" Line="24" Column="12" />
+      <File FileName="website/src/index.tsx" Line="8" Column="89" />
+      <File FileName="website/src/pages/GlobalApp/GlobalApp.tsx" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,9 +14,10 @@
             <Node name="vopen-web" expanded="True">
               <Node name="website" expanded="True">
                 <Node name="src" expanded="True">
+                  <Node name="components" expanded="True" />
                   <Node name="pages" expanded="True">
-                    <Node name="Team" expanded="True">
-                      <Node name="Team.tsx" selected="True" />
+                    <Node name="GlobalApp" expanded="True">
+                      <Node name="GlobalApp.tsx" selected="True" />
                     </Node>
                   </Node>
                 </Node>

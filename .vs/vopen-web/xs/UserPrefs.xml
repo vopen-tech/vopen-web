@@ -1,17 +1,11 @@
 ﻿<Properties StartupConfiguration="{FA72A5B7-5424-4FC3-84FF-9948ACF3DCCC}|Default">
   <MonoDevelop.Ide.ItemProperties.vopen-web PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Startup.cs">
-    <Files>
-      <File FileName="appsettings.json" Line="1" Column="1" />
-      <File FileName="appsettings.Development.json" Line="1" Column="1" />
-      <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Startup.cs" Line="47" Column="36" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="vopen-web" expanded="True">
-            <Node name="vopen-web" expanded="True" selected="True" />
+          <Node name="vopen-web" expanded="True" selected="True">
+            <Node name="vopen-web" expanded="True" />
           </Node>
         </State>
       </Pad>

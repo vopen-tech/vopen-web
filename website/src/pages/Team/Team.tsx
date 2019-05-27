@@ -13,7 +13,7 @@ const team: any[] = [
   },
   {
     name: "Fabian Fernandez",
-    imageUrl: "http://uy.netconf.global/Content/images/demo/organizers/fabian.jpg",
+    imageUrl: "https://i.imgur.com/vXLIy95.jpg",
     socialInfo: {
       twitter: "https://twitter.com/kzfabi",
       linkedin: "http://uy.linkedin.com/in/kzfabi"

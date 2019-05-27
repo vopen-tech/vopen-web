@@ -1,0 +1,43 @@
+@import "styles";
+
+.pastEditions {
+  @extend %flexColumn;
+  align-items: flex-start;
+
+  background-color: $tertiaryBackgroundColor;
+  position: relative;
+  z-index: auto;
+
+  width: 100%;
+
+  .header {
+    position: relative;
+
+    .title {
+      color: $secondaryTitleFontColor;
+      text-transform: uppercase;
+      font-weight: normal;
+      margin: 0 0 100px 0;
+
+      &:before {
+        content: "";
+        display: flex;
+        width: 50px;
+        height: 4px;
+        background-color: $secondaryTitleFontColor;
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .editions {
+    display: inline-block;
+    width: 100%;
+
+
+    .edition {
+      position: relative;
+      z-index: auto;
+    }
+  }
+}

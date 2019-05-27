@@ -1,0 +1,9 @@
+@import "styles";
+
+.speakers {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  justify-content: center;
+  flex: 1;
+}

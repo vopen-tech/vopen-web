@@ -1,4 +1,4 @@
-@import "styles";
+@import "../../styles/styles";
 
 .backgroundTriangle {
   position: absolute;
@@ -20,7 +20,7 @@
   width: 0;
   height: 0;
   border-top: 150px solid $secondaryBackgroundColor;
-  border-right: 98vw) solid transparent;
+  border-right: 98vw solid transparent;
 }
 
 .triangleBehindDottedBackground {

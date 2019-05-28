@@ -28,7 +28,7 @@ const team: any[] = [
     }
   },
   {
-    name: "Guillermo Bellman",
+    name: "Guillermo Bellmann",
     imageUrl: "http://ar.netconf.global/Content/images/demo/organizers/guillermobellmann.jpg",
     socialInfo: {
       twitter: "http://twitter.com/gjbellmann",

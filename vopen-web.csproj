@@ -6,7 +6,7 @@
     <RootNamespace>vopen_web</RootNamespace>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+  <PropertyGroup Condition=" '$(OS)' != 'Windows_NT' ">
     <CustomCommands>
       <CustomCommands>
         <Command>
@@ -18,6 +18,19 @@
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>BeforeBuild</type>
+          <command>./build-website.ps1</command>
+          <workingdir>${ProjectDir}</workingdir>
+          <externalConsole>True</externalConsole>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -39,9 +52,16 @@
     <Content Remove="Views\Shared\_CookieConsentPartial.cshtml" />
     <Content Remove="Views\Shared\_Layout.cshtml" />
     <Content Remove="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="website\build\manifest.json" />
+    <Content Remove="website\build\manifest.json" />
+    <Content Remove="website\build\asset-manifest.json" />
+    <Content Remove="wwwroot\asset-manifest.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Controllers\HomeController.cs" />
     <Compile Remove="Models\ErrorViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="website\build\images\netconfcl-2018.png" />
   </ItemGroup>
 </Project>

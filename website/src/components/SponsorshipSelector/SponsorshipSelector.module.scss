@@ -7,7 +7,6 @@
 
   .sponsorships {
     @extend %flexRow;
-    margin: 60px 0;
 
     .sponsorshipHeader {
       cursor: pointer;
@@ -32,6 +31,25 @@
     .sponsorshipHeaderPrice {
       font-size: 0.67em;
       margin: 0;
+    }
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .sponsorshipSelector {
+    
+    .sponsorships {
+      flex-direction: column;
+      width: 100%;
+
+      .sponsorshipHeader {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
     }
   }
 }

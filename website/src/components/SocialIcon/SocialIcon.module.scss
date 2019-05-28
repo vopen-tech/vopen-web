@@ -2,14 +2,14 @@
 
 .socialIcon {
   display: inline-block;
-  width: 27px;
-  height: 27px;
-  background: url("../SVGs/social-icons.svg");
-  background-size: 548% 100%;
-  margin-left: 10px;
+  width: 29px;
+  height: 29px;
+  background: url("../SVGs/social-icons.svg") no-repeat transparent;
+  background-size: 165px 29px;
+  margin-right: 10px;
 
-  &:first-of-type {
-    margin-left: 0px;
+  &:last-of-type {
+    margin-right: 0px;
   }
 
   &:hover {
@@ -23,17 +23,26 @@
 }
 
 .linkedin {
-  background-position: -30px 0;
+  background-position: 25% 0;
 }
 
 .facebook {
-  background-position: -60px 0;
+  background-position: 50% 0;
 }
 
 .instagram {
-  background-position: -91px 0;
+  background-position: 75% 0;
 }
 
 .youtube {
-  background-position: -120.5px 0;
+  background-position: 100% 0;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .socialIcon {
+    margin-right: 5px;
+  }
 }

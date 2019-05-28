@@ -1,11 +1,12 @@
 @import "../../../styles/styles";
 
 .sponsorship {
-  @extend %pageSection;
   @extend %flexColumn;
+  margin: 35px 0;
 
   .title {
-    margin: 0;
+    margin: 0 35px;
+    text-align: center;
   }
 
   .price {
@@ -14,11 +15,25 @@
 
   .packageList {
     columns: 2;
+    padding: 0;
+    margin: 35px;
   }
 
   .packageListItem {
     font-size: 21px;
     margin: 0 0 10px 0;
     list-style: none;
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .sponsorship {
+
+    .packageList {
+      columns: 1;
+    }
   }
 }

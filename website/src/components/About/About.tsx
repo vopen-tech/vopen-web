@@ -17,7 +17,7 @@ export default class About extends React.PureComponent<Props, State> {
     return (
       <div id={id} className={cssClasses}>
         <BackgroundTriangle />
-        <img className={styles.image} src="http://uy.netconf.global/Content/images/country/UY/2018/main-slider/1.jpg" />
+        <div className={styles.image} />
         <div className={styles.textSection}>
           <h3 className={styles.title}>About</h3>
           <p className={styles.text}>

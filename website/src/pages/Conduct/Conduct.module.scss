@@ -8,11 +8,20 @@
 }
 
 .title {
-  text-transform: uppercase;
+  @extend %pageTitle;
 }
 
 .text {
-  font-size: 18px;
+  font-size: 21px;
   column-count: 2;
-  margin: 0 100px;
+  margin: 0 35px;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .text {
+    column-count: 1;
+  }
 }

@@ -7,6 +7,7 @@
 .banner {
   @extend %pageSection;
   @extend %flexColumn;
+  
   height: 616px;
   align-items: center;
   justify-content: center;
@@ -17,6 +18,7 @@
 }
 
 .actions {
+  display: flex;
   margin: 80px 0 0 0;
 }
 
@@ -66,4 +68,36 @@
   width: 350px;
   margin-right: 10px;
   fill: $primaryFontColor;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .section,
+  .oddSection {
+    width: 100%;
+    padding: 50px 0 0 0;
+    flex-direction: column;
+
+    &:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .home {
+    .banner {
+      height: 616px + 40px; 
+    }
+
+    .title {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }

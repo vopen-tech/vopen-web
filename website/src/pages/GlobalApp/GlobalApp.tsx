@@ -21,12 +21,14 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink activeClassName={styles.navActive} className={classNames(styles.navLink, styles.home)} to="/">
               <VOpenLogo className={styles.logo} />
             </NavLink>
-            <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/sponsorship">
-              Sponsorship
-            </NavLink>
-            <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/team">
-              Team
-            </NavLink>
+            <div className={styles.navMenu}>
+              <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/sponsorship">
+                Sponsorship
+              </NavLink>
+              <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/team">
+                Team
+              </NavLink>
+            </div>
           </nav>
           {/* Body */}
           <Route exact path="/" component={Home} />

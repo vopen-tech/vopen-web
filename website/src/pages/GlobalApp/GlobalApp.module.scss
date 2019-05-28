@@ -8,6 +8,7 @@
   flex-direction: column;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .nav {
@@ -21,6 +22,13 @@
   flex-direction: row;
 }
 
+.navMenu {
+  flex: 1;
+  justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+}
+
 .navLink,
 .navLink:link,
 .navlink:visited {
@@ -30,7 +38,6 @@
   text-transform: uppercase;
   color: $primaryFontColor;
   font-weight: bold;
-  font-size: 16px;
 
   min-width: 150px;
   height: 30px;
@@ -49,8 +56,9 @@
   }
 
   &.home {
-    flex: 1;
+    flex: none;
     justify-content: flex-start;
+    margin-bottom: 20px;
   }
 
   .logo {
@@ -63,7 +71,6 @@
     }
   }
 }
-
 .footer {
   width: calc(100% - 60px);
   height: 60px;
@@ -81,5 +88,41 @@
 
   .navLink {
     font-size: 14px;
+    flex: none;
+  }
+}
+
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .nav {
+    flex-direction: column;
+
+    .navMenu {
+      justify-content: flex-end;
+    }
+
+    .navLink,
+    .navLink:link,
+    .navlink:visited {
+      min-width: auto;
+      margin-right: 25px;
+      justify-content: flex-start;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .footer {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+
+    .separator:before {
+      margin: 0 5px 5px;
+    }
   }
 }

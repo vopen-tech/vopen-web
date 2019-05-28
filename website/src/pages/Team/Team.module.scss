@@ -4,14 +4,20 @@
   @extend %pageSection;
   @extend %flexColumn;
   flex: 1;
+  width: 100%;
+  height: auto;
 }
 
 .title {
-  text-transform: uppercase;
+  @extend %pageTitle;
 }
 
 .people {
   @extend %flexRow;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
 }
 
 .person {
@@ -20,7 +26,7 @@
   align-items: center;
   justify-content: center;
 
-  width: 215px;
+  width: 235px;
   height: auto;
   margin-right: 50px;
   
@@ -35,5 +41,22 @@
   .personName {
     text-align: center;
     margin: 20px 0 10px 0;
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .team {
+    margin-bottom: 50px;
+  }
+
+  .people {
+    flex-direction: column;
+  }
+
+  .person {
+    margin: 50px 0 0 0;
   }
 }

@@ -7,8 +7,13 @@
   z-index: auto;
 
   .image {
+    flex: none;
     position: relative;
-    width: 40vw;
+    width: 672px;
+    height: 377px;
+    background-image: url('http://uy.netconf.global/Content/images/country/UY/2018/main-slider/1.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
   }
 
   .textSection {
@@ -21,6 +26,7 @@
     text-transform: uppercase;
     font-weight: normal;
     margin: 0px;
+    margin-bottom: 35px;
 
     &:before {
       content: "";
@@ -33,6 +39,26 @@
   }
 
   .text {
-    font-size: 18px;
+    margin: 0;
+    font-size: 21px;
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .about {
+    
+    .image {
+      width: 100%;
+      order: 2;
+      background-position: 50% 50%;
+    }
+
+    .textSection {
+      width: 75%;
+      margin-bottom: 25px;
+    }
   }
 }

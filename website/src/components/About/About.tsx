@@ -21,16 +21,15 @@ export default class About extends React.PureComponent<Props, State> {
         <div className={styles.textSection}>
           <h3 className={styles.title}>About</h3>
           <p className={styles.text}>
-            Desde 2014 somos uno de los eventos más importantes de tecnologías en Latinoamérica.
-            <br />
-            Con nosotros aprenderás sobre lo último en desarrollo de software junto a speakers internacionales, conocerás las múltiples comunidades de
-            tecnología y te divertirás en un ambiente descontracturado. vOpen es un evento sin fines de lucro hecho por la comunidad y para la comunidad. <br />{" "}
-            <br />
-            Nuestra historia comenzó como <b>.NET Conf</b>, hoy somos <b>vOpen</b>. Aquí hablamos de todas las tecnologías que nos importan a nosotros, los
-            desarrolladores de software. Trabajamos con una gran diversidad de tecnologías en el día a día. Necesitamos saber hacia dónde van las tendencias y
-            cómo podemos emplear mejor la tecnología para solucionar los problemas de mañana.
+            <b>¡Bienvenid@s a vOpen!</b> El grupo de eventos de tecnología más importante en Latinoamérica.
             <br /> <br />
-            Bienvenidos a vOpen!
+            Nuestra misión es conectar a entusiastas, estudiantes, profesionales, expertos referentes y organizaciones de todo el mundo que 
+            utilicen la tecnología para concretar sus objetivos.
+            <br /> <br />
+            Nuestra historia comenzó como <a href='http://netconf.global' target='_blank'>.NET Conf</a>, y durante los últimos 5 años 
+            convocamos a 221 expertos, 148 sponsors, +50 organizadores y +5000 asistentes en el marco de las 10 ediciones que llevamos adelante en 4 países.
+            <br /> <br />
+            Hoy somos <b>vOpen</b> y en el 2019 hemos expandido nuestro alcance para mostrarte cómo la innovación y la tecnología está transformando nuestra vida. <b>¡Sumate!</b>
           </p>
         </div>
       </div>

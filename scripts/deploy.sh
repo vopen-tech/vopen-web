@@ -104,23 +104,25 @@ echo "Handling Create React app deployment.."
 echo "- Selecting Node version.."
 selectNodeVersion
 
-# 2. Install npm packages
-echo "- Installing npm packages.."
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
-  cd "$DEPLOYMENT_SOURCE"
-  eval $NPM_CMD ci
-  exitWithMessageOnError "Installing npm packages failed!"
-  cd - > /dev/null
-fi
+# ALL OF THIS IS DONE BY TRAVIS
+## 2. Install npm packages
+# echo "- Installing npm packages.."
+# if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
+#   cd "$DEPLOYMENT_SOURCE"
+#   eval $NPM_CMD ci
+#   exitWithMessageOnError "Installing npm packages failed!"
+#   cd - > /dev/null
+# fi
 
-# 3. Building the artifact
-echo "- Building the artifact.."
-if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
-  cd "$DEPLOYMENT_SOURCE"
-  eval $NPM_CMD run build
-  exitWithMessageOnError "Building the artifact failed!"
-  cd - > /dev/null
-fi
+# # 3. Building the artifact
+# echo "- Building the artifact.."
+# if [ -e "$DEPLOYMENT_SOURCE/package.json" ]; then
+#   cd "$DEPLOYMENT_SOURCE"
+#   eval $NPM_CMD run build
+#   exitWithMessageOnError "Building the artifact failed!"
+#   cd - > /dev/null
+# fi
+# END ALL OF THIS IS DONE BY TRAVIS
 
 # 4. KuduSync
 echo "- KuduSync: Copying files to wwwroot.."

@@ -3,7 +3,6 @@
 .conduct {
   @extend %pageSection;
   @extend %flexColumn;
-
   flex: 1;
 }
 
@@ -15,6 +14,7 @@
   font-size: 21px;
   column-count: 2;
   margin: 0 35px;
+  padding: 0 100px;
 }
 
 @media 
@@ -23,5 +23,6 @@
 
   .text {
     column-count: 1;
+    padding: 0;
   }
 }

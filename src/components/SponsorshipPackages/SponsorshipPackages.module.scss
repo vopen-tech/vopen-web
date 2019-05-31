@@ -1,6 +1,6 @@
 @import "../../styles/styles";
 
-.sponsorshipSelector {
+.sponsorshipPackages {
   @extend %pageSection;
   @extend %flexColumn;
   flex: 1;
@@ -39,7 +39,7 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-  .sponsorshipSelector {
+  .sponsorshipPackages {
     
     .sponsorships {
       flex-direction: column;

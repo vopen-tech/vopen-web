@@ -1,0 +1,69 @@
+@import "../../styles/styles";
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .nav {
+    position: relative;
+    z-index: 2;
+    width: calc(100% - 100px);
+    height: calc(150px - 100px);
+    padding: 50px;
+  
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navMenu {
+    flex: 1;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .home {
+    flex: none;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .logo {
+    width: 100px;
+    fill: $primaryFontColor;
+    transition: fill 0.2s ease-in-out 0s;
+
+    &:hover {
+      fill: $primaryBackgroundColor;
+    }
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .header {
+    .nav {
+      flex-direction: column;
+
+      .navMenu {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+
+      .navLink,
+      .navLink:link,
+      .navlink:visited {
+        min-width: auto;
+        margin-right: 25px;
+        justify-content: flex-start;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

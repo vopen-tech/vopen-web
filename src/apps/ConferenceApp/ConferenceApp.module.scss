@@ -1,0 +1,12 @@
+@import "../../styles/styles";
+
+.conferenceApp {
+  flex: 1;
+  background-color: $primaryBackgroundColor;
+  color: $primaryFontColor;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}

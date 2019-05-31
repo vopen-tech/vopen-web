@@ -1,19 +1,19 @@
 import React from "react";
 import classNames from "classnames";
-import sponsorships from "../sponsorships.json";
+import sponsorshipPackages from "../sponsorshipPackages.json";
 
 import { Props } from "./types";
-import styles from "./Sponsorship.module.scss";
+import styles from "./SponsorshipPackage.module.scss";
 
-export default class Sponsorship extends React.PureComponent<Props> {
+export default class SponsorshipPackage extends React.PureComponent<Props> {
   static defaultProps: Partial<Props> = {
     className: undefined
   };
 
   render() {
     const { name, className } = this.props;
-    const sponsorshipData = sponsorships.find(item => item.name === name);
-    const cssClasses = classNames(className, styles.sponsorship);
+    const sponsorshipData = sponsorshipPackages.find(item => item.name === name);
+    const cssClasses = classNames(className, styles.sponsorshipPackage);
 
     if (!sponsorshipData) {
       return null;
@@ -21,9 +21,7 @@ export default class Sponsorship extends React.PureComponent<Props> {
 
     return (
       <div className={cssClasses}>
-        <h6 className={styles.title}>
-          El paquete {sponsorshipData.name} incluye:
-        </h6>
+        <h6 className={styles.title}>El paquete {sponsorshipData.name} incluye:</h6>
         <ul className={styles.packageList}>
           {sponsorshipData.items.map(item => (
             <li key={item} className={styles.packageListItem}>

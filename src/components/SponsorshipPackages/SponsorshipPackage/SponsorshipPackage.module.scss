@@ -1,6 +1,6 @@
 @import "../../../styles/styles";
 
-.sponsorship {
+.sponsorshipPackage {
   @extend %flexColumn;
   margin: 35px 0;
 
@@ -30,7 +30,7 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-  .sponsorship {
+  .sponsorshipPackage {
 
     .packageList {
       columns: 1;

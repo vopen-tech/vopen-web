@@ -1,11 +1,10 @@
 import React from "react";
 import classNames from "classnames";
-import Sponsorship from "./Sponsorship";
-import sponsorshipData from "./sponsorships.json";
+import SponsorshipPackage from "./SponsorshipPackage";
+import sponsorshipData from "./sponsorshipPackages.json";
+import styles from "./SponsorshipPackages.module.scss";
 
-import styles from "./SponsorshipSelector.module.scss";
-
-export default class SponsorshipSelector extends React.PureComponent<any, any> {
+export default class SponsorshipPackages extends React.PureComponent<any, any> {
   constructor(props: any) {
     super(props);
     this.state = { selectedSponsorship: "Diamond" };
@@ -19,16 +18,13 @@ export default class SponsorshipSelector extends React.PureComponent<any, any> {
   render() {
     const { name, className } = this.props;
     const { selectedSponsorship }: any = this.state;
-    const cssClasses = classNames(className, styles.sponsorshipSelector);
+    const cssClasses = classNames(className, styles.sponsorshipPackages);
     return (
       <div className={cssClasses}>
         <div className={styles.sponsorships}>
           {sponsorshipData.map(item => (
             <div
-              className={classNames(
-                styles.sponsorshipHeader,
-                item.name === selectedSponsorship && styles.active
-              )}
+              className={classNames(styles.sponsorshipHeader, item.name === selectedSponsorship && styles.active)}
               key={item.name}
               data-item-name={item.name}
               role="button"
@@ -40,7 +36,7 @@ export default class SponsorshipSelector extends React.PureComponent<any, any> {
             </div>
           ))}
         </div>
-        <Sponsorship name={selectedSponsorship} />
+        <SponsorshipPackage name={selectedSponsorship} />
       </div>
     );
   }

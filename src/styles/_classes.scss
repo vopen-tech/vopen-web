@@ -30,38 +30,3 @@
   padding: 0;
   font-size: 42px;
 }
-
-.section {
-  @extend %pageSection;
-  width: calc(100% - 200px);
-  padding: 100px;
-
-  background-color: $tertiaryBackgroundColor;
-  color: $tertiaryFontColor;
-}
-
-.oddSection {
-  @extend %pageSection;
-  width: calc(100% - 200px);
-  padding: 100px;
-
-  background-color: $secondaryBackgroundColor;
-  color: $primaryFontColor;
-}
-
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
-  .section,
-  .oddSection {
-    width: 100%;
-    padding: 50px 0 0 0;
-    flex-direction: column;
-
-    &:last-child {
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-  }
-}

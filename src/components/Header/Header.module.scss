@@ -52,18 +52,6 @@
         justify-content: flex-end;
         flex-wrap: wrap;
       }
-
-      .navLink,
-      .navLink:link,
-      .navlink:visited {
-        min-width: auto;
-        margin-right: 25px;
-        justify-content: flex-start;
-
-        &:last-child {
-          margin-right: 0;
-        }
-      }
     }
   }
 }

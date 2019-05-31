@@ -15,7 +15,7 @@ export default class NavLink extends React.PureComponent<LinkProps, any> {
       );
     }
 
-    const isInternalLink = to.toString().indexOf("#") === 0;
+    const isInternalLink = to.toString().indexOf("/#") === 0;
     if (isInternalLink) {
       return (
         <a className={styles.navLink} href={to.toString()}>

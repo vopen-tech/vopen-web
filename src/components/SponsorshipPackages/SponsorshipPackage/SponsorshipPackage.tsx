@@ -13,7 +13,7 @@ export default class SponsorshipPackage extends React.PureComponent<Props> {
   render() {
     const { name, className } = this.props;
     const sponsorshipData = sponsorshipPackages.find(item => item.name === name);
-    const cssClasses = classNames(className, styles.sponsorshipPackage);
+    const cssClasses = classNames(styles.sponsorshipPackage, className);
 
     if (!sponsorshipData) {
       return null;

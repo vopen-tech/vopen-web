@@ -4,6 +4,7 @@
   @extend %pageSection;
   @extend %flexColumn;
   flex: 1;
+  padding-bottom: 0;
 
   .sponsorships {
     @extend %flexRow;
@@ -31,6 +32,21 @@
     .sponsorshipHeaderPrice {
       font-size: 0.67em;
       margin: 0;
+    }
+  }
+
+  &.odd {
+    .sponsorshipHeader {
+      background-color: rgba($primaryBackgroundColor, 0.15);
+      color: white;
+      
+      &:hover {
+        background-color: rgba($primaryBackgroundColor, 0.5);
+      }
+
+      &.active {
+        background-color: $primaryBackgroundColor
+      }
     }
   }
 }

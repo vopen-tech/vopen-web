@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, Banner, About, PastEditions } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions } from "../../components";
 import { Conduct, Sponsorship, Team } from "../../pages";
 import styles from "./GlobalApp.module.scss";
 
@@ -8,8 +8,12 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Banner to="#about" />
-      <About id="about" className={styles.section} />
-      <PastEditions className={styles.oddSection} />
+      <PageSection id="about" title="About">
+        <About />
+      </PageSection>
+      <PageSection title="Ediciones anteriores" type="odd">
+        <PastEditions />
+      </PageSection>
     </div>
   );
 };

@@ -16,9 +16,10 @@ export default class SponsorshipPackages extends React.PureComponent<any, any> {
   };
 
   render() {
-    const { name, className } = this.props;
+    const { className, type } = this.props;
     const { selectedSponsorship }: any = this.state;
-    const cssClasses = classNames(className, styles.sponsorshipPackages);
+    const cssClasses = classNames(styles.sponsorshipPackages, className, type === "odd" && styles.odd);
+
     return (
       <div className={cssClasses}>
         <div className={styles.sponsorships}>

@@ -1,8 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-
 import Edition from "./Edition";
-import BackgroundTriangle from "../BackgroundTriangle";
 
 import { Props, State } from "./types";
 import styles from "./PastEditions.module.scss";
@@ -14,14 +12,10 @@ export default class About extends React.PureComponent<Props, State> {
 
   render() {
     const { className } = this.props;
-    const cssClasses = classNames(className, styles.pastEditions);
+    const cssClasses = classNames(styles.pastEditions, className);
 
     return (
       <div className={cssClasses}>
-        <BackgroundTriangle isOdd={true} />
-        <div className={styles.header}>
-          <h3 className={styles.title}>Ediciones anteriores</h3>
-        </div>
         <div className={styles.editions}>
           <Edition
             className={styles.edition}

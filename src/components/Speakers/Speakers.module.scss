@@ -1,19 +1,19 @@
 @import "../../styles/styles";
 
-.conferenceApp {
-  flex: 1;
-  background-color: $primaryBackgroundColor;
-  color: $primaryFontColor;
-  display: flex;
-  flex-direction: column;
+.speakers {
+  @extend %pageSection;
+  @extend %flexColumn;
+  align-items: center;
+  
   position: relative;
-  z-index: 1;
+  z-index: auto;
+
   width: 100%;
+  justify-content: center;
 }
 
 @media 
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
-
- 
+    
 }

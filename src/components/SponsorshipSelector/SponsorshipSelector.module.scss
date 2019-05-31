@@ -1,0 +1,55 @@
+@import "../../styles/styles";
+
+.sponsorshipSelector {
+  @extend %pageSection;
+  @extend %flexColumn;
+  flex: 1;
+
+  .sponsorships {
+    @extend %flexRow;
+
+    .sponsorshipHeader {
+      cursor: pointer;
+      outline: none;
+      padding: 40px;
+      background-color: rgba($secondaryBackgroundColor, 0.15);
+      
+      &:hover {
+        background-color: rgba($secondaryBackgroundColor, 0.5);
+      }
+
+      &.active {
+        background-color: $secondaryBackgroundColor
+      }
+    }
+
+    .sponsorshipHeaderTitle {
+      font-size: 0.67em;
+      margin: 0;
+    }
+
+    .sponsorshipHeaderPrice {
+      font-size: 0.67em;
+      margin: 0;
+    }
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .sponsorshipSelector {
+    
+    .sponsorships {
+      flex-direction: column;
+      width: 100%;
+
+      .sponsorshipHeader {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}

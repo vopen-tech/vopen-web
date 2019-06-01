@@ -1,8 +1,10 @@
 import React from "react";
 import classNames from "classnames";
+import { ActionButton, SponsorshipPackages } from "..";
+import constants from "../../constants";
+
 import { Props, State } from "./types";
 import styles from "./Sponsors.module.scss";
-import { ActionButton, SponsorshipPackages } from "..";
 
 export default class Sponsors extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
@@ -15,7 +17,7 @@ export default class Sponsors extends React.PureComponent<Props, State> {
 
     return (
       <div className={cssClasses}>
-        <ActionButton type="tertiary" text="Quiero ser sponsor" url="https://forms.gle/ob5vr5WRZMrxP1uv7" />
+        <ActionButton type="tertiary" text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
         <SponsorshipPackages type="odd" />
       </div>
     );

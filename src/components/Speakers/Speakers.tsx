@@ -1,8 +1,10 @@
 import React from "react";
 import classNames from "classnames";
+import { ActionButton } from "../";
+import constants from "../../constants";
+
 import { Props, State } from "./types";
 import styles from "./Speakers.module.scss";
-import { ActionButton } from "../";
 
 export default class Speakers extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
@@ -15,7 +17,7 @@ export default class Speakers extends React.PureComponent<Props, State> {
 
     return (
       <div className={cssClasses}>
-        <ActionButton type="tertiary" text="Quiero ser speaker" url="https://forms.gle/nfvm3uJT7vT2zgnRA" />
+        <ActionButton type="tertiary" text="Quiero ser speaker" url={constants.speakerCallUrl} />
       </div>
     );
   }

@@ -1,5 +1,7 @@
 import React from "react";
 import { ActionButton, VOpenLogo, ArrowBottom } from "..";
+import constants from "../../constants";
+
 import { IProps, IState } from "./types";
 import styles from "./Banner.module.scss";
 
@@ -13,8 +15,8 @@ export default class Banner extends React.PureComponent<IProps, IState> {
           <span className={styles.year}>2019</span>
         </span>
         <div className={styles.actions}>
-          <ActionButton text="Quiero ser sponsor" url="https://forms.gle/ob5vr5WRZMrxP1uv7" />
-          <ActionButton type="secondary" text="Quiero ser speaker" url="https://forms.gle/nfvm3uJT7vT2zgnRA" />
+          <ActionButton text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
+          <ActionButton type="secondary" text="Quiero ser speaker" url={constants.speakerCallUrl} />
         </div>
         {to && (
           <a href="#about" className={styles.goDown}>

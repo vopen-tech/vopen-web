@@ -6,6 +6,7 @@ export { default as Banner } from "./Banner";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
 export { default as NavLink } from "./NavLink";
+export { default as InfoIcon } from "./InfoIcon";
 export { default as PageSection } from "./PageSection";
 export { default as PastEditions } from "./PastEditions";
 export { default as SocialIcon } from "./SocialIcon";

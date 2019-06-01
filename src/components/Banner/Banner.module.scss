@@ -3,36 +3,48 @@
 .banner {
   @extend %flexColumn;
   @extend %pageSection;
-  @extend %flexColumn;
   
-  height: 616px;
+  min-height: 696px;
+  width: calc(100% - 70px);
+  padding: 35px;
   align-items: center;
   justify-content: center;
 }
 
 .title {
+  flex: 1 1 0%;
   @extend %flexRow;
   align-items: flex-end;
   font-size: 87px;
   color: $secondaryFontColor;
-}
 
-.logo {
-  width: 350px;
-  margin-right: 10px;
-  fill: $primaryFontColor;
-}
+  .logo {
+    width: 350px;
+    margin-right: 10px;
+    fill: $primaryFontColor;
+  }
 
-.year {
-  color: $highlightColor;
+  .year {
+    color: $highlightColor;
+  }
 }
 
 .actions {
-  display: flex;
+  flex: none;
+  @extend %flexRow;
   margin: 80px 0 0 0;
 }
 
+.children {
+  flex: none;
+  @extend %flexRow;
+  margin: 40px 0 0 0;
+  flex-wrap: wrap;
+}
+
 .goDown {
+  flex: none;
+  margin: 40px 0 0 0;
   cursor: pointer;
   width: 30px;
   height: 30px;
@@ -40,12 +52,17 @@
   display: flex;
   border: solid 1px $primaryFontColor;
 
-  position: absolute;
-  bottom: 25px;
-
   .arrowDown {
     width: 30px;
     height: 30px;
+  }
+
+  &:hover {
+    border-color: $secondaryFontColor;
+
+    polyline {
+      stroke: $secondaryFontColor !important;
+    }
   }
 }
 
@@ -53,7 +70,7 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-    .actions {
+    .actions, .children {
       flex-direction: column;
     }
 

@@ -7,7 +7,7 @@ import styles from "./Banner.module.scss";
 
 export default class Banner extends React.PureComponent<IProps, IState> {
   render() {
-    const { to } = this.props;
+    const { children, to } = this.props;
     return (
       <div className={styles.banner}>
         <span className={styles.title}>
@@ -18,6 +18,7 @@ export default class Banner extends React.PureComponent<IProps, IState> {
           <ActionButton text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
           <ActionButton type="secondary" text="Quiero ser speaker" url={constants.speakerCallUrl} />
         </div>
+        {children && <div className={styles.children}>{children}</div>}
         {to && (
           <a href="#about" className={styles.goDown}>
             <ArrowBottom className={styles.arrowDown} />

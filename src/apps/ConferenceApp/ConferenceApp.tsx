@@ -1,13 +1,18 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon } from "../../components";
 import { Conduct, Schedule, Team } from "../../pages";
 import styles from "./ConferenceApp.module.scss";
 
 const Home = () => {
   return (
     <div className={styles.home}>
-      <Banner to="#about" />
+      <Banner to="#about">
+        <InfoIcon type="location" title="Auditorio Antel" subtitle="Montevideo, Uruguay" />
+        <InfoIcon type="date" title="nov. 15" subtitle="2019" />
+        <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
+        <InfoIcon type="tickets" title="Lugares limitados!" subtitle="Entradas a la venta" />
+      </Banner>
       <PageSection id="about" title="About">
         <About />
       </PageSection>

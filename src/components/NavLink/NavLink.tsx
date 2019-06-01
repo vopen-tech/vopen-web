@@ -1,31 +1,33 @@
 import React from "react";
+import classNames from "classnames";
 import { NavLink as Link, NavLinkProps as LinkProps } from "react-router-dom";
 import styles from "./NavLink.module.scss";
 
-export default class NavLink extends React.PureComponent<LinkProps, any> {
+export default class NavLink extends React.PureComponent<LinkProps> {
   render() {
-    const { children, to } = this.props;
-
+    const { children, className, to } = this.props;
     const isExternalUrl = to.toString().indexOf("//") === 0 || to.toString().indexOf("http") === 0;
+    const isInternalLink = to.toString().indexOf("/#") === 0;
+    const cssClasses = classNames(isExternalUrl ? styles.externalNavLink : styles.navLink, classNames);
+
     if (isExternalUrl) {
       return (
-        <a className={styles.externalNavLink} href={to.toString()} target="_blank">
+        <a className={cssClasses} href={to.toString()} target="_blank">
           {children}
         </a>
       );
     }
 
-    const isInternalLink = to.toString().indexOf("/#") === 0;
     if (isInternalLink) {
       return (
-        <a className={styles.navLink} href={to.toString()}>
+        <a className={cssClasses} href={to.toString()}>
           {children}
         </a>
       );
     }
 
     return (
-      <Link className={styles.navLink} activeClassName={styles.navActive} to={to}>
+      <Link className={cssClasses} activeClassName={styles.navActive} to={to}>
         {children}
       </Link>
     );

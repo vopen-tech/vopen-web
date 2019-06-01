@@ -39,20 +39,22 @@ export default class InfoIcon extends React.PureComponent<IProps, IState> {
     const { title, subtitle, linkUrl } = this.props;
     const iconClassName = this.getIconClassName();
     const cssClassName = classNames(styles.infoIcon, linkUrl && styles.link);
-    const Wrapper: any = linkUrl ? NavLink : React.Fragment;
-
-    return (
-      <Wrapper to={linkUrl}>
-        <div className={cssClassName}>
-          <div className={styles.icon}>
-            <i className={iconClassName} />
-          </div>
-          <div className={styles.info}>
-            <h4 className={styles.title}>{title}</h4>
-            <h5 className={styles.subtitle}>{subtitle}</h5>
-          </div>
+    const content = (
+      <div className={cssClassName}>
+        <div className={styles.icon}>
+          <i className={iconClassName} />
         </div>
-      </Wrapper>
+        <div className={styles.info}>
+          <h4 className={styles.title}>{title}</h4>
+          <h5 className={styles.subtitle}>{subtitle}</h5>
+        </div>
+      </div>
     );
+
+    if (linkUrl) {
+      return <NavLink to={linkUrl}>{content}</NavLink>;
+    }
+
+    return content;
   }
 }

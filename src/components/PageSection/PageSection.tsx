@@ -14,12 +14,11 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
 
   render() {
     const { children, id, title, className, type } = this.props;
-    const isOdd = type === "odd";
-    const cssClasses = classnames(isOdd ? styles.oddSection : styles.pageSection, className);
+    const cssClasses = classnames(type === "even" && styles.evenSection, type === "odd" && styles.oddSection, type === "full" && styles.fullSection, className);
 
     return (
       <div id={id} className={cssClasses}>
-        <BackgroundTriangle isOdd={isOdd} />
+        {type !== "full" && <BackgroundTriangle isOdd={type === "odd"} />}
         {title && (
           <div className={styles.header}>
             <h3 className={styles.title}>{title}</h3>

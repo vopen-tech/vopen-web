@@ -70,12 +70,13 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-    .actions, .children {
-      flex-direction: column;
-    }
-
     .title {
       flex-direction: column;
       align-items: center;
+      padding-top: 100px;
+    }
+
+    .actions, .children {
+      flex-direction: column;
     }
 }

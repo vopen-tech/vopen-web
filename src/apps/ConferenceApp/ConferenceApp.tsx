@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon, MapsLocation } from "../../components";
 import { Conduct, Schedule, Team } from "../../pages";
 import styles from "./ConferenceApp.module.scss";
 
@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <Banner to="#about">
-        <InfoIcon type="location" title="Auditorio Antel" subtitle="Montevideo, Uruguay" />
+        <InfoIcon type="location" title="Auditorio Antel" subtitle="Montevideo, Uruguay" linkUrl="/#location" />
         <InfoIcon type="date" title="nov. 15" subtitle="2019" />
         <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
         <InfoIcon type="tickets" title="Lugares limitados!" subtitle="Entradas a la venta" />
@@ -21,6 +21,9 @@ const Home = () => {
       </PageSection>
       <PageSection id="sponsors" title="Sponsors">
         <Sponsors />
+      </PageSection>
+      <PageSection id="location" type="full">
+        <MapsLocation address="Auditorio Torre de las Telecomunicaciones, Guatemala 1075, Montevideo 11800, Uruguay" />
       </PageSection>
     </div>
   );

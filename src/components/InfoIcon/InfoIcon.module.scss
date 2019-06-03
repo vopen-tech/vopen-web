@@ -1,0 +1,59 @@
+@import "../../styles/styles";
+
+.infoIcon {
+  @extend %flexRow;
+  align-items: center;
+  color: $primaryFontColor;
+  transition: color 0.25s ease-in-out 0s;
+  margin: 0 75px 25px 0;
+  cursor: default;
+
+  text-transform: none;
+  
+  &:hover {
+    color: $secondaryFontColor;
+
+    .icon {
+      border-color: $secondaryFontColor;
+    }
+  }
+
+  &.link {
+    cursor: pointer;
+  }
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    border: solid 3px $primaryFontColor;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: border-color 0.25s ease-in-out 0s;
+  }
+
+  .info {
+
+    .title {
+      font-size: 21px;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .infoIcon {
+    margin: 0 0 25px 0;
+  }
+}

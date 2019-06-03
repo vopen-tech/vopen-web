@@ -1,0 +1,36 @@
+@import "../../styles/styles";
+
+.footer {
+  width: calc(100% - 60px);
+  height: 60px;
+  padding: 0 30px;
+  border-top: solid 4px $secondaryBackgroundColor;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .separator:before {
+    content: " | ";
+    margin: 0 20px 20px;
+  }
+
+  .navLink {
+    font-size: 14px;
+    flex: none;
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .footer {
+    width: calc(100% - 20px);
+    padding: 0 10px;
+
+    .separator:before {
+      margin: 0 5px 5px;
+    }
+  }
+}

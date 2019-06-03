@@ -1,0 +1,19 @@
+@import "../../styles/styles";
+
+.speakers {
+  @extend %pageSection;
+  @extend %flexColumn;
+  align-items: center;
+  
+  position: relative;
+  z-index: auto;
+
+  width: 100%;
+  justify-content: center;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+    
+}

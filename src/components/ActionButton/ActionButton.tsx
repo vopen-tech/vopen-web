@@ -8,10 +8,24 @@ export default class About extends React.PureComponent<Props, State> {
     type: "primary"
   };
 
+  getClassType() {
+    const { type } = this.props;
+
+    if (type === "primary") {
+      return styles.primary;
+    }
+
+    if (type === "secondary") {
+      return styles.secondary;
+    }
+
+    return styles.tertiary;
+  }
+
   render() {
-    const { type, text, url } = this.props;
-    const classType = type === "primary" ? styles.primary : styles.secondary;
-    const cssClasses = classNames(classType, styles.actionButton);
+    const { text, url } = this.props;
+    const classType = this.getClassType();
+    const cssClasses = classNames(styles.actionButton, classType);
 
     return (
       <a className={cssClasses} href={url} target="_blank">

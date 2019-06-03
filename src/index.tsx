@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import { GlobalApp, ConferenceApp } from "./pages";
+import { GlobalApp, ConferenceApp } from "./apps";
 
 import "./styles/global.scss";
 
-const WebsiteComponent = process.env.REACT_APP_CONFERENCE_APP === "true" ? ConferenceApp : GlobalApp;
-ReactDOM.render(<WebsiteComponent />, document.getElementById("root"));
+const WebsiteApp = process.env.REACT_APP_CONFERENCE_APP === "true" ? ConferenceApp : GlobalApp;
+ReactDOM.render(<WebsiteApp />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

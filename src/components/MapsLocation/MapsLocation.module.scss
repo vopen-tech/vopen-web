@@ -1,0 +1,47 @@
+@import "../../styles/styles";
+
+.mapsLocation {
+  height: 696px;
+
+  iframe {
+    float: left;
+  }
+
+  .arrowUp {
+    cursor: pointer;
+    transform: rotate(180deg);
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    background-color: $tertiaryBackgroundColor;
+    border: solid 1px $secondaryBackgroundColor;
+    
+    polyline {
+      stroke: $secondaryBackgroundColor !important;
+    }
+
+    &:hover {
+      border-color: $secondaryFontColor;
+  
+      polyline {
+        stroke: $secondaryFontColor !important;
+      }
+    }
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+  .mapsLocation {
+    
+    .arrowUp {
+      top: -60px;
+    }
+  }
+}
+

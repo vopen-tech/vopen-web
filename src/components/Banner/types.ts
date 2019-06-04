@@ -1,6 +1,7 @@
 export interface IProps {
-  children?: JSX.Element[] | JSX.Element;
+  title: string;
   to: string;
+  children?: JSX.Element[] | JSX.Element;
 }
 
 export interface IState {}

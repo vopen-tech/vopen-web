@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.19.0",
     "classnames": "^2.2.6",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/classnames": "^2.2.7",
     "@types/jest": "24.0.11",
     "@types/node": "11.13.6",
@@ -22,8 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "start:conference": "REACT_APP_CONFERENCE_APP=true react-scripts start",
-    "build:conference": "REACT_APP_CONFERENCE_APP=true react-scripts start"
+    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-uy react-scripts start",
+    "build:conference": "REACT_APP_CONFERENCE_APP=vopen-uy react-scripts start"
   },
   "engines": {
     "node": "10.x"

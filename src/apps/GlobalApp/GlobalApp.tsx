@@ -7,7 +7,7 @@ import styles from "./GlobalApp.module.scss";
 const Home = () => {
   return (
     <div className={styles.home}>
-      <Banner to="#about" />
+      <Banner to="#about" title="2019" />
       <PageSection id="about" title="About">
         <About />
       </PageSection>

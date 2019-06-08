@@ -13,9 +13,14 @@ function getConferenceId(): string {
   }
 
   const host = window.location.host;
+
   if (host.indexOf("localhost") === -1) {
     const hostParts = host.split(".");
     toReturn = `${hostParts[1]}-${hostParts[0]}`;
+  }
+
+  if (toReturn === "tech-vopen") {
+    toReturn = "vopen-global";
   }
 
   console.log(`Conference ID: ${toReturn}`);

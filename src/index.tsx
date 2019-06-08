@@ -5,8 +5,26 @@ import { GlobalApp, ConferenceApp } from "./apps";
 
 import "./styles/global.scss";
 
-const WebsiteApp = !!process.env.REACT_APP_CONFERENCE_APP ? ConferenceApp : GlobalApp;
-ReactDOM.render(<WebsiteApp />, document.getElementById("root"));
+function getConferenceId(): string {
+  let toReturn = "vopen-global";
+
+  if (!!process.env.REACT_APP_CONFERENCE_APP) {
+    toReturn = process.env.REACT_APP_CONFERENCE_APP;
+  }
+
+  const host = window.location.host;
+  if (host.indexOf("localhost") === -1) {
+    const hostParts = host.split(".");
+    toReturn = `${hostParts[1]}-${hostParts[0]}`;
+  }
+
+  console.log(`Conference ID: ${toReturn}`);
+  return toReturn;
+}
+
+const conferenceId = getConferenceId();
+const WebsiteApp = conferenceId !== "vopen-global" ? ConferenceApp : GlobalApp;
+ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

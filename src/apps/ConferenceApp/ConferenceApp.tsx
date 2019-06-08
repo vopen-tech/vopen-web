@@ -33,14 +33,14 @@ const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
   );
 };
 
-const conferenceId = process.env.REACT_APP_CONFERENCE_APP || "";
-
 export default class ConferenceApp extends React.PureComponent<IProps, IState> {
   state: IState = {
     conferenceData: undefined
   };
 
   async componentDidMount() {
+    const { conferenceId } = this.props;
+
     if (!conferenceId) {
       console.error("No conference ID set up");
     }
@@ -50,6 +50,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
   }
 
   render() {
+    const { conferenceId } = this.props;
     const { conferenceData } = this.state;
 
     if (!conferenceData) {

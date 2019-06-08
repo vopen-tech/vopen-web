@@ -13,8 +13,8 @@
 
 .title {
   flex: 1 1 0%;
-  @extend %flexRow;
-  align-items: flex-end;
+  @extend %flexColumn;
+  justify-content: flex-end;
   font-size: 87px;
   color: $secondaryFontColor;
 
@@ -22,6 +22,7 @@
     width: 350px;
     margin-right: 10px;
     fill: $primaryFontColor;
+    display: block;
   }
 
   .year {
@@ -71,8 +72,6 @@
   only screen and (max-width: 900px) {
 
     .title {
-      flex-direction: column;
-      align-items: center;
       padding-top: 100px;
     }
 

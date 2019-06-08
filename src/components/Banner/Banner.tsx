@@ -7,12 +7,12 @@ import styles from "./Banner.module.scss";
 
 export default class Banner extends React.PureComponent<IProps, IState> {
   render() {
-    const { children, to } = this.props;
+    const { title, to, children } = this.props;
     return (
       <div className={styles.banner}>
         <span className={styles.title}>
           <VOpenLogo className={styles.logo} />
-          <span className={styles.year}>2019</span>
+          <span className={styles.year}>{title}</span>
         </span>
         <div className={styles.actions}>
           <ActionButton text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />

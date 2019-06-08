@@ -5,7 +5,7 @@ import { GlobalApp, ConferenceApp } from "./apps";
 
 import "./styles/global.scss";
 
-const WebsiteApp = process.env.REACT_APP_CONFERENCE_APP === "true" ? ConferenceApp : GlobalApp;
+const WebsiteApp = !!process.env.REACT_APP_CONFERENCE_APP ? ConferenceApp : GlobalApp;
 ReactDOM.render(<WebsiteApp />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

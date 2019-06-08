@@ -1,11 +1,20 @@
-import { ISchedule } from "../types/ISchedule";
+import axios from "axios";
+import { IConference } from "../types/IConference";
 
-const apiBasePath = "/";
+const apiBasePath = "https://vopen-prod-api-win-app.azurewebsites.net/api";
 
-async function fetchSchedule(): Promise<ISchedule> {
-  return Promise.resolve({ days: [] });
+async function fetchConference(conferenceId: string): Promise<IConference | undefined> {
+  const url = `${apiBasePath}/v1/conferences/${conferenceId}`;
+
+  try {
+    const result = await axios.get(url);
+    return result.data;
+  } catch (error) {
+    console.error(error);
+    return;
+  }
 }
 
 export default {
-  fetchSchedule
+  fetchConference
 };

@@ -31,5 +31,5 @@ deploy:
       branch: $CONFERENCES_AZURE_WA_BRANCH
     site: $CONFERENCES_AZURE_WA_SITE # site to deploy
     slot: $CONFERENCES_AZURE_WA_SLOT # site's slot to use
-    username: $CONFERENCES_CONFERENCES_WA_USERNAME
-    password: $CONFERENCES_CONFERENCES_WA_PASSWORD
+    username: $CONFERENCES_AZURE_WA_USERNAME
+    password: $CONFERENCES_AZURE_WA_PASSWORD

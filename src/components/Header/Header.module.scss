@@ -1,8 +1,7 @@
 @import "../../styles/styles";
 
 .header {
-  display: flex;
-  flex-direction: row;
+  @extend %flexRow;
   width: 100%;
 
   .nav {
@@ -16,11 +15,48 @@
     flex-direction: row;
   }
 
+  .navOptions {
+    flex: 1;
+    @extend %flexRow;
+    justify-content: flex-end;
+  }
+
   .navMenu {
     flex: 1;
-    justify-content: flex-end;
-    display: flex;
-    flex-direction: row;
+    @extend %flexColumn;
+    align-items: flex-end;
+    display: none;
+    cursor: pointer;
+
+    .navMenuIcon {
+      outline: 0;
+      font-size: 28px;
+      padding: 10px 15px;
+      margin: -10px 0 0 0;
+      color: $primaryFontColor;
+      transition: color 0.25s ease-in-out 0s;
+
+      &:hover {
+        color: rgba($secondaryBackgroundColor, 0.80);
+      }
+    }
+
+    &.isNavMenuOpen {
+      .navMenuIcon {
+        background-color: darken($primaryBackgroundColor, 10%);
+        color: rgba($secondaryBackgroundColor, 0.80);
+      }
+
+      .navOptions {
+        @extend %flexColumn;
+        padding: 10px;
+        background-color: darken($primaryBackgroundColor, 10%);
+
+        a {
+          border: none;
+        }
+      }
+    }
   }
 
   .home {
@@ -46,12 +82,17 @@
 
   .header {
     .nav {
-      flex-direction: column;
+      width: calc(100% - 50px);
+      padding-left: 25px;
+      padding-right: 25px;
 
-      .navMenu {
-        justify-content: flex-end;
-        flex-wrap: wrap;
+      .navOptions {
+        display: none;
       }
+    }
+
+    .navMenu {
+      display: flex;
     }
   }
 }

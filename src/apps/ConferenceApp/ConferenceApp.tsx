@@ -50,7 +50,6 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
   }
 
   render() {
-    const { conferenceId } = this.props;
     const { conferenceData } = this.state;
 
     if (!conferenceData) {

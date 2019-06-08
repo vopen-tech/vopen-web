@@ -19,8 +19,14 @@ function getConferenceId(): string {
     toReturn = `${hostParts[1]}-${hostParts[0]}`;
   }
 
+  // Hack to match global site with global domain
   if (toReturn === "tech-vopen") {
     toReturn = "vopen-global";
+  }
+
+  // Hack until the subdomains are properly set up
+  if (toReturn === "azurewebsites-vopen-prod-confs-win-app") {
+    toReturn = "vopen-uy";
   }
 
   console.log(`Conference ID: ${toReturn}`);

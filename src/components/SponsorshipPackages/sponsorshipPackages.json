@@ -1,7 +1,7 @@
 [
   {
     "name": "Diamond",
-    "price": "USD 10.000",
+    "price": "",
     "items": [
       "Presencia física y digital con banners",
       "Uso de la App Mobile para sorteos y promociones",
@@ -21,7 +21,7 @@
   },
   {
     "name": "Gold",
-    "price": "USD 5.000",
+    "price": "",
     "items": [
       "Presencia física y digital con banners",
       "Uso de la App Mobile para sorteos y promociones",
@@ -35,7 +35,7 @@
   },
   {
     "name": "Silver",
-    "price": "USD 2.500",
+    "price": "",
     "items": [
       "Presencia física y digital con banners",
       "Uso de la App Mobile para sorteos y promociones",
@@ -46,11 +46,7 @@
   },
   {
     "name": "Digital",
-    "price": "USD 1.000",
-    "items": [
-      "Presencia física y digital con banners",
-      "Swag en la bolsa de bienvenida",
-      "Logo en videos, gráfica, y merchandising"
-    ]
+    "price": "",
+    "items": ["Presencia física y digital con banners", "Swag en la bolsa de bienvenida", "Logo en videos, gráfica, y merchandising"]
   }
 ]

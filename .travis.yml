@@ -13,12 +13,23 @@ before_deploy:
   - cp -r ./build/* .
 
 deploy:
-  verbose: true
-  skip_cleanup: true
-  provider: azure_web_apps
-  on:
-    branch: $AZURE_WA_BRANCH
-  site: $AZURE_WA_SITE # site to deploy
-  slot: $AZURE_WA_SLOT # site's slot to use
-  username: $AZURE_WA_USERNAME
-  password: $AZURE_WA_PASSWORD
+  - provider: azure_web_apps
+    verbose: true
+    skip_cleanup: true
+    provider: azure_web_apps
+    on:
+      branch: $AZURE_WA_BRANCH
+    site: $AZURE_WA_SITE # site to deploy
+    slot: $AZURE_WA_SLOT # site's slot to use
+    username: $AZURE_WA_USERNAME
+    password: $AZURE_WA_PASSWORD
+  - provider: azure_web_apps
+    verbose: true
+    skip_cleanup: true
+    provider: azure_web_apps
+    on:
+      branch: $CONFERENCES_AZURE_WA_BRANCH
+    site: $CONFERENCES_AZURE_WA_SITE # site to deploy
+    slot: $CONFERENCES_AZURE_WA_SLOT # site's slot to use
+    username: $CONFERENCES_CONFERENCES_WA_USERNAME
+    password: $CONFERENCES_CONFERENCES_WA_PASSWORD

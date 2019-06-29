@@ -27,16 +27,6 @@
   }
 }
 
-.externalNavLink {
-  @extend .navLink;
-  border: solid 1px $secondaryBackgroundColor;
-
-  &:hover {
-    color: $primaryFontColor;
-    background-color: $secondaryBackgroundColor;
-  }
-}
-
 @media 
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {

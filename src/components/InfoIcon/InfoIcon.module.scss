@@ -19,7 +19,7 @@
   }
 
   &.link {
-    cursor: pointer;
+    text-transform: none;
   }
 
   .icon {
@@ -31,11 +31,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
     transition: border-color 0.25s ease-in-out 0s;
   }
 
   .info {
+    margin-left: 15px;
 
     .title {
       font-size: 21px;

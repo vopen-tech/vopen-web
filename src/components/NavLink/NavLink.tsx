@@ -8,7 +8,7 @@ export default class NavLink extends React.PureComponent<LinkProps> {
     const { children, className, to } = this.props;
     const isExternalUrl = to.toString().indexOf("//") === 0 || to.toString().indexOf("http") === 0;
     const isInternalLink = to.toString().indexOf("/#") === 0;
-    const cssClasses = classNames(isExternalUrl ? styles.externalNavLink : styles.navLink, classNames);
+    const cssClasses = classNames(styles.navLink, className);
 
     if (isExternalUrl) {
       return (

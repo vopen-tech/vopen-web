@@ -65,7 +65,9 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             <NavLink to="/schedule">Agenda</NavLink>
             <NavLink to="/#speakers">Speakers</NavLink>
             <NavLink to="/#sponsors">Sponsors</NavLink>
-            <NavLink to="//vopen.tech">Global</NavLink>
+            <NavLink className={styles.externalNavLink} to="//vopen.tech">
+              Global
+            </NavLink>
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home edition={lastEdition} />} />

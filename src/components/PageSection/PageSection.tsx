@@ -24,7 +24,7 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
             <h3 className={styles.title}>{title}</h3>
           </div>
         )}
-        {children}
+        <div className={styles.body}>{children}</div>
       </div>
     );
   }

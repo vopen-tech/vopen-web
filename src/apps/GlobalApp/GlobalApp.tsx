@@ -8,7 +8,7 @@ import styles from "./GlobalApp.module.scss";
 
 const Home = () => {
   return (
-    <div className={styles.home}>
+    <>
       <Banner to="#about" title="2019">
         <div className={styles.flags}>
           <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
@@ -24,7 +24,7 @@ const Home = () => {
       <PageSection title="Ediciones anteriores" type="odd">
         <PastEditions />
       </PageSection>
-    </div>
+    </>
   );
 };
 

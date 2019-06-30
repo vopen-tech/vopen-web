@@ -3,7 +3,6 @@
 .about {
   @extend %pageSection;
   @extend %flexRow;
-  background-color: $tertiaryBackgroundColor;
   position: relative;
   z-index: auto;
 

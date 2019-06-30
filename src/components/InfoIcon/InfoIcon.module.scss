@@ -35,6 +35,7 @@
   }
 
   .info {
+    width: 200px;
     margin-left: 15px;
 
     .title {
@@ -53,7 +54,9 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-  .infoIcon {
+  .infoIcon,
+  a.infoIcon,
+  a.infoIcon:link {
     margin: 0 0 25px 0;
   }
 }

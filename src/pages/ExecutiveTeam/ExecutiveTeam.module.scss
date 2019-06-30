@@ -1,0 +1,18 @@
+@import "../../styles/styles";
+
+.team {
+  @extend %pageSection;
+  @extend %flexColumn;
+  flex: 1;
+}
+
+.title {
+  @extend %pageTitle;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+ 
+}

@@ -23,6 +23,8 @@
   width: 75px;
   margin: 0 75px 25px 0;
   cursor: pointer;
+  border: solid 4px navy;
+  border-radius: 50%;
   
   &:last-of-type {
     margin-right: 0;

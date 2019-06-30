@@ -1,3 +1,5 @@
+import { IOrganizer } from "./IOrganizer";
+
 export interface IConference {
   id: string;
   name: string;
@@ -18,4 +20,5 @@ export interface IEdition {
     ticketsType: string;
     isTicketSaleOpen: boolean;
   };
+  organizers: IOrganizer[];
 }

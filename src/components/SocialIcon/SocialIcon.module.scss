@@ -16,6 +16,11 @@
     background-color: rgba($secondaryFontColor, 0.25);
     border-radius: 50%;
   }
+
+  &.odd {
+    -webkit-filter: hue-rotate(23deg) saturate(100) brightness(0.55);
+    filter: hue-rotate(23deg) saturate(100) brightness(0.55);
+  }
 }
 
 .twitter {

@@ -1,18 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon, MapsLocation } from "../../components";
-import { Conduct, Schedule, Team } from "../../pages";
+import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon, Team, MapsLocation } from "../../components";
+import { Conduct, Schedule } from "../../pages";
 import { backendService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
 import { IEdition } from "../../types/IConference";
 
+const sortByName = (itemA: any, itemB: any) => {
+  if (itemA.name < itemB.name) return -1;
+  if (itemA.name > itemB.name) return 1;
+  return 0;
+};
+
 const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
+  const editionLocation = edition.location || {};
+  const editionOrganizers = edition.organizers ? edition.organizers.sort(sortByName) : [];
+
   return (
-    <div className={styles.home}>
+    <>
       <Banner to="#about" title={edition.name}>
-        <InfoIcon type="location" title={edition.location.venueName} subtitle={edition.location.description} linkUrl="/#location" />
+        <InfoIcon type="location" title={editionLocation.venueName} subtitle={editionLocation.description} linkUrl="/#location" />
         <InfoIcon type="date" title={edition.date || "Próximamente"} subtitle={""} />
         <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
         <InfoIcon type="tickets" title="Lugares limitados!" subtitle={edition.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Próximamente"} />
@@ -26,10 +35,13 @@ const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
       <PageSection id="sponsors" title="Sponsors">
         <Sponsors />
       </PageSection>
-      <PageSection id="location" type="full">
-        <MapsLocation address={edition.location.fullAddress} />
+      <PageSection id="team" title="Organizadores" type="odd">
+        <Team team={editionOrganizers} type="odd" />
       </PageSection>
-    </div>
+      <PageSection id="location" type="full">
+        <MapsLocation address={editionLocation.fullAddress} />
+      </PageSection>
+    </>
   );
 };
 

@@ -41,6 +41,8 @@
   @extend %flexRow;
   margin: 40px 0 0 0;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .goDown {

@@ -1,11 +1,4 @@
-export enum SocialTypes {
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-  Linkedin,
-  Mail
-}
+type SocialTypes = "facebook" | "twitter" | "instagram" | "youtube" | "linkedin" | "email";
 
 export interface ISocialLink {
   type: SocialTypes;

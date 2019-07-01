@@ -11,7 +11,7 @@ async function fetchConference(conferenceId: string): Promise<IConference | unde
     return result.data;
   } catch (error) {
     console.error(error);
-    return;
+    return undefined;
   }
 }
 

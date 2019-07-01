@@ -1,4 +1,5 @@
 import { IOrganizer } from "./IOrganizer";
+import { ISponsor } from "./ISponsor";
 
 export interface IConference {
   id: string;
@@ -21,4 +22,5 @@ export interface IEdition {
     isTicketSaleOpen: boolean;
   };
   organizers: IOrganizer[];
+  sponsors: ISponsor[];
 }

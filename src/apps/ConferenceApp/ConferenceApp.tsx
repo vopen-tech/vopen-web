@@ -1,12 +1,27 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, Sponsors, Speakers, InfoIcon, Team, MapsLocation } from "../../components";
+import {
+  Header,
+  Footer,
+  NavLink,
+  PageSection,
+  Banner,
+  About,
+  Sponsors,
+  Speakers,
+  InfoIcon,
+  Team,
+  MapsLocation,
+  ActionButton,
+  SponsorshipPackages
+} from "../../components";
 import { Conduct, Schedule } from "../../pages";
 import { backendService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
 import { IEdition } from "../../types/IConference";
+import constants from "../../constants";
 
 const sortByName = (itemA: any, itemB: any) => {
   if (itemA.name < itemB.name) return -1;
@@ -32,8 +47,12 @@ const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
       <PageSection id="speakers" title="Speakers" type="odd">
         <Speakers />
       </PageSection>
-      <PageSection id="sponsors" title="Sponsors">
-        <Sponsors />
+      <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
+        <div style={{ width: "100%", textAlign: "center" }}>
+          <ActionButton type="tertiary" text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
+        </div>
+        <SponsorshipPackages type="odd" />
+        <Sponsors title="Quienes nos acompañan" />
       </PageSection>
       <PageSection id="team" title="Organizadores" type="odd">
         <Team team={editionOrganizers} type="odd" />

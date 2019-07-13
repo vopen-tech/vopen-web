@@ -29,17 +29,21 @@ const sortByName = (itemA: any, itemB: any) => {
   return 0;
 };
 
-const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
-  const editionLocation = edition.location || {};
-  const editionOrganizers = edition.organizers ? edition.organizers.sort(sortByName) : [];
+const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
+  const conferenceLocation = conferenceInfo.location || {};
+  const conferenceDate = conferenceInfo.date || "Próximamente";
+  const conferenceTicketSaleStatus = conferenceInfo.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Próximamente";
+  const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
+
+  const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
 
   return (
     <>
-      <Banner to="#about" title={edition.name}>
-        <InfoIcon type="location" title={editionLocation.venueName} subtitle={editionLocation.description} linkUrl="/#location" />
-        <InfoIcon type="date" title={edition.date || "Próximamente"} subtitle={""} />
+      <Banner to="#about" title={conferenceInfo.name}>
+        <InfoIcon type="location" title={conferenceLocation.venueName} subtitle={conferenceLocation.description} linkUrl="/#location" />
+        <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
-        <InfoIcon type="tickets" title="Lugares limitados!" subtitle={edition.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Próximamente"} />
+        <InfoIcon type="tickets" title="Lugares limitados!" subtitle={conferenceTicketSaleStatus} />
       </Banner>
       <PageSection id="about" title="About">
         <About />
@@ -48,17 +52,21 @@ const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
         <Speakers />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
-        <div style={{ width: "100%", textAlign: "center" }}>
+        <div className={styles.centeredText}>
           <ActionButton type="tertiary" text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
         </div>
         <SponsorshipPackages type="odd" />
         <Sponsors title="Quienes nos acompañan" />
       </PageSection>
       <PageSection id="team" title="Organizadores" type="odd">
-        <Team team={editionOrganizers} type="odd" />
+        <Team team={conferenceOrganizers} type="odd" />
+        <h4 className={styles.centeredText} style={{ margin: "35px 0" }}>
+          Organizadores globales
+        </h4>
+        <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">
-        <MapsLocation address={editionLocation.fullAddress} />
+        <MapsLocation address={conferenceLocation.fullAddress} />
       </PageSection>
     </>
   );
@@ -66,7 +74,8 @@ const Home: React.SFC<any> = ({ edition }: { edition: IEdition }) => {
 
 export default class ConferenceApp extends React.PureComponent<IProps, IState> {
   state: IState = {
-    conferenceData: undefined
+    conferenceData: undefined,
+    globalData: undefined
   };
 
   async componentDidMount() {
@@ -76,18 +85,19 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       console.error("No conference ID set up");
     }
 
-    const result = await backendService.fetchConference(conferenceId);
-    this.setState({ conferenceData: result });
+    const [conferenceData, globalData] = await Promise.all([backendService.fetchConference(conferenceId), backendService.fetchConference("vopen-global")]);
+    this.setState({ conferenceData, globalData });
   }
 
   render() {
-    const { conferenceData } = this.state;
+    const { conferenceData, globalData } = this.state;
 
-    if (!conferenceData) {
+    if (!conferenceData || !globalData) {
       return null;
     }
 
     const lastEdition = conferenceData.editions[0];
+    const globalEdition = globalData.editions[0];
 
     return (
       <Router>
@@ -101,7 +111,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             </NavLink>
           </Header>
           {/* Body */}
-          <Route exact path="/" render={() => <Home edition={lastEdition} />} />
+          <Route exact path="/" render={() => <Home conferenceInfo={lastEdition} globalInfo={globalEdition} />} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/conduct" component={Conduct} />
           <Route path="/team" component={Team} />

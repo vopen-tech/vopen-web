@@ -58,10 +58,10 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <SponsorshipPackages type="odd" />
         <Sponsors title="Quienes nos acompañan" />
       </PageSection>
-      <PageSection id="team" title="Organizadores" type="odd">
+      <PageSection id="team" title="Equipo" type="odd">
         <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0" }}>
-          Organizadores globales
+          Equipo global
         </h4>
         <Team team={globalOrganizers} type="odd" />
       </PageSection>

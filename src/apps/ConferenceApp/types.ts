@@ -6,4 +6,5 @@ export interface IProps {
 
 export interface IState {
   conferenceData?: IConference;
+  globalData?: IConference;
 }

@@ -13,7 +13,8 @@ import {
   Team,
   MapsLocation,
   ActionButton,
-  SponsorshipPackages
+  SponsorshipPackages,
+  LanguageSelector
 } from "../../components";
 import { Conduct, Schedule } from "../../pages";
 import { backendService } from "../../services";
@@ -109,6 +110,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             <NavLink className={styles.externalNavLink} to="//vopen.tech">
               Global
             </NavLink>
+            {/* <LanguageSelector /> */}
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={lastEdition} globalInfo={globalEdition} />} />

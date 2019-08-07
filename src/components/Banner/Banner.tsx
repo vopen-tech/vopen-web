@@ -17,6 +17,7 @@ export default class Banner extends React.PureComponent<IProps, IState> {
         <div className={styles.actions}>
           <ActionButton text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
           <ActionButton type="secondary" text="Quiero ser speaker" url={constants.speakerCallUrl} />
+          <ActionButton type="primary" text="Quiero recibir novedades" url={constants.rsvpUrl} />
         </div>
         {children && <div className={styles.children}>{children}</div>}
         {to && (

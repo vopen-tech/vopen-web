@@ -33,7 +33,7 @@ const sortByName = (itemA: any, itemB: any) => {
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const conferenceLocation = conferenceInfo.location || {};
   const conferenceDate = conferenceInfo.date || "Próximamente";
-  const conferenceTicketSaleStatus = conferenceInfo.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Próximamente";
+  const conferenceTicketSaleStatus = conferenceInfo.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Inscribite al RSVP";
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
@@ -44,7 +44,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <InfoIcon type="location" title={conferenceLocation.venueName} subtitle={conferenceLocation.description} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
-        <InfoIcon type="tickets" title="Lugares limitados!" subtitle={conferenceTicketSaleStatus} />
+        <InfoIcon type="tickets" title="Lugares limitados!" subtitle={conferenceTicketSaleStatus} linkUrl={constants.rsvpUrl} />
       </Banner>
       <PageSection id="about" title="About">
         <About />

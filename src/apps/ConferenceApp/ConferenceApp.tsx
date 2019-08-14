@@ -23,6 +23,8 @@ import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
 import { IEdition } from "../../types/IConference";
 import constants from "../../constants";
+import ReactGA from 'react-ga';
+import withTracker from '../withTracker';
 
 const sortByName = (itemA: any, itemB: any) => {
   if (itemA.name < itemB.name) return -1;
@@ -37,6 +39,8 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
+
+  ReactGA.pageview(location.pathname);
 
   return (
     <>
@@ -114,9 +118,9 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={lastEdition} globalInfo={globalEdition} />} />
-          <Route path="/schedule" component={Schedule} />
-          <Route path="/conduct" component={Conduct} />
-          <Route path="/team" component={Team} />
+          <Route path="/schedule" component={withTracker(Schedule)} />
+          <Route path="/conduct" component={withTracker(Conduct)} />
+          <Route path="/team" component={withTracker(Team)} />
           {/* End body */}
           <Footer>
             <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/conduct">

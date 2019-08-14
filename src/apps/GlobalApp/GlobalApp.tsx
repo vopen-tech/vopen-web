@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions } from "../../components";
 import { FlagArgentina, FlagChile, FlagColombia, FlagPeru, FlagUruguay } from "../../components/SVGs";
 import { Conduct, Sponsorship, Team } from "../../pages";
+import withTracker from '../withTracker';
 
 import styles from "./GlobalApp.module.scss";
 
@@ -38,10 +39,10 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink to="/team">Team</NavLink>
           </Header>
           {/* Body */}
-          <Route exact path="/" component={Home} />
-          <Route path="/conduct" component={Conduct} />
-          <Route path="/sponsorship" component={Sponsorship} />
-          <Route path="/team" component={Team} />
+          <Route exact path="/" component={withTracker(Home)} />
+          <Route path="/conduct" component={withTracker(Conduct)} />
+          <Route path="/sponsorship" component={withTracker(Sponsorship)} />
+          <Route path="/team" component={withTracker(Team)} />
           {/* End body */}
           <Footer>
             <NavLink to="/conduct">Código de conducta</NavLink>

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
+import ReactGA from 'react-ga';
 import { GlobalApp, ConferenceApp } from "./apps";
 
 import "./styles/global.scss";
@@ -33,8 +34,34 @@ function getConferenceId(): string {
   return toReturn;
 }
 
+function getTrackingId(conferenceId:string): string {
+  const baseCode = "UA-49706206-";
+  switch (conferenceId) {
+    case "vopen-ar":
+      return baseCode + "5";
+    case "vopen-cl":
+      return baseCode + "6";
+    case "vopen-co":
+      return baseCode + "7";
+    case "vopen-pe":
+      return baseCode + "8";
+    case "vopen-uy":
+      return baseCode + "9";
+    case "vopen-global":
+      return baseCode + "10";
+    default:
+      break;
+  }
+  return "";
+}
+
 const conferenceId = getConferenceId();
+
+const trackingId = getTrackingId(conferenceId);
+ReactGA.initialize(trackingId);
+
 const WebsiteApp = conferenceId !== "vopen-global" ? ConferenceApp : GlobalApp;
+
 ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

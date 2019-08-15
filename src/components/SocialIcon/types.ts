@@ -1,4 +1,4 @@
-type SocialIconType = "twitter" | "linkedin" | "facebook" | "instagram" | "youtube";
+type SocialIconType = "Twitter" | "Linkedin" | "Facebook" | "Instagram" | "Youtube";
 
 export interface Props {
   iconType: SocialIconType;

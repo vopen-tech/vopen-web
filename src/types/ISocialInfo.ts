@@ -1,4 +1,4 @@
-type SocialTypes = "facebook" | "twitter" | "instagram" | "youtube" | "linkedin" | "email";
+type SocialTypes = "Facebook" | "Twitter" | "Instagram" | "Youtube" | "Linkedin" | "Email";
 
 export interface ISocialLink {
   type: SocialTypes;

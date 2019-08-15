@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./Conduct.module.scss";
+import { resourcesService } from "../../services";
 
 export default class Conduct extends React.PureComponent {
   render() {
+    const Resources = resourcesService.getResources();
     return (
       <div className={styles.conduct}>
-        <h3 className={styles.title}>Código de conducta</h3>
+        <h3 className={styles.title}>{Resources.pages.codeOfConduct}</h3>
         <p className={styles.text}>
           El acoso incluye y no se limita a comentarios ofensivos verbales relacionadas al género, identidad y/o expresión de género, orientación sexual,
           discapacidad, apariencia física, el tamaño corporal, la raza, la religión, las imágenes sexuales en espacios públicos, intimidación deliberada, el

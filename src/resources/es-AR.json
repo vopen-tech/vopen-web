@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "schedule": "Agenda",
+    "speakers": "Speakers",
+    "sponsors": "Sponsors",
+    "sponsorship": "Sponsorship",
+    "team": "Equipo",
+    "codeOfConduct": "Código de conducta"
+  },
+  "buttons": {
+    "wantToBeSponsors": "Quiero ser sponsor",
+    "wantToBeSpeaker": "Quiero ser speaker",
+    "wantToReceiveNews": "Quiero recibir novedades"
+  },
+  "banner": {
+    "soon": "Soon",
+    "speakersTitle": "Speakers",
+    "speakersDescription": "Los mejores expertos",
+    "ticketsTitle": "Lugares limitados",
+    "ticketsOnSale": "Entradas a la venta",
+    "ticketsSignUp": "Anotate a la lista de espera"
+  },
+  "info": {
+    "welcome": "¡Bienvenid@s a vOpen! El grupo de eventos de tecnología más importante en Latinoamérica.",
+    "mission": "Nuestra misión es conectar a entusiastas, estudiantes, profesionales, expertos referentes y organizaciones de todo el mundo que utilicen la tecnología para concretar sus objetivos.",
+    "history": "Nuestra historia comenzó como .NET Conf, y durante los últimos 5 años convocamos a 221 expertos, 148 sponsors, +50 organizadores y +5000 asistentes en el marco de las 10 ediciones que llevamos adelante en 4 países.",
+    "today": "Hoy somos vOpen y en el 2019 hemos expandido nuestro alcance para mostrarte cómo la innovación y la tecnología está transformando nuestra vida ¡Sumate!"
+  },
+  "titles": {
+    "sponsorPage": "Quienes nos acompañan",
+    "globalTeam": "Equipo global",
+    "pastEditions": "Ediciones anteriores"
+  },
+  "sponsorshipPackages": {
+    "thePackage": "El paquete",
+    "includes": "incluye"
+  }
+}

@@ -17,7 +17,7 @@ import {
   LanguageSelector
 } from "../../components";
 import { Conduct, Schedule } from "../../pages";
-import { backendService } from "../../services";
+import { backendService, resourcesService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
@@ -31,11 +31,12 @@ const sortByName = (itemA: any, itemB: any) => {
 };
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
-  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
-  const conferenceDate = conferenceInfo.date || "Próximamente";
-  const conferenceTicketSaleStatus = !!conferenceInfo.ticketStartDate ? "Entradas a la venta" : "Inscribite al RSVP";
-  const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
+  const Resources = resourcesService.getResources();
 
+  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
+  const conferenceDate = conferenceInfo.date || Resources.banner.soon;
+  const conferenceTicketSaleStatus = !!conferenceInfo.ticketStartDate ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
+  const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
 
   return (
@@ -43,8 +44,8 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       <Banner to="#about" title={conferenceTitle}>
         <InfoIcon type="location" title={conferenceInfo.locationName} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
-        <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
-        <InfoIcon type="tickets" title="Lugares limitados!" subtitle={conferenceTicketSaleStatus} linkUrl={constants.rsvpUrl} />
+        <InfoIcon type="speakers" title={Resources.banner.speakersTitle} subtitle={Resources.banner.speakersDescription} linkUrl="/#speakers" />
+        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={constants.rsvpUrl} />
       </Banner>
       <PageSection id="about" title="About">
         <About />
@@ -54,15 +55,15 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
         <div className={styles.centeredText}>
-          <ActionButton type="tertiary" text="Quiero ser sponsor" url={constants.sponsorsCallUrl} />
+          <ActionButton type="tertiary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} />
         </div>
         <SponsorshipPackages type="odd" />
-        <Sponsors title="Quienes nos acompañan" />
+        <Sponsors title={Resources.titles.sponsorPage} />
       </PageSection>
-      <PageSection id="team" title="Equipo" type="odd">
+      <PageSection id="team" title={Resources.pages.team} type="odd">
         <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0" }}>
-          Equipo global
+          {Resources.titles.globalTeam}
         </h4>
         <Team team={globalOrganizers} type="odd" />
       </PageSection>
@@ -97,17 +98,19 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       return null;
     }
 
+    const Resources = resourcesService.getResources();
+
     return (
       <Router>
         <div className={styles.conferenceApp}>
           <Header>
-            <NavLink to="/schedule">Agenda</NavLink>
-            <NavLink to="/#speakers">Speakers</NavLink>
-            <NavLink to="/#sponsors">Sponsors</NavLink>
+            <NavLink to="/schedule" />
+            <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
+            <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink className={styles.externalNavLink} to="//vopen.tech">
               Global
             </NavLink>
-            {/* <LanguageSelector /> */}
+            <LanguageSelector />
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
@@ -117,7 +120,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           {/* End body */}
           <Footer>
             <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/conduct">
-              Código de conducta
+              {Resources.pages.codeOfConduct}
             </NavLink>
           </Footer>
         </div>

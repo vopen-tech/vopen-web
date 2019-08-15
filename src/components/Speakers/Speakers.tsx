@@ -5,6 +5,7 @@ import constants from "../../constants";
 
 import { Props, State } from "./types";
 import styles from "./Speakers.module.scss";
+import { resourcesService } from "../../services";
 
 export default class Speakers extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
@@ -14,10 +15,11 @@ export default class Speakers extends React.PureComponent<Props, State> {
   render() {
     const { className } = this.props;
     const cssClasses = classNames(styles.speakers, className);
+    const Resources = resourcesService.getResources();
 
     return (
       <div className={cssClasses}>
-        <ActionButton type="tertiary" text="Quiero ser speaker" url={constants.speakerCallUrl} />
+        <ActionButton type="tertiary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
       </div>
     );
   }

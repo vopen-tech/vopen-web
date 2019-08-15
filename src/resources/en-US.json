@@ -1,0 +1,38 @@
+{
+  "pages": {
+    "schedule": "Schedule",
+    "speakers": "Speakers",
+    "sponsors": "Sponsors",
+    "sponsorship": "Sponsorship",
+    "team": "Team",
+    "codeOfConduct": "Code of Conduct"
+  },
+  "buttons": {
+    "wantToBeSponsors": "I want to be a sponsor",
+    "wantToBeSpeaker": "I want to be a speaker",
+    "wantToReceiveNews": "I want to get notifications"
+  },
+  "banner": {
+    "soon": "Soon",
+    "speakersTitle": "Speakers",
+    "speakersDescription": "The best experts",
+    "ticketsTitle": "Limited seats available",
+    "ticketsOnSale": "Tickets on sale",
+    "ticketsSignUp": "Sign up to the waitlist"
+  },
+  "info": {
+    "welcome": "Welcome to vOpen! One of the most important community organized set of technology events in Latin America.",
+    "mission": "Our mission is to connect connect students, professionals, experts and organizations from around the world to share knowledge, experiences and promote technological innovation.",
+    "history": "Our history started as .NET Conf, a conference that started five years ago in which we gathered 220+ expertes, 145+ sponsors, 50+ organizers and 5000+ attendees in the 10 editions we organized in 4 coutries.",
+    "today": "Today we are vOpen and our new goal is to extend our influence and show to everyone the new trends in technology that are changing our lives. Join us!"
+  },
+  "titles": {
+    "sponsorPage": "Who are with us",
+    "globalTeam": "Global team",
+    "pastEditions": "Past editions"
+  },
+  "sponsorshipPackages": {
+    "thePackage": "The package",
+    "includes": "includes"
+  }
+}

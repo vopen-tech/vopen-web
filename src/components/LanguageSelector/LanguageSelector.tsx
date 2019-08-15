@@ -24,6 +24,9 @@ export default class LanguageSelector extends React.PureComponent<IProps, IState
 
     this.setState({ activeLanguage: newActiveLanguage });
     siteService.setSiteLanguage(newActiveLanguage);
+
+    // Reload the page
+    window.location.reload();
   };
 
   render() {

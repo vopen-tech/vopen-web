@@ -2,10 +2,10 @@ import axios, { AxiosRequestConfig } from "axios";
 import siteService from "./siteService";
 import { IConference } from "../types/IConference";
 
-const apiBasePath = "https://vopen-prod-api-win-app.azurewebsites.net/api";
+const apiBasePath = "https://api.vopen.tech/api";
 
 async function fetchConference(conferenceId: string): Promise<IConference | undefined> {
-  const url = `${apiBasePath}/v1/conferences/${conferenceId}`;
+  const url = `${apiBasePath}/v1/editions/${conferenceId}`;
   const activeSiteLanguage = siteService.getSiteLanguage();
   const config: AxiosRequestConfig = {
     headers: {

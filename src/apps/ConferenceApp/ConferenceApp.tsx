@@ -31,17 +31,17 @@ const sortByName = (itemA: any, itemB: any) => {
 };
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
-  const conferenceLocation = conferenceInfo.location || {};
+  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceDate = conferenceInfo.date || "Próximamente";
-  const conferenceTicketSaleStatus = conferenceInfo.ticketsInfo.isTicketSaleOpen ? "Entradas a la venta" : "Inscribite al RSVP";
+  const conferenceTicketSaleStatus = !!conferenceInfo.ticketStartDate ? "Entradas a la venta" : "Inscribite al RSVP";
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
 
   return (
     <>
-      <Banner to="#about" title={conferenceInfo.name}>
-        <InfoIcon type="location" title={conferenceLocation.venueName} subtitle={conferenceLocation.description} linkUrl="/#location" />
+      <Banner to="#about" title={conferenceTitle}>
+        <InfoIcon type="location" title={conferenceInfo.locationName} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="speakers" title="Speakers" subtitle="Los mejores expertos" linkUrl="/#speakers" />
         <InfoIcon type="tickets" title="Lugares limitados!" subtitle={conferenceTicketSaleStatus} linkUrl={constants.rsvpUrl} />
@@ -67,7 +67,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">
-        <MapsLocation address={conferenceLocation.fullAddress} />
+        <MapsLocation address={conferenceInfo.locationFullAddress} />
       </PageSection>
     </>
   );
@@ -86,7 +86,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       console.error("No conference ID set up");
     }
 
-    const [conferenceData, globalData] = await Promise.all([backendService.fetchConference(conferenceId), backendService.fetchConference("vopen-global")]);
+    const [conferenceData, globalData] = await Promise.all([backendService.fetchConference(conferenceId), backendService.fetchConference("vopen-global-2019")]);
     this.setState({ conferenceData, globalData });
   }
 
@@ -96,9 +96,6 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
     if (!conferenceData || !globalData) {
       return null;
     }
-
-    const lastEdition = conferenceData.editions[0];
-    const globalEdition = globalData.editions[0];
 
     return (
       <Router>
@@ -113,7 +110,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             {/* <LanguageSelector /> */}
           </Header>
           {/* Body */}
-          <Route exact path="/" render={() => <Home conferenceInfo={lastEdition} globalInfo={globalEdition} />} />
+          <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
           <Route path="/schedule" component={Schedule} />
           <Route path="/conduct" component={Conduct} />
           <Route path="/team" component={Team} />

@@ -4,9 +4,10 @@ import * as serviceWorker from "./serviceWorker";
 import { GlobalApp, ConferenceApp } from "./apps";
 
 import "./styles/global.scss";
+const VOPEN_GLOBAL_ID = "vopen-global-2019";
 
 function getConferenceId(): string {
-  let toReturn = "vopen-global";
+  let toReturn = VOPEN_GLOBAL_ID;
 
   if (!!process.env.REACT_APP_CONFERENCE_APP) {
     toReturn = process.env.REACT_APP_CONFERENCE_APP;
@@ -16,17 +17,12 @@ function getConferenceId(): string {
 
   if (host.indexOf("localhost") === -1) {
     const hostParts = host.split(".");
-    toReturn = `${hostParts[1]}-${hostParts[0]}`;
+    toReturn = `${hostParts[1]}-${hostParts[0]}-2019`;
   }
 
   // Hack to match global site with global domain
-  if (toReturn === "tech-vopen") {
-    toReturn = "vopen-global";
-  }
-
-  // Hack until the subdomains are properly set up
-  if (toReturn === "azurewebsites-vopen-prod-confs-win-app") {
-    toReturn = "vopen-uy";
+  if (toReturn === "tech-vopen-2019") {
+    toReturn = VOPEN_GLOBAL_ID;
   }
 
   console.log(`Conference ID: ${toReturn}`);
@@ -34,7 +30,7 @@ function getConferenceId(): string {
 }
 
 const conferenceId = getConferenceId();
-const WebsiteApp = conferenceId !== "vopen-global" ? ConferenceApp : GlobalApp;
+const WebsiteApp = conferenceId !== VOPEN_GLOBAL_ID ? ConferenceApp : GlobalApp;
 ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

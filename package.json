@@ -24,8 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-uy react-scripts start",
-    "build:conference": "REACT_APP_CONFERENCE_APP=vopen-uy react-scripts start"
+    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-uy-2019 react-scripts start",
+    "build:conference": "REACT_APP_CONFERENCE_APP=vopen-uy-2019 react-scripts start"
   },
   "engines": {
     "node": "10.x"

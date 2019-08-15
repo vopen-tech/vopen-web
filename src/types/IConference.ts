@@ -11,12 +11,13 @@ export interface IEdition {
   id: string;
   name: string;
   description: string;
-  location: {
-    fullAddress: string;
-    venueName: string;
-    description: string;
-  };
   date: string;
+  locationName: string;
+  locationFullAddress: string;
+  ticketType: string;
+  ticketPrice: string;
+  ticketStartDate: string;
+  ticketEndDate: string;
   ticketsInfo: {
     ticketsType: string;
     isTicketSaleOpen: boolean;

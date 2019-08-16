@@ -1,28 +1,26 @@
 @import "../../styles/styles";
 
 .actionButton {
-  display: inline-block;
-  
-  text-shadow: 1px 1px black;
-  text-decoration: none;
   appearance: none;
-  
-  width: auto;
-  height: auto;
-  padding: 25px;
-  margin: 0 25px 25px 0;
-
+  display: inline-block;
   font-size: 21px;
+  height: auto;
+  margin: 0 25px 25px 0;
+  padding: 25px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 1px 1px black;
   text-transform: uppercase;
   transition: background-color 0.25s ease-out;
+  width: auto;
 
   &:last-of-type {
     margin-right: 0;
   }
 
   &.primary {
-    color: $secondaryTitleFontColor;
     border: solid 2px $secondaryFontColor;
+    color: $secondaryTitleFontColor;
 
     &:hover {
       background-color: $secondaryFontColor;
@@ -30,8 +28,8 @@
   }
 
   &.secondary {
-    color: $secondaryTitleFontColor;
     border: solid 2px $secondaryBackgroundColor;
+    color: $secondaryTitleFontColor;
 
     &:hover {
       background-color: $secondaryBackgroundColor;
@@ -49,10 +47,7 @@
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
+@media only screen and (max-device-width: 900px), only screen and (max-width: 900px) {
   .actionButton {
     margin-right: 0;
   }

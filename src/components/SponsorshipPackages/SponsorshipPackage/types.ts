@@ -1,4 +1,6 @@
+export type SponsorshipType = "diamond" | "gold" | "silver" | "digital";
+
 export interface Props {
-  name: string;
+  sponsorshipType: SponsorshipType;
   className?: string;
 }

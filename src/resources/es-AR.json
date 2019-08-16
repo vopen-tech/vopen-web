@@ -32,7 +32,22 @@
     "pastEditions": "Ediciones anteriores"
   },
   "sponsorshipPackages": {
-    "thePackage": "El paquete",
-    "includes": "incluye"
+    "title": "El paquete ${type} incluye",
+    "offer1": "Presencia física y digital con banners",
+    "offer2": "Uso de la App Mobile para sorteos y promociones",
+    "offer3": "Stand grande con ubicación privilegiada",
+    "offer3b": "Stand mediano con ubicación a definir por la organización",
+    "offer3c": "Stand chico con ubicación a definir por la organización",
+    "offer4": "Posibilidad de una charla patrocinada",
+    "offer5": "Base de datos de asistentes",
+    "offer6": "Swag en la bolsa de bienvenida",
+    "offer7": "Branding en la sala principal y mesa de coworking",
+    "offer8": "Entrevista patrocinada",
+    "offer9": "Logo en videos, gráfica, y merchandising",
+    "offer10": "Tickets para la conferencia",
+    "offer11": "Tickets para los workshops",
+    "offer12": "First come, first served: Auspicio del Almuerzo",
+    "offer13": "First come, first served: Branding de cinta",
+    "offer14": "Ser sponsor Digital en todas las conferencias vOpen"
   }
 }

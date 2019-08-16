@@ -2,8 +2,9 @@
 
 .sponsorshipPackage {
   @extend %flexColumn;
+
   margin: 35px 0 0 0;
-  height: 300px;
+  min-height: 300px;
 
   .title {
     margin: 0 35px;
@@ -16,23 +17,20 @@
 
   .packageList {
     columns: 2;
-    padding: 0;
     margin: 35px 35px 0 35px;
+    padding: 0;
   }
 
   .packageListItem {
     font-size: 21px;
-    margin: 0 0 10px 0;
     list-style: none;
+    margin: 0 0 10px 0;
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
+@media only screen and (max-device-width: 900px), only screen and (max-width: 900px) {
   .sponsorshipPackage {
-    height: 675px;
+    height: 700px;
 
     .packageList {
       columns: 1;

@@ -32,7 +32,22 @@
     "pastEditions": "Past editions"
   },
   "sponsorshipPackages": {
-    "thePackage": "The package",
-    "includes": "includes"
+    "title": "The ${type} package includes",
+    "offer1": "Banners and stand in the Conference",
+    "offer2": "Push notifications in the Conference Mobile app for raffles and promotions",
+    "offer3": "Large-sized stand in a privileged location",
+    "offer3b": "Medium-sized stand in a location to be defined by the organization",
+    "offer3c": "Small-sized stand in a location to be defined by the organization",
+    "offer4": "Possibility of a talk during the conference",
+    "offer5": "Attendees database",
+    "offer6": "Approved swag in attendee bag",
+    "offer7": "Branding in the main stage and the coworking space",
+    "offer8": "Sponsor interview",
+    "offer9": "Logo in Conference videos, social network posts and merchandising",
+    "offer10": "Conference tickets",
+    "offer11": "Workshops tickets",
+    "offer12": "First come, first served: sponsor Conference lunch",
+    "offer13": "First come, first served: sponsor badge and holder",
+    "offer14": "Digital sponsor in all vOpen conferences"
   }
 }

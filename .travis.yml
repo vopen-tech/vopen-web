@@ -16,18 +16,18 @@ deploy:
   - provider: azure_web_apps
     verbose: true
     skip_cleanup: true
-    on:
-      branch: $GLOBAL_WEBSITE_BRANCH
+    on: $GLOBAL_WEBSITE_BRANCH
     site: $GLOBAL_WEBSITE_SITE # site to deploy
     slot: $GLOBAL_WEBSITE_SLOT # site's slot to use
     username: $AZURE_DEPLOYER_USERNAME
     password: $AZURE_DEPLOYER_PASS
+    verbose: true
   - provider: azure_web_apps
     verbose: true
     skip_cleanup: true
-    on:
-      branch: $CONFERENCES_WEBSITE_BRANCH
+    on: $CONFERENCES_WEBSITE_BRANCH
     site: $CONFERENCES_WEBSITE_SITE # site to deploy
     slot: $CONFERENCES_WEBSITE_SLOT # site's slot to use
     username: $AZURE_DEPLOYER_USERNAME
     password: $AZURE_DEPLOYER_PASS
+    verbose: true

@@ -3,7 +3,7 @@ export interface IProps {
   id?: string;
   title?: string;
   className?: string;
-  type?: "odd" | "even" | "full";
+  type?: "odd" | "even" | "full" | "primary";
 }
 
 export interface IState {}

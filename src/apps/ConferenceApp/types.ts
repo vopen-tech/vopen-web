@@ -1,10 +1,10 @@
-import { IConference } from "../../types/IConference";
+import { IEdition } from "../../types/IEdition";
 
 export interface IProps {
   conferenceId: string;
 }
 
 export interface IState {
-  conferenceData?: IConference;
-  globalData?: IConference;
+  conferenceData?: IEdition;
+  globalData?: IEdition;
 }

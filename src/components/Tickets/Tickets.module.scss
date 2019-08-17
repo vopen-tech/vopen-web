@@ -1,0 +1,95 @@
+@import "../../styles/styles";
+
+.tickets {
+  @extend %pageSection;
+  @extend %flexRow;
+
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+
+  .ticket {
+    @extend %flexColumn;
+
+    align-items: center;
+    flex: 1;
+    margin: 0 10px;
+
+    .title {
+      font-size: 28px;
+      padding: 10px 0 20px 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .list {
+      list-style-type: none;
+      margin: 0 10px 30px 0;
+      padding: 0 20px;
+
+      .item {
+        font-size: 24px;
+        padding: 10px 0;
+
+        .itemIcon {
+          margin: 0 10px 0 0;
+        }
+
+        .itemText {
+          display: inline;
+          font-size: 21px;
+        }
+      }
+    }
+
+    .buttons {
+      @extend %flexRow;
+    }
+  }
+
+  .disabledTicket {
+    @extend .ticket;
+
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  .enabledTicket {
+    @extend .ticket;
+
+    border: solid 2px $tertiaryBackgroundColor;
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s ease-in-out 0s;
+
+    &:hover {
+      transform: scale(1.01);
+    }
+
+    .title {
+      background-color: $tertiaryBackgroundColor;
+      color: $primaryBackgroundColor;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1215px), only screen and (max-width: 1215px) {
+  .tickets {
+    flex-direction: column;
+  }
+
+  .ticket {
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .buttons {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

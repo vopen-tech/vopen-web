@@ -2,6 +2,7 @@
 
 .actionButton {
   appearance: none;
+  cursor: pointer;
   display: inline-block;
   font-size: 21px;
   height: auto;
@@ -44,6 +45,12 @@
     &:hover {
       background-color: rgba($primaryBackgroundColor, 0.95);
     }
+  }
+
+  &.disabled {
+    border: solid 2px $secondaryBackgroundColor;
+    opacity: 0.5;
+    pointer-events: none;
   }
 }
 

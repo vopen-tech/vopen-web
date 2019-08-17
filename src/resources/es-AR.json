@@ -5,12 +5,16 @@
     "sponsors": "Sponsors",
     "sponsorship": "Sponsorship",
     "team": "Equipo",
+    "tickets": "Entradas",
     "codeOfConduct": "Código de conducta"
   },
   "buttons": {
     "wantToBeSponsors": "Quiero ser sponsor",
     "wantToBeSpeaker": "Quiero ser speaker",
-    "wantToReceiveNews": "Quiero recibir novedades"
+    "wantToReceiveNews": "Quiero recibir novedades",
+    "buy": "Comprar",
+    "soon": "Próximamente",
+    "soldOut": "Entradas agotadas"
   },
   "banner": {
     "soon": "Soon",

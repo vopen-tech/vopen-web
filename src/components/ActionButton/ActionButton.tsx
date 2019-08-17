@@ -19,13 +19,17 @@ export default class About extends React.PureComponent<Props, State> {
       return styles.secondary;
     }
 
+    if (type === "disabled") {
+      return styles.disabled;
+    }
+
     return styles.tertiary;
   }
 
   render() {
-    const { text, url } = this.props;
+    const { className, text, url } = this.props;
     const classType = this.getClassType();
-    const cssClasses = classNames(styles.actionButton, classType);
+    const cssClasses = classNames(styles.actionButton, classType, className);
 
     return (
       <a className={cssClasses} href={url} target="_blank">

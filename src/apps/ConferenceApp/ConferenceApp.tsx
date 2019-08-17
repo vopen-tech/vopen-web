@@ -11,6 +11,7 @@ import {
   Speakers,
   InfoIcon,
   Team,
+  Tickets,
   MapsLocation,
   ActionButton,
   SponsorshipPackages,
@@ -21,7 +22,7 @@ import { backendService, resourcesService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
-import { IEdition } from "../../types/IConference";
+import { IEdition } from "../../types/IEdition";
 import constants from "../../constants";
 
 const sortByName = (itemA: any, itemB: any) => {
@@ -35,7 +36,11 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceDate = conferenceInfo.date || Resources.banner.soon;
-  const conferenceTicketSaleStatus = !!conferenceInfo.ticketStartDate ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
+
+  const isTicketSaleOpen = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
+  const conferenceTicketSaleStatus = isTicketSaleOpen ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
+  const conferenceTicketsLink = isTicketSaleOpen ? "/#tickets" : constants.rsvpUrl;
+
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
 
@@ -45,7 +50,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <InfoIcon type="location" title={conferenceInfo.locationName} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="speakers" title={Resources.banner.speakersTitle} subtitle={Resources.banner.speakersDescription} linkUrl="/#speakers" />
-        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={constants.rsvpUrl} />
+        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
       </Banner>
       <PageSection id="about" title="About">
         <About />
@@ -60,6 +65,11 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <SponsorshipPackages type="odd" />
         <Sponsors title={Resources.titles.sponsorPage} />
       </PageSection>
+      {isTicketSaleOpen && (
+        <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
+          <Tickets tickets={conferenceInfo.editionTickets} />
+        </PageSection>
+      )}
       <PageSection id="team" title={Resources.pages.team} type="odd">
         <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0" }}>

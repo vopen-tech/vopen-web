@@ -1,10 +1,10 @@
 import axios, { AxiosRequestConfig } from "axios";
 import siteService from "./siteService";
-import { IConference } from "../types/IConference";
+import { IEdition } from "../types/IEdition";
 
 const apiBasePath = "https://api.vopen.tech/api";
 
-async function fetchConference(conferenceId: string): Promise<IConference | undefined> {
+async function fetchConference(conferenceId: string): Promise<IEdition | undefined> {
   const url = `${apiBasePath}/v1/editions/${conferenceId}`;
   const activeSiteLanguage = siteService.getSiteLanguage();
   const config: AxiosRequestConfig = {
@@ -16,7 +16,7 @@ async function fetchConference(conferenceId: string): Promise<IConference | unde
 
   try {
     const result = await axios.get(url, config);
-    return result.data;
+    return result.data as IEdition;
   } catch (error) {
     console.error(error);
     return undefined;

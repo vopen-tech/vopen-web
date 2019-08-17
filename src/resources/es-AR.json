@@ -5,12 +5,16 @@
     "sponsors": "Sponsors",
     "sponsorship": "Sponsorship",
     "team": "Equipo",
+    "tickets": "Entradas",
     "codeOfConduct": "Código de conducta"
   },
   "buttons": {
     "wantToBeSponsors": "Quiero ser sponsor",
     "wantToBeSpeaker": "Quiero ser speaker",
-    "wantToReceiveNews": "Quiero recibir novedades"
+    "wantToReceiveNews": "Quiero recibir novedades",
+    "buy": "Comprar",
+    "soon": "Próximamente",
+    "soldOut": "Entradas agotadas"
   },
   "banner": {
     "soon": "Soon",
@@ -49,5 +53,15 @@
     "offer12": "First come, first served: Auspicio del Almuerzo",
     "offer13": "First come, first served: Branding de cinta",
     "offer14": "Ser sponsor Digital en todas las conferencias vOpen"
+  },
+  "tickets": {
+    "benefit1": "Acceso a los dos días de Conferencia",
+    "benefit2": "Bolsa de Bienvenida con Swag",
+    "benefit3": "Remera de la conferencia",
+    "benefit4": "Tickets de Almuerzo",
+    "benefit5": "Coffee break",
+    "benefit6": "Acceso al After Party",
+    "benefit7": "Acceso a los workshops (first come, first served)",
+    "benefit8": "Certificado de Asistencia"
   }
 }

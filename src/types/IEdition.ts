@@ -1,11 +1,6 @@
 import { IOrganizer } from "./IOrganizer";
 import { ISponsor } from "./ISponsor";
-
-export interface IConference {
-  id: string;
-  name: string;
-  editions: IEdition[];
-}
+import { IEditionTicket } from "./IEditionTicket";
 
 export interface IEdition {
   id: string;
@@ -14,14 +9,7 @@ export interface IEdition {
   date: string;
   locationName: string;
   locationFullAddress: string;
-  ticketType: string;
-  ticketPrice: string;
-  ticketStartDate: string;
-  ticketEndDate: string;
-  ticketsInfo: {
-    ticketsType: string;
-    isTicketSaleOpen: boolean;
-  };
+  editionTickets: IEditionTicket[];
   organizers: IOrganizer[];
   sponsors: ISponsor[];
 }

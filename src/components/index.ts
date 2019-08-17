@@ -16,5 +16,6 @@ export { default as SponsorshipPackages } from "./SponsorshipPackages";
 export { default as Sponsors } from "./Sponsors";
 export { default as Speakers } from "./Speakers";
 export { default as Team } from "./Team";
+export { default as Tickets } from "./Tickets";
 
 export * from "./SVGs";

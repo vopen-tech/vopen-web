@@ -5,12 +5,16 @@
     "sponsors": "Sponsors",
     "sponsorship": "Sponsorship",
     "team": "Team",
+    "tickets": "Tickets",
     "codeOfConduct": "Code of Conduct"
   },
   "buttons": {
     "wantToBeSponsors": "I want to be a sponsor",
     "wantToBeSpeaker": "I want to be a speaker",
-    "wantToReceiveNews": "I want to get notifications"
+    "wantToReceiveNews": "I want to get notifications",
+    "buy": "Buy",
+    "soon": "Soon available",
+    "soldOut": "Sold out"
   },
   "banner": {
     "soon": "Soon",
@@ -49,5 +53,15 @@
     "offer12": "First come, first served: sponsor Conference lunch",
     "offer13": "First come, first served: sponsor badge and holder",
     "offer14": "Digital sponsor in all vOpen conferences"
+  },
+  "tickets": {
+    "benefit1": "Two-days access to the Conference",
+    "benefit2": "Welcome bag with swag",
+    "benefit3": "Conference T-Shirt",
+    "benefit4": "Lunch tickets",
+    "benefit5": "Coffee break",
+    "benefit6": "After Party access",
+    "benefit7": "Workshops access (first come, first served)",
+    "benefit8": "Attendee certificate"
   }
 }

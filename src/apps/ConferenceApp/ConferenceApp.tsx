@@ -37,9 +37,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceDate = conferenceInfo.date || Resources.banner.soon;
 
-  const isTicketSaleOpen = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
-  const conferenceTicketSaleStatus = isTicketSaleOpen ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
-  const conferenceTicketsLink = isTicketSaleOpen ? "/#tickets" : constants.rsvpUrl;
+  const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
+  const conferenceTicketSaleStatus = isTicketSaleEnabled ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
+  const conferenceTicketsLink = isTicketSaleEnabled ? "/#tickets" : constants.rsvpUrl;
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
@@ -65,7 +65,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <SponsorshipPackages type="odd" />
         <Sponsors title={Resources.titles.sponsorPage} />
       </PageSection>
-      {isTicketSaleOpen && (
+      {isTicketSaleEnabled && (
         <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>

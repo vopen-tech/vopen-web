@@ -3,43 +3,61 @@
 .about {
   @extend %pageSection;
   @extend %flexRow;
+
   position: relative;
   z-index: auto;
 
   .image {
+    background-image: url("https://vopenprodstorage.blob.core.windows.net/publicresources/About0.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     flex: none;
+    height: 377px;
     position: relative;
     width: 672px;
-    height: 377px;
-    background-image: url('https://vopenprodstorage.blob.core.windows.net/publicresources/About0.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
   }
 
   .textSection {
-    position: relative;
-    margin: 0 0 0 50px;
     font-size: 21px;
+    margin: 0 0 0 50px;
+    position: relative;
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
+@media only screen and (min-device-width: 900px) and (max-device-width: 1250px), only screen and (min-width: 900px) and (max-width: 1250px) {
   .about {
     flex-direction: column;
     padding-bottom: 0;
 
     .image {
-      width: 100%;
-      order: 2;
       background-position: 50% 50%;
+      background-size: cover;
+      height: 500px;
+      order: 2;
+      width: 800px;
     }
 
     .textSection {
-      width: 75%;
       margin: 0 0 25px 50px;
+      width: 75%;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 900px), only screen and (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    padding-bottom: 0;
+
+    .image {
+      background-position: 50% 50%;
+      order: 2;
+      width: 100%;
+    }
+
+    .textSection {
+      margin: 0 0 25px 50px;
+      width: 75%;
     }
   }
 }

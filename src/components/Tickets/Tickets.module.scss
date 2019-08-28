@@ -14,6 +14,7 @@
     align-items: center;
     flex: 1;
     margin: 0 10px;
+    max-width: 500px;
 
     .title {
       font-size: 28px;
@@ -44,6 +45,8 @@
 
     .buttons {
       @extend %flexRow;
+
+      justify-content: center;
     }
   }
 
@@ -90,6 +93,10 @@
       align-items: center;
       flex-direction: column;
       justify-content: center;
+    }
+
+    .button {
+      margin-right: 0;
     }
   }
 }

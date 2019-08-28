@@ -31,22 +31,22 @@ export default class Tickets extends React.PureComponent<Props, State> {
     const Resources = resourcesService.getResources();
 
     return (
-      <div className={styles.enabledTicket}>
+      <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
           <br /> {ticketInfo.price}
         </div>
         <ul className={styles.list}>
           {this.getBenefits().map((benefit: string) => (
-            <li className={styles.item}>
+            <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
-              <li className={styles.itemText}>{benefit}</li>
+              <span className={styles.itemText}>{benefit}</span>
             </li>
           ))}
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton text={link.label || Resources.buttons.buy} url={link.url} />
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.buy} url={link.url} />
           ))}
         </div>
       </div>
@@ -58,16 +58,16 @@ export default class Tickets extends React.PureComponent<Props, State> {
     const buttonText = isTicketSaleFinished(ticketInfo) ? Resources.buttons.soldOut : Resources.buttons.soon;
 
     return (
-      <div className={styles.disabledTicket}>
+      <div key={ticketInfo.name} className={styles.disabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
           <br /> {ticketInfo.price}
         </div>
         <ul className={styles.list}>
           {this.getBenefits().map((benefit: string) => (
-            <li className={styles.item}>
+            <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
-              <li className={styles.itemText}>{benefit}</li>
+              <span className={styles.itemText}>{benefit}</span>
             </li>
           ))}
         </ul>

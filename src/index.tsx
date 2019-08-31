@@ -30,7 +30,7 @@ function getConferenceId(): string {
 }
 
 const conferenceId = getConferenceId();
-const WebsiteApp = conferenceId !== VOPEN_GLOBAL_ID ? ConferenceApp : GlobalApp;
+const WebsiteApp: any = conferenceId !== VOPEN_GLOBAL_ID ? ConferenceApp : GlobalApp;
 ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change

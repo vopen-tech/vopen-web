@@ -6,6 +6,7 @@ export { default as Banner } from "./Banner";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";
 export { default as LanguageSelector } from "./LanguageSelector";
+export { default as Loading } from "./Loading";
 export { default as MapsLocation } from "./MapsLocation";
 export { default as NavLink } from "./NavLink";
 export { default as InfoIcon } from "./InfoIcon";

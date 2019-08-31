@@ -1,0 +1,42 @@
+@import "../../styles/styles";
+
+.loading {
+  @extend %pageSection;
+  @extend %flexRow;
+
+  position: relative;
+  z-index: auto;
+  background-color: $primaryBackgroundColor;
+  color: $primaryFontColor;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 75px;
+  height: 75px;
+
+  :global {
+    animation: 1.75s infinite heartBeat;
+  }
+}
+
+@keyframes :global(heartBeat) {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.10);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+
+}
+

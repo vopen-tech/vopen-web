@@ -1,4 +1,4 @@
-import { IOrganizer } from "./IOrganizer";
+import { IUser } from "./IUser";
 import { ISponsor } from "./ISponsor";
 import { IEditionTicket } from "./IEditionTicket";
 
@@ -10,6 +10,7 @@ export interface IEdition {
   locationName: string;
   locationFullAddress: string;
   editionTickets: IEditionTicket[];
-  organizers: IOrganizer[];
+  organizers: IUser[];
   sponsors: ISponsor[];
+  speakers: IUser[];
 }

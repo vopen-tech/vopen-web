@@ -1,25 +1,27 @@
 import React from "react";
 import classNames from "classnames";
-import { ActionButton } from "../";
+import { ActionButton, Team } from "../";
+import { resourcesService } from "../../services";
 import constants from "../../constants";
 
 import { Props, State } from "./types";
 import styles from "./Speakers.module.scss";
-import { resourcesService } from "../../services";
 
 export default class Speakers extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
-    className: undefined
+    className: undefined,
+    speakers: []
   };
 
   render() {
-    const { className } = this.props;
+    const { className, speakers } = this.props;
     const cssClasses = classNames(styles.speakers, className);
     const Resources = resourcesService.getResources();
 
     return (
       <div className={cssClasses}>
         <ActionButton type="tertiary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
+        {speakers.length > 0 && <Team className={styles.speakersList} team={speakers} type={"odd"} />}
       </div>
     );
   }

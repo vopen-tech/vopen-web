@@ -17,11 +17,11 @@
     "soldOut": "Entradas agotadas"
   },
   "banner": {
-    "soon": "Soon",
+    "soon": "Próximamente",
     "speakersTitle": "Speakers",
     "speakersDescription": "Los mejores expertos",
     "ticketsTitle": "Lugares limitados",
-    "ticketsOnSale": "Entradas a la venta",
+    "ticketsOnSale": "Entradas disponibles",
     "ticketsSignUp": "Anotate para conseguir tu lugar"
   },
   "info": {

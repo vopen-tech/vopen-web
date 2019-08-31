@@ -14,12 +14,13 @@ const sortByType = (itemA: any, itemB: any) => {
 export default class Team extends React.PureComponent<IProps, IState> {
   static defaultProps: Partial<IProps> = {
     team: [],
-    type: ""
+    type: "",
+    className: ""
   };
 
   render() {
-    const { team, type } = this.props;
-    const cssClasses = classNames(styles.team, type === "odd" && styles.odd);
+    const { className, team, type } = this.props;
+    const cssClasses = classNames(styles.team, type === "odd" && styles.odd, className);
 
     if (!team || !team.length) {
       return (
@@ -35,6 +36,8 @@ export default class Team extends React.PureComponent<IProps, IState> {
           <div className={styles.person} key={item.name}>
             <img className={styles.personImage} src={item.imageUrl} />
             <h6 className={styles.personName}>{item.name}</h6>
+            {item.jobTitle && <p className={styles.personJobInfo}>{item.jobTitle}</p>}
+            {item.company && <p className={styles.personJobInfo}>{item.company}</p>}
             <div className={styles.personSocialInfo}>
               {(item.socialLinks || []).sort(sortByType).map(item => (
                 <SocialIcon key={item.type} iconType={item.type as any} type={type} url={item.url} />

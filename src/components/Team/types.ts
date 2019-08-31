@@ -1,8 +1,8 @@
-import { IOrganizer } from "../../types/IOrganizer";
+import { IUser } from "../../types/IUser";
 
 export interface IProps {
   className?: string;
-  team?: IOrganizer[];
+  team?: IUser[];
   type?: string;
 }
 

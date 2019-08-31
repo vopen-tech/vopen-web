@@ -1,9 +1,11 @@
 import { ISocialLink } from "./ISocialInfo";
 
-export interface IOrganizer {
+export interface IUser {
   id: string;
   name: string;
-  description?: string;
   imageUrl: string;
   socialLinks: ISocialLink[];
+  description?: string;
+  jobTitle?: string;
+  company?: string;
 }

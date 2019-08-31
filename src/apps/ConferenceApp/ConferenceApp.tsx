@@ -15,7 +15,8 @@ import {
   MapsLocation,
   ActionButton,
   SponsorshipPackages,
-  LanguageSelector
+  LanguageSelector,
+  Loading
 } from "../../components";
 import { Conduct, Schedule } from "../../pages";
 import { backendService, resourcesService } from "../../services";
@@ -36,6 +37,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceDate = conferenceInfo.date || Resources.banner.soon;
+  const conferenceLocation = conferenceInfo.locationName || Resources.banner.soon;
 
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
   const conferenceTicketSaleStatus = isTicketSaleEnabled ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
@@ -43,11 +45,12 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
+  const conferenceSpeakers = conferenceInfo.speakers;
 
   return (
     <>
       <Banner to="#about" title={conferenceTitle}>
-        <InfoIcon type="location" title={conferenceInfo.locationName} linkUrl="/#location" />
+        <InfoIcon type="location" title={conferenceLocation} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="speakers" title={Resources.banner.speakersTitle} subtitle={Resources.banner.speakersDescription} linkUrl="/#speakers" />
         <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
@@ -56,7 +59,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <About />
       </PageSection>
       <PageSection id="speakers" title="Speakers" type="odd">
-        <Speakers />
+        <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
         <div className={styles.centeredText}>
@@ -105,7 +108,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
     const { conferenceData, globalData } = this.state;
 
     if (!conferenceData || !globalData) {
-      return null;
+      return <Loading />;
     }
 
     const Resources = resourcesService.getResources();

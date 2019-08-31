@@ -1,10 +1,10 @@
 import React from "react";
 import { Team } from "../../components";
-import { IOrganizer } from "../../types/IOrganizer";
+import { IUser } from "../../types/IUser";
 
 import styles from "./ExecutiveTeam.module.scss";
 
-const team: IOrganizer[] = [
+const team: IUser[] = [
   {
     id: "Fabian Imaz",
     name: "Fabian Imaz",

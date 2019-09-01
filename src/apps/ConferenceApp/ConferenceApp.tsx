@@ -73,9 +73,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      <PageSection id="team" title={Resources.pages.team} type="odd">
-        <Team team={conferenceOrganizers} type="odd" />
-        <h4 className={styles.centeredText} style={{ margin: "35px 0" }}>
+      <PageSection id="team" title={Resources.pages.team}>
+        <Team team={conferenceOrganizers} />
+        <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>
           {Resources.titles.globalTeam}
         </h4>
         <Team team={globalOrganizers} type="odd" />

@@ -1,95 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 165 29" width="165" height="29">
-  <defs>
-    <style>
-      .cls-1, .cls-2 {
-        fill: none;
-      }
-
-      .cls-2 {
-        stroke: #4883f6;
-        stroke-miterlimit: 10;
-        stroke-width: 2px;
-      }
-
-      .cls-2:hover { 
-        stroke: #7bdfea;
-      }
-
-      .cls-3 {
-        clip-path: url(#clip-path);
-      }
-
-      .cls-4 {
-        fill: #4883f6;
-      }
-
-      .cls-5 {
-        clip-path: url(#clip-path-2);
-      }
-
-      .cls-6 {
-        clip-path: url(#clip-path-3);
-      }
-
-      .cls-7 {
-        fill: #fff;
-      }
-
-      .cls-8 {
-        fill: #4883f6;
-      }
-    </style>
-    <clipPath id="clip-path">
-      <path id="Clip_2" data-name="Clip 2" class="cls-1" d="M0,0H7V15H0Z"/>
-    </clipPath>
-    <clipPath id="clip-path-2">
-      <path id="Clip_2-2" data-name="Clip 2" class="cls-1" d="M0,0H17V14H0Z"/>
-    </clipPath>
-    <clipPath id="clip-path-3">
-      <path id="Clip_2-3" data-name="Clip 2" class="cls-1" d="M0,0H15V15H0Z" transform="translate(0)"/>
-    </clipPath>
-  </defs>
-  <g id="Social_Icons" data-name="Social Icons" transform="translate(1 1)" style="&#10;    color: red;&#10;">
-    <g id="Facebook" transform="translate(68)">
-      <circle id="Oval_Copy_2" data-name="Oval Copy 2" class="cls-2" cx="13.5" cy="13.5" r="13.5"/>
-      <g id="Page_1" data-name="Page 1" transform="translate(10 6)">
-        <path id="Clip_2-4" data-name="Clip 2" class="cls-1" d="M0,0H7V15H0Z"/>
-        <g id="Page_1-2" data-name="Page 1" class="cls-3">
-          <path id="Fill_1" data-name="Fill 1" class="cls-4" d="M0,4.961H1.5V3.453a4.143,4.143,0,0,1,.483-2.324A2.638,2.638,0,0,1,4.311,0,9.155,9.155,0,0,1,7,.279l-.375,2.3A4.915,4.915,0,0,0,5.417,2.39c-.583,0-1.106.215-1.106.819V4.961H6.7L6.536,7.2H4.311V15H1.5V7.2H0Z"/>
-        </g>
-      </g>
-    </g>
-    <g id="Twitter">
-      <circle id="Oval" class="cls-2" cx="13.5" cy="13.5" r="13.5"/>
-      <g id="Page_1-3" data-name="Page 1" transform="translate(5 7)">
-        <path id="Clip_2-5" data-name="Clip 2" class="cls-1" d="M0,0H17V14H0Z"/>
-        <g id="Page_1-4" data-name="Page 1" class="cls-5">
-          <path id="Fill_1-2" data-name="Fill 1" class="cls-4" d="M17,1.657a6.9,6.9,0,0,1-2,.557A3.537,3.537,0,0,0,16.53.258a6.928,6.928,0,0,1-2.215.858A3.462,3.462,0,0,0,11.77,0,3.511,3.511,0,0,0,8.282,3.534a3.59,3.59,0,0,0,.09.805A9.859,9.859,0,0,1,1.184.647,3.569,3.569,0,0,0,2.263,5.366a3.439,3.439,0,0,1-1.58-.442c0,.015,0,.03,0,.045a3.525,3.525,0,0,0,2.8,3.466,3.451,3.451,0,0,1-1.575.061,3.5,3.5,0,0,0,3.258,2.454A6.965,6.965,0,0,1,0,12.412,9.777,9.777,0,0,0,5.346,14,9.927,9.927,0,0,0,15.27,3.944q0-.23-.01-.457A7.138,7.138,0,0,0,17,1.657"/>
-        </g>
-      </g>
-    </g>
-    <g id="Instagram" transform="translate(102)">
-      <circle id="Oval_Copy_3" data-name="Oval Copy 3" class="cls-2" cx="13.5" cy="13.5" r="13.5"/>
-      <g id="Page_1-5" data-name="Page 1" transform="translate(6 6)">
-        <g id="Group_3" data-name="Group 3">
-          <path id="Clip_2-6" data-name="Clip 2" class="cls-1" d="M0,0H15V15H0Z" transform="translate(0)"/>
-          <g id="Group_3-2" data-name="Group 3" class="cls-6">
-            <path id="Fill_1-3" data-name="Fill 1" class="cls-4" d="M4.214,0h6.571A4.227,4.227,0,0,1,15,4.214v6.571A4.227,4.227,0,0,1,10.786,15H4.214A4.227,4.227,0,0,1,0,10.786V4.214A4.227,4.227,0,0,1,4.214,0" transform="translate(0)"/>
-          </g>
-        </g>
-        <path id="Fill_4" data-name="Fill 4" class="cls-7" d="M2,1A1,1,0,1,1,1,0,1,1,0,0,1,2,1" transform="translate(11 2)"/>
-        <path id="Fill_6" data-name="Fill 6" class="cls-7" d="M4,8A4,4,0,1,1,8,4,4,4,0,0,1,4,8ZM4,1.47A2.53,2.53,0,1,0,6.53,4,2.533,2.533,0,0,0,4,1.47Z" transform="translate(4 4)"/>
-      </g>
-    </g>
-    <g id="Videos" transform="translate(136)">
-      <path id="Fill_686_Copy" data-name="Fill 686 Copy" class="cls-8" d="M0,12,12,6.021,0,0Z" transform="translate(9 8)"/>
-      <circle id="Oval_Copy_4" data-name="Oval Copy 4" class="cls-2" cx="13.5" cy="13.5" r="13.5"/>
-    </g>
-    <g id="Linkedin" transform="translate(34)">
-      <path id="Fill_680" data-name="Fill 680" class="cls-8" d="M0,10H3V0H0Z" transform="translate(7 10)"/>
-      <path id="Fill_682" data-name="Fill 682" class="cls-8" d="M1.509,0A1.443,1.443,0,0,0,0,1.5,1.435,1.435,0,0,0,1.474,3h.017A1.444,1.444,0,0,0,3,1.5,1.439,1.439,0,0,0,1.509,0" transform="translate(7 6)"/>
-      <path id="Fill_683" data-name="Fill 683" class="cls-8" d="M6.228,0A3.254,3.254,0,0,0,3.276,1.614V.229H0C.044,1.146,0,10,0,10H3.276V4.544a2.208,2.208,0,0,1,.108-.792,1.791,1.791,0,0,1,1.68-1.189c1.186,0,1.66.9,1.66,2.21V10H10V4.4C10,1.4,8.384,0,6.228,0" transform="translate(11 10)"/>
-      <circle id="Oval_Copy" data-name="Oval Copy" class="cls-2" cx="13.5" cy="13.5" r="13.5"/>
-    </g>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 165 29" style="enable-background:new 0 0 165 29;" xml:space="preserve">
+<path fill="#4883f6" d="M150.2,1c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5s13.5-6,13.5-13.5S157.7,1,150.2,1z M146,21V9l12,6L146,21z"
+	/>
+<path fill="#4883f6" d="M82.5,1C75,1,69,7,69,14.5S75,28,82.5,28S96,22,96,14.5S90,1,82.5,1z M85.7,12l-0.2,2.2h-2.2V22h-2.8v-7.8H79
+	V12h1.5v-1.5c-0.1-0.8,0.1-1.6,0.5-2.3c0.5-0.8,1.4-1.2,2.3-1.1c0.9,0,1.8,0.1,2.7,0.3l-0.4,2.3c-0.4-0.1-0.8-0.2-1.2-0.2
+	c-0.6,0-1.1,0.2-1.1,0.8V12H85.7z"/>
+<path fill="#4883f6" d="M14.5,1C7,1,1,7,1,14.5S7,28,14.5,28S28,22,28,14.5S22,1,14.5,1z M21.3,11.5c0,0.2,0,0.3,0,0.5c0,0,0,0.1,0,0.1
+	c0,5.5-4.4,9.9-9.9,9.9c-1.9,0-3.8-0.6-5.3-1.6c1.8,0.2,3.7-0.3,5.2-1.5c-1.5,0-2.8-1-3.3-2.5c0.5,0.1,1.1,0.1,1.6-0.1
+	c-1.6-0.3-2.8-1.8-2.8-3.5c0,0,0,0,0,0c0.5,0.3,1,0.4,1.6,0.4c-1.5-1.1-2-3.1-1.1-4.7c1.8,2.2,4.4,3.5,7.2,3.7
+	c-0.1-0.3-0.1-0.5-0.1-0.8c0,0,0,0,0,0c0-1.9,1.5-3.5,3.5-3.5c1,0,1.9,0.4,2.5,1.1c0.8-0.2,1.5-0.4,2.2-0.9c-0.3,0.8-0.8,1.5-1.5,2
+	c0.7-0.1,1.4-0.3,2-0.6C22.5,10.4,21.9,11,21.3,11.5z"/>
+<path fill="#4883f6" d="M116.5,1C109,1,103,7,103,14.5S109,28,116.5,28S130,22,130,14.5S124,1,116.5,1z M124,17.8
+	c0,2.3-1.9,4.2-4.2,4.2h-6.6c-2.3,0-4.2-1.9-4.2-4.2v-6.6c0-2.3,1.9-4.2,4.2-4.2h6.6c2.3,0,4.2,1.9,4.2,4.2V17.8z"/>
+<path id="Fill_4" fill="#4883f6" d="M122,10c0,0.6-0.4,1-1,1s-1-0.4-1-1c0-0.6,0.4-1,1-1S122,9.4,122,10"/>
+<path id="Fill_6" fill="#4883f6" d="M116.7,19c-2.2,0-4-1.8-4-4s1.8-4,4-4s4,1.8,4,4S118.9,19,116.7,19z M116.7,12.5
+	c-1.4,0-2.5,1.1-2.5,2.5s1.1,2.5,2.5,2.5s2.5-1.1,2.5-2.5C119.2,13.6,118.1,12.5,116.7,12.5z"/>
+<path fill="#4883f6" d="M48.5,1C41,1,35,7,35,14.5S41,28,48.5,28S62,22,62,14.5S56,1,48.5,1z M45,21h-3V11h3V21z M45,8.6
+	c0,0.8-0.7,1.4-1.5,1.4h0c0,0-0.1,0-0.1,0C42.6,10,42,9.3,42,8.5c0,0,0-0.1,0-0.1C42,7.6,42.7,7,43.5,7c0,0,0.1,0,0.1,0
+	C44.4,7,45,7.7,45,8.5C45,8.5,45,8.6,45,8.6z M56,21h-3.3v-5.2c0-1.3-0.5-2.2-1.7-2.2c-0.8,0-1.4,0.5-1.7,1.2
+	c-0.1,0.3-0.1,0.5-0.1,0.8V21H46c0,0,0-8.9,0-9.8h3.3v1.4c0.6-1,1.7-1.7,3-1.6c2.2,0,3.8,1.4,3.8,4.4V21z"/>
 </svg>

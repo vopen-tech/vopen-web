@@ -20,6 +20,8 @@ export default class Speakers extends React.PureComponent<Props, State> {
     const cssClasses = classNames(styles.speakers, className);
     const Resources = resourcesService.getResources();
 
+    const actionButtonType = type === "odd" ? "tertiary" : "secondary";
+
     return (
       <div className={cssClasses}>
         {title && (
@@ -27,7 +29,7 @@ export default class Speakers extends React.PureComponent<Props, State> {
             <h3>{title}</h3>
           </div>
         )}
-        <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
+        <ActionButton type={actionButtonType} text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
         {speakers.length > 0 && <Team className={styles.speakersList} team={speakers} type={type} />}
       </div>
     );

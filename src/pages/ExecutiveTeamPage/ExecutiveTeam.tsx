@@ -2,7 +2,7 @@ import React from "react";
 import { Team } from "../../components";
 import { IUser } from "../../types/IUser";
 
-import styles from "./ExecutiveTeam.module.scss";
+import styles from "./ExecutiveTeamPage.module.scss";
 
 const team: IUser[] = [
   {
@@ -37,10 +37,10 @@ const team: IUser[] = [
   }
 ];
 
-export default class ExecutiveTeam extends React.PureComponent {
+export default class ExecutiveTeamPage extends React.PureComponent {
   render() {
     return (
-      <div className={styles.team}>
+      <div className={styles.executiveTeamPage}>
         <h3 className={styles.title}>Executive team</h3>
         <Team team={team} />
       </div>

@@ -18,7 +18,7 @@ import {
   LanguageSelector,
   Loading
 } from "../../components";
-import { Conduct, Schedule } from "../../pages";
+import { ConductPage, SchedulePage } from "../../pages";
 import { backendService, resourcesService } from "../../services";
 
 import { IProps, IState } from "./types";
@@ -127,8 +127,8 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
-          <Route path="/schedule" component={Schedule} />
-          <Route path="/conduct" component={Conduct} />
+          <Route path="/schedule" component={SchedulePage} />
+          <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}
           <Footer>

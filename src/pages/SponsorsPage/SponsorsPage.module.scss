@@ -1,0 +1,22 @@
+@import "../../styles/styles";
+
+.sponsorsPage {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 0;
+}
+
+.sponsorshipPackages {
+  min-height: 488px;
+  padding-bottom: 30px;
+}
+
+.sponsors {
+  width: auto;
+  background-color: white;
+  color: #1d116e;
+  padding: 0 100px 35px 100px;
+}

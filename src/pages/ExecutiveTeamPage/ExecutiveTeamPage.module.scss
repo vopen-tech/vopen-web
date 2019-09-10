@@ -1,6 +1,6 @@
 @import "../../styles/styles";
 
-.conduct {
+.executiveTeamPage {
   @extend %pageSection;
   @extend %flexColumn;
   flex: 1;
@@ -10,19 +10,9 @@
   @extend %pageTitle;
 }
 
-.text {
-  font-size: 21px;
-  column-count: 2;
-  margin: 0 35px;
-  padding: 0 100px;
-}
-
 @media 
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-  .text {
-    column-count: 1;
-    padding: 0;
-  }
+ 
 }

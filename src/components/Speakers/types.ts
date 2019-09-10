@@ -1,9 +1,10 @@
 import { IUser } from "../../types/IUser";
 
 export interface Props {
-  className?: string;
-  type?: "odd" | "even";
   speakers: IUser[];
+  className?: string;
+  title?: string;
+  type?: "odd" | "even";
 }
 
 export interface State {}

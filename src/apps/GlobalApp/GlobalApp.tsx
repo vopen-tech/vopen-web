@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions, LanguageSelector, Loading } from "../../components";
 import { FlagArgentina, FlagChile, FlagColombia, FlagPeru, FlagUruguay } from "../../components/SVGs";
-import { Conduct, Sponsorship, Team, Speakers } from "../../pages";
+import { ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
 import { resourcesService, backendService } from "../../services";
 
 import styles from "./GlobalApp.module.scss";
@@ -55,16 +55,16 @@ export default class GlobalApp extends React.PureComponent {
         <div className={styles.globalApp}>
           <Header>
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
-            <NavLink to="/sponsorship">{Resources.pages.sponsorship}</NavLink>
+            <NavLink to="/sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
             <LanguageSelector />
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />
-          <Route path="/conduct" component={Conduct} />
-          <Route path="/speakers" render={() => <Speakers speakers={legacyGlobalData.speakers as any} />} />
-          <Route path="/sponsorship" component={Sponsorship} />
-          <Route path="/team" component={Team} />
+          <Route path="/conduct" component={ConductPage} />
+          <Route path="/speakers" render={() => <SpeakersPage speakers={legacyGlobalData.speakers as any} />} />
+          <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
+          <Route path="/team" component={ExecutiveTeamPage} />
           {/* End body */}
           <Footer>
             <NavLink to="/conduct">{Resources.pages.codeOfConduct}</NavLink>

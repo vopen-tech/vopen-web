@@ -1,5 +1,5 @@
-export { default as Conduct } from "./Conduct";
-export { default as Schedule } from "./Schedule";
-export { default as Speakers } from "./Speakers";
-export { default as Sponsorship } from "./Sponsorship";
-export { default as Team } from "./ExecutiveTeam";
+export { default as ConductPage } from "./ConductPage";
+export { default as SchedulePage } from "./SchedulePage";
+export { default as SpeakersPage } from "./SpeakersPage";
+export { default as SponsorsPage } from "./SponsorsPage";
+export { default as ExecutiveTeamPage } from "./ExecutiveTeamPage";

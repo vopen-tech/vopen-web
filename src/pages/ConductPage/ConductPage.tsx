@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Conduct.module.scss";
+import styles from "./ConductPage.module.scss";
 import { resourcesService } from "../../services";
 
-export default class Conduct extends React.PureComponent {
+export default class ConductPage extends React.PureComponent {
   render() {
     const Resources = resourcesService.getResources();
     return (

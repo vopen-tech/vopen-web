@@ -59,7 +59,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <About />
       </PageSection>
       <PageSection id="speakers" title="Speakers" type="odd">
-        <Speakers speakers={conferenceSpeakers} />
+        <Speakers speakers={conferenceSpeakers} type="odd" />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
         <div className={styles.centeredText}>

@@ -10,18 +10,19 @@ import styles from "./Speakers.module.scss";
 export default class Speakers extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
     className: undefined,
+    type: "odd",
     speakers: []
   };
 
   render() {
-    const { className, speakers } = this.props;
+    const { className, speakers, type } = this.props;
     const cssClasses = classNames(styles.speakers, className);
     const Resources = resourcesService.getResources();
 
     return (
       <div className={cssClasses}>
         <ActionButton type="tertiary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
-        {speakers.length > 0 && <Team className={styles.speakersList} team={speakers} type={"odd"} />}
+        {speakers.length > 0 && <Team className={styles.speakersList} team={speakers} type={type} />}
       </div>
     );
   }

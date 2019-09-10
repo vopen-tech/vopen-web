@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions, LanguageSelector } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions, LanguageSelector, Loading } from "../../components";
 import { FlagArgentina, FlagChile, FlagColombia, FlagPeru, FlagUruguay } from "../../components/SVGs";
-import { Conduct, Sponsorship, Team } from "../../pages";
-import { resourcesService } from "../../services";
+import { Conduct, Sponsorship, Team, Speakers } from "../../pages";
+import { resourcesService, backendService } from "../../services";
 
 import styles from "./GlobalApp.module.scss";
 
@@ -32,13 +32,29 @@ const Home = () => {
 };
 
 export default class GlobalApp extends React.PureComponent {
+  state: any = {
+    legacyGlobalData: undefined
+  };
+
+  async componentDidMount() {
+    const legacyGlobalData = await backendService.fetchConference("vopen-global-legacy");
+    this.setState({ legacyGlobalData });
+  }
+
   render() {
+    const { legacyGlobalData } = this.state;
+
+    if (!legacyGlobalData) {
+      return <Loading />;
+    }
+
     const Resources = resourcesService.getResources();
 
     return (
       <Router>
         <div className={styles.globalApp}>
           <Header>
+            <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsorship">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
             <LanguageSelector />
@@ -46,6 +62,7 @@ export default class GlobalApp extends React.PureComponent {
           {/* Body */}
           <Route exact path="/" component={Home} />
           <Route path="/conduct" component={Conduct} />
+          <Route path="/speakers" render={() => <Speakers speakers={legacyGlobalData.speakers as any} />} />
           <Route path="/sponsorship" component={Sponsorship} />
           <Route path="/team" component={Team} />
           {/* End body */}

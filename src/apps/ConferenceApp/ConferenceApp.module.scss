@@ -14,7 +14,8 @@
 .externalNavLink {
   border: solid 1px $secondaryBackgroundColor;
 
-  &:hover {
+  &:hover,
+  &:link:hover {
     color: $primaryFontColor;
     background-color: $secondaryBackgroundColor;
   }

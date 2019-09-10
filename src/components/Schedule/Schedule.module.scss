@@ -1,0 +1,75 @@
+@import "../../styles/styles";
+
+.schedule {
+  @extend %pageSection;
+  @extend %flexColumn;
+  flex: 1;
+  padding: 0;
+  color: $primaryFontColor;
+}
+
+.daysHeader {
+  @extend %flexRow;
+  flex: none;
+
+  .dayHeader {
+    cursor: pointer;
+    outline: none;
+    padding: 20px;
+    font-size: 28px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: $nonHighlightedColor;
+
+    &:hover {
+      background-color: rgba($primaryBackgroundColor, 0.5);
+    }
+
+    &.active {
+      background-color: $primaryBackgroundColor;
+    }
+  }
+}
+
+.dayTracks {
+  @extend %flexRow;
+  font-size: 24px;
+  background-color: $tertiaryBackgroundColor;
+  color: $primaryBackgroundColor;
+
+  .trackHeader {
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: transparent;
+    
+    &:hover {
+      background-color: rgba($secondaryFontColor, 0.5);
+    }
+
+    &.active {
+      background-color: $secondaryFontColor;
+    }
+  }
+}
+
+.dayActivities {
+  @extend %flexColumn;
+  color: $tertiaryFontColor;
+  font-size: 21px;
+  padding: 20px;
+}
+
+.dayActivity {
+  background-color: $quaternaryBackgroundColor;
+}
+
+@media 
+  only screen and (max-device-width: 900px),
+  only screen and (max-width: 900px) {
+    
+}

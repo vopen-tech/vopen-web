@@ -1,5 +1,9 @@
 language: node_js
 
+sudo: true # give us 7.5GB and >2 bursted cores.
+git:
+  depth: false
+
 node_js:
   - 10
 

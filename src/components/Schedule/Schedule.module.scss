@@ -6,13 +6,18 @@
   flex: 1;
   padding: 0;
   color: $primaryFontColor;
+
+  width: 750px;
+  margin: 0 auto;
 }
 
 .daysHeader {
   @extend %flexRow;
-  flex: none;
+  width: 100%;
 
   .dayHeader {
+    @extend %flexRow;
+    flex: 1;
     cursor: pointer;
     outline: none;
     padding: 20px;
@@ -34,12 +39,15 @@
 
 .dayTracks {
   @extend %flexRow;
+  width: 100%;
+
   font-size: 24px;
   background-color: $tertiaryBackgroundColor;
   color: $primaryBackgroundColor;
 
   .trackHeader {
-    padding: 10px 20px;
+    flex: none;  
+    padding: 10px 55px;
     cursor: pointer;
     outline: none;
     align-items: center;
@@ -59,17 +67,89 @@
 
 .dayActivities {
   @extend %flexColumn;
+  width: 100%;
+
   color: $tertiaryFontColor;
   font-size: 21px;
-  padding: 20px;
-}
 
-.dayActivity {
-  background-color: $quaternaryBackgroundColor;
+
+  .dayActivity {
+    width: calc(100% - 40px);
+    flex: 1;
+    background-color: $quaternaryBackgroundColor;
+    padding: 20px;
+    margin-bottom: 10px;
+  }
+
+  .dayActivityHeader {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr auto;
+  }
+  
+  .dayActivityBody {
+    @extend %flexRow;
+  }
+  
+  .dayActivityFooter {
+    @extend %flexRow;
+  }
+  
+  .time {
+    grid-row: 1 / span 2;
+    grid-column: 1;
+    background-color: $tertiaryBackgroundColor;
+    border-radius: 5px;
+    margin-right: 10px;
+    padding: 15px;
+  }
+  
+  .title {
+    grid-row: 1;
+    grid-column: 2;
+    font-weight: 400;
+  }
+
+  .expand {
+    cursor: pointer;
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    @extend %flexRow;
+    align-items: center;
+    justify-content: center;
+
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+    border: solid 3px $secondaryBackgroundColor;
+    border-radius: 50%;
+    color: $secondaryBackgroundColor;
+  }
+
+  .presenters {
+    grid-row: 2;
+    grid-column: 2;
+  }
+  
+  .tags {
+    @extend %flexRow;
+    font-size: 18px;
+    margin: 10px 0;
+
+    .tag {
+      background-color: $secondaryBackgroundColor;
+      color: $primaryFontColor;
+      border-radius: 5px;
+      margin-right: 10px;
+      padding: 5px;
+    }
+  }
 }
 
 @media 
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
-    
+    .schedule {
+      width: auto;
+    }
 }

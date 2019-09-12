@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import { Props, State } from "./types";
 import styles from "./Schedule.module.scss";
+import { IEditionActivity } from "../../types/IEditionActivities";
 
 export default class Schedule extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
@@ -91,12 +92,34 @@ export default class Schedule extends React.PureComponent<Props, State> {
 
     return (
       <div className={styles.dayActivities}>
-        {selectedTrack.activities.map(item => (
-          <div className={styles.dayActivity}>
-            <div className={styles.dayActivityHeader}>{item.title}</div>
-            <div className={styles.dayActivityBody}>{item.description}</div>
-          </div>
-        ))}
+        {selectedTrack.activities.map((activity: IEditionActivity) => {
+          const timeArray = new Date(activity.date).toLocaleTimeString().split(":");
+          const activityTime = `${timeArray[0]}:${timeArray[1]}`;
+          const activityPresenters = activity.presenters.map(item => item.name).join(", ");
+          const activityTags = activity.tags.split(",").map(item => item.trim());
+          const expandCssClass = false ? "fas fa-minus" : "fas fa-plus";
+
+          return (
+            <div key={activity.id} className={styles.dayActivity}>
+              <div className={styles.dayActivityHeader}>
+                <div className={styles.time}>{activityTime}</div>
+                <div className={styles.title}>{activity.title}</div>
+                <div className={styles.presenters}>{activityPresenters}</div>
+                {activity.description && <i className={`${styles.expand} ${expandCssClass}`} />}
+              </div>
+              <div className={styles.dayActivityBody}>
+                <div className={styles.tags}>
+                  {activityTags.map(tag => (
+                    <div key={tag} className={styles.tag}>
+                      {tag}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className={styles.dayActivityFooter}>{activity.description}</div>
+            </div>
+          );
+        })}
       </div>
     );
   }

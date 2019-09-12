@@ -8,4 +8,5 @@ export interface Props {
 export interface State {
   selectedDayName: string;
   selectedTrackName: string;
+  activitiesExpanded: string[];
 }

@@ -17,7 +17,8 @@ export default class Schedule extends React.PureComponent<Props, State> {
     const firstTrack = firstDay && firstDay.tracks[0];
     this.state = {
       selectedDayName: firstDay ? firstDay.name : "",
-      selectedTrackName: firstTrack ? firstTrack.name : ""
+      selectedTrackName: firstTrack ? firstTrack.name : "",
+      activitiesExpanded: []
     };
   }
 
@@ -31,6 +32,13 @@ export default class Schedule extends React.PureComponent<Props, State> {
 
   handleTrackClick = (trackName: string) => {
     this.setState({ selectedTrackName: trackName });
+  };
+
+  handleActivityExpandClick = (activityId: string) => {
+    const { activitiesExpanded } = this.state;
+    const result = activitiesExpanded.includes(activityId) ? activitiesExpanded.filter(item => item !== activityId) : activitiesExpanded.concat(activityId);
+
+    this.setState({ activitiesExpanded: result });
   };
 
   renderDaysHeader() {
@@ -82,7 +90,7 @@ export default class Schedule extends React.PureComponent<Props, State> {
 
   renderSelectedDayAndSelectedTrackActivities() {
     const { activities } = this.props;
-    const { selectedDayName, selectedTrackName } = this.state;
+    const { selectedDayName, selectedTrackName, activitiesExpanded } = this.state;
     const selectedDay = activities.days.find(item => item.name === selectedDayName);
     const selectedTrack = selectedDay && selectedDay.tracks.find(item => item.name === selectedTrackName);
 
@@ -97,7 +105,9 @@ export default class Schedule extends React.PureComponent<Props, State> {
           const activityTime = `${timeArray[0]}:${timeArray[1]}`;
           const activityPresenters = activity.presenters.map(item => item.name).join(", ");
           const activityTags = activity.tags.split(",").map(item => item.trim());
-          const expandCssClass = false ? "fas fa-minus" : "fas fa-plus";
+
+          const isActivityExpanded = !!activitiesExpanded.includes(activity.id);
+          const expandCssClass = isActivityExpanded ? "fas fa-minus" : "fas fa-plus";
 
           return (
             <div key={activity.id} className={styles.dayActivity}>
@@ -105,7 +115,7 @@ export default class Schedule extends React.PureComponent<Props, State> {
                 <div className={styles.time}>{activityTime}</div>
                 <div className={styles.title}>{activity.title}</div>
                 <div className={styles.presenters}>{activityPresenters}</div>
-                {activity.description && <i className={`${styles.expand} ${expandCssClass}`} />}
+                {activity.description && <i className={`${styles.expand} ${expandCssClass}`} onClick={() => this.handleActivityExpandClick(activity.id)} />}
               </div>
               <div className={styles.dayActivityBody}>
                 <div className={styles.tags}>
@@ -116,7 +126,7 @@ export default class Schedule extends React.PureComponent<Props, State> {
                   ))}
                 </div>
               </div>
-              <div className={styles.dayActivityFooter}>{activity.description}</div>
+              {isActivityExpanded && <div className={styles.dayActivityFooter}>{activity.description}</div>}
             </div>
           );
         })}

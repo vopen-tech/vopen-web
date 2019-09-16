@@ -1,63 +1,130 @@
 @import "../../styles/styles";
 
 .about {
-  @extend %pageSection;
-  @extend %flexRow;
+  padding: 0 20px;
+  margin: auto;
+  max-width: 85rem;
+}
 
+.triangle {
+  @extend %dottedTriangle;
+  width: 20%;
+  height: 157px;
+  bottom: 0;
+  right: 0;
+
+  span {
+    @extend %triangle;
+    bottom: 0;
+    border-bottom: 157px solid $secondaryColor;
+    border-left: 230px solid transparent;
+  }
+}
+
+.images {
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
-  z-index: auto;
+  width: 100%;
 
-  .image {
-    background-image: url("https://vopenprodstorage.blob.core.windows.net/publicresources/About0.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    flex: none;
-    height: 377px;
-    position: relative;
-    width: 672px;
+  &::before {
+    @extend %triangle;
+    content: '';
+    border-top: 70px solid;
+    border-right: 120px solid transparent;
+  }
+}
+
+.image {
+  @extend .images;
+  background-image: url("../images/homepage-1.jpg");
+  height: 430px;
+  color: $accentColor;
+}
+
+.image2 {
+  @extend .images;
+  background-image: url("../images/homepage-3.jpg");
+  height: 370px;
+  color: $tertiaryColor;
+}
+
+.image3 {
+  @extend .images;
+  background-image: url("../images/homepage-2.jpg");
+  height: 300px;
+  color: transparent;
+}
+
+.textSection {
+  margin-top: -50px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+
+  .textAbout {
+    font-size: 24px;
+    line-height: 35px;
+    padding: 50px;
+    background-color: $accentColor;
+    width: 80%;
+    margin: 0;
+  }
+}
+
+.textPast {
+  @extend .textSection;
+
+  .textAbout {
+    @extend .textAbout;
+    background-color: $tertiaryColor;
+    width: 100%;
+    margin-left: 150px;
+    margin-right: -150px;
   }
 
+  .trianglePast {
+    @extend %dottedTriangle;
+    width: 150px;
+    height: 155px;
+    bottom: 0;
+    left: 0;
+
+    span {
+      @extend %triangle;
+      bottom: 0;
+      border-bottom: 155px solid $secondaryColor;
+      border-right: 150px solid transparent;
+    }
+  }
+}
+
+.action {
+  border: solid 2px $primaryColor;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+  }
+}
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
   .textSection {
-    font-size: 21px;
-    margin: 0 0 0 50px;
-    position: relative;
-  }
-}
-
-@media only screen and (min-device-width: 900px) and (max-device-width: 1250px), only screen and (min-width: 900px) and (max-width: 1250px) {
-  .about {
-    flex-direction: column;
-    padding-bottom: 0;
-
-    .image {
-      background-position: 50% 50%;
-      background-size: cover;
-      height: 500px;
-      order: 2;
-      width: 800px;
-    }
-
-    .textSection {
-      margin: 0 0 25px 50px;
-      width: 75%;
-    }
-  }
-}
-
-@media only screen and (max-device-width: 900px), only screen and (max-width: 900px) {
-  .about {
-    flex-direction: column;
-    padding-bottom: 0;
-
-    .image {
-      background-position: 50% 50%;
-      order: 2;
+    .textAbout {
       width: 100%;
+      font-size: 18px;
     }
-
-    .textSection {
-      margin: 0 0 25px 50px;
-      width: 75%;
+  }
+  .textPast {
+    .textAbout {
+      margin: 0;
     }
+  }
+  .triangle, .trianglePast {
+    display: none;
   }
 }

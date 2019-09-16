@@ -26,12 +26,6 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
 
     return (
       <div id={id} className={cssClasses}>
-        {showBackgroundTriangle && <BackgroundTriangle isOdd={type === "odd"} />}
-        {title && (
-          <div className={styles.header}>
-            <h3 className={styles.title}>{title}</h3>
-          </div>
-        )}
         <div className={styles.body}>{children}</div>
       </div>
     );

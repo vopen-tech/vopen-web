@@ -20,7 +20,7 @@ export default class BackgroundTriangle extends React.PureComponent<Props> {
       <div className={backgroundTriangleCssClass}>
         <div className={triangleClassName} />
         <div className={backgroundClassName} style={{ borderBottomColor: backgroundColor }} />
-        {showLightBlueTriangle && <div className={styles.triangle} />}
+
       </div>
     );
   }

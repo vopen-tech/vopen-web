@@ -1,18 +1,25 @@
 @import "../../styles/styles";
 
-.executiveTeamPage {
-  @extend %pageSection;
-  @extend %flexColumn;
-  flex: 1;
+.banner {
+  @extend %banner;
+  height: 300px;
 }
 
+.subtitle {
+  @extend %subtitle;
+  text-align: center;
+}
 .title {
-  @extend %pageTitle;
+  @extend %title;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto 50px;
 }
-
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
+    .title {
+      width: 100%;
+    }
  
 }

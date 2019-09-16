@@ -6,8 +6,6 @@
   position: relative;
   z-index: 1;
   font-size: 36px;
-  padding: 35px 0;
-
   overflow: hidden;
 }
 
@@ -31,4 +29,52 @@
   margin: 35px;
   padding: 0;
   font-size: 42px;
+}
+
+%dottedTriangle {
+  position: absolute;
+  background-image: radial-gradient($primaryColor 20%, transparent 0);
+  background-size: 7px 7px;
+  height: 100%;
+}
+
+%triangle {
+  position: absolute;
+width: 0;
+height: 0;
+}
+
+%banner {
+  @extend %flexColumn;
+  @extend %pageSection;
+  padding: 35px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  max-width: 85rem;
+  height: 450px;
+}
+%subtitle {
+  color: $primaryColor;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+%title {
+  font-size: 60px;
+  line-height: 55px;
+  color: $primaryColor;
+  font-weight: 700;
+}
+
+@media 
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
+    %title {
+      font-size: 40px;
+      line-height: 45px;
+    }
+    %subtitle {
+      font-size: 14px;
+    }
+ 
 }

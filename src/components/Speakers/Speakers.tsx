@@ -16,21 +16,21 @@ export default class Speakers extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { className, speakers, type, title } = this.props;
+    const { className, speakers, type } = this.props;
     const cssClasses = classNames(styles.speakers, className);
     const Resources = resourcesService.getResources();
-
     const actionButtonType = type === "odd" ? "tertiary" : "secondary";
 
     return (
-      <div className={cssClasses}>
-        {title && (
-          <div className={styles.title}>
-            <h3>{title}</h3>
-          </div>
-        )}
+      <div>
+      <div className={styles.banner}>
+        <span className={styles.subtitle}>{Resources.pages.speakers}</span>
+        <span className={styles.title}>
+        {Resources.titles.speakersPage}
+        </span>
         <ActionButton type={actionButtonType} text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} />
-        {speakers.length > 0 && <Team className={styles.speakersList} team={speakers} type={type} />}
+        </div>
+        <Team className={styles.speakersList} team={speakers} type={type} />
       </div>
     );
   }

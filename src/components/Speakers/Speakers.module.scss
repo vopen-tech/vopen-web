@@ -1,5 +1,17 @@
 @import "../../styles/styles";
 
+.banner {
+  @extend %banner;
+}
+
+.subtitle {
+  @extend %subtitle;
+  text-align: center;
+}
+.title {
+  @extend %title;
+  text-align: center;
+}
 .speakers {
   @extend %pageSection;
   @extend %flexColumn;
@@ -12,16 +24,13 @@
   justify-content: center;
 }
 
-.title {
-  text-align: center;
-}
 
 .speakersList {
   margin-top: 50px;
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
     
 }

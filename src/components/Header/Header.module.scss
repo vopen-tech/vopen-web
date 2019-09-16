@@ -2,23 +2,24 @@
 
 .header {
   @extend %flexRow;
-  width: 100%;
+  margin: auto;
+  max-width: 85rem;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
 
   .nav {
     position: relative;
     z-index: 2;
-    width: calc(100% - 100px);
-    height: calc(150px - 100px);
-    padding: 50px;
-  
     display: flex;
-    flex-direction: row;
+    width: 100%;
   }
 
   .navOptions {
     flex: 1;
     @extend %flexRow;
     justify-content: flex-end;
+    align-items: center;
   }
 
   .navMenu {
@@ -30,27 +31,29 @@
 
     .navMenuIcon {
       outline: 0;
-      font-size: 28px;
+      font-size: 20px;
       padding: 10px 15px;
-      margin: -10px 0 0 0;
-      color: $primaryFontColor;
+      margin: 0;
+      color: $primaryColor;
       transition: color 0.25s ease-in-out 0s;
 
       &:hover {
-        color: rgba($secondaryBackgroundColor, 0.80);
+        color: $tertiaryColor;
       }
     }
 
     &.isNavMenuOpen {
       .navMenuIcon {
-        background-color: darken($primaryBackgroundColor, 10%);
-        color: rgba($secondaryBackgroundColor, 0.80);
+       color: $primaryColor;
       }
 
       .navOptions {
         @extend %flexColumn;
+        position: absolute;
+        top: 100%;
         padding: 10px;
-        background-color: darken($primaryBackgroundColor, 10%);
+        background-color: $tertiaryColor;
+        width: 85%;
 
         a {
           border: none;
@@ -59,32 +62,25 @@
     }
   }
 
-  .home {
-    flex: none;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-  }
-
   .logo {
     width: 100px;
-    fill: $primaryFontColor;
+    fill: $primaryColor;
     transition: fill 0.25s ease-in-out 0s;
 
     &:hover {
-      fill: $primaryBackgroundColor;
+      fill: $tertiaryColor;
     }
   }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .header {
     .nav {
-      width: calc(100% - 50px);
-      padding-left: 25px;
-      padding-right: 25px;
+      width: 100%;
+      padding-left: 15px;
 
       .navOptions {
         display: none;

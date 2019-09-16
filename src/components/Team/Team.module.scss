@@ -7,14 +7,6 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-flow: row wrap;
-
-  &.odd {
-    .person {
-      .personImage {
-        border-color: $primaryBackgroundColor;
-      }
-    }
-  }
 }
 
 .person {
@@ -23,43 +15,46 @@
   align-items: center;
   justify-content: flex-start;
 
-  width: 250px;
-  min-height: 405px;
+  width: 200px;
+  min-height: 300px;
   margin: 0 50px 50px 0;
   
   .personImage {
-    width: 235px;
-    height: 235px;
-
-    border: solid 6px $secondaryBackgroundColor;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
   }
 
   .personJobInfo {
-    font-size: 18px;
+    font-size: 12px;
     text-align: center;
-    color: rgba(white, 0.85);
+    color: $primaryColor;
     margin: 0;
   }
 
   .personName {
     text-align: center;
     margin: 20px 0 10px 0;
+    font-size: 18px;
   }
 
   .personSocialInfo {
     margin: 10px 0 0 0;
     height: 45px;
   }
+  .socialIcon {
+    fill: $primaryColor;
+  }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .team {
     flex-direction: column;
     padding-bottom: 75px;
+    align-items: center;
   }
 
   .person {

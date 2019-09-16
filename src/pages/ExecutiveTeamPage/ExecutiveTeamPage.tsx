@@ -1,7 +1,7 @@
 import React from "react";
 import { Team } from "../../components";
 import { IUser } from "../../types/IUser";
-
+import { resourcesService } from "../../services";
 import styles from "./ExecutiveTeamPage.module.scss";
 
 const team: IUser[] = [
@@ -38,12 +38,20 @@ const team: IUser[] = [
 ];
 
 export default class ExecutiveTeamPage extends React.PureComponent {
-  render() {
-    return (
-      <div className={styles.executiveTeamPage}>
-        <h3 className={styles.title}>Executive team</h3>
-        <Team team={team} />
-      </div>
+  
+    render() {
+      const Resources = resourcesService.getResources();
+  
+      return (
+      <div>
+<div className={styles.banner}>
+  <span className={styles.subtitle}>{Resources.pages.team}</span>
+  <span className={styles.title}>
+    {Resources.titles.globalTeam}
+  </span>
+  </div>
+<Team team={team} />
+</div>
     );
   }
 }

@@ -14,7 +14,7 @@
       float: left;
       outline: none;
       appearance: none;
-      border: solid 3px $secondaryFontColor;
+      border: solid 3px $secondaryColor;
       width: 200px;
       height: 45px;
       padding: 0 15px;
@@ -28,7 +28,7 @@
       appearance: none;
       width: 53px;
       height: 51px;
-      border: solid 3px $secondaryFontColor;
+      border: solid 3px $secondaryColor;
       border-left: none;
       background-color: transparent;
 
@@ -39,7 +39,7 @@
 
     .arrowRight {
       polyline {
-        stroke: $secondaryFontColor;
+        stroke: $secondaryColor;
       }
     }
   }

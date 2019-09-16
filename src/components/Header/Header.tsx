@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
-import { BackgroundTriangle, VOpenLogo } from "..";
+import { LanguageSelector, VOpenLogo } from "..";
 
 import styles from "./Header.module.scss";
 
@@ -38,11 +38,13 @@ export default class Header extends React.PureComponent<any, any> {
 
     return (
       <div className={styles.header}>
-        <BackgroundTriangle showLightBlueTriangle={true} backgroundColor="#1d116e" />
         <nav className={styles.nav}>
+          <div className="flex items-center">
           <NavLink className={styles.home} to="/">
             <VOpenLogo className={styles.logo} />
           </NavLink>
+          <LanguageSelector />
+          </div>
           <div className={styles.navOptions}>{children}</div>
           <div className={navMenuCssIcon}>
             <i className={iconCssClasses} role="presentation" tabIndex={0} onClick={this.handleNavMenuClick} />

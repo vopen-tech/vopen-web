@@ -16,26 +16,26 @@
     position: absolute;
     top: -20px;
     left: 50%;
-    background-color: $tertiaryBackgroundColor;
-    border: solid 1px $secondaryBackgroundColor;
+    background-color: $tertiaryColor;
+    border: solid 1px $secondaryColor;
     
     polyline {
-      stroke: $secondaryBackgroundColor !important;
+      stroke: $secondaryColor !important;
     }
 
     &:hover {
-      border-color: $secondaryFontColor;
+      border-color: $secondaryColor;
   
       polyline {
-        stroke: $secondaryFontColor !important;
+        stroke: $secondaryColor !important;
       }
     }
   }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .mapsLocation {
     

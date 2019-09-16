@@ -3,7 +3,7 @@
 .infoIcon {
   @extend %flexRow;
   align-items: center;
-  color: $primaryFontColor;
+  color: $primaryColor;
   transition: color 0.25s ease-in-out 0s;
   margin: 0 75px 25px 0;
   cursor: default;
@@ -11,10 +11,10 @@
   text-transform: none;
   
   &:hover {
-    color: $secondaryFontColor;
+    color: $secondaryColor;
 
     .icon {
-      border-color: $secondaryFontColor;
+      border-color: $secondaryColor;
     }
   }
 
@@ -25,7 +25,7 @@
   .icon {
     width: 75px;
     height: 75px;
-    border: solid 3px $primaryFontColor;
+    border: solid 3px $primaryColor;
     border-radius: 50%;
     
     display: flex;
@@ -51,8 +51,8 @@
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .infoIcon,
   a.infoIcon,

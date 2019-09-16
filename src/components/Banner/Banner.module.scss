@@ -1,33 +1,19 @@
 @import "../../styles/styles";
 
 .banner {
-  @extend %flexColumn;
-  @extend %pageSection;
-  
-  min-height: 696px;
-  width: calc(100% - 70px);
-  padding: 35px;
-  align-items: center;
-  justify-content: center;
+  @extend %banner;
+}
+
+.subtitle {
+  @extend %subtitle;
+  text-align: center;
 }
 
 .title {
-  flex: 1 1 0%;
-  @extend %flexColumn;
-  justify-content: flex-end;
-  font-size: 87px;
-  color: $secondaryFontColor;
-
-  .logo {
-    width: 350px;
-    margin-right: 10px;
-    fill: $primaryFontColor;
-    display: block;
-  }
-
-  .year {
-    color: $highlightColor;
-  }
+  @extend %title;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .actions {
@@ -46,39 +32,11 @@
   justify-content: center;
 }
 
-.goDown {
-  flex: none;
-  margin: 40px 0 0 0;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  display: flex;
-  border: solid 1px $primaryFontColor;
 
-  .arrowDown {
-    width: 30px;
-    height: 30px;
-  }
-
-  &:hover {
-    border-color: $secondaryFontColor;
-
-    polyline {
-      stroke: $secondaryFontColor !important;
-    }
-  }
-}
-
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  @media only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
     .title {
-      padding-top: 100px;
+      width: 100%;
     }
-
-    .actions, .children {
-      flex-direction: column;
-    }
-}
+  }

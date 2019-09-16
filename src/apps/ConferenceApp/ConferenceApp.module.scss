@@ -2,8 +2,8 @@
 
 .conferenceApp {
   flex: 1;
-  background-color: $primaryBackgroundColor;
-  color: $primaryFontColor;
+  background-color: $primaryColor;
+  color: $primaryColor;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -12,12 +12,12 @@
 }
 
 .externalNavLink {
-  border: solid 1px $secondaryBackgroundColor;
+  border: solid 1px $secondaryColor;
 
   &:hover,
   &:link:hover {
-    color: $primaryFontColor;
-    background-color: $secondaryBackgroundColor;
+    color: $primaryColor;
+    background-color: $secondaryColor;
   }
 }
 
@@ -28,8 +28,8 @@
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
  
 }

@@ -21,11 +21,8 @@ const Home = () => {
           <FlagUruguay className={styles.flag} onClick={() => window.open("//uy.vopen.tech", "_blank")} />
         </div>
       </Banner>
-      <PageSection id="about" title="About">
+      <PageSection id="about">
         <About />
-      </PageSection>
-      <PageSection title={Resources.titles.pastEditions} type="odd">
-        <PastEditions />
       </PageSection>
     </>
   );
@@ -57,7 +54,6 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
-            <LanguageSelector />
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />

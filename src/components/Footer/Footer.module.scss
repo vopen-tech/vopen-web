@@ -1,14 +1,12 @@
 @import "../../styles/styles";
 
 .footer {
-  width: calc(100% - 60px);
-  height: 60px;
-  padding: 0 30px;
-  border-top: solid 4px $secondaryBackgroundColor;
-
+  padding: 2rem 1rem;
+  margin: auto;
+  max-width: 85rem;
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 
   .separator:before {
     content: " | ";
@@ -19,18 +17,18 @@
     font-size: 14px;
     flex: none;
   }
+  .countries {
+    @extend %flexRow;
+    padding: 5px 0 0 20px;
+  }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
-  .footer {
-    width: calc(100% - 20px);
-    padding: 0 10px;
-
-    .separator:before {
-      margin: 0 5px 5px;
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
+.footer {
+    .countries { 
+      display: none;
     }
   }
-}
+  }

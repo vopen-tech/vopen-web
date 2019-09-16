@@ -3,11 +3,11 @@
 .loading {
   @extend %pageSection;
   @extend %flexRow;
-
+  height: 100vh;
   position: relative;
   z-index: auto;
-  background-color: $primaryBackgroundColor;
-  color: $primaryFontColor;
+  background-color: $secondaryColor;
+  color: $primaryColor;
 
   justify-content: center;
   align-items: center;
@@ -35,8 +35,8 @@
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
 }
 

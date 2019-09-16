@@ -7,11 +7,9 @@
   flex: none;
   text-decoration: none;
   text-transform: uppercase;
-  color: $primaryFontColor;
-  font-weight: 600;
-
-  min-width: 150px;
-  min-height: 30px;
+  color: $primaryColor;
+  font-weight: 500;
+  padding: 0 20px;
 
   display: flex;
   align-items: center;
@@ -19,17 +17,17 @@
   transition: color 0.25s ease-in-out 0s, background-color 0.25s ease-in-out 0s;
 
   &:hover {
-    color: $secondaryBackgroundColor;
+    color: $tertiaryColor;
   }
 
   &.navActive {
-    color: $secondaryBackgroundColor;
+    color: $tertiaryColor;
   }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .navLink,
   .navLink:link,

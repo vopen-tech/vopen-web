@@ -10,26 +10,28 @@
 
 .language {
   padding: 5px;
-  background-color: rgba($secondaryBackgroundColor, 0.50);
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 400;
+  &:first-child {
+    border-right: solid 1px;
+  }
 
   &:hover {
-    background-color: rgba($secondaryBackgroundColor, 0.75);
+    color: rgba($primaryColor, 0.75);
   }
 
   &:active {
-    background-color: rgba($secondaryBackgroundColor, 0.65);
+    color: rgba($primaryColor, 0.65);
   }
 
   &.active {
-    background-color: rgba($secondaryBackgroundColor, 1.00);
+    color: rgba($primaryColor, 1.00);
   }
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .languageSelector {
     

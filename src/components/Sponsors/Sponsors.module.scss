@@ -20,12 +20,89 @@
 }
 
 .sponsor {
-  width: 250px;
-  height: 100px;
-  margin: 0 30px 30px 0;
+  width: 300px;
+  height: auto;
+  margin: 0 100px 100px 0;
+  padding: 0;
 
-  &:hover {
-    background-color: rgba($secondaryBackgroundColor, 0.20);
+  display: inline-block;
+
+  font-size: 21px;text-decoration: none;
+  color: white;
+  text-decoration: none !important;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .sponsorImage {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .sponsorLegend {
+    width: 100%;
+    height: 35px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  &.diamond {
+    width: 450px;
+
+    .sponsorImage {
+      height: 200px;
+    }
+
+    .sponsorLegend {
+      display: inline-flex;
+      background-color: $secondaryFontColor;
+    }
+  }
+
+  &.gold {
+    width: 400px;
+
+    .sponsorImage {
+      height: 150px;
+    }
+
+    .sponsorLegend {
+      display: inline-flex;
+      background-color: goldenrod;
+    }
+  }
+
+  &.silver {
+    width: 350px;
+
+    .sponsorImage {
+      height: 100px;
+    }
+
+    .sponsorLegend {
+      display: inline-flex;
+      background-color: silver;
+    }
+  }
+
+  &.digital {
+    width: 300px;
+
+    .sponsorImage {
+      height: 50px;
+    }
+
+    .sponsorLegend {
+      display: inline-flex;
+      background-color: darkseagreen
+    }
   }
 }
 
@@ -33,5 +110,7 @@
   only screen and (max-device-width: 900px),
   only screen and (max-width: 900px) {
 
-  
+    .sponsor {
+      margin-right: 0;
+    }
 }

@@ -1,9 +1,8 @@
 @import "../../styles/styles";
 
 .about {
+  @extend %container;
   padding: 0 20px;
-  margin: auto;
-  max-width: 85rem;
 }
 
 .triangle {
@@ -21,36 +20,22 @@
   }
 }
 
-.images {
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  width: 100%;
-
-  &::before {
-    @extend %triangle;
-    content: '';
-    border-top: 70px solid;
-    border-right: 120px solid transparent;
-  }
-}
-
 .image {
-  @extend .images;
+  @extend %images;
   background-image: url("../images/homepage-1.jpg");
   height: 430px;
   color: $accentColor;
 }
 
 .image2 {
-  @extend .images;
+  @extend %images;
   background-image: url("../images/homepage-3.jpg");
   height: 370px;
   color: $tertiaryColor;
 }
 
 .image3 {
-  @extend .images;
+  @extend %images;
   background-image: url("../images/homepage-2.jpg");
   height: 300px;
   color: transparent;

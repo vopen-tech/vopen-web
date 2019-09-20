@@ -52,7 +52,7 @@ export default class GlobalApp extends React.PureComponent {
         <div className={styles.globalApp}>
           <Header>
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
-            <NavLink to="/sponsors">{Resources.pages.sponsors}</NavLink>
+            <NavLink to="/sponsors">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
           </Header>
           {/* Body */}

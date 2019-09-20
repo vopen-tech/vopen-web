@@ -6,14 +6,12 @@
 
 .subtitle {
   @extend %subtitle;
-  text-align: center;
 }
 
 .title {
   @extend %title;
   width: 60%;
   margin: 0 auto;
-  text-align: center;
 }
 
 .actions {

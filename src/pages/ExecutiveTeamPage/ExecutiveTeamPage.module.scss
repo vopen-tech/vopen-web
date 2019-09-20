@@ -2,16 +2,14 @@
 
 .banner {
   @extend %banner;
-  height: 300px;
+  height: 400px;
 }
 
 .subtitle {
   @extend %subtitle;
-  text-align: center;
 }
 .title {
   @extend %title;
-  text-align: center;
   width: 80%;
   margin: 0 auto 50px;
 }

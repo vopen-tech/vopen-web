@@ -12,7 +12,6 @@ export default class About extends React.PureComponent<Props, State> {
 
   render() {
     const { className } = this.props;
-    const cssClasses = classNames(styles.about, className);
     const Resources = resourcesService.getResources();
 
     return (
@@ -25,7 +24,7 @@ export default class About extends React.PureComponent<Props, State> {
       <div className={styles.triangle}><span></span></div>
         </div>
         <ul className="w-80-l w-100 flex flex-wrap justify-between-l justify-center pv4-l pv1 pl0 list ttu tc">
-          <li className="ph3"><p className="f1 fw7 mv0">+5000</p><p className="mv0 f4">{Resources.info.attendees}</p></li>
+          <li className="ph3"><p className="f1 fw7 mv0">+5000</p><p className="mv0 f4 ttu">{Resources.info.attendees}</p></li>
           <li className="ph3"><p className="f1 fw7 mv0">+200</p><p className="mv0 f4">{Resources.info.expositors}</p></li>
           <li className="ph3"><p className="f1 fw7 mv0">+150</p><p className="mv0 f4">{Resources.info.companies}</p></li>
           <li className="ph3"><p className="f1 fw7 mv0">10</p><p className="mv0 f4">{Resources.info.editions}</p></li>

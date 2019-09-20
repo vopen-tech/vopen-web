@@ -9,7 +9,7 @@
   text-transform: uppercase;
   color: $primaryColor;
   font-weight: 500;
-  padding: 0 20px;
+  padding: 10px 20px;
 
   display: flex;
   align-items: center;
@@ -22,6 +22,14 @@
 
   &.navActive {
     color: $tertiaryColor;
+  }
+  &:last-child {
+    background-color: $tertiaryColor;
+    margin-left: 10px;
+    &:hover {
+      background-color: $primaryColor;
+      color: white;
+    }
   }
 }
 
@@ -36,7 +44,7 @@
     justify-content: center;
   
     &:last-child {
-      margin-right: 0;
+      margin-left: 0;
     }
   }
 

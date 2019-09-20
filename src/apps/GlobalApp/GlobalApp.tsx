@@ -54,6 +54,7 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsors">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
+            <NavLink to="https://goo.gl/forms/hzPXdO4Aa0jGUjW72">{Resources.buttons.wantToBeSpeaker}</NavLink>
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />

@@ -24,10 +24,10 @@ export default class About extends React.PureComponent<Props, State> {
       <div className={styles.triangle}><span></span></div>
         </div>
         <ul className="w-80-l w-100 flex flex-wrap justify-between-l justify-center pv4-l pv1 pl0 list ttu tc">
-          <li className="ph3"><p className="f1 fw7 mv0">+5000</p><p className="mv0 f4 ttu">{Resources.info.attendees}</p></li>
-          <li className="ph3"><p className="f1 fw7 mv0">+200</p><p className="mv0 f4">{Resources.info.expositors}</p></li>
-          <li className="ph3"><p className="f1 fw7 mv0">+150</p><p className="mv0 f4">{Resources.info.companies}</p></li>
-          <li className="ph3"><p className="f1 fw7 mv0">10</p><p className="mv0 f4">{Resources.info.editions}</p></li>
+          <li className="pa3"><p className="f1 fw7 mv0">+5000</p><p className="mv0 f4 ttu">{Resources.info.attendees}</p></li>
+          <li className="pa3"><p className="f1 fw7 mv0">+200</p><p className="mv0 f4">{Resources.info.expositors}</p></li>
+          <li className="pa3"><p className="f1 fw7 mv0">+150</p><p className="mv0 f4">{Resources.info.companies}</p></li>
+          <li className="pa3"><p className="f1 fw7 mv0">10</p><p className="mv0 f4">{Resources.info.editions}</p></li>
         </ul>
         <div className="flex flex-wrap">
         <div className="w-80-l w-100 flex flex-wrap">
@@ -46,7 +46,7 @@ export default class About extends React.PureComponent<Props, State> {
         </div>
         <div className="w-20-l w-100 pl4-l pl0 mt5-l mt3 h4">
       <p className="f4">{Resources.info.today}</p>
-      <p className="f5"><a href="http://netconf.global" target="_blank" rel="noopener" className="navy hover-yellow">visit Netconf.global</a></p>
+      <p className="f5"><a href="http://netconf.global" target="_blank" rel="noopener" className="navy hover-yellow">{Resources.buttons.visit} Netconf.global</a></p>
         </div>
       </div>
       <div className="flex flex-wrap nl3 nr3 pv5">

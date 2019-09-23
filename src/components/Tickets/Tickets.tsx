@@ -1,5 +1,5 @@
 import React from "react";
-import { resourcesService } from "../../services";
+import { resourcesService, siteService } from "../../services";
 import { ActionButton } from "..";
 import { IEditionTicket } from "../../types/IEditionTicket";
 import { isTicketSaleOpen, isTicketSaleFinished } from "./utils";
@@ -14,6 +14,19 @@ export default class Tickets extends React.PureComponent<Props, State> {
 
   getBenefits(): string[] {
     const Resources = resourcesService.getResources();
+
+    const conferenceId = siteService.getConferenceId();
+
+    if (conferenceId === "vopen-ar-2019") {
+      return [
+        Resources.tickets.benefit1b,
+        "Swag",
+        Resources.tickets.benefit4,
+        Resources.tickets.benefit5,
+        Resources.tickets.benefit8
+      ];
+    }
+
 
     return [
       Resources.tickets.benefit1,

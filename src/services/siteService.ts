@@ -27,6 +27,11 @@ function getConferenceId(): string {
     toReturn = `${hostParts[1]}-${hostParts[0]}-2019`;
   }
 
+  // Hack for Colombia
+  if (toReturn === "vopen-co-2019") {
+    toReturn = "vopen-co-2020";
+  }
+
   // Hack to match global site with global domain
   if (toReturn === "tech-vopen-2019") {
     toReturn = globalConferenceId;

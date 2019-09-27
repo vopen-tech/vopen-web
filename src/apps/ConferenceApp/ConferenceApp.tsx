@@ -20,7 +20,7 @@ import {
   Loading
 } from "../../components";
 import { ConductPage, SchedulePage } from "../../pages";
-import { backendService, resourcesService } from "../../services";
+import { backendService, resourcesService, siteService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
@@ -48,7 +48,10 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
-  const conferenceActivities = conferenceInfo.activities;
+  const conferenceActivities = conferenceInfo.activities || {};
+
+  const conferenceId = siteService.getConferenceId();
+  const isScheduleEnabled = conferenceId === "vopen-ar-2019" && conferenceActivities.days.length > 0;
 
   return (
     <>
@@ -76,7 +79,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      {conferenceActivities && conferenceActivities.days && conferenceActivities.days.length > 0 && (
+      {isScheduleEnabled && (
         <PageSection id="schedule" title={Resources.pages.schedule}>
           <Schedule activities={conferenceActivities} />
         </PageSection>

@@ -48,7 +48,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
-  const conferenceActivities = conferenceInfo.activities || [];
+  const conferenceActivities = conferenceInfo.activities;
 
   return (
     <>
@@ -76,9 +76,11 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      <PageSection id="schedule" title={Resources.pages.schedule}>
-        <Schedule activities={conferenceActivities} />
-      </PageSection>
+      {conferenceActivities && conferenceActivities.days && conferenceActivities.days.length > 0 && (
+        <PageSection id="schedule" title={Resources.pages.schedule}>
+          <Schedule activities={conferenceActivities} />
+        </PageSection>
+      )}
       <PageSection id="team" title={Resources.pages.team} type="odd">
         <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>

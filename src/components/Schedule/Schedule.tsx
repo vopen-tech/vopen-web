@@ -45,6 +45,10 @@ export default class Schedule extends React.PureComponent<Props, State> {
     const { activities } = this.props;
     const { selectedDayName } = this.state;
 
+    if (!activities.days || activities.days.length === 1) {
+      return null;
+    }
+
     return (
       <div className={styles.daysHeader}>
         {activities.days.map(day => (
@@ -67,7 +71,7 @@ export default class Schedule extends React.PureComponent<Props, State> {
     const { selectedDayName, selectedTrackName } = this.state;
     const selectedDay = activities.days.find(item => item.name === selectedDayName);
 
-    if (!selectedDay) {
+    if (!selectedDay || selectedDay.tracks.length === 1) {
       return null;
     }
 
@@ -104,28 +108,35 @@ export default class Schedule extends React.PureComponent<Props, State> {
           const timeArray = new Date(activity.date).toLocaleTimeString().split(":");
           const activityTime = `${timeArray[0]}:${timeArray[1]}`;
           const activityPresenters = activity.presenters.map(item => item.name).join(", ");
-          const activityTags = activity.tags.split(",").map(item => item.trim());
+          const activityTags = activity.tags && activity.tags.split(",").map(item => item.trim());
 
           const isActivityExpanded = !!activitiesExpanded.includes(activity.id);
           const expandCssClass = isActivityExpanded ? "fas fa-minus" : "fas fa-plus";
 
+          const isTalk = activity.presenters && activity.presenters.length > 0;
+          const activityCssClass = classNames(styles.dayActivity, !isTalk && styles.nonTalkActivity);
+
           return (
-            <div key={activity.id} className={styles.dayActivity}>
+            <div key={activity.id} className={activityCssClass}>
               <div className={styles.dayActivityHeader}>
                 <div className={styles.time}>{activityTime}</div>
                 <div className={styles.title}>{activity.title}</div>
                 <div className={styles.presenters}>{activityPresenters}</div>
                 {activity.description && <i className={`${styles.expand} ${expandCssClass}`} onClick={() => this.handleActivityExpandClick(activity.id)} />}
               </div>
-              <div className={styles.dayActivityBody}>
-                <div className={styles.tags}>
-                  {activityTags.map(tag => (
-                    <div key={tag} className={styles.tag}>
-                      {tag}
-                    </div>
-                  ))}
+              {isTalk && (
+                <div className={styles.dayActivityBody}>
+                  <div className={styles.tags}>
+                    {activity.level && <div className={styles.level}>{activity.level}</div>}
+                    {activityTags &&
+                      activityTags.map(tag => (
+                        <div key={tag} className={styles.tag}>
+                          {tag}
+                        </div>
+                      ))}
+                  </div>
                 </div>
-              </div>
+              )}
               {isActivityExpanded && <div className={styles.dayActivityFooter}>{activity.description}</div>}
             </div>
           );

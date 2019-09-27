@@ -25,4 +25,5 @@ export interface IEditionActivity {
   date: string;
   duration: string;
   tags: string;
+  level: string;
 }

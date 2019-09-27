@@ -72,13 +72,35 @@
   color: $tertiaryFontColor;
   font-size: 21px;
 
-
   .dayActivity {
     width: calc(100% - 40px);
     flex: 1;
     background-color: $quaternaryBackgroundColor;
     padding: 20px;
     margin-bottom: 10px;
+  }
+
+  .nonTalkActivity {
+    background-color: $secondaryBackgroundColor;
+    color: white;
+    font-weight: bold;
+
+    &:first-child {
+      margin-top: 10px;
+    }
+
+    .dayActivityHeader {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .time {
+      background-color: transparent;
+    }
+
+    .title {
+      grid-row: 1 / span 2;
+    }
   }
 
   .dayActivityHeader {
@@ -89,13 +111,19 @@
   
   .dayActivityBody {
     @extend %flexRow;
+    margin: 5px 0;
   }
   
   .dayActivityFooter {
     @extend %flexRow;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: justify;
   }
   
   .time {
+    display: flex;
+    align-items: center;
     grid-row: 1 / span 2;
     grid-column: 1;
     background-color: $tertiaryBackgroundColor;
@@ -107,7 +135,8 @@
   .title {
     grid-row: 1;
     grid-column: 2;
-    font-weight: 400;
+    display: flex;
+    align-items: center;
   }
 
   .expand {
@@ -129,12 +158,21 @@
   .presenters {
     grid-row: 2;
     grid-column: 2;
+    font-size: 18px;
   }
   
   .tags {
     @extend %flexRow;
-    font-size: 18px;
+    font-size: 16px;
     margin: 10px 0;
+
+    .level {
+      background-color: $primaryBackgroundColor;
+      color: $primaryFontColor;
+      border-radius: 15px;
+      margin-right: 10px;
+      padding: 5px 10px;
+    }
 
     .tag {
       background-color: $secondaryBackgroundColor;
@@ -151,5 +189,6 @@
   only screen and (max-width: 900px) {
     .schedule {
       width: auto;
+      margin: 0 0 60px 0;
     }
 }

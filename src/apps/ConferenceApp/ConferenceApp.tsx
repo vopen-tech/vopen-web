@@ -9,6 +9,7 @@ import {
   About,
   Sponsors,
   Speakers,
+  Schedule,
   InfoIcon,
   Team,
   Tickets,
@@ -47,6 +48,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
+  const conferenceActivities = conferenceInfo.activities;
 
   return (
     <>
@@ -74,8 +76,13 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      <PageSection id="team" title={Resources.pages.team}>
-        <Team team={conferenceOrganizers} />
+      {conferenceActivities && conferenceActivities.days && conferenceActivities.days.length > 0 && (
+        <PageSection id="schedule" title={Resources.pages.schedule}>
+          <Schedule activities={conferenceActivities} />
+        </PageSection>
+      )}
+      <PageSection id="team" title={Resources.pages.team} type="odd">
+        <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>
           {Resources.titles.globalTeam}
         </h4>
@@ -118,7 +125,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       <Router>
         <div className={styles.conferenceApp}>
           <Header>
-            <NavLink to="/schedule" />
+            <NavLink to="/#schedule" />
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink className={styles.externalNavLink} to="//vopen.tech">

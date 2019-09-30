@@ -35,14 +35,17 @@ export default class Tickets extends React.PureComponent<Props, State> {
 
   renderEnabledTicket(ticketInfo: IEditionTicket) {
     const Resources = resourcesService.getResources();
+    const ticketEndDateText = `${Resources.ticketInfo.until} ${resourcesService.getDateFormatted(ticketInfo.endDate)} ${Resources.ticketInfo.orSoldOut}`;
 
     return (
       <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
-          <br /> {ticketInfo.price}
+          <br />
+          {ticketInfo.price}
         </div>
         <ul className={styles.list}>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
@@ -62,14 +65,17 @@ export default class Tickets extends React.PureComponent<Props, State> {
   renderDisabledTicket(ticketInfo: IEditionTicket) {
     const Resources = resourcesService.getResources();
     const buttonText = isTicketSaleFinished(ticketInfo) ? Resources.buttons.soldOut : Resources.buttons.soon;
+    const ticketEndDateText = `${Resources.ticketInfo.until} ${resourcesService.getDateFormatted(ticketInfo.endDate)} ${Resources.ticketInfo.orSoldOut}`;
 
     return (
       <div key={ticketInfo.name} className={styles.disabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
-          <br /> {ticketInfo.price}
+          <br />
+          {ticketInfo.price}
         </div>
         <ul className={styles.list}>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />

@@ -14,4 +14,10 @@ function getResources() {
   }
 }
 
-export default { getResources };
+function getDateFormatted(date: string, format?: any) {
+  const language = siteService.getSiteLanguage();
+  const dateFormat = format || { day: "2-digit", month: "2-digit" };
+  return new Date(date).toLocaleDateString(language, dateFormat);
+}
+
+export default { getResources, getDateFormatted };

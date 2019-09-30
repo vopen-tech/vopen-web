@@ -65,5 +65,10 @@
     "benefit6": "After Party access",
     "benefit7": "Workshops access (first come, first served)",
     "benefit8": "Attendee certificate"
+  },
+  "ticketInfo": {
+    "until": "Until",
+    "orSoldOut": "or sold out",
+    "soldOut": "Sold out"
   }
 }

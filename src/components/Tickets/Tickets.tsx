@@ -18,15 +18,8 @@ export default class Tickets extends React.PureComponent<Props, State> {
     const conferenceId = siteService.getConferenceId();
 
     if (conferenceId === "vopen-ar-2019") {
-      return [
-        Resources.tickets.benefit1b,
-        "Swag",
-        Resources.tickets.benefit4,
-        Resources.tickets.benefit5,
-        Resources.tickets.benefit8
-      ];
+      return [Resources.tickets.benefit1b, "Swag", Resources.tickets.benefit4, Resources.tickets.benefit5, Resources.tickets.benefit8];
     }
-
 
     return [
       Resources.tickets.benefit1,
@@ -59,7 +52,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.buy} url={link.url} />
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url} />
           ))}
         </div>
       </div>

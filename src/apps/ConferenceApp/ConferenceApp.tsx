@@ -50,9 +50,6 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const conferenceSponsors = conferenceInfo.sponsors || [];
   const conferenceActivities = conferenceInfo.activities || {};
 
-  const conferenceId = siteService.getConferenceId();
-  const isScheduleEnabled = conferenceId === "vopen-ar-2019" && conferenceActivities.days.length > 0;
-
   return (
     <>
       <Banner to="#about" title={conferenceTitle}>
@@ -79,11 +76,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      {isScheduleEnabled && (
-        <PageSection id="schedule" title={Resources.pages.schedule}>
-          <Schedule activities={conferenceActivities} />
-        </PageSection>
-      )}
+      <PageSection id="schedule" title={Resources.pages.schedule}>
+        <Schedule activities={conferenceActivities} />
+      </PageSection>
       <PageSection id="team" title={Resources.pages.team} type="odd">
         <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>

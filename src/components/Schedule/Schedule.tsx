@@ -113,7 +113,7 @@ export default class Schedule extends React.PureComponent<Props, State> {
           const isActivityExpanded = !!activitiesExpanded.includes(activity.id);
           const expandCssClass = isActivityExpanded ? "fas fa-minus" : "fas fa-plus";
 
-          const isTalk = activity.presenters && activity.presenters.length > 0;
+          const isTalk = activity.type.toUpperCase() === "TALK" || activity.type.toUpperCase() === "KEYNOTE";
           const activityCssClass = classNames(styles.dayActivity, !isTalk && styles.nonTalkActivity);
 
           return (

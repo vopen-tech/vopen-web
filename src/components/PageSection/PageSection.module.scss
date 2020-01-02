@@ -1,21 +1,5 @@
 @import "../../styles/styles";
 
-.evenSection {
-  @extend %pageSection;
-}
-
-.oddSection {
-  @extend %pageSection;
-}
-
-.primarySection {
-  @extend %pageSection;
-}
-
-.fullSection {
-
-}
-
 .header {
   position: relative;
   text-align: right;

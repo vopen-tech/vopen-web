@@ -5,7 +5,7 @@
   @extend %flexColumn;
   flex: 1;
   padding: 0;
-  color: $primaryColor;
+  color: $backgroundColor;
 
   width: 750px;
   margin: 0 auto;
@@ -25,7 +25,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $backgroundColor;
+    background-color: $disabledColor;
 
     &:hover {
       background-color: rgba($primaryColor, 0.5);
@@ -42,7 +42,7 @@
   width: 100%;
 
   font-size: 24px;
-  background-color: $tertiaryColor;
+  background-color: $tertiaryBackgroundColor;
   color: $primaryColor;
 
   .trackHeader {
@@ -56,11 +56,11 @@
     background-color: transparent;
     
     &:hover {
-      background-color: rgba($backgroundColor, 0.5);
+      background-color: rgba($tertiaryColor, 0.5);
     }
 
     &.active {
-      background-color: $backgroundColor;
+      background-color: $tertiaryColor;
     }
   }
 }
@@ -69,19 +69,19 @@
   @extend %flexColumn;
   width: 100%;
 
-  color: $tertiaryColor;
+  color: $primaryColor;
   font-size: 21px;
 
   .dayActivity {
     width: calc(100% - 40px);
     flex: 1;
-    background-color: $accentColor;
+    background-color: $disabledColor;
     padding: 20px;
     margin-bottom: 10px;
   }
 
   .nonTalkActivity {
-    background-color: $backgroundColor;
+    background-color: $secondaryColor;
     color: white;
     font-weight: bold;
 
@@ -147,9 +147,9 @@
     width: 35px;
     height: 35px;
     font-size: 14px;
-    border: solid 3px $backgroundColor;
+    border: solid 3px $secondaryColor;
     border-radius: 50%;
-    color: $backgroundColor;
+    color: $secondaryColor;
   }
 
   .presenters {
@@ -165,15 +165,15 @@
 
     .level {
       background-color: $primaryColor;
-      color: $primaryColor;
+      color: $backgroundColor;
       border-radius: 15px;
       margin-right: 10px;
       padding: 5px 10px;
     }
 
     .tag {
-      background-color: $backgroundColor;
-      color: $primaryColor;
+      background-color: $secondaryColor;
+      color: $backgroundColor;
       border-radius: 5px;
       margin-right: 10px;
       padding: 5px;

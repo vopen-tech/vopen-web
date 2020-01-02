@@ -16,18 +16,18 @@
     position: absolute;
     top: -20px;
     left: 50%;
-    background-color: $tertiaryColor;
-    border: solid 1px $backgroundColor;
+    background-color: $tertiaryBackgroundColor;
+    border: solid 1px $secondaryColor;
     
     polyline {
-      stroke: $backgroundColor !important;
+      stroke: $secondaryColor !important;
     }
 
     &:hover {
-      border-color: $backgroundColor;
+      border-color: $tertiaryColor;
   
       polyline {
-        stroke: $backgroundColor !important;
+        stroke: $tertiaryColor !important;
       }
     }
   }

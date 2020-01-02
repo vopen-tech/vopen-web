@@ -20,8 +20,8 @@
   }
 
   &.primary {
+    border: solid 2px $tertiaryColor;
     color: $backgroundColor;
-    background-color: $primaryColor;
 
     &:hover {
       background-color: $tertiaryColor;
@@ -29,11 +29,12 @@
   }
 
   &.secondary {
-    color: $backgroundColor;
     background-color: $tertiaryColor;
+    color: $primaryColor;
 
     &:hover {
       background-color: $primaryColor;
+      color: $backgroundColor;
     }
   }
 
@@ -48,6 +49,7 @@
   }
 
   &.disabled {
+    border: solid 2px $secondaryColor;
     opacity: 0.5;
     pointer-events: none;
   }

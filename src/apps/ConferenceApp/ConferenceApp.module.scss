@@ -3,7 +3,7 @@
 .conferenceApp {
   flex: 1;
   background-color: $primaryColor;
-  color: $primaryColor;
+  color: $backgroundColor;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -12,12 +12,12 @@
 }
 
 .externalNavLink {
-  border: solid 1px $backgroundColor;
+  border: solid 1px $secondaryColor;
 
   &:hover,
   &:link:hover {
-    color: $primaryColor;
-    background-color: $backgroundColor;
+    color: $backgroundColor;
+    background-color: $secondaryColor;
   }
 }
 

@@ -12,12 +12,12 @@
 }
 
 .externalNavLink {
-  border: solid 1px $secondaryColor;
+  border: solid 1px $backgroundColor;
 
   &:hover,
   &:link:hover {
     color: $primaryColor;
-    background-color: $secondaryColor;
+    background-color: $backgroundColor;
   }
 }
 

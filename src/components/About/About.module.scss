@@ -15,7 +15,7 @@
   span {
     @extend %triangle;
     bottom: 0;
-    border-bottom: 157px solid $secondaryColor;
+    border-bottom: 157px solid $backgroundColor;
     border-left: 230px solid transparent;
   }
 }
@@ -78,7 +78,7 @@
     span {
       @extend %triangle;
       bottom: 0;
-      border-bottom: 155px solid $secondaryColor;
+      border-bottom: 155px solid $backgroundColor;
       border-right: 150px solid transparent;
     }
   }
@@ -92,7 +92,7 @@
 
   &:hover {
     background-color: $primaryColor;
-    color: $secondaryColor;
+    color: $backgroundColor;
   }
 }
 

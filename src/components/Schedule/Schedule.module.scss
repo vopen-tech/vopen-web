@@ -25,7 +25,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $secondaryColor;
+    background-color: $backgroundColor;
 
     &:hover {
       background-color: rgba($primaryColor, 0.5);
@@ -56,11 +56,11 @@
     background-color: transparent;
     
     &:hover {
-      background-color: rgba($secondaryColor, 0.5);
+      background-color: rgba($backgroundColor, 0.5);
     }
 
     &.active {
-      background-color: $secondaryColor;
+      background-color: $backgroundColor;
     }
   }
 }
@@ -81,7 +81,7 @@
   }
 
   .nonTalkActivity {
-    background-color: $secondaryColor;
+    background-color: $backgroundColor;
     color: white;
     font-weight: bold;
 
@@ -147,9 +147,9 @@
     width: 35px;
     height: 35px;
     font-size: 14px;
-    border: solid 3px $secondaryColor;
+    border: solid 3px $backgroundColor;
     border-radius: 50%;
-    color: $secondaryColor;
+    color: $backgroundColor;
   }
 
   .presenters {
@@ -172,7 +172,7 @@
     }
 
     .tag {
-      background-color: $secondaryColor;
+      background-color: $backgroundColor;
       color: $primaryColor;
       border-radius: 5px;
       margin-right: 10px;

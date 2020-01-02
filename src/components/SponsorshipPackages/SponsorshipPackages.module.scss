@@ -98,7 +98,7 @@
   span {
     @extend %triangle;
     bottom: 0;
-    border-bottom: 190px solid $secondaryColor;
+    border-bottom: 190px solid $backgroundColor;
     border-right: 230px solid transparent;
   }
 }

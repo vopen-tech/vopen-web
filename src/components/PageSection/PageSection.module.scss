@@ -21,14 +21,14 @@
   text-align: right;
 
   .title {
-    color: $secondaryColor;
+    color: $backgroundColor;
     display: inline-block;
     font-weight: normal;
     margin: 0 0 35px 0;
     text-transform: uppercase;
 
     &:before {
-      background-color: $secondaryColor;
+      background-color: $backgroundColor;
       content: "";
       display: flex;
       height: 4px;
@@ -49,10 +49,10 @@
   .title {
     @extend .title;
 
-    color: $secondaryColor;
+    color: $backgroundColor;
 
     &:before {
-      background-color: $secondaryColor;
+      background-color: $backgroundColor;
     }
   }
 }

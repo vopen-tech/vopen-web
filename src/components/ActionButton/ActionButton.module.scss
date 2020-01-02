@@ -20,7 +20,7 @@
   }
 
   &.primary {
-    color: $secondaryColor;
+    color: $backgroundColor;
     background-color: $primaryColor;
 
     &:hover {
@@ -29,7 +29,7 @@
   }
 
   &.secondary {
-    color: $secondaryColor;
+    color: $backgroundColor;
     background-color: $tertiaryColor;
 
     &:hover {
@@ -39,7 +39,7 @@
 
   &.tertiary {
     background-color: $primaryColor;
-    color: $secondaryColor;
+    color: $backgroundColor;
     padding: 27px;
 
     &:hover {

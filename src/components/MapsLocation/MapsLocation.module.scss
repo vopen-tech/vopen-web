@@ -17,17 +17,17 @@
     top: -20px;
     left: 50%;
     background-color: $tertiaryColor;
-    border: solid 1px $secondaryColor;
+    border: solid 1px $backgroundColor;
     
     polyline {
-      stroke: $secondaryColor !important;
+      stroke: $backgroundColor !important;
     }
 
     &:hover {
-      border-color: $secondaryColor;
+      border-color: $backgroundColor;
   
       polyline {
-        stroke: $secondaryColor !important;
+        stroke: $backgroundColor !important;
       }
     }
   }

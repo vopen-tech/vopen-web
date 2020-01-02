@@ -11,10 +11,10 @@
   text-transform: none;
   
   &:hover {
-    color: $secondaryColor;
+    color: $backgroundColor;
 
     .icon {
-      border-color: $secondaryColor;
+      border-color: $backgroundColor;
     }
   }
 

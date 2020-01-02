@@ -72,6 +72,7 @@
   },
   "tickets": {
     "benefit1": "Acceso a los dos días de Conferencia",
+    "benefit1b": "Acceso completo a la conferencia",
     "benefit2": "Bolsa de Bienvenida con Swag",
     "benefit3": "Remera de la conferencia",
     "benefit4": "Tickets de Almuerzo",
@@ -79,5 +80,10 @@
     "benefit6": "Acceso al After Party",
     "benefit7": "Acceso a los workshops (first come, first served)",
     "benefit8": "Certificado de Asistencia"
+  },
+  "ticketInfo": {
+    "until": "Hasta el",
+    "orSoldOut": "o agotar stock",
+    "soldOut": "Sold out"
   }
 }

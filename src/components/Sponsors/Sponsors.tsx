@@ -5,12 +5,18 @@ import { ISponsor } from "../../types/ISponsor";
 import { Props, State } from "./types";
 import styles from "./Sponsors.module.scss";
 
-const Sponsor = ({ sponsor }: { sponsor: ISponsor }) => {
-  const cssClass = classNames(styles.sponsor, styles[sponsor.type]);
+interface ISponsorProps {
+  sponsor: ISponsor;
+  sponsorClassName: string;
+}
 
+const Sponsor = ({ sponsor, sponsorClassName }: ISponsorProps) => {
+  const cssClasses = classNames(styles.sponsor, sponsorClassName);
+  
   return (
-    <a className={cssClass} href={`${sponsor.url}?ref=vopen`} target="_blank">
+    <a className={cssClasses} href={`${sponsor.url}?ref=vopen`} target="_blank">
       <img className={styles.sponsorImage} src={sponsor.imageUrl} />
+      <div className={styles.sponsorLegend}>{sponsor.type}</div>
     </a>
   );
 };
@@ -30,19 +36,24 @@ export default class Sponsors extends React.PureComponent<Props, State> {
       return null;
     }
 
-    const diamondSponsors = sponsors.filter(item => item.type === "diamond");
-    const goldSponsors = sponsors.filter(item => item.type === "gold");
-    const silverSponsors = sponsors.filter(item => item.type === "silver");
-    const digitalSponsors = sponsors.filter(item => item.type === "digital");
-    const otherSponsors = sponsors.filter(item => item.type !== "diamond" && item.type !== "gold" && item.type !== "silver" && item.type !== "digital");
+    const diamondSponsors = sponsors.filter(item => item.type && item.type.toLowerCase() === "diamond");
+    const goldSponsors = sponsors.filter(item => item.type && item.type.toLowerCase() === "gold");
+    const silverSponsors = sponsors.filter(item => item.type &&item.type.toLowerCase() === "silver");
+    const digitalSponsors = sponsors.filter(item => item.type && item.type.toLowerCase() === "digital");
+    const otherSponsors = sponsors.filter(item => !item.type || item.type.toLowerCase() !== "diamond" && item.type.toLowerCase() !== "gold" && item.type.toLowerCase() !== "silver" && item.type.toLowerCase() !== "digital");
 
-    const Sponsors = ({ items }: { items: ISponsor[] }) => (
-      <div className={styles.sponsorsRow}>
-        {items.map(item => (
-          <Sponsor key={item.id} sponsor={item} />
-        ))}
-      </div>
-    );
+    const Sponsors = ({ items, sponsorClassName }: { items: ISponsor[], sponsorClassName: string }) => {
+      if (!items || !items.length) {
+        return null;
+      }
+
+      return (<div className={styles.sponsorsRow}>
+          {items.map(item => (
+            <Sponsor key={item.id} sponsor={item} sponsorClassName={sponsorClassName} />
+          ))}
+        </div>
+      );
+    };
 
     return (
       <div className={cssClasses}>
@@ -51,11 +62,11 @@ export default class Sponsors extends React.PureComponent<Props, State> {
             <h3>{title}</h3>
           </div>
         )}
-        <Sponsors items={diamondSponsors} />
-        <Sponsors items={goldSponsors} />
-        <Sponsors items={silverSponsors} />
-        <Sponsors items={digitalSponsors} />
-        <Sponsors items={otherSponsors} />
+        <Sponsors items={diamondSponsors} sponsorClassName={styles.diamond} />
+        <Sponsors items={goldSponsors} sponsorClassName={styles.gold} />
+        <Sponsors items={silverSponsors} sponsorClassName={styles.silver} />
+        <Sponsors items={digitalSponsors} sponsorClassName={styles.digital} />
+        <Sponsors items={otherSponsors} sponsorClassName={styles.other} />
       </div>
     );
   }

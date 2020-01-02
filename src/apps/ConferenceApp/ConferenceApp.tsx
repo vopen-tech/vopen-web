@@ -9,6 +9,7 @@ import {
   About,
   Sponsors,
   Speakers,
+  Schedule,
   InfoIcon,
   Team,
   Tickets,
@@ -19,7 +20,7 @@ import {
   Loading
 } from "../../components";
 import { ConductPage, SchedulePage } from "../../pages";
-import { backendService, resourcesService } from "../../services";
+import { backendService, resourcesService, siteService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
@@ -45,7 +46,10 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
-  const conferenceSpeakers = conferenceInfo.speakers;
+  const conferenceSpeakers = conferenceInfo.speakers || [];
+  const conferenceSponsors = conferenceInfo.sponsors || [];
+  const conferenceActivities = conferenceInfo.activities || {};
+  const isScheduleEnabled = conferenceActivities.days && conferenceActivities.days.length > 0;
 
   return (
     <>
@@ -62,19 +66,24 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <Speakers speakers={conferenceSpeakers} type="odd" />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
+        <Sponsors sponsors={conferenceSponsors} />
         <div className={styles.centeredText}>
           <ActionButton type="tertiary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} />
         </div>
         <SponsorshipPackages type="odd" />
-        <Sponsors title={Resources.titles.sponsorPage} />
       </PageSection>
       {isTicketSaleEnabled && (
         <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      <PageSection id="team" title={Resources.pages.team}>
-        <Team team={conferenceOrganizers} />
+      {isScheduleEnabled && (
+        <PageSection id="schedule" title={Resources.pages.schedule}>
+          <Schedule activities={conferenceActivities} />
+        </PageSection>
+      )}
+      <PageSection id="team" title={Resources.pages.team} type="odd">
+        <Team team={conferenceOrganizers} type="odd" />
         <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>
           {Resources.titles.globalTeam}
         </h4>
@@ -117,7 +126,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       <Router>
         <div className={styles.conferenceApp}>
           <Header>
-            <NavLink to="/schedule" />
+            <NavLink to="/#schedule" />
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink className={styles.externalNavLink} to="//vopen.tech">

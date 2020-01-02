@@ -1,5 +1,5 @@
 import React from "react";
-import { resourcesService } from "../../services";
+import { resourcesService, siteService } from "../../services";
 import { ActionButton } from "..";
 import { IEditionTicket } from "../../types/IEditionTicket";
 import { isTicketSaleOpen, isTicketSaleFinished } from "./utils";
@@ -15,6 +15,12 @@ export default class Tickets extends React.PureComponent<Props, State> {
   getBenefits(): string[] {
     const Resources = resourcesService.getResources();
 
+    const conferenceId = siteService.getConferenceId();
+
+    if (conferenceId === "vopen-ar-2019") {
+      return [Resources.tickets.benefit1b, "Swag", Resources.tickets.benefit4, Resources.tickets.benefit5, Resources.tickets.benefit8];
+    }
+
     return [
       Resources.tickets.benefit1,
       Resources.tickets.benefit2,
@@ -29,14 +35,17 @@ export default class Tickets extends React.PureComponent<Props, State> {
 
   renderEnabledTicket(ticketInfo: IEditionTicket) {
     const Resources = resourcesService.getResources();
+    const ticketEndDateText = `${Resources.ticketInfo.until} ${resourcesService.getDateFormatted(ticketInfo.endDate)} ${Resources.ticketInfo.orSoldOut}`;
 
     return (
       <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
-          <br /> {ticketInfo.price}
+          <br />
+          {ticketInfo.price}
         </div>
         <ul className={styles.list}>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
@@ -46,7 +55,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.buy} url={link.url} />
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url} />
           ))}
         </div>
       </div>
@@ -56,14 +65,17 @@ export default class Tickets extends React.PureComponent<Props, State> {
   renderDisabledTicket(ticketInfo: IEditionTicket) {
     const Resources = resourcesService.getResources();
     const buttonText = isTicketSaleFinished(ticketInfo) ? Resources.buttons.soldOut : Resources.buttons.soon;
+    const ticketEndDateText = `${Resources.ticketInfo.until} ${resourcesService.getDateFormatted(ticketInfo.endDate)} ${Resources.ticketInfo.orSoldOut}`;
 
     return (
       <div key={ticketInfo.name} className={styles.disabledTicket}>
         <div className={styles.title}>
           {ticketInfo.name}
-          <br /> {ticketInfo.price}
+          <br />
+          {ticketInfo.price}
         </div>
         <ul className={styles.list}>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />

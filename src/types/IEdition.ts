@@ -1,6 +1,7 @@
 import { IUser } from "./IUser";
 import { ISponsor } from "./ISponsor";
 import { IEditionTicket } from "./IEditionTicket";
+import { IEditionActivities } from "./IEditionActivities";
 
 export interface IEdition {
   id: string;
@@ -13,4 +14,5 @@ export interface IEdition {
   organizers: IUser[];
   sponsors: ISponsor[];
   speakers: IUser[];
+  activities: IEditionActivities;
 }

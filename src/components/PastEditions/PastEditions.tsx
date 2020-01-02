@@ -21,28 +21,28 @@ export default class About extends React.PureComponent<Props, State> {
             className={styles.edition}
             date="4 de Octubre de 2018"
             location="Buenos Aires, Argentina"
-            imageUrl="https://vopenprodstorage.blob.core.windows.net/publicresources/AR0.jpg"
+            imageUrl="/images/AR0.jpg"
             url="http://ar.netconf.global"
           />
           <Edition
             className={styles.edition}
             date="8 de Noviembre de 2018"
             location="Medellín, Colombia"
-            imageUrl="https://vopenprodstorage.blob.core.windows.net/publicresources/CO0.jpg"
+            imageUrl="/images/CO0.jpg"
             url="http://co.netconf.global"
           />
           <Edition
             className={styles.edition}
             date="15 de Noviembre de 2018"
             location="Montevideo, Uruguay"
-            imageUrl="https://vopenprodstorage.blob.core.windows.net/publicresources/UY0.jpg"
+            imageUrl="/images/UY0.jpg"
             url="https://uy.netconf.global"
           />
           <Edition
             className={styles.edition}
             date="28 de Noviembre de 2018"
             location="Santiago, Chile"
-            imageUrl="https://vopenprodstorage.blob.core.windows.net/publicresources/CL0.jpg"
+            imageUrl="/images/CL0.jpg"
             url="https://cl.netconf.global"
           />
         </div>

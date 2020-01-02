@@ -72,6 +72,7 @@
   },
   "tickets": {
     "benefit1": "Two-days access to the Conference",
+    "benefit1b": "Full access to the Conference",
     "benefit2": "Welcome bag with swag",
     "benefit3": "Conference T-Shirt",
     "benefit4": "Lunch tickets",
@@ -79,5 +80,10 @@
     "benefit6": "After Party access",
     "benefit7": "Workshops access (first come, first served)",
     "benefit8": "Attendee certificate"
+  },
+  "ticketInfo": {
+    "until": "Until",
+    "orSoldOut": "or sold out",
+    "soldOut": "Sold out"
   }
 }

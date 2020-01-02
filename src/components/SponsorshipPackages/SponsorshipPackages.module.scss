@@ -13,14 +13,14 @@
       cursor: pointer;
       outline: none;
       padding: 40px;
-      background-color: rgba($secondaryBackgroundColor, 0.15);
+      background-color: rgba($secondaryColor, 0.15);
       
       &:hover {
-        background-color: rgba($secondaryBackgroundColor, 0.5);
+        background-color: rgba($secondaryColor, 0.5);
       }
 
       &.active {
-        background-color: $secondaryBackgroundColor
+        background-color: $secondaryColor
       }
     }
 
@@ -37,15 +37,15 @@
 
   &.odd {
     .sponsorshipHeader {
-      background-color: rgba($primaryBackgroundColor, 0.15);
+      background-color: rgba($primaryColor, 0.15);
       color: white;
       
       &:hover {
-        background-color: rgba($primaryBackgroundColor, 0.5);
+        background-color: rgba($primaryColor, 0.5);
       }
 
       &.active {
-        background-color: $primaryBackgroundColor
+        background-color: $primaryColor
       }
     }
   }

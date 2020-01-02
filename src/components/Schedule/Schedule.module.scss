@@ -5,7 +5,7 @@
   @extend %flexColumn;
   flex: 1;
   padding: 0;
-  color: $primaryFontColor;
+  color: $backgroundColor;
 
   width: 750px;
   margin: 0 auto;
@@ -25,14 +25,14 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $nonHighlightedColor;
+    background-color: $disabledColor;
 
     &:hover {
-      background-color: rgba($primaryBackgroundColor, 0.5);
+      background-color: rgba($primaryColor, 0.5);
     }
 
     &.active {
-      background-color: $primaryBackgroundColor;
+      background-color: $primaryColor;
     }
   }
 }
@@ -43,7 +43,7 @@
 
   font-size: 24px;
   background-color: $tertiaryBackgroundColor;
-  color: $primaryBackgroundColor;
+  color: $primaryColor;
 
   .trackHeader {
     flex: none;  
@@ -56,11 +56,11 @@
     background-color: transparent;
     
     &:hover {
-      background-color: rgba($secondaryFontColor, 0.5);
+      background-color: rgba($tertiaryColor, 0.5);
     }
 
     &.active {
-      background-color: $secondaryFontColor;
+      background-color: $tertiaryColor;
     }
   }
 }
@@ -69,19 +69,19 @@
   @extend %flexColumn;
   width: 100%;
 
-  color: $tertiaryFontColor;
+  color: $primaryColor;
   font-size: 21px;
 
   .dayActivity {
     width: calc(100% - 40px);
     flex: 1;
-    background-color: $quaternaryBackgroundColor;
+    background-color: $disabledColor;
     padding: 20px;
     margin-bottom: 10px;
   }
 
   .nonTalkActivity {
-    background-color: $secondaryBackgroundColor;
+    background-color: $secondaryColor;
     color: white;
     font-weight: bold;
 
@@ -147,9 +147,9 @@
     width: 35px;
     height: 35px;
     font-size: 14px;
-    border: solid 3px $secondaryBackgroundColor;
+    border: solid 3px $secondaryColor;
     border-radius: 50%;
-    color: $secondaryBackgroundColor;
+    color: $secondaryColor;
   }
 
   .presenters {
@@ -164,16 +164,16 @@
     margin: 10px 0;
 
     .level {
-      background-color: $primaryBackgroundColor;
-      color: $primaryFontColor;
+      background-color: $primaryColor;
+      color: $backgroundColor;
       border-radius: 15px;
       margin-right: 10px;
       padding: 5px 10px;
     }
 
     .tag {
-      background-color: $secondaryBackgroundColor;
-      color: $primaryFontColor;
+      background-color: $secondaryColor;
+      color: $backgroundColor;
       border-radius: 5px;
       margin-right: 10px;
       padding: 5px;

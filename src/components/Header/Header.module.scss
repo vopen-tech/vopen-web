@@ -33,24 +33,24 @@
       font-size: 28px;
       padding: 10px 15px;
       margin: -10px 0 0 0;
-      color: $primaryFontColor;
+      color: $backgroundColor;
       transition: color 0.25s ease-in-out 0s;
 
       &:hover {
-        color: rgba($secondaryBackgroundColor, 0.80);
+        color: rgba($secondaryColor, 0.80);
       }
     }
 
     &.isNavMenuOpen {
       .navMenuIcon {
-        background-color: darken($primaryBackgroundColor, 10%);
-        color: rgba($secondaryBackgroundColor, 0.80);
+        background-color: darken($primaryColor, 10%);
+        color: rgba($secondaryColor, 0.80);
       }
 
       .navOptions {
         @extend %flexColumn;
         padding: 10px;
-        background-color: darken($primaryBackgroundColor, 10%);
+        background-color: darken($primaryColor, 10%);
 
         a {
           border: none;
@@ -67,11 +67,11 @@
 
   .logo {
     width: 100px;
-    fill: $primaryFontColor;
+    fill: $backgroundColor;
     transition: fill 0.25s ease-in-out 0s;
 
     &:hover {
-      fill: $primaryBackgroundColor;
+      fill: $primaryColor;
     }
   }
 }

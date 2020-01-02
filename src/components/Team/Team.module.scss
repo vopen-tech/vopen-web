@@ -11,7 +11,7 @@
   &.odd {
     .person {
       .personImage {
-        border-color: $primaryBackgroundColor;
+        border-color: $primaryColor;
       }
     }
   }
@@ -31,7 +31,7 @@
     width: 235px;
     height: 235px;
 
-    border: solid 6px $secondaryBackgroundColor;
+    border: solid 6px $secondaryColor;
     border-radius: 50%;
   }
 

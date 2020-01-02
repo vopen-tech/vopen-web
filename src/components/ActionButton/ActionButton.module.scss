@@ -20,35 +20,35 @@
   }
 
   &.primary {
-    border: solid 2px $secondaryFontColor;
-    color: $secondaryTitleFontColor;
+    border: solid 2px $tertiaryColor;
+    color: $backgroundColor;
 
     &:hover {
-      background-color: $secondaryFontColor;
+      background-color: $tertiaryColor;
     }
   }
 
   &.secondary {
-    border: solid 2px $secondaryBackgroundColor;
-    color: $secondaryTitleFontColor;
+    border: solid 2px $secondaryColor;
+    color: $backgroundColor;
 
     &:hover {
-      background-color: $secondaryBackgroundColor;
+      background-color: $secondaryColor;
     }
   }
 
   &.tertiary {
-    background-color: $primaryBackgroundColor;
-    color: $secondaryTitleFontColor;
+    background-color: $primaryColor;
+    color: $backgroundColor;
     padding: 27px;
 
     &:hover {
-      background-color: rgba($primaryBackgroundColor, 0.95);
+      background-color: rgba($primaryColor, 0.95);
     }
   }
 
   &.disabled {
-    border: solid 2px $secondaryBackgroundColor;
+    border: solid 2px $secondaryColor;
     opacity: 0.5;
     pointer-events: none;
   }

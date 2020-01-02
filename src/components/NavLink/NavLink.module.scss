@@ -7,7 +7,7 @@
   flex: none;
   text-decoration: none;
   text-transform: uppercase;
-  color: $primaryFontColor;
+  color: $backgroundColor;
   font-weight: 600;
 
   min-width: 150px;
@@ -19,11 +19,11 @@
   transition: color 0.25s ease-in-out 0s, background-color 0.25s ease-in-out 0s;
 
   &:hover {
-    color: $secondaryBackgroundColor;
+    color: $secondaryColor;
   }
 
   &.navActive {
-    color: $secondaryBackgroundColor;
+    color: $secondaryColor;
   }
 }
 

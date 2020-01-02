@@ -19,7 +19,7 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-top: 150px solid $secondaryBackgroundColor;
+  border-top: 150px solid $secondaryColor;
   border-right: 60vw solid transparent;
 }
 
@@ -33,7 +33,7 @@
 
 .oddTriangleBehindDottedBackground {
   @extend .triangleBehindDottedBackground;
-  border-bottom-color: $secondaryBackgroundColor;
+  border-bottom-color: $secondaryColor;
 }
 
 .dottedTriangle {
@@ -41,11 +41,11 @@
   width: 50vw;
   height: 400px;
 
-  background-image: radial-gradient($secondaryBackgroundColor 20%, transparent 0);
+  background-image: radial-gradient($secondaryColor 20%, transparent 0);
   background-size: 10px 10px;
 }
 
 .oddDottedTriangle{
   @extend .dottedTriangle;
-  background-image: radial-gradient($primaryBackgroundColor 20%, transparent 0);
+  background-image: radial-gradient($primaryColor 20%, transparent 0);
 }

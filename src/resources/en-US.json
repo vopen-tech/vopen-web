@@ -30,25 +30,25 @@
   },
   "info": {
     "welcome": "Welcome to vOpen! One of the most important community organized set of technology events in Latin America.",
-    "mission": "Our mission is to connect connect students, professionals, experts and organizations from around the world to share knowledge, experiences and promote technological innovation.",
-    "history": "Our history started as .NET Conf, a conference that started five years ago organized in 4 coutries.",
+    "mission": "Our mission is to connect connect students, professionals, technical experts and organizations from around the globe to share knowledge, experiences and promote technological innovation.",
+    "history": "Our history started as .NET Conf, a conference that started five years ago and was held in 4 coutries.",
     "today": "Find out what happened in previous editions",
-    "sponsorship": "We offer different sponsor packages and you can also prepare your package based on the different opportunities offered. If you have unique needs or ideas, let us know and we will work together to meet your marketing and business needs.",
+    "sponsorship": "We offer different sponsorship packages, and you can also prepare your own based on the different opportunities offered. If you have unique needs or new ideas, let us know and we will work together to meet your marketing and business needs.",
     "companies": "Companies",
     "expositors": "Expositors",
     "attendees": "Attendees",
     "editions": "Editions"
   },
   "titles": {
-    "homePage": "All connected in one place",
-    "speakersPage": "More than 200 experts shared their knowledge",
+    "homePage": "All you need for networking in one place",
+    "speakersPage": "200+ experts already shared their knowledge",
     "sponsorPage": "150+ sponsors support us",
     "globalTeam": "Committed to making a great event",
     "pastEditions": "Past editions",
-    "sponsorship": "Un evento de tecnología sin fines de lucro"
+    "sponsorship": "A non-profit event focused on technology and innovation"
   },
   "subtitles": {
-    "homePage": "Experts, Community, Large Companies"
+    "homePage": "Experts, Communities, Large Companies"
   },
   "sponsorshipPackages": {
     "title": "Our opportunities",

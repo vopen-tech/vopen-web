@@ -18,7 +18,7 @@
     "buy": "Comprar",
     "soon": "Próximamente",
     "soldOut": "Entradas agotadas",
-    "visit": "Visita"
+    "visit": "Visitá"
   },
   "banner": {
     "soon": "Próximamente",
@@ -29,26 +29,26 @@
     "ticketsSignUp": "Anotate para conseguir tu lugar"
   },
   "info": {
-    "welcome": "¡Bienvenid@s a vOpen! El grupo de eventos de tecnología más importante en Latinoamérica.",
-    "mission": "vOpen busca conectar a entusiastas, estudiantes, profesionales, expertos referentes y organizaciones de todo el mundo que utilicen la tecnología para concretar sus objetivos.",
+    "welcome": "¡Bienvenid@s a vOpen! El ciclo de eventos de tecnología en Latinoamérica.",
+    "mission": "vOpen busca conectar a entusiastas, estudiantes, profesionales, referentes técnicos y organizaciones de todo el mundo que utilicen la tecnología como medio para concretar sus objetivos.",
     "history": "Nuestra historia comenzó como .NET Conf, y durante los últimos 5 años llevamos adelante conferencias en 4 países.",
     "today": "Enterate de que pasó en las ediciones anteriores",
-    "sponsorship": "Ofrecemos distintos paquetes de sponsor y también puede elaborar su paquete basado en las distintas oportunidades ofrecidas. Si tiene necesidades únicas o ideas, háganos saber y trabajaremos juntos para satisfacer sus necesidades de marketing y negocio.",
+    "sponsorship": "Ofrecemos distintos paquetes de sponsorship y también puede elaborar su paquete personalizado basado en las distintas oportunidades ofrecidas. Si tiene ideas únicas o nuevas propuestas, háganos saber y trabajaremos juntos para satisfacer sus necesidades de marketing y negocio.",
     "companies": "empresas",
     "expositors": "expositores",
     "attendees": "asistentes",
     "editions": "ediciones"
   },
   "titles": {
-    "homePage": "Todos conectados en un solo lugar",
-    "speakersPage": "Más de 200 expertos compartieron su conocimiento",
+    "homePage": "Todo en un solo lugar",
+    "speakersPage": "Más de 200 referentes técnicos compartieron su conocimiento",
     "sponsorPage": "Más de 150 sponsors nos acompañan",
-    "globalTeam": "Comprometidos a realizar un gran evento",
+    "globalTeam": "Comprometidos a realizar grandes eventos",
     "pastEditions": "Ediciones anteriores",
     "sponsorship": "Un evento de tecnología sin fines de lucro"
   },
   "subtitles": {
-    "homePage": "Expertos, Comunidad, Grandes Empresas"
+    "homePage": "Referentes técnicos, Comunidades, Grandes Empresas"
   },
   "sponsorshipPackages": {
     "title": "Nuestras oportunidades",

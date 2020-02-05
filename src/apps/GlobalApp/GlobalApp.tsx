@@ -15,8 +15,8 @@ const Home = () => {
       <Banner to="#about" title="2019">
         <div className={styles.flags}>
           <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
-          <FlagMexico className={styles.flag} onClick={() => window.open("//mx.vopen.tech", "_blank")} />
           <FlagChile className={styles.flag} onClick={() => window.open("//cl.vopen.tech", "_blank")} />
+          <FlagMexico className={styles.flag} onClick={() => window.open("//mx.vopen.tech", "_blank")} />
           <FlagUruguay className={styles.flag} onClick={() => window.open("//uy.vopen.tech", "_blank")} />
         </div>
       </Banner>

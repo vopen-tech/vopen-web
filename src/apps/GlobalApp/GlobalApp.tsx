@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, PastEditions, LanguageSelector, Loading } from "../../components";
-import { FlagArgentina, FlagChile, FlagColombia, FlagPeru, FlagUruguay } from "../../components/SVGs";
+import { Header, Footer, NavLink, PageSection, Banner, About, Loading } from "../../components";
+import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
 import { ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
 import { resourcesService, backendService } from "../../services";
 
@@ -15,9 +15,8 @@ const Home = () => {
       <Banner to="#about" title="2019">
         <div className={styles.flags}>
           <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
+          <FlagMexico className={styles.flag} onClick={() => window.open("//mx.vopen.tech", "_blank")} />
           <FlagChile className={styles.flag} onClick={() => window.open("//cl.vopen.tech", "_blank")} />
-          <FlagColombia className={styles.flag} onClick={() => window.open("//co.vopen.tech", "_blank")} />
-          <FlagPeru className={styles.flag} onClick={() => window.open("//pe.vopen.tech", "_blank")} />
           <FlagUruguay className={styles.flag} onClick={() => window.open("//uy.vopen.tech", "_blank")} />
         </div>
       </Banner>

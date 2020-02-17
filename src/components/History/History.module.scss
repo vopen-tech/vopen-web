@@ -1,6 +1,6 @@
 @import "../../styles/styles";
 
-.about {
+.history {
   @extend %container;
   padding: 0 20px;
 }
@@ -20,11 +20,18 @@
   }
 }
 
-.image {
+.image2 {
   @extend %images;
-  background-image: url("../images/homepage-1.jpg");
-  height: 430px;
-  color: $accentColor;
+  background-image: url("../images/homepage-3.jpg");
+  height: 370px;
+  color: $tertiaryColor;
+}
+
+.image3 {
+  @extend %images;
+  background-image: url("../images/homepage-2.jpg");
+  height: 300px;
+  color: transparent;
 }
 
 .textSection {

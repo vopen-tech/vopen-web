@@ -1,6 +1,7 @@
 import React from "react";
 import { Speakers } from "../../components";
-
+import { ActionButton } from "../../components";
+import constants from "../../constants";
 import { Props } from "./types";
 import styles from "./SpeakersPage.module.scss";
 import { resourcesService } from "../../services";
@@ -11,8 +12,13 @@ export default class SpeakersPage extends React.PureComponent<Props> {
     const Resources = resourcesService.getResources();
 
     return (
-      <div className={styles.speakersPage}>
-        <Speakers title={Resources.titles.speakersPage} speakers={speakers} type="even" />
+      <div>
+        <div className={styles.banner}>
+          <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
+          <h1 className={styles.title}>{Resources.titles.speakersPage}</h1>
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.sponsorsCallUrl} />
+        </div>
+        <Speakers speakers={speakers}/>
       </div>
     );
   }

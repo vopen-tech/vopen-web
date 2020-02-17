@@ -22,7 +22,6 @@
   },
   "banner": {
     "soon": "Soon",
-    "speakersTitle": "Speakers",
     "speakersDescription": "The best experts",
     "ticketsTitle": "Limited seats available",
     "ticketsOnSale": "Tickets on sale",
@@ -43,7 +42,8 @@
     "homePage": "The perfect place for networking",
     "speakersPage": "200+ experts already shared their knowledge",
     "sponsorPage": "150+ sponsors support us",
-    "globalTeam": "Committed to making a great event",
+    "sloganTeam": "Committed to making a great event",
+    "globalTeam": "Global Team",
     "pastEditions": "Past editions",
     "sponsorship": "A non-profit event focused on technology and innovation"
   },

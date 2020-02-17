@@ -54,6 +54,8 @@ export default class InfoIcon extends React.PureComponent<IProps, IState> {
       </>
     );
 
+
+    
     if (linkUrl) {
       return (
         <NavLink className={classNames(styles.infoIcon, styles.link)} to={linkUrl}>

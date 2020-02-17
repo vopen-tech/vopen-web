@@ -22,7 +22,6 @@
   },
   "banner": {
     "soon": "Próximamente",
-    "speakersTitle": "Speakers",
     "speakersDescription": "Los mejores expertos",
     "ticketsTitle": "Lugares limitados",
     "ticketsOnSale": "Entradas disponibles",
@@ -43,7 +42,8 @@
     "homePage": "El lugar perfecto para hacer networking",
     "speakersPage": "Más de 200 referentes técnicos compartieron su conocimiento",
     "sponsorPage": "Más de 150 sponsors nos acompañan",
-    "globalTeam": "Comprometidos a realizar grandes eventos",
+    "sloganTeam": "Comprometidos a realizar grandes eventos",
+    "globalTeam": "Equipo Global",
     "pastEditions": "Ediciones anteriores",
     "sponsorship": "Un evento de tecnología sin fines de lucro"
   },

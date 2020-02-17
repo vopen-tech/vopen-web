@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, Loading } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
 import { ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
 import { resourcesService, backendService } from "../../services";
@@ -22,6 +22,8 @@ const Home = () => {
       </Banner>
       <PageSection id="about">
         <About />
+        <History />
+        <CtaButtons />
       </PageSection>
     </>
   );

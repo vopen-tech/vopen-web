@@ -65,11 +65,20 @@
   padding: 35px;
 }
 
-%subtitle {
+%tag {
   color: $primaryColor;
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;
+  font-weight: normal;
+}
+
+%subtitle {
+  color: $primaryColor;
+  font-size: 40px;
+  line-height: 35px;
+  text-align: center;
+  font-weight: 700;
 }
 
 %title {
@@ -78,6 +87,7 @@
   color: $primaryColor;
   font-weight: 700;
   text-align: center;
+  margin: 0;
 }
 
 

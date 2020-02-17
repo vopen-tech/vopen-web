@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import BackgroundTriangle from "../BackgroundTriangle";
 import { IProps, IState } from "./types";
 import styles from "./PageSection.module.scss";
 
@@ -21,8 +20,6 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
       type === "primary" && styles.primarySection,
       className
     );
-
-    const showBackgroundTriangle = type !== "full" && type !== "primary";
 
     return (
       <div id={id} className={cssClasses}>

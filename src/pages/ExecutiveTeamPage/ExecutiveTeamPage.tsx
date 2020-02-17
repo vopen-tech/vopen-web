@@ -50,8 +50,8 @@ export default class ExecutiveTeamPage extends React.PureComponent {
     return (
       <div>
         <div className={styles.banner}>
-          <span className={styles.subtitle}>{Resources.pages.team}</span>
-          <span className={styles.title}>{Resources.titles.globalTeam}</span>
+          <h2 className={styles.tag}>{Resources.pages.team}</h2>
+          <h1 className={styles.title}>{Resources.titles.sloganTeam}</h1>
         </div>
         <Team team={team} />
       </div>

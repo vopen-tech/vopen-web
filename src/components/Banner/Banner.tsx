@@ -11,10 +11,10 @@ export default class Banner extends React.PureComponent<IProps, IState> {
 
     return (
       <div className={styles.banner}>
-        <span className={styles.subtitle}>{Resources.subtitles.homePage}</span>
-        <span className={styles.title}>
+        <h2 className={styles.tag}>{Resources.subtitles.homePage}</h2>
+        <h1 className={styles.title}>
         {Resources.titles.homePage}
-        </span>
+        </h1>
         {children && <div className={styles.children}>{children}</div>}
       </div>
     );

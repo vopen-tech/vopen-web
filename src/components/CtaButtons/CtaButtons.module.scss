@@ -1,0 +1,19 @@
+@import "../../styles/styles";
+
+.ctabuttons {
+  @extend %container;
+  padding: 0 20px;
+}
+
+.action {
+  background-color: $backgroundColor;
+  border: solid 2px $primaryColor;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primaryColor;
+    color: $backgroundColor;
+  }
+}

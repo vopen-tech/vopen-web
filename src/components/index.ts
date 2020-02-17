@@ -1,7 +1,8 @@
 export { default as About } from "./About";
+export { default as History } from "./History";
+export { default as CtaButtons } from "./CtaButtons";
 export { default as ActionButton } from "./ActionButton";
 export { default as RegisterEmail } from "./RegisterEmail";
-export { default as BackgroundTriangle } from "./BackgroundTriangle";
 export { default as Banner } from "./Banner";
 export { default as Footer } from "./Footer";
 export { default as Header } from "./Header";

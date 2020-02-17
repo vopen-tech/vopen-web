@@ -7,6 +7,7 @@ import {
   PageSection,
   Banner,
   About,
+  CtaButtons,
   Sponsors,
   Speakers,
   Schedule,
@@ -14,9 +15,6 @@ import {
   Team,
   Tickets,
   MapsLocation,
-  ActionButton,
-  SponsorshipPackages,
-  LanguageSelector,
   Loading
 } from "../../components";
 import { ConductPage, SchedulePage } from "../../pages";
@@ -45,7 +43,6 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const conferenceTicketsLink = isTicketSaleEnabled ? "/#tickets" : constants.rsvpUrl;
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
-  const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
   const conferenceActivities = conferenceInfo.activities || {};
@@ -56,21 +53,18 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       <Banner to="#about" title={conferenceTitle}>
         <InfoIcon type="location" title={conferenceLocation} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
-        <InfoIcon type="speakers" title={Resources.banner.speakersTitle} subtitle={Resources.banner.speakersDescription} linkUrl="/#speakers" />
         <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
       </Banner>
       <PageSection id="about" title="About">
+      <CtaButtons />
         <About />
       </PageSection>
       <PageSection id="speakers" title="Speakers" type="odd">
+      <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>
         <Speakers speakers={conferenceSpeakers} type="odd" />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
         <Sponsors sponsors={conferenceSponsors} />
-        <div className={styles.centeredText}>
-          <ActionButton type="tertiary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} />
-        </div>
-        <SponsorshipPackages type="odd" />
       </PageSection>
       {isTicketSaleEnabled && (
         <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
@@ -82,12 +76,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
-      <PageSection id="team" title={Resources.pages.team} type="odd">
-        <Team team={conferenceOrganizers} type="odd" />
-        <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>
-          {Resources.titles.globalTeam}
-        </h4>
-        <Team team={globalOrganizers} type="odd" />
+      <PageSection id="team" title={Resources.pages.team}>
+          <h2 className={styles.subtitle}>{Resources.titles.globalTeam}</h2>
+        <Team team={conferenceOrganizers} />
       </PageSection>
       <PageSection id="location" type="full">
         <MapsLocation address={conferenceInfo.locationFullAddress} />
@@ -129,10 +120,9 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             <NavLink to="/#schedule" />
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
-            <NavLink className={styles.externalNavLink} to="//vopen.tech">
+            <NavLink className={Resources.buttons.wantToBeSpeaker} to="//vopen.tech">
               Global
             </NavLink>
-            <LanguageSelector />
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />

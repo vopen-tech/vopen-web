@@ -1,4 +1,5 @@
 import React from "react";
+import { resourcesService } from "../../services";
 import classNames from "classnames";
 import SocialIcon from "../SocialIcon";
 
@@ -18,14 +19,16 @@ export default class Team extends React.PureComponent<IProps, IState> {
     className: ""
   };
 
+
   render() {
     const { className, team, type } = this.props;
+    const Resources = resourcesService.getResources();
     const cssClasses = classNames(styles.team, type === "odd" && styles.odd, className);
 
     if (!team || !team.length) {
       return (
         <div className={cssClasses}>
-          <span style={{ marginTop: 50, marginBottom: 50 }}>Próximamente</span>
+          <h3 style={{ marginTop: 50, marginBottom: 50 }}>{Resources.buttons.soon}</h3>
         </div>
       );
     }

@@ -4,8 +4,8 @@
   @extend %banner;
 }
 
-.subtitle {
-  @extend %subtitle;
+.tag {
+  @extend %tag;
 }
 
 .title {
@@ -22,7 +22,6 @@
 }
 
 .children {
-  flex: none;
   @extend %flexRow;
   margin: 40px 0 0 0;
   flex-wrap: wrap;

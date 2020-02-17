@@ -1,13 +1,8 @@
 @import "../../styles/styles";
 
 .conferenceApp {
-  flex: 1;
-  background-color: $primaryColor;
-  color: $backgroundColor;
-  display: flex;
-  flex-direction: column;
+  color: $primaryColor;
   position: relative;
-  z-index: 1;
   width: 100%;
 }
 
@@ -21,10 +16,10 @@
   }
 }
 
-.centeredText {
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
+.subtitle {
+  @extend %subtitle;
+  width: 80%;
+  margin: 100px auto;
 }
 
 @media 

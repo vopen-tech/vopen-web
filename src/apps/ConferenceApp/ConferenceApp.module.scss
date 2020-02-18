@@ -1,7 +1,6 @@
 @import "../../styles/styles";
 
 .conferenceApp {
-  color: $primaryColor;
   position: relative;
   width: 100%;
 }
@@ -16,10 +15,11 @@
   }
 }
 
+
 .subtitle {
   @extend %subtitle;
   width: 80%;
-  margin: 100px auto;
+  margin: 100px auto 50px;
 }
 
 @media 

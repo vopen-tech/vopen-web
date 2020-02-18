@@ -1,82 +1,138 @@
 @import "../../styles/styles";
 
-.header {
-  @extend %flexRow;
-  margin: auto;
-  max-width: 85rem;
-  justify-content: space-between;
-  padding: 2rem 1rem;
-  align-items: center;
+.evenSection,
+.oddSection {
 
-  .nav {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    width: 100%;
-  }
-
-  .navOptions {
-    flex: 1;
+  .header {
     @extend %flexRow;
-    justify-content: flex-end;
+    margin: auto;
+    max-width: 85rem;
+    justify-content: space-between;
+    padding: 2rem 1rem;
     align-items: center;
-  }
 
-  .navMenu {
-    flex: 1;
-    @extend %flexColumn;
-    align-items: flex-end;
-    display: none;
-    cursor: pointer;
-
-    .navMenuIcon {
-      outline: 0;
-      font-size: 20px;
-      padding: 10px 15px;
-      margin: 0;
-      color: $primaryColor;
-      transition: color 0.25s ease-in-out 0s;
-
-      &:hover {
-        color: $tertiaryColor;
-      }
+    .nav {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      width: 100%;
     }
 
-    &.isNavMenuOpen {
+    .navOptions {
+      flex: 1;
+      @extend %flexRow;
+      justify-content: flex-end;
+      align-items: center;
+
+    }
+
+    .navMenu {
+      flex: 1;
+      @extend %flexColumn;
+      align-items: flex-end;
+      display: none;
+      cursor: pointer;
+
       .navMenuIcon {
-       color: $primaryColor;
+        outline: 0;
+        font-size: 20px;
+        padding: 10px 15px;
+        margin: 0;
+        transition: color 0.25s ease-in-out 0s;
+
+        &:hover {
+          color: $tertiaryColor;
+        }
       }
 
-      .navOptions {
-        @extend %flexColumn;
-        position: absolute;
-        top: 100%;
-        padding: 10px;
-        background-color: $tertiaryColor;
-        width: 100%;
+      &.isNavMenuOpen {
+        .navMenuIcon {
+          color: $primaryColor;
+        }
 
-        a {
-          border: none;
+        .navOptions {
+          @extend %flexColumn;
+          position: absolute;
+          top: 100%;
+          padding: 10px;
+          width: 100%;
+
+          a {
+            border: none;
+          }
         }
       }
     }
-  }
 
-  .logo {
-    width: 100px;
-    fill: $primaryColor;
-    transition: fill 0.25s ease-in-out 0s;
+    .logo {
+      width: 100px;
+      transition: fill 0.25s ease-in-out 0s;
 
-    &:hover {
-      fill: $tertiaryColor;
+      &:hover {
+        fill: $tertiaryColor;
+      }
     }
   }
 }
 
-@media 
-  only screen and (max-device-width: 1120px),
-  only screen and (max-width: 1120px) {
 
+.oddSection {
+  background-color: $primaryColor;
+  width: 100%;
+  .header {
+    .navMenu {
+      .navMenuIcon {
+        color: $backgroundColor;
+      }
+
+      &.isNavMenuOpen {
+        .navMenuIcon {
+          color: $backgroundColor;
+        }
+        .navOptions {
+          background-color: $primaryColor;
+        }
+      }
+    }
+
+    .logo {
+      fill: $backgroundColor;
+    }
+  }
+}
+
+.evenSection {
+  background-color: $backgroundColor;
+  width: 100%;
+  .header {
+
+    .navMenu {
+      .navMenuIcon {
+        color: $primaryColor;
+      }
+
+      &.isNavMenuOpen {
+        .navMenuIcon {
+          color: $primaryColor;
+        }
+        .navOptions {
+          background-color: $backgroundColor;
+        }
+      }
+    }
+
+    .logo {
+      fill: $primaryColor;
+    }
+  }
+}
+
+
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
+  .evenSection,
+  .oddSection {
   .header {
     .nav {
       width: 100%;
@@ -91,4 +147,5 @@
       display: flex;
     }
   }
+}
 }

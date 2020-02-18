@@ -7,7 +7,6 @@
   flex: none;
   text-decoration: none;
   text-transform: uppercase;
-  color: $primaryColor;
   font-weight: 500;
   padding: 10px 20px;
 
@@ -16,16 +15,11 @@
   justify-content: center;
   transition: color 0.25s ease-in-out 0s, background-color 0.25s ease-in-out 0s;
 
-  &:hover {
-    color: $tertiaryColor;
-  }
 
-  &.navActive {
-    color: $tertiaryColor;
-  }
   &:last-child {
     background-color: $tertiaryColor;
     margin-left: 10px;
+
     &:hover {
       background-color: $primaryColor;
       color: white;
@@ -33,22 +27,23 @@
   }
 }
 
-@media 
-  only screen and (max-device-width: 1120px),
-  only screen and (max-width: 1120px) {
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
 
   .navLink,
   .navLink:link,
   .navlink:visited {
     margin: 0 0 5px 0;
     justify-content: center;
-  
+
     &:last-child {
       margin-left: 0;
     }
   }
 
   footer {
+
     .navLink,
     .navLink:link {
       font-size: 14px;
@@ -56,4 +51,3 @@
     }
   }
 }
-

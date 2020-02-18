@@ -14,8 +14,8 @@ const Sponsor = ({ sponsor, sponsorClassName }: ISponsorProps) => {
   const cssClasses = classNames(styles.sponsor, sponsorClassName);
   
   return (
-    <a className={cssClasses} href={`${sponsor.url}?ref=vopen`} target="_blank">
-      <img className={styles.sponsorImage} src={sponsor.imageUrl} />
+    <a href={`${sponsor.url}?ref=vopen`} target="_blank">
+      <span className={cssClasses} ><img className={styles.sponsorImage} src={sponsor.imageUrl} /></span>
       <div className={styles.sponsorLegend}>{sponsor.type}</div>
     </a>
   );
@@ -57,11 +57,6 @@ export default class Sponsors extends React.PureComponent<Props, State> {
 
     return (
       <div className={cssClasses}>
-        {title && (
-          <div className={styles.title}>
-            <h3>{title}</h3>
-          </div>
-        )}
         <Sponsors items={diamondSponsors} sponsorClassName={styles.diamond} />
         <Sponsors items={goldSponsors} sponsorClassName={styles.gold} />
         <Sponsors items={silverSponsors} sponsorClassName={styles.silver} />

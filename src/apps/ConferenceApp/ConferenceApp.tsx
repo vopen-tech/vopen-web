@@ -15,7 +15,8 @@ import {
   Team,
   Tickets,
   MapsLocation,
-  Loading
+  Loading,
+  VOpenLogo
 } from "../../components";
 import { ConductPage, SchedulePage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
@@ -33,7 +34,6 @@ const sortByName = (itemA: any, itemB: any) => {
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
-
   const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceDate = conferenceInfo.date || Resources.banner.soon;
   const conferenceLocation = conferenceInfo.locationName || Resources.banner.soon;
@@ -50,34 +50,37 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <Banner to="#about" title={conferenceTitle}>
+      <Banner to="#about"  title={conferenceTitle} subtitle={""} type="odd">
+          <VOpenLogo className={styles.logo} />
         <InfoIcon type="location" title={conferenceLocation} linkUrl="/#location" />
         <InfoIcon type="date" title={conferenceDate} subtitle={""} />
         <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
       </Banner>
-      <PageSection id="about" title="About">
+      <PageSection id="about"  type="even">
       <CtaButtons />
         <About />
       </PageSection>
-      <PageSection id="speakers" title="Speakers" type="odd">
+      <PageSection id="speakers" type="odd">
       <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>
         <Speakers speakers={conferenceSpeakers} type="odd" />
       </PageSection>
-      <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
+      <PageSection className={styles.centeredColumn} id="sponsors">
+      <h2 className={styles.subtitle}>{Resources.pages.sponsors}</h2>
         <Sponsors sponsors={conferenceSponsors} />
       </PageSection>
       {isTicketSaleEnabled && (
-        <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
+        <PageSection className={styles.centeredColumn} id="tickets" type="primary">
+          <h2 className={styles.subtitle}>{Resources.pages.tickets}</h2>
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
       {isScheduleEnabled && (
-        <PageSection id="schedule" title={Resources.pages.schedule}>
+        <PageSection id="schedule">
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
-      <PageSection id="team" title={Resources.pages.team}>
-          <h2 className={styles.subtitle}>{Resources.titles.globalTeam}</h2>
+      <PageSection id="team">
+          <h2 className={styles.subtitle}>{Resources.pages.team}</h2>
         <Team team={conferenceOrganizers} />
       </PageSection>
       <PageSection id="location" type="full">
@@ -116,7 +119,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
     return (
       <Router>
         <div className={styles.conferenceApp}>
-          <Header>
+          <Header type="odd">
             <NavLink to="/#schedule" />
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>

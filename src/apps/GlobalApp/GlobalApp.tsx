@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <>
-      <Banner to="#about" title="2019">
+      <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even">
         <div className={styles.flags}>
           <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
           <FlagChile className={styles.flag} onClick={() => window.open("//cl.vopen.tech", "_blank")} />
@@ -51,7 +51,7 @@ export default class GlobalApp extends React.PureComponent {
     return (
       <Router>
         <div className={styles.globalApp}>
-          <Header>
+          <Header type="even">
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsors">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>

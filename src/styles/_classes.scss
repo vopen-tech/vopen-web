@@ -13,14 +13,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 %flexRow {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
 }
 
 %dottedTriangle {
@@ -90,7 +88,20 @@
   margin: 0;
 }
 
+.oddSection {
+  color: $backgroundColor;
+  a {
+    color: $backgroundColor;
+  }
+}
 
+.evenSection {
+  color: $primaryColor;
+  a {
+    color: $primaryColor;
+  }
+
+}
 @media only screen and (max-device-width: 1120px),
 only screen and (max-width: 1120px) {
   %title {
@@ -98,7 +109,7 @@ only screen and (max-width: 1120px) {
     line-height: 45px;
   }
 
-  %subtitle {
+  %tag {
     font-size: 14px;
   }
 

@@ -3,10 +3,10 @@
 .sponsors {
   @extend %pageSection;
   @extend %flexColumn;
-  position: relative;
-  z-index: 1;
 
-  width: 100%;
+  justify-content: center;
+  flex: 1;
+  padding: 0 100px 35px 100px;
 }
 
 .title {
@@ -16,18 +16,24 @@
 .sponsorsRow {
   @extend %flexRow;
   flex-wrap: wrap;
-  justify-content: center;
+  padding: 30px;
 }
-
+.sponsorLegend {
+  text-align: center;
+  font-size: 12px;
+}
 .sponsor {
+  @extend %flexRow;
   width: 250px;
   height: 100px;
   margin: 15px;
   -webkit-filter: grayscale(100%); 
   filter: grayscale(100%);
+  justify-content: center;
 
   &:hover {
-    background-color: rgba($backgroundColor, 0.20);
+    -webkit-filter: grayscale(0); 
+    filter: grayscale(0%);
   }
 }
 

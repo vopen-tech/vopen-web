@@ -1,5 +1,7 @@
 @import "../../styles/styles";
 
+.evenSection,
+.oddSection {
 .banner {
   @extend %banner;
 }
@@ -28,7 +30,12 @@
   align-items: center;
   justify-content: center;
 }
+}
 
+
+.oddSection {
+  background-color: $primaryColor;
+}
 
   @media only screen and (max-device-width: 1120px),
   only screen and (max-width: 1120px) {

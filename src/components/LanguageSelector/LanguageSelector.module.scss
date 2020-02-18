@@ -17,23 +17,14 @@
   }
 
   &:hover {
-    color: rgba($primaryColor, 0.75);
+    opacity: 0.75;
   }
 
   &:active {
-    color: rgba($primaryColor, 0.65);
+    opacity: 0.65;
   }
 
   &.active {
-    color: rgba($primaryColor, 1.00);
-  }
-}
-
-@media 
-  only screen and (max-device-width: 1120px),
-  only screen and (max-width: 1120px) {
-
-  .languageSelector {
-    
+    opacity: 1;
   }
 }

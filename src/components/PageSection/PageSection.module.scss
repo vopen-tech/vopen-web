@@ -27,39 +27,7 @@
   z-index: 1;
 }
 
-.oddSection .header {
-  text-align: left;
-
-  .title {
-    @extend .title;
-
-    color: $backgroundColor;
-
-    &:before {
-      background-color: $backgroundColor;
-    }
-  }
-}
-
 @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
-  .evenSection,
-  .oddSection,
-  .primarySection {
-    flex-direction: column;
-    padding: 50px 0 0 0;
-    width: 100%;
 
-    &:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-  }
 
-  .header {
-    text-align: left;
-
-    .title {
-      margin: 0 0 35px 50px;
-    }
-  }
 }

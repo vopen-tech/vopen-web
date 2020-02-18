@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
+import { Props } from "./types";
 import { LanguageSelector, VOpenLogo } from "..";
 
 import styles from "./Header.module.scss";
@@ -29,15 +30,25 @@ export default class Header extends React.PureComponent<any, any> {
     this.setState({ isNavMenuOpen: !isNavMenuOpen });
   };
 
-  render() {
-    const { children } = this.props;
-    const { isNavMenuOpen } = this.state;
+  static defaultProps: Partial<Props> = {
+    className: undefined,
+    type: "even"
+  };
 
+  render() {
+    const { children, className, type } = this.props;
+    const cssClasses = classNames(
+      type === "even" && styles.evenSection,
+      type === "odd" && styles.oddSection,
+      className
+    );
+    const { isNavMenuOpen } = this.state;
     const navMenuCssIcon = classNames(styles.navMenu, isNavMenuOpen && styles.isNavMenuOpen);
     const iconCssClasses = classNames(styles.navMenuIcon, "fas fa-bars");
 
     return (
-      <div className={styles.header}>
+      <div className={cssClasses}>
+        <div className={styles.header}>
         <nav className={styles.nav}>
           <div className="flex items-center">
           <NavLink className={styles.home} to="/">
@@ -51,6 +62,7 @@ export default class Header extends React.PureComponent<any, any> {
             {isNavMenuOpen && <div className={styles.navOptions}>{children}</div>}
           </div>
         </nav>
+        </div>
       </div>
     );
   }

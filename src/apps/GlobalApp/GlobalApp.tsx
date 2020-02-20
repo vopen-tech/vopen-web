@@ -23,7 +23,7 @@ const Home = () => {
       <PageSection id="about">
         <About />
         <History />
-        <CtaButtons />
+        <CtaButtons  className="pv5"/>
       </PageSection>
     </>
   );

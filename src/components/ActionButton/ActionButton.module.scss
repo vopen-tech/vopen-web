@@ -20,16 +20,16 @@
   }
 
   &.primary {
-    border: solid 2px $tertiaryColor;
+    border: solid 2px $secondaryColor;
     color: $backgroundColor;
 
     &:hover {
-      background-color: $tertiaryColor;
+      background-color: $secondaryColor;
     }
   }
 
   &.secondary {
-    background-color: $tertiaryColor;
+    background-color: $secondaryColor;
     color: $primaryColor;
 
     &:hover {

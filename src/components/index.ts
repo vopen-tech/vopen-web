@@ -10,6 +10,7 @@ export { default as LanguageSelector } from "./LanguageSelector";
 export { default as Loading } from "./Loading";
 export { default as MapsLocation } from "./MapsLocation";
 export { default as NavLink } from "./NavLink";
+export { default as HeroConf } from "./HeroConf";
 export { default as InfoIcon } from "./InfoIcon";
 export { default as PageSection } from "./PageSection";
 export { default as PastEditions } from "./PastEditions";

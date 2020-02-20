@@ -24,7 +24,7 @@
   @extend %images;
   background-image: url("../images/homepage-3.jpg");
   height: 370px;
-  color: $tertiaryColor;
+  color: $secondaryColor;
 }
 
 .image3 {
@@ -55,7 +55,7 @@
 
   .textAbout {
     @extend .textAbout;
-    background-color: $tertiaryColor;
+    background-color: $secondaryColor;
     width: 100%;
     margin-left: 150px;
     margin-right: -150px;

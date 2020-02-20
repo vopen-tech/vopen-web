@@ -24,10 +24,10 @@
     }
 
     &:hover {
-      border-color: $tertiaryColor;
+      border-color: $secondaryColor;
   
       polyline {
-        stroke: $tertiaryColor !important;
+        stroke: $secondaryColor !important;
       }
     }
   }

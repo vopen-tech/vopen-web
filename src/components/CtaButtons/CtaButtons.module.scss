@@ -1,19 +1,42 @@
 @import "../../styles/styles";
 
-.ctabuttons {
-  @extend %container;
-  padding: 0 20px;
+.evenSection,
+.oddSection {
+
+  .ctabuttons {
+    @extend %container;
+    padding: 0 20px;
+
+  }
+  .action {
+    border-style: solid;
+    border-width: 2px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    }
+  }
+
+.evenSection {
+  .action {
+    background-color: $backgroundColor;
+    border-color: $primaryColor;
+
+    &:hover {
+      background-color: $primaryColor;
+      color: $backgroundColor;
+    }
+  }
 }
 
-.action {
-  background-color: $backgroundColor;
-  border: solid 2px $primaryColor;
-  padding: 2rem;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
+.oddSection {
+  .action {
     background-color: $primaryColor;
-    color: $backgroundColor;
+    border-color: $primaryColor;
+
+    &:hover {
+      background-color: $secondaryColor;
+      color: $primaryColor;
+    }
   }
 }

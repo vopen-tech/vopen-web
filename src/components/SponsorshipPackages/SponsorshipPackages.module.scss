@@ -15,7 +15,7 @@
 
 .title {
   @extend %title;
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@
   @extend %images;
   background-image: url("../images/sponsorship-page.jpg");
   height: 430px;
-  color: $tertiaryColor;
+  color: $secondaryColor;
   width: 80%;
   margin-left: auto;
   &::before {
@@ -35,7 +35,7 @@
   @extend %images;
   background-image: url("../images/oportunity-1.jpg");
   height: 240px;
-  color: $tertiaryColor;
+  color: $secondaryColor;
   width: 100%;
   &:before {
     display: none;
@@ -45,7 +45,7 @@
   @extend %images;
   background-image: url("../images/oportunity-2.jpg");
   height: 200px;
-  color: $tertiaryColor;
+  color: $secondaryColor;
   width: 100%;
   margin-bottom: 2rem;
   &:before {
@@ -56,7 +56,7 @@
   @extend %images;
   background-image: url("../images/oportunity-3.jpg");
   height: 240px;
-  color: $tertiaryColor;
+  color: $secondaryColor;
   width: 100%;
   margin-bottom: 2rem;
   &:before {
@@ -74,7 +74,7 @@
     font-size: 24px;
     line-height: 35px;
     padding: 50px 40px;
-    background-color: $tertiaryColor;
+    background-color: $secondaryColor;
     width: 50%;
     margin: 0;
   }
@@ -156,10 +156,10 @@ table {
       background-color: $accentColor;
     }
     &:nth-child(4) {
-      background-color: $tertiaryColor;
+      background-color: $secondaryColor;
     }
     &:nth-child(5) {
-      background-color: rgba($tertiaryColor, 0.5);
+      background-color: rgba($secondaryColor, 0.5);
     }
     span {
       display: block;

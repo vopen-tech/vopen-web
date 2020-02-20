@@ -1,11 +1,42 @@
+
+/* BASE*/
+
 $backgroundColor: #ffff;
 $primaryColor: #1d115d;
-$secondaryColor: #4883f6;
-$tertiaryColor: #7bdfea;
-$accentColor: #ffc400; 
 $disabledColor: #dcdcdc;
-
-
 $tertiaryBackgroundColor: #f2f2f2;
+
+
+/* Colores x Region */
+
+/* Global   */
+$secondaryColor: #7bdfea;
+$accentColor: #ffc400;
+
+/* Argentina
+$secondaryColor: #ffc400;
+$accentColor: #7bdfea; */
+
+/* Chile 
+$secondaryColor: #d61920;
+$accentColor: #7bdfea; */
+
+/* Uruguay
+$secondaryColor: #518bff;
+$accentColor: #7bdfea; */
+
+/* México
+$secondaryColor: #d61920;
+$accentColor: #6db733;*/
+
+
+/* Colombia
+$secondaryColor: #d61920;
+$accentColor: #ffc400; */
+
+/* Peru 
+$secondaryColor:#d61920;
+$accentColor:  #f2f2f2;*/
+
 
 

@@ -5,8 +5,7 @@
 
   .header {
     @extend %flexRow;
-    margin: auto;
-    max-width: 85rem;
+    @extend %container;
     justify-content: space-between;
     padding: 2rem 1rem;
     align-items: center;
@@ -41,7 +40,7 @@
         transition: color 0.25s ease-in-out 0s;
 
         &:hover {
-          color: $tertiaryColor;
+          color: $secondaryColor;
         }
       }
 
@@ -69,7 +68,7 @@
       transition: fill 0.25s ease-in-out 0s;
 
       &:hover {
-        fill: $tertiaryColor;
+        fill: $secondaryColor;
       }
     }
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { Props, State } from "./types";
 import styles from "./CtaButtons.module.scss";
 import { resourcesService } from "../../services";
@@ -6,15 +7,23 @@ import constants from "../../constants";
 
 export default class CtaButtons extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
-    className: undefined
+    className: undefined,
+    type: "even"
   };
 
   render() {
     const Resources = resourcesService.getResources();
+    const { className, type } = this.props;
+    const cssClasses = classNames(
+      type === "even" && styles.evenSection,
+      type === "odd" && styles.oddSection,
+      className
+    );
 
     return (
+      <div className={cssClasses}>
     <div className={styles.ctabuttons}>
-      <div className="flex flex-wrap nl3 nr3 pv5">
+      <div className="flex flex-wrap nl3 nr3">
         <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={()=> window.open(constants.speakerCallUrl)}>
             <h1 className="ttu f2 mv0">{Resources.buttons.wantToBeSpeaker}</h1>
@@ -38,6 +47,8 @@ export default class CtaButtons extends React.PureComponent<Props, State> {
           </div>
         </div>
       </div>
+    </div>
+
     </div>
     );
     }

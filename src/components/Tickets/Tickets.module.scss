@@ -69,7 +69,7 @@
   .enabledTicket {
     @extend .ticket;
 
-    border: solid 2px $tertiaryColor;
+    border: solid 2px $secondaryColor;
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.25s ease-in-out 0s;
 

@@ -5,18 +5,18 @@ import {
   Footer,
   NavLink,
   PageSection,
-  Banner,
+  HeroConf,
+  InfoIcon,
   About,
   CtaButtons,
   Sponsors,
   Speakers,
   Schedule,
-  InfoIcon,
   Team,
   Tickets,
   MapsLocation,
-  Loading,
-  VOpenLogo
+  Loading
+
 } from "../../components";
 import { ConductPage, SchedulePage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
@@ -34,12 +34,9 @@ const sortByName = (itemA: any, itemB: any) => {
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
-  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
-  const conferenceDate = conferenceInfo.date || Resources.banner.soon;
-  const conferenceLocation = conferenceInfo.locationName || Resources.banner.soon;
 
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
-  const conferenceTicketSaleStatus = isTicketSaleEnabled ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
+  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
   const conferenceTicketsLink = isTicketSaleEnabled ? "/#tickets" : constants.rsvpUrl;
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
@@ -50,19 +47,17 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <Banner to="#about"  title={conferenceTitle} subtitle={""} type="odd">
-          <VOpenLogo className={styles.logo} />
-        <InfoIcon type="location" title={conferenceLocation} linkUrl="/#location" />
-        <InfoIcon type="date" title={conferenceDate} subtitle={""} />
-        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
-      </Banner>
-      <PageSection id="about"  type="even">
-      <CtaButtons />
+      <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
+        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} linkUrl={conferenceTicketsLink} />
+
+      <CtaButtons type="odd" className="bottom--2 nb4 absolute w-100"/>
+        </HeroConf>
+      <PageSection id="about"  type="even" className="pt6">
         <About />
       </PageSection>
-      <PageSection id="speakers" type="odd">
+      <PageSection id="speakers">
       <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>
-        <Speakers speakers={conferenceSpeakers} type="odd" />
+        <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className={styles.centeredColumn} id="sponsors">
       <h2 className={styles.subtitle}>{Resources.pages.sponsors}</h2>

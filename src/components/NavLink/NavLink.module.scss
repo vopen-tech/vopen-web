@@ -15,14 +15,17 @@
   justify-content: center;
   transition: color 0.25s ease-in-out 0s, background-color 0.25s ease-in-out 0s;
 
+  &:hover {
+    color: $secondaryColor;
+  }
 
   &:last-child {
-    background-color: $tertiaryColor;
+    color: $primaryColor;
+    background-color: $secondaryColor;
     margin-left: 10px;
 
     &:hover {
-      background-color: $primaryColor;
-      color: white;
+      background-color: $accentColor;
     }
   }
 }

@@ -46,8 +46,8 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
         </HeroConf>
-      <PageSection id="about"  type="even" className="pt6">
-        <CtaButtons className="pv5"/>
+      <PageSection id="about"  type="even" className="pv6">
+        <CtaButtons className="pt5"/>
       </PageSection>
       <PageSection id="speakers">
       <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>
@@ -68,7 +68,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
-      <PageSection id="team">
+      <PageSection id="team" className="bg-near-white">
           <h2 className={styles.subtitle}>{Resources.pages.team}</h2>
         <Team team={conferenceOrganizers}  className="pt4"/>
       </PageSection>

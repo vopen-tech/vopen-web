@@ -70,7 +70,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       )}
       <PageSection id="team">
           <h2 className={styles.subtitle}>{Resources.pages.team}</h2>
-        <Team team={conferenceOrganizers} />
+        <Team team={conferenceOrganizers}  className="pt4"/>
       </PageSection>
       <PageSection id="location" type="full">
         <MapsLocation address={conferenceInfo.locationFullAddress} />

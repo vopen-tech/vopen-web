@@ -16,7 +16,7 @@ export default class SpeakersPage extends React.PureComponent<Props> {
         <div className={styles.banner}>
           <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
           <h1 className={styles.title}>{Resources.titles.speakersPage}</h1>
-          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.sponsorsCallUrl} />
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.sponsorsCallUrl} target="_blank"/>
         </div>
         <Speakers speakers={speakers}/>
       </div>

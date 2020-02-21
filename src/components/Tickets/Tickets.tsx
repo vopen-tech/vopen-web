@@ -54,7 +54,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url} />
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url}  target="_blank"/>
           ))}
         </div>
       </div>
@@ -82,7 +82,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
           ))}
         </ul>
         <div className={styles.buttons}>
-        <ActionButton type="disabled" text={buttonText} />
+        <ActionButton type="disabled" text={buttonText} target="_blank"/>
         </div>
       </div>
     );

@@ -6,7 +6,6 @@ import {
   NavLink,
   PageSection,
   HeroConf,
-  InfoIcon,
   About,
   CtaButtons,
   Sponsors,
@@ -24,7 +23,6 @@ import { backendService, resourcesService, siteService } from "../../services";
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
 import { IEdition } from "../../types/IEdition";
-import constants from "../../constants";
 
 const sortByName = (itemA: any, itemB: any) => {
   if (itemA.name < itemB.name) return -1;
@@ -37,7 +35,6 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
   const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
-  const conferenceTicketsLink = isTicketSaleEnabled ? "/#tickets" : constants.rsvpUrl;
 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
@@ -48,9 +45,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   return (
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
-        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} linkUrl={conferenceTicketsLink} />
 
-      <CtaButtons type="odd" className="bottom--2 nb4 absolute w-100"/>
+
+      <CtaButtons type="odd" className="bottom--2 nb4 absolute-l relative w-100"/>
         </HeroConf>
       <PageSection id="about"  type="even" className="pt6">
         <About />

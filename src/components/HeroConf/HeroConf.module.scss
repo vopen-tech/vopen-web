@@ -10,17 +10,18 @@
     padding: 4rem 0 10rem;
     position: relative;
 
+
     .logo {
-      width: 30rem;
-      fill: $accentColor;
+      width: 15rem;
+      fill: $backgroundColor;
     }
 
     .tag {
-      font-size: 7.5rem;
+      font-size: 3.5rem;
       margin: 0;
-      padding: 16px 0 0 10px;
+      padding: 7px 0 0 10px;
       font-weight: normal;
-      color: $accentColor;
+      color: $backgroundColor;
 
     }
 
@@ -33,24 +34,97 @@
       color: $backgroundColor
     }
 
-    .info {
-      text-align: center;
-      line-height: 4rem;
-      font-size: 1.5rem;
-      padding: 1rem;
+    .time {
+      font-size: 2.5rem;
       text-transform: uppercase;
-      color: $backgroundColor;
-      span {
-        padding: 0 0.5rem;
-      }
-      i {
-        color: $accentColor;
+    }
+
+    .image {
+      @extend %images;
+      height: 400px;
+      color: $accentColor;
+      width: calc(100% - 150px);
+      position: relative;
+
+      &:before {
+        left: 0;
+        z-index: 3;
       }
     }
-  }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      background-color: rgba($primaryColor, 0.7);
+    }
+
+    .textPast {
+      margin-top: -85px;
+      z-index: 1;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+
+      .textAbout {
+        font-size: 24px;
+        line-height: 35px;
+        padding: 50px;
+        background-color: $accentColor;
+        width: 100%;
+        text-align: left;
+
+        p {
+          margin: 0;
+          color: $primaryColor;
+        }
+      }
+
+      .trianglePast {
+        @extend %dottedTriangle;
+        background-image: radial-gradient($accentColor 20%, transparent 0);
+        width: 150px;
+        height: 155px;
+        bottom: 0;
+        right: 0;
+        top: -155px;
+
+
+        span {
+          @extend %triangle;
+          bottom: 0;
+          left: 0;
+          border-top: 155px solid $primaryColor;
+          border-left: 150px solid transparent;
+        }
+      }
+    }
+
+
+
   @media only screen and (max-device-width: 1120px),
   only screen and (max-width: 1120px) {
-    
-  }
 
+
+        .image {
+          width: 100%;
+        }
+        .textPast { 
+          flex-direction: column;
+          .textAbout {
+          padding: 30px;
+          }
+        }
+        .trianglePast {
+          display: none;
+        }
+  }
+}
 }

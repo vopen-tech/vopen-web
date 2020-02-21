@@ -15,4 +15,5 @@ export interface IEdition {
   sponsors: ISponsor[];
   speakers: IUser[];
   activities: IEditionActivities;
+  background: string;
 }

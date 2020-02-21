@@ -27,13 +27,11 @@
 
       p {
         margin: 0;
-        color: $secondaryColor;
       }
 
       .price {
         font-size: 3rem;
         font-weight: bold;
-        color: $primaryColor;
       }
     }
 
@@ -78,7 +76,6 @@
         .itemIcon {
           margin: 0 10px 0 0;
           font-size: 1rem;
-          color: $secondaryColor;
         }
 
         .itemText {
@@ -102,11 +99,11 @@
     cursor: default;
     pointer-events: none;
     background: rgba($backgroundColor, 0.9);
+    color: #999999;
   }
 
   .enabledTicket {
     @extend .ticket;
-
     border: solid 2px $secondaryColor;
     box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.25s ease-in-out 0s;
@@ -119,6 +116,14 @@
       background-color: $tertiaryBackgroundColor;
       color: $primaryColor;
       width: 100%;
+      .type {
+        color: $secondaryColor;
+      }
+    }
+    .list {
+      .itemIcon {
+        color: $secondaryColor;
+      }
     }
   }
 }

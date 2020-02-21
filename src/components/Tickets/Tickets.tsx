@@ -40,7 +40,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
     return (
       <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
-          <p>{ticketInfo.name}</p>      
+          <p className={styles.type}>{ticketInfo.name}</p>      
           <p className={styles.price}>{ticketInfo.price}</p>
           <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>
@@ -69,7 +69,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
     return (
       <div key={ticketInfo.name} className={styles.disabledTicket}>
                 <div className={styles.title}>
-          <p>{ticketInfo.name}</p>      
+                <p className={styles.type}>{ticketInfo.name}</p>      
           <p className={styles.price}>{ticketInfo.price}</p>
           <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>

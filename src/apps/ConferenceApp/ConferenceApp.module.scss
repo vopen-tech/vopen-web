@@ -3,7 +3,6 @@
 .conferenceApp {
   position: relative;
   width: 100%;
-}
 
 .externalNavLink {
   border: solid 1px $secondaryColor;
@@ -15,12 +14,19 @@
   }
 }
 
-
-.subtitle {
-  @extend %subtitle;
-  width: 80%;
-  margin: 0 auto;
+.banner {
+  @extend %container;
   padding: 5rem 0 2rem;
+  .subtitle {
+    @extend %subtitle;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .tag {
+    @extend %tag;
+    text-transform: uppercase;
+  }
+
 }
 
 
@@ -29,4 +35,5 @@
   only screen and (max-width: 1120px) {
 
  
+}
 }

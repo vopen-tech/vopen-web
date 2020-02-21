@@ -6,7 +6,6 @@ import {
   NavLink,
   PageSection,
   HeroConf,
-  About,
   CtaButtons,
   Sponsors,
   Speakers,
@@ -14,9 +13,11 @@ import {
   Team,
   Tickets,
   MapsLocation,
-  Loading
+  Loading,
+  ActionButton
 
 } from "../../components";
+import constants from "../../constants";
 import { ConductPage, SchedulePage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
 
@@ -30,7 +31,7 @@ const sortByName = (itemA: any, itemB: any) => {
   return 0;
 };
 
-const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
+  const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
 
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
@@ -50,26 +51,42 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <CtaButtons className="pt5"/>
       </PageSection>
       <PageSection id="speakers">
-      <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>
+      <div className={styles.banner}>
+          <h1 className={styles.subtitle}>{Resources.pages.speakers}</h1>
+        </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
-      <PageSection className={styles.centeredColumn} id="sponsors">
-      <h2 className={styles.subtitle}>{Resources.pages.sponsors}</h2>
+      <PageSection className="tc bg-near-white" id="sponsors">
+      <div className={styles.banner}>
+        <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
+          <h1 className={styles.subtitle}>{Resources.titles.sponsors}</h1>
+          <div className="pt5">
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} target="_blank"/>
+          </div>
+        </div>
         <Sponsors sponsors={conferenceSponsors} />
       </PageSection>
       {isTicketSaleEnabled && (
         <PageSection className={styles.centeredColumn} id="tickets" type="odd">
-          <h2 className={styles.subtitle}>{Resources.pages.tickets}</h2>
+                    <div className={styles.banner}>
+          <h1 className={styles.subtitle}>{Resources.pages.tickets}</h1>
+        </div>
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
       {isScheduleEnabled && (
-        <PageSection id="schedule">
+        <PageSection id="schedule" className="pv5">
+          <div className={styles.banner}>
+          <h1 className={styles.subtitle}>{Resources.pages.schedule}</h1>
+        </div>
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
       <PageSection id="team" className="bg-near-white">
-          <h2 className={styles.subtitle}>{Resources.pages.team}</h2>
+        <div className={styles.banner}>
+          <h2 className={styles.tag}>{Resources.pages.team}</h2>
+          <h1 className={styles.subtitle}>{Resources.titles.sloganTeam}</h1>
+        </div>
         <Team team={conferenceOrganizers}  className="pt4"/>
       </PageSection>
       <PageSection id="location" type="full">
@@ -112,6 +129,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             <NavLink to="/#schedule" />
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
+            <NavLink to="/conduct"> {Resources.pages.codeOfConduct}</NavLink>
             <NavLink className={Resources.buttons.wantToBeSpeaker} to="//vopen.tech">
               Global
             </NavLink>
@@ -123,9 +141,6 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           <Route path="/team" component={Team} />
           {/* End body */}
           <Footer>
-            <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/conduct">
-              {Resources.pages.codeOfConduct}
-            </NavLink>
           </Footer>
         </div>
       </Router>

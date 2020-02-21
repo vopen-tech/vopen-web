@@ -37,7 +37,7 @@ export default class Team extends React.PureComponent<IProps, IState> {
       <div className={cssClasses}>
         {(team || []).map(item => (
           <div className={styles.person} key={item.name}>
-            <img className={styles.personImage} src={item.imageUrl} />
+            <span className={styles.personImage} style={{ backgroundImage: `url(${item.imageUrl})` }}></span>
             <h6 className={styles.personName}>{item.name}</h6>
             {item.jobTitle && <p className={styles.personJobInfo}>{item.jobTitle}</p>}
             {item.company && <p className={styles.personJobInfo}>{item.company}</p>}

@@ -1,9 +1,6 @@
 @import "../../styles/styles";
 
 .schedulePage {
-  @extend %pageSection;
-  @extend %flexColumn;
-
-  justify-content: center;
-  flex: 1;
+  @extend %container;
+  padding: 0 50px;
 }

@@ -30,7 +30,7 @@
     .title {
       @extend %title;
       color: $backgroundColor;
-      width: 70%;
+      width: 80%;
       margin: 30px 0;
       text-align: left;
 
@@ -40,12 +40,14 @@
       color: $backgroundColor;
       opacity: 0.7;
       font-size: 1.5rem;
-      width: 50%;
+      width: 60%;
     }
 
     .logo {
-      width: 15rem;
-      fill: $backgroundColor;
+      width: 8.2rem;
+      fill: $accentColor;
+      margin-top: -7px;
+      margin-right: 7px;
     }
 
     .tag {

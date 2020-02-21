@@ -20,12 +20,12 @@
   }
 
   &.primary {
-    border: solid 2px $primaryColor;
     background-color: $primaryColor;
     color: $backgroundColor;
 
     &:hover {
       background-color: $secondaryColor;
+      color: $primaryColor;
     }
   }
 

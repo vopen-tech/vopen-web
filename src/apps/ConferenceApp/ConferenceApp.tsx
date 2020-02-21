@@ -45,12 +45,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   return (
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
-
-
-      <CtaButtons type="odd" className="bottom--2 nb4 absolute-l relative w-100"/>
         </HeroConf>
       <PageSection id="about"  type="even" className="pt6">
-        <About />
+        <CtaButtons className="pv5"/>
       </PageSection>
       <PageSection id="speakers">
       <h2 className={styles.subtitle}>{Resources.pages.speakers}</h2>

@@ -11,7 +11,7 @@ export default class HeroConf extends React.PureComponent<Props, State> {
   };
 
   render() {
-    const { subtitle, children, className, type } = this.props;
+    const { title, subtitle, children, className, type } = this.props;
     const cssClasses = classNames(
       type === "even" && styles.evenSection,
       type === "odd" && styles.oddSection,
@@ -22,19 +22,19 @@ export default class HeroConf extends React.PureComponent<Props, State> {
     return (
       <div className={cssClasses}>
         <div className={styles.hero}>
-        <div className={styles.date}>
-              21, 22 y 23 de Octubre
+        <div className={styles.info}>
+              <i className="fas fa-map-marker-alt"></i> <span>Torres de las Telecomunicaciones, Antel</span>
             </div>
-          <div className="flex justify-center items-center">
-          <VOpenLogo className={styles.logo} />
-          <h1 className={styles.tag}>
-            {subtitle}
-          </h1>
+          <div className="flex justify-center flex-wrap items-center">
+            <VOpenLogo className={styles.logo} />
+            <h1 className={styles.tag}>
+              {subtitle}
+            </h1>
           </div>
-
-            <div className={styles.place}>
-           <i className="fas fa-map-marker-alt"></i> <span>Torres de las Telecomunicaciones, Antel</span>
+          <div className={styles.info}>
+            <i className="fas fas fa-calendar-day"></i> <span>21 al 23 de Octubre</span>
             </div>
+
           {children}
         </div>
       </div>

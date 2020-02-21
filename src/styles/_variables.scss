@@ -3,8 +3,7 @@
 
 $backgroundColor: #ffff;
 $primaryColor: #1d115d;
-$disabledColor: #dcdcdc;
-$tertiaryBackgroundColor: #f2f2f2;
+$disabledColor: #f2f2f2;
 
 
 /* Colores x Region */
@@ -40,3 +39,4 @@ $accentColor:  #f2f2f2;*/
 
 
 
+$tertiaryBackgroundColor: rgba($secondaryColor, 0.2);

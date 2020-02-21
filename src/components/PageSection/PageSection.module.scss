@@ -1,30 +1,14 @@
 @import "../../styles/styles";
 
-.header {
-  position: relative;
-  text-align: right;
-
-  .title {
-    color: $backgroundColor;
-    display: inline-block;
-    font-weight: normal;
-    margin: 0 0 35px 0;
-    text-transform: uppercase;
-
-    &:before {
-      background-color: $backgroundColor;
-      content: "";
-      display: flex;
-      height: 4px;
-      margin: 0 0 25px 0;
-      width: 50px;
-    }
-  }
+.oddSection {
+  background-color: $primaryColor;
+  color: $backgroundColor;
 }
 
 .body {
   position: relative;
   z-index: 1;
+  padding: 20px 0 100px;
 }
 
 @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {

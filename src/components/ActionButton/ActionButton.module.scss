@@ -6,7 +6,7 @@
   display: inline-block;
   font-size: 18px;
   height: auto;
-  margin-top: 50px;
+  margin: 25px 0;
   padding: 15px 25px;
   text-align: center;
   text-decoration: none;
@@ -48,8 +48,8 @@
   }
 
   &.disabled {
-    border: solid 2px $secondaryColor;
-    opacity: 0.5;
+    background-color: $disabledColor;
+    color: rgba($primaryColor, 0.5);
     pointer-events: none;
   }
 }

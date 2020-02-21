@@ -16,7 +16,9 @@
 .sponsorsRow {
   @extend %flexRow;
   flex-wrap: wrap;
-  padding: 30px;
+  a {
+    padding: 30px 15px;
+  }
 }
 .sponsorLegend {
   text-align: center;

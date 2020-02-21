@@ -64,7 +64,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
         <Sponsors sponsors={conferenceSponsors} />
       </PageSection>
       {isTicketSaleEnabled && (
-        <PageSection className={styles.centeredColumn} id="tickets" type="primary">
+        <PageSection className={styles.centeredColumn} id="tickets" type="odd">
           <h2 className={styles.subtitle}>{Resources.pages.tickets}</h2>
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>

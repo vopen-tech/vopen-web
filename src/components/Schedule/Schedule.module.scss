@@ -1,14 +1,8 @@
 @import "../../styles/styles";
 
 .schedule {
-  @extend %pageSection;
-  @extend %flexColumn;
-  flex: 1;
-  padding: 0;
-  color: $backgroundColor;
-
-  width: 750px;
-  margin: 0 auto;
+  @extend %container;
+  padding: 0 50px;
 }
 
 .daysHeader {
@@ -27,12 +21,23 @@
     text-align: center;
     background-color: $disabledColor;
 
-    &:hover {
-      background-color: rgba($primaryColor, 0.5);
-    }
-
     &.active {
       background-color: $primaryColor;
+      color: $backgroundColor;
+      position: relative;
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        margin-top: -7px;
+        margin-left: -6px;
+        top: 100%;
+        left: 50%;
+        background-color: $primaryColor;
+        transform: rotate(45deg);
+      }
     }
   }
 }
@@ -40,13 +45,12 @@
 .dayTracks {
   @extend %flexRow;
   width: 100%;
-
-  font-size: 24px;
+  font-size: 1.5rem;
   background-color: $tertiaryBackgroundColor;
-  color: $primaryColor;
+  color: $secondaryColor;
 
   .trackHeader {
-    flex: none;  
+    flex: none;
     padding: 10px 55px;
     cursor: pointer;
     outline: none;
@@ -54,13 +58,13 @@
     justify-content: center;
     text-align: center;
     background-color: transparent;
-    
-    &:hover {
-      background-color: rgba($secondaryColor, 0.5);
-    }
+    border-bottom: solid 2px transparent;
+
+
 
     &.active {
-      background-color: $secondaryColor;
+      border-bottom: solid 2px $primaryColor;
+      color: $primaryColor;
     }
   }
 }
@@ -68,88 +72,113 @@
 .dayActivities {
   @extend %flexColumn;
   width: 100%;
-
+  padding-top: 20px;
   color: $primaryColor;
   font-size: 21px;
 
   .dayActivity {
-    width: calc(100% - 40px);
-    flex: 1;
-    background-color: $disabledColor;
-    padding: 20px;
-    margin-bottom: 10px;
+    width: 100%;
+
+    &:last-child {
+      .wrapper {
+        border-left: none;
+      }
+    }
   }
 
   .nonTalkActivity {
-    background-color: $secondaryColor;
-    color: white;
+    color: $accentColor;
     font-weight: bold;
-
-    .dayActivityHeader {
-      display: flex;
-      justify-content: center;
-    }
-    
-    .time {
-      background-color: transparent;
-    }
-
-    .title {
-      grid-row: 1 / span 2;
-    }
   }
 
   .dayActivityHeader {
     display: grid;
     grid-template-rows: auto auto;
     grid-template-columns: auto 1fr auto;
+
+    .wrapper {
+      flex-grow: 1;
+      position: relative;
+      padding-left: 40px;
+      border-left: 1px solid #e0e0e0;
+      padding-bottom: 30px;
+      flex-basis: 0;
+    }
   }
-  
+
   .dayActivityBody {
     @extend %flexRow;
     margin: 5px 0;
+
+    &:last-child {
+      .wrapper {
+        border-left: none;
+      }
+    }
   }
-  
+
   .dayActivityFooter {
     @extend %flexRow;
     font-size: 16px;
     line-height: 21px;
     text-align: justify;
   }
-  
+
   .time {
     display: flex;
-    align-items: center;
-    grid-row: 1 / span 2;
+    grid-row: 1/span 2;
     grid-column: 1;
-    background-color: $secondaryColor;
-    border-radius: 5px;
-    margin-right: 10px;
-    padding: 15px;
+    font-size: 20px;
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    position: relative;
+    width: 105px;
+
+    &:before {
+      content: "";
+      right: -1px;
+      top: 0;
+      position: absolute;
+      background-color: $backgroundColor;
+      height: 30px;
+      width: 1px;
+      z-index: 10;
+    }
+
+    &:after {
+      content: "";
+      left: 100%;
+      top: 10px;
+      margin-left: -5px;
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      display: inline-block;
+      border-radius: 50%;
+      z-index: 12;
+      background-color: $accentColor;
+    }
   }
-  
+
   .title {
-    grid-row: 1;
-    grid-column: 2;
-    display: flex;
-    align-items: center;
+    width: 90%;
+    font-weight: bold;
   }
 
   .expand {
     cursor: pointer;
-    grid-row: 1 / span 2;
-    grid-column: 3;
     @extend %flexRow;
     align-items: center;
     justify-content: center;
     margin: 0 0 0 15px;
-
+    position: absolute;
+    right: 0;
+    top: 0;
     width: 35px;
     height: 35px;
     font-size: 14px;
-    border: solid 3px $secondaryColor;
     border-radius: 50%;
-    color: $secondaryColor;
+    color: $primaryColor;
   }
 
   .presenters {
@@ -157,7 +186,7 @@
     grid-column: 2;
     font-size: 18px;
   }
-  
+
   .tags {
     @extend %flexRow;
     font-size: 16px;
@@ -181,11 +210,35 @@
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-    .schedule {
-      width: auto;
-      margin: 0 0 60px 0;
+@media only screen and (max-device-width: 900px),
+only screen and (max-width: 900px) {
+  .schedule {
+    width: auto;
+    margin: 0 0 60px 0;
+  }
+
+  .dayActivities {
+    .expand {
+      top: -30px
     }
+
+    .dayActivityHeader {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+
+      .wrapper {
+        padding-bottom: 20px;
+        padding-left: 0;
+        border-bottom: 1px solid #e0e0e0;
+        border-left: none;
+      }
+    }
+
+    .time {
+      &:after {
+        visibility: hidden;
+      }
+    }
+  }
 }

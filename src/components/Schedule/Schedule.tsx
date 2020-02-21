@@ -120,11 +120,12 @@ export default class Schedule extends React.PureComponent<Props, State> {
             <div key={activity.id} className={activityCssClass}>
               <div className={styles.dayActivityHeader}>
                 <div className={styles.time}>{activityTime}</div>
+                <div className={styles.wrapper}>
                 <div className={styles.title}>{activity.title}</div>
                 <div className={styles.presenters}>{activityPresenters}</div>
+
                 {activity.description && <i className={`${styles.expand} ${expandCssClass}`} onClick={() => this.handleActivityExpandClick(activity.id)} />}
-              </div>
-              {isTalk && (
+                {isTalk && (
                 <div className={styles.dayActivityBody}>
                   <div className={styles.tags}>
                     {activity.level && <div className={styles.level}>{activity.level}</div>}
@@ -137,7 +138,10 @@ export default class Schedule extends React.PureComponent<Props, State> {
                   </div>
                 </div>
               )}
-              {isActivityExpanded && <div className={styles.dayActivityFooter}>{activity.description}</div>}
+                              {isActivityExpanded && <div className={styles.dayActivityFooter}>{activity.description}</div>}
+                </div>
+              </div>
+            
             </div>
           );
         })}

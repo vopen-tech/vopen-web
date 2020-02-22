@@ -9,7 +9,7 @@
 .title {
   @extend %subtitle;
   padding: 5rem 0 2rem;
-  color: $primaryColor;
+  color: var(--primaryColor);
 }
 
 .text {

@@ -1,8 +1,8 @@
 @import "../../styles/styles";
 
 .oddSection {
-  background-color: $primaryColor;
-  color: $backgroundColor;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
 }
 
 .body {

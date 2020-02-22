@@ -19,11 +19,11 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-color: $disabledColor;
+    background-color: var(--disabledColor);
 
     &.active {
-      background-color: $primaryColor;
-      color: $backgroundColor;
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
       position: relative;
 
       &:after {
@@ -35,7 +35,7 @@
         margin-left: -6px;
         top: 100%;
         left: 50%;
-        background-color: $primaryColor;
+        background-color: var(--primaryColor);
         transform: rotate(45deg);
       }
     }
@@ -46,8 +46,8 @@
   @extend %flexRow;
   width: 100%;
   font-size: 1.5rem;
-  background-color: $tertiaryBackgroundColor;
-  color: $secondaryColor;
+  background-color: var(--tertiaryBackgroundColor);
+  color: var(--secondaryColor);
 
   .trackHeader {
     flex: none;
@@ -63,8 +63,8 @@
 
 
     &.active {
-      border-bottom: solid 2px $primaryColor;
-      color: $primaryColor;
+      border-bottom: solid 2px var(--primaryColor);
+      color: var(--primaryColor);
     }
   }
 }
@@ -73,7 +73,7 @@
   @extend %flexColumn;
   width: 100%;
   padding-top: 20px;
-  color: $primaryColor;
+  color: var(--primaryColor);
   font-size: 21px;
 
   .dayActivity {
@@ -87,7 +87,7 @@
   }
 
   .nonTalkActivity {
-    color: $accentColor;
+    color: var(--accentColor);
     font-weight: bold;
   }
 
@@ -139,7 +139,7 @@
       right: -1px;
       top: 0;
       position: absolute;
-      background-color: $backgroundColor;
+      background-color: var(--backgroundColor);
       height: 30px;
       width: 1px;
       z-index: 10;
@@ -156,7 +156,7 @@
       display: inline-block;
       border-radius: 50%;
       z-index: 12;
-      background-color: $accentColor;
+      background-color: var(--accentColor);
     }
   }
 
@@ -178,7 +178,7 @@
     height: 35px;
     font-size: 14px;
     border-radius: 50%;
-    color: $primaryColor;
+    color: var(--primaryColor);
   }
 
   .presenters {
@@ -193,16 +193,16 @@
     margin: 10px 0;
 
     .level {
-      background-color: $primaryColor;
-      color: $backgroundColor;
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
       border-radius: 15px;
       margin-right: 10px;
       padding: 5px 10px;
     }
 
     .tag {
-      background-color: $secondaryColor;
-      color: $backgroundColor;
+      background-color: var(--secondaryColor);
+      color: var(--backgroundColor);
       border-radius: 5px;
       margin-right: 10px;
       padding: 5px;

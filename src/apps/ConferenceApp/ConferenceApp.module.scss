@@ -5,12 +5,12 @@
   width: 100%;
 
 .externalNavLink {
-  border: solid 1px $secondaryColor;
+  border: solid 1px var(--secondaryColor);
 
   &:hover,
   &:link:hover {
-    color: $backgroundColor;
-    background-color: $secondaryColor;
+    color: var(--backgroundColor);
+    background-color: var(--secondaryColor);
   }
 }
 

@@ -40,13 +40,13 @@
         transition: color 0.25s ease-in-out 0s;
 
         &:hover {
-          color: $secondaryColor;
+          color: var(--secondaryColor);
         }
       }
 
       &.isNavMenuOpen {
         .navMenuIcon {
-          color: $primaryColor;
+          color: var(--primaryColor);
         }
 
         .navOptions {
@@ -69,7 +69,7 @@
       margin-right: 20px;
 
       &:hover {
-        fill: $secondaryColor;
+        fill: var(--secondaryColor);
       }
     }
   }
@@ -77,53 +77,53 @@
 
 
 .oddSection {
-  background-color: $primaryColor;
+  background-color: var(--primaryColor);
   width: 100%;
   .header {
     .navMenu {
       .navMenuIcon {
-        color: $backgroundColor;
+        color: var(--backgroundColor);
       }
 
       &.isNavMenuOpen {
         .navMenuIcon {
-          color: $backgroundColor;
+          color: var(--backgroundColor);
         }
         .navOptions {
-          background-color: $primaryColor;
+          background-color: var(--primaryColor);
         }
       }
     }
 
     .logo {
-      fill: $backgroundColor;
+      fill: var(--backgroundColor);
       margin-right: 20px;
     }
   }
 }
 
 .evenSection {
-  background-color: $backgroundColor;
+  background-color: var(--backgroundColor);
   width: 100%;
   .header {
 
     .navMenu {
       .navMenuIcon {
-        color: $primaryColor;
+        color: var(--primaryColor);
       }
 
       &.isNavMenuOpen {
         .navMenuIcon {
-          color: $primaryColor;
+          color: var(--primaryColor);
         }
         .navOptions {
-          background-color: $backgroundColor;
+          background-color: var(--backgroundColor);
         }
       }
     }
 
     .logo {
-      fill: $primaryColor;
+      fill: var(--primaryColor);
     }
   }
 }

@@ -34,7 +34,7 @@
 
 
 .oddSection {
-  background-color: $primaryColor;
+  background-color: var(--primaryColor);
 }
 
   @media only screen and (max-device-width: 1120px),

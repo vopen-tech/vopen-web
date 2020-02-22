@@ -23,7 +23,7 @@
 
 %dottedTriangle {
   position: absolute;
-  background-image: radial-gradient($primaryColor 20%, transparent 0);
+  background-image: radial-gradient(var(--primaryColor) 20%, transparent 0);
   background-size: 7px 7px;
   height: 100%;
 }
@@ -86,16 +86,16 @@
 }
 
 .oddSection {
-  color: $backgroundColor;
+  color: var(--backgroundColor);
   a {
-    color: $backgroundColor;
+    color: var(--backgroundColor);
   }
 }
 
 .evenSection {
-  color: $primaryColor;
+  color: var(--primaryColor);
   a {
-    color: $primaryColor;
+    color: var(--primaryColor);
   }
 
 }

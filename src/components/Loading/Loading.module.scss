@@ -6,8 +6,8 @@
   height: 100vh;
   position: relative;
   z-index: auto;
-  background-color: $backgroundColor;
-  color: $primaryColor;
+  background-color: var(--backgroundColor);
+  color: var(--primaryColor);
 
   justify-content: center;
   align-items: center;

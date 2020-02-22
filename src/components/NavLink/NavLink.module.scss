@@ -16,16 +16,16 @@
   transition: color 0.25s ease-in-out 0s, background-color 0.25s ease-in-out 0s;
 
   &:hover {
-    color: $secondaryColor;
+    color: var(--secondaryColor);
   }
 
   &:last-child {
-    color: $primaryColor;
-    background-color: $secondaryColor;
+    color: var(--primaryColor);
+    background-color: var(--secondaryColor);
     margin-left: 10px;
 
     &:hover {
-      background-color: $accentColor;
+      background-color: var(--accentColor);
     }
   }
 }

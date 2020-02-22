@@ -19,24 +19,24 @@
 
 .evenSection {
   .action {
-    background-color: $backgroundColor;
-    border-color: $primaryColor;
+    background-color: var(--backgroundColor);
+    border-color: var(--primaryColor);
 
     &:hover {
-      background-color: $primaryColor;
-      color: $backgroundColor;
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
     }
   }
 }
 
 .oddSection {
   .action {
-    background-color: $primaryColor;
-    border-color: $primaryColor;
+    background-color: var(--primaryColor);
+    border-color: var(--primaryColor);
 
     &:hover {
-      background-color: $secondaryColor;
-      color: $primaryColor;
+      background-color: var(--secondaryColor);
+      color: var(--primaryColor);
     }
   }
 }

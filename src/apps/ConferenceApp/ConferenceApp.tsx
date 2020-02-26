@@ -61,7 +61,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sponsors}</h1>
           <div className="pt5">
-            <ActionButton type="secondary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} target="_blank" />
+            <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
           </div>
         </div>
         <Sponsors sponsors={conferenceSponsors} />
@@ -127,7 +127,6 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
         <div className={styles.conferenceApp}>
           <Header type="odd">
             <NavLink to="/#schedule" />
-            <NavLink to="/sponsorship">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink to="/conduct"> {Resources.pages.codeOfConduct}</NavLink>

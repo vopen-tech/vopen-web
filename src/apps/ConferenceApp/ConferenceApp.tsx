@@ -9,7 +9,6 @@ import {
   CtaButtons,
   Sponsors,
   Speakers,
-  Schedule,
   Team,
   Tickets,
   MapsLocation,
@@ -40,8 +39,6 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
-  const conferenceActivities = conferenceInfo.activities || {};
-  const isScheduleEnabled = conferenceActivities.days && conferenceActivities.days.length > 0;
 
   return (
     <>
@@ -72,14 +69,6 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
             <h1 className={styles.subtitle}>{Resources.pages.tickets}</h1>
           </div>
           <Tickets tickets={conferenceInfo.editionTickets} />
-        </PageSection>
-      )}
-      {isScheduleEnabled && (
-        <PageSection id="schedule" className="pv5">
-          <div className={styles.banner}>
-            <h1 className={styles.subtitle}>{Resources.pages.schedule}</h1>
-          </div>
-          <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
       <PageSection id="team" className="bg-near-white">
@@ -122,11 +111,14 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
 
     const Resources = resourcesService.getResources();
 
+    const conferenceActivities = conferenceData.activities || {};
+    const isScheduleEnabled = conferenceActivities.days && conferenceActivities.days.length > 0;
+
     return (
       <Router>
         <div className={styles.conferenceApp}>
           <Header type="odd">
-            <NavLink to="/#schedule" />
+            {isScheduleEnabled && <NavLink to="/schedule">{Resources.pages.schedule}</NavLink>}
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink to="/conduct"> {Resources.pages.codeOfConduct}</NavLink>
@@ -136,8 +128,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
-          <Route path="/schedule" component={SchedulePage} />
-          <Route path="/sponsorship" render={() => <SponsorsPage />} />
+          <Route path="/schedule" render={() => <SchedulePage activities={conferenceActivities} />} />
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}

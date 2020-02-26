@@ -43,10 +43,11 @@
     "homePage": "El lugar perfecto para hacer networking",
     "speakersPage": "Más de 200 referentes técnicos compartieron su conocimiento",
     "sponsorPage": "Más de 150 sponsors nos acompañan",
-    "sloganTeam": "Comprometidos a realizar grandes eventos",
     "teamGlobal": "Equipo Global",
     "pastEditions": "Ediciones anteriores",
-    "sponsors": "If you want to contribute, we'd love to hear from you",
+    "sloganTeam": "Comprometidos a realizar grandes eventos",
+    "sloganSponsors": "Si esta interesado en patrocinar nuestra conferencia",
+    "sloganSpeakers": "Referentes técnicos dispuestos a compartir su conocimiento",
     "sponsorship": "Un evento de tecnología sin fines de lucro"
   },
   "subtitles": {

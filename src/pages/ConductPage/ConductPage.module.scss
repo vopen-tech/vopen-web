@@ -3,13 +3,13 @@
 .conductPage {
   @extend %pageSection;
   @extend %flexColumn;
-  flex: 1;
 }
+
 
 .title {
   @extend %subtitle;
-  padding: 5rem 0 2rem;
-  color: $primaryColor;
+  padding: 3rem 0 2rem;
+  color: var(--primaryColor);
 }
 
 .text {
@@ -17,6 +17,7 @@
   column-count: 2;
   margin: 0 35px;
   padding: 0 100px 100px;
+  color: var(--primaryColor);
 }
 
 @media 

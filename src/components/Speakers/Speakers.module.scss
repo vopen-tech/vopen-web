@@ -14,17 +14,10 @@
   @extend %pageSection;
   @extend %flexColumn;
   align-items: center;
-  
   position: relative;
   z-index: auto;
-
   width: 100%;
   justify-content: center;
-}
-
-
-.speakersList {
-  margin-top: 50px;
 }
 
 @media 

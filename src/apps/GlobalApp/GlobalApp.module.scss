@@ -1,7 +1,7 @@
 @import "../../styles/styles";
 
 .globalApp {
-  color: $primaryColor;
+  color: var(--primaryColor);
   position: relative;
   width: 100%;
 }

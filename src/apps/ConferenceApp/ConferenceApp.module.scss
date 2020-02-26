@@ -5,18 +5,18 @@
   width: 100%;
 
 .externalNavLink {
-  border: solid 1px $secondaryColor;
+  border: solid 1px var(--secondaryColor);
 
   &:hover,
   &:link:hover {
-    color: $backgroundColor;
-    background-color: $secondaryColor;
+    color: var(--backgroundColor);
+    background-color: var(--secondaryColor);
   }
 }
 
 .banner {
   @extend %container;
-  padding: 5rem 0 2rem;
+  padding: 3rem 0 2rem;
   .subtitle {
     @extend %subtitle;
     width: 70%;
@@ -26,9 +26,7 @@
     @extend %tag;
     text-transform: uppercase;
   }
-
 }
-
 
 @media 
   only screen and (max-device-width: 1120px),

@@ -3,8 +3,10 @@ import ReactDOM from "react-dom";
 import { siteService } from "./services";
 import * as serviceWorker from "./serviceWorker";
 import { GlobalApp, ConferenceApp } from "./apps";
+import { overrideCssVariablesValuesWithCountryValues } from "./utils";
 
 import "./styles/global.scss";
+overrideCssVariablesValuesWithCountryValues();
 
 const conferenceId = siteService.getConferenceId();
 const globalConferenceId = siteService.getGlobalConferenceId();

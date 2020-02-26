@@ -1,42 +1,53 @@
+/* We use CSS variables because we want to change them
+ * dynamically later on, depending on the country we are at.
+ */
+:root {
 
-/* BASE*/
+  /* BASE */
+  --backgroundColor: #ffffff;
+  --primaryColor: #1d115d;
+  --disabledColor: #ededed;
 
-$backgroundColor: #ffff;
-$primaryColor: #1d115d;
-$disabledColor: #f2f2f2;
+  /* Default variables and values (the global site will use these values) */
+  --secondaryColor:  #7bdfea;
+  --secondary_rgb:  123,223,234;
+  --accentColor: #ffc400;
+  --tertiaryBackgroundColor: #{'rgba(var(--secondary_rgb), 0.2)'};
 
+  /* Country specific values 
+   * For this to work you need to create country variables that "match" default variables
+   * and are prefixed by the country prefix
+   * E.g. I want to change the accent color in Chile, 
+   * - Default variable name: "--accentColor" 
+   * - Chile's country prefix: "cl"
+   * ---> "--cl--accentColor"
+   */
+  --ar-secondaryColor: #ffc400;
+  --ar-secondary_rgb: 255,196,0;
+  --ar-accentColor: #7bdfea;
 
-/* Colores x Region */
+  /* Chile */
+  --cl-secondaryColor: #ff494f;
+  --cl-secondary_rgb: 255,30,38;
+  --cl-accentColor: #7bdfea;
 
-/* Global   */
-$secondaryColor: #7bdfea;
-$accentColor: #ffc400;
+  /* Uruguay */
+  --uy-secondaryColor: #6899fc;
+  --uy-secondary_rgb: 104,153,252;
+  --uy-accentColor: #7bdfea;
 
-/* Argentina
-$secondaryColor: #ffc400;
-$accentColor: #7bdfea; */
+  /* México */
+  --mx-secondaryColor: #ff494f;
+  --mx-secondary_rgb: 255,30,38;
+  --mx-accentColor: #6db733;
 
-/* Chile 
-$secondaryColor: #ff1e26;
-$accentColor: #7bdfea; */
+  /* Colombia */
+  --co-secondaryColor: #ff494f;
+  --co-secondary_rgb: 255,30,38;
+  --co-accentColor: #ffc400;
 
-/* Uruguay
-$secondaryColor: #518bff;
-$accentColor: #7bdfea; */
-
-/* México
-$secondaryColor: #ff1e26;
-$accentColor: #6db733;*/
-
-
-/* Colombia
-$secondaryColor: #ff1e26;
-$accentColor: #ffc400; */
-
-/* Peru 
-$secondaryColor:#ff1e26;
-$accentColor:  #f2f2f2;*/
-
-
-
-$tertiaryBackgroundColor: rgba($secondaryColor, 0.2);
+  /* Peru */
+  --pe-secondaryColor:#ff494f;
+  --pe-secondary_rgb:255,30,38;
+  --pe-accentColor:  #f2f2f2;
+}

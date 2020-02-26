@@ -20,37 +20,36 @@
   }
 
   &.primary {
-    background-color: $primaryColor;
-    color: $backgroundColor;
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
 
     &:hover {
-      background-color: $secondaryColor;
-      color: $primaryColor;
+      background-color: var(--secondaryColor);
     }
   }
 
   &.secondary {
-    background-color: $secondaryColor;
-    color: $primaryColor;
+    background-color: var(--accentColor);
+    color: var(--primaryColor);
 
     &:hover {
-      background-color: $primaryColor;
-      color: $backgroundColor;
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
     }
   }
 
   &.tertiary {
-    background-color: $primaryColor;
-    color: $backgroundColor;
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
 
     &:hover {
-      background-color: rgba($primaryColor, 0.95);
+      background-color: rgba(var(--primaryColor), 0.95);
     }
   }
 
   &.disabled {
-    background-color: $disabledColor;
-    color: rgba($primaryColor, 0.5);
+    background-color: var(--disabledColor);
+    color: rgba(var(--primaryColor), 0.5);
     pointer-events: none;
   }
 }

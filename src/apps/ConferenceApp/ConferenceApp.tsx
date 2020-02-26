@@ -16,7 +16,6 @@ import {
   ActionButton
 
 } from "../../components";
-import constants from "../../constants";
 import { ConductPage, SchedulePage, SponsorsPage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
 
@@ -43,21 +42,22 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   return (
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
-      </HeroConf>
-      <PageSection id="about" type="even" className="pv6">
-        <CtaButtons className="pt5" />
+        </HeroConf>
+      <PageSection id="about"  type="even" className="pt6">
+        <CtaButtons className="pt4"/>
       </PageSection>
       <PageSection id="speakers">
-        <div className={styles.banner}>
-          <h1 className={styles.subtitle}>{Resources.pages.speakers}</h1>
+      <div className={styles.banner}>
+        <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
+          <h1 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h1>
         </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className="tc bg-near-white" id="sponsors">
-        <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
-          <h1 className={styles.subtitle}>{Resources.titles.sponsors}</h1>
-          <div className="pt5">
+      <div className={styles.banner}>
+        <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
+          <h1 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h1>
+          <div className="pt4">
             <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
           </div>
         </div>
@@ -71,7 +71,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      <PageSection id="team" className="bg-near-white">
+      <PageSection id="team">
         <div className={styles.banner}>
           <h2 className={styles.tag}>{Resources.pages.team}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sloganTeam}</h1>
@@ -128,6 +128,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
+          <Route path="/sponsorship" render={() => <SponsorsPage />} />
           <Route path="/schedule" render={() => <SchedulePage activities={conferenceActivities} />} />
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />

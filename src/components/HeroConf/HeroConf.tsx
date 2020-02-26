@@ -31,7 +31,7 @@ export default class HeroConf extends React.PureComponent<Props, State> {
               <div className={styles.info} >
                 <div className="self-center">
               <div className="flex flex-wrap items-center justify-centerself-center">
-                {/* <VOpenLogo className={styles.logo} />  */}
+                <VOpenLogo className={styles.logo} /> 
                   <h1 className={styles.tag}>
                     {subtitle}
                   </h1>

@@ -15,7 +15,7 @@
   span {
     @extend %triangle;
     bottom: 0;
-    border-bottom: 157px solid $backgroundColor;
+    border-bottom: 157px solid var(--backgroundColor);
     border-left: 230px solid transparent;
   }
 }
@@ -24,7 +24,7 @@
   @extend %images;
   background-image: url("../images/homepage-3.jpg");
   height: 370px;
-  color: $secondaryColor;
+  color: var(--secondaryColor);
 }
 
 .image3 {
@@ -44,7 +44,7 @@
     font-size: 24px;
     line-height: 35px;
     padding: 50px;
-    background-color: $accentColor;
+    background-color: var(--accentColor);
     width: 80%;
     margin: 0;
   }
@@ -55,7 +55,7 @@
 
   .textAbout {
     @extend .textAbout;
-    background-color: $secondaryColor;
+    background-color: var(--secondaryColor);
     width: 100%;
     margin-left: 150px;
     margin-right: -150px;
@@ -71,7 +71,7 @@
     span {
       @extend %triangle;
       bottom: 0;
-      border-bottom: 155px solid $backgroundColor;
+      border-bottom: 155px solid var(--backgroundColor);
       border-right: 150px solid transparent;
     }
   }

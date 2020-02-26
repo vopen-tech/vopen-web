@@ -2,6 +2,8 @@ import React from "react";
 import { resourcesService } from "../../services";
 import classNames from "classnames";
 import SocialIcon from "../SocialIcon";
+import {  ActionButton} from "../../components";
+import constants from "../../constants";
 
 import { IProps, IState } from "./types";
 import styles from "./Team.module.scss";
@@ -28,7 +30,9 @@ export default class Team extends React.PureComponent<IProps, IState> {
     if (!team || !team.length) {
       return (
         <div className={cssClasses}>
-          <h3 style={{ marginTop: 50, marginBottom: 50 }}>{Resources.buttons.soon}</h3>
+          <div className="nt5 pb5">
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank"/>
+          </div>
         </div>
       );
     }

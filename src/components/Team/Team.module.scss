@@ -7,7 +7,9 @@
   justify-content: center;
   flex-wrap: wrap;
   flex-flow: row wrap;
+  padding-top: 4rem;
 }
+
 
 .person {
   display: flex;
@@ -26,13 +28,13 @@
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-color: $disabledColor;
+    background-color: var(--disabledColor);
   }
 
   .personJobInfo {
     font-size: 12px;
     text-align: center;
-    color: $primaryColor;
+    color: var(--primaryColor);
     margin: 0;
   }
 
@@ -47,7 +49,7 @@
     height: 45px;
   }
   .socialIcon {
-    fill: $primaryColor;
+    fill: var(--primaryColor);
   }
 }
 

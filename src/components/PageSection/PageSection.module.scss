@@ -1,14 +1,24 @@
 @import "../../styles/styles";
 
 .oddSection {
-  background-color: $primaryColor;
-  color: $backgroundColor;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
 }
 
-.body {
-  position: relative;
-  z-index: 1;
+.oddSection, .evenSection {
+  .body {
+    position: relative;
+    z-index: 1;
+    padding: 3rem 0;
+  }
 }
+.fullSection {
+  .body {
+    position: relative;
+    z-index: 1;
+  }
+}
+
 
 @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
 

@@ -13,7 +13,7 @@
   }
 
   &:hover {
-    background-color: $disabledColor;
+    background-color: var(--disabledColor);
     border-radius: 50%;
   }
 }

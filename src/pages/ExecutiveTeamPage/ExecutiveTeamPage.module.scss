@@ -2,7 +2,7 @@
 
 .banner {
   @extend %banner;
-  height: 400px;
+  height: 350px;
 }
 
 .tag {
@@ -11,7 +11,7 @@
 .title {
   @extend %title;
   width: 80%;
-  margin: 0 auto 50px;
+  margin: 0 auto;
 }
 @media 
   only screen and (max-device-width: 1120px),

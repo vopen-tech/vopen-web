@@ -4,6 +4,7 @@
 .oddSection {
   background-color: var(--primaryColor);
   @extend %images;
+  background-image:  var(--imageSrc);
 
   &:before {
     display: none;

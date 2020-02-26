@@ -19,3 +19,11 @@
   }
 
 }
+
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
+  .schedulePage {
+    padding: 0;
+  }
+}

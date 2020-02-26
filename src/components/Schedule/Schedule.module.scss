@@ -15,7 +15,7 @@
     cursor: pointer;
     outline: none;
     padding: 20px;
-    font-size: 28px;
+    font-size: 2rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -217,7 +217,16 @@ only screen and (max-width: 900px) {
     margin: 0 0 60px 0;
     padding: 0 30px;
   }
-
+  .daysHeader {
+    .dayHeader {
+    font-size: 1.5rem;
+  }
+  }
+  .dayTracks {
+    .trackHeader {
+    padding: 20px 30px;
+    }
+  }
   .dayActivities {
     .expand {
       top: -30px
@@ -235,7 +244,6 @@ only screen and (max-width: 900px) {
         border-left: none;
       }
     }
-
     .time {
       &:after {
         visibility: hidden;

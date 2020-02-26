@@ -3,7 +3,6 @@ import { Props, State } from "./types";
 import styles from "./HeroConf.module.scss";
 import classNames from "classnames";
 import { VOpenLogo, ActionButton } from "../../components";
-import Background from '../images/homepage-2.jpg';
 import {resourcesService } from "../../services";
 
 export default class HeroConf extends React.PureComponent<Props, State> {
@@ -23,7 +22,7 @@ export default class HeroConf extends React.PureComponent<Props, State> {
 
 
     return (
-      <div className={cssClasses}  style={{ backgroundImage: `url(${Background})` }}>
+      <div className={cssClasses}>
         <div className={styles.hero}>
 
           <div className="flex flex-wrap">

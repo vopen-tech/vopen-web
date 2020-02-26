@@ -25,12 +25,11 @@
 
     &:hover {
       background-color: var(--secondaryColor);
-      color: var(--primaryColor);
     }
   }
 
   &.secondary {
-    background-color: var(--secondaryColor);
+    background-color: var(--accentColor);
     color: var(--primaryColor);
 
     &:hover {

@@ -17,6 +17,7 @@
   @extend %title;
   width: 80%;
   margin: 0 auto;
+  color: var(--primaryColor);
 }
 
 .image {
@@ -75,6 +76,7 @@
     line-height: 35px;
     padding: 50px 40px;
     background-color: var(--secondaryColor);
+    color: var(--primaryColor);
     width: 50%;
     margin: 0;
   }

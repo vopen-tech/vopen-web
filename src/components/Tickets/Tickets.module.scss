@@ -14,7 +14,7 @@
     border-radius: 20px;
     align-items: center;
     flex: 1;
-    margin: 50px 10px;
+    margin: 20px 10px 100px 10px;
     max-width: 400px;
 
     .title {
@@ -98,8 +98,8 @@
     @extend .ticket;
     cursor: default;
     pointer-events: none;
-    background: rgba(var(--backgroundColor), 0.9);
-    color: #999999;
+    background: rgba(#ffffff, 0.8);
+    color: rgba(#1d115d, 0.5);
   }
 
   .enabledTicket {

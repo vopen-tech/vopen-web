@@ -47,19 +47,23 @@ const sortByName = (itemA: any, itemB: any) => {
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
         </HeroConf>
-      <PageSection id="about"  type="even" className="pv6">
-        <CtaButtons className="pt5"/>
+      <PageSection id="about"  type="even" className="pt6">
+        <CtaButtons className="pt4"/>
       </PageSection>
       <PageSection id="speakers">
       <div className={styles.banner}>
-          <h1 className={styles.subtitle}>{Resources.pages.speakers}</h1>
+        <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
+          <h1 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h1>
+          <div className="pt5 tc">
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank"/>
+          </div>
         </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className="tc bg-near-white" id="sponsors">
       <div className={styles.banner}>
         <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
-          <h1 className={styles.subtitle}>{Resources.titles.sponsors}</h1>
+          <h1 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h1>
           <div className="pt5">
           <ActionButton type="secondary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} target="_blank"/>
           </div>
@@ -75,14 +79,14 @@ const sortByName = (itemA: any, itemB: any) => {
         </PageSection>
       )}
       {isScheduleEnabled && (
-        <PageSection id="schedule" className="pv5">
+        <PageSection id="schedule" className="bg-near-white">
           <div className={styles.banner}>
           <h1 className={styles.subtitle}>{Resources.pages.schedule}</h1>
         </div>
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
-      <PageSection id="team" className="bg-near-white">
+      <PageSection id="team">
         <div className={styles.banner}>
           <h2 className={styles.tag}>{Resources.pages.team}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sloganTeam}</h1>

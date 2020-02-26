@@ -42,10 +42,11 @@
     "homePage": "The perfect place for networking",
     "speakersPage": "200+ experts already shared their knowledge",
     "sponsorPage": "150+ sponsors support us",
-    "sloganTeam": "Committed to making a great event",
     "teamGlobal": "Global Team",
     "pastEditions": "Past editions",
-    "sponsors": "If you want to contribute, we'd love to hear from you",
+    "sloganTeam": "Committed to making a great event",
+    "sloganSponsors": "If you want to contribute, we'd love to hear from you",
+    "sloganSpeakers": "We are looking for people willing to share the knowledge",
     "sponsorship": "A non-profit event focused on technology and innovation"
   },
   "subtitles": {

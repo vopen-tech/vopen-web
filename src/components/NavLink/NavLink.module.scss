@@ -19,13 +19,13 @@
     color: var(--secondaryColor);
   }
 
-  &:last-child {
+  &:last-child { 
+    background-color: var(--accentColor);
     color: var(--primaryColor);
-    background-color: var(--secondaryColor);
     margin-left: 10px;
 
     &:hover {
-      background-color: var(--accentColor);
+      background-color: var(--secondaryColor);
     }
   }
 }

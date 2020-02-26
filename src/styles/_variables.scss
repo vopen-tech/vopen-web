@@ -4,14 +4,15 @@
 :root {
 
   /* BASE */
-  --backgroundColor: #ffff;
+  --backgroundColor: #ffffff;
   --primaryColor: #1d115d;
-  --disabledColor: #f2f2f2;
+  --disabledColor: #ededed;
 
   /* Default variables and values (the global site will use these values) */
   --secondaryColor:  #7bdfea;
+  --secondary_rgb:  123,223,234;
   --accentColor: #ffc400;
-  --tertiaryBackgroundColor: rgba(var(--secondaryColor), 0.2);
+  --tertiaryBackgroundColor: #{'rgba(var(--secondary_rgb), 0.2)'};
 
   /* Country specific values 
    * For this to work you need to create country variables that "match" default variables
@@ -22,25 +23,31 @@
    * ---> "--cl--accentColor"
    */
   --ar-secondaryColor: #ffc400;
+  --ar-secondary_rgb: 255,196,0;
   --ar-accentColor: #7bdfea;
 
   /* Chile */
   --cl-secondaryColor: #ff1e26;
+  --cl-secondary_rgb: 255,30,38;
   --cl-accentColor: #7bdfea;
 
   /* Uruguay */
   --uy-secondaryColor: #518bff;
+  --uy-secondary_rgb: 81,139,255;
   --uy-accentColor: #7bdfea;
 
   /* México */
   --mx-secondaryColor: #ff1e26;
+  --mx-secondary_rgb: 255,30,38;
   --mx-accentColor: #6db733;
 
   /* Colombia */
   --co-secondaryColor: #ff1e26;
+  --co-secondary_rgb: 255,30,38;
   --co-accentColor: #ffc400;
 
   /* Peru */
   --pe-secondaryColor:#ff1e26;
+  --pe-secondary_rgb:255,30,38;
   --pe-accentColor:  #f2f2f2;
 }

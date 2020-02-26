@@ -4,3 +4,18 @@
   @extend %container;
   padding: 0 50px;
 }
+
+.banner {
+  @extend %container;
+  padding: 5rem 0 2rem;
+  .subtitle {
+    @extend %subtitle;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .tag {
+    @extend %tag;
+    text-transform: uppercase;
+  }
+
+}

@@ -18,7 +18,7 @@ import {
 
 } from "../../components";
 import constants from "../../constants";
-import { ConductPage, SchedulePage } from "../../pages";
+import { ConductPage, SchedulePage, SponsorsPage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
 
 import { IProps, IState } from "./types";
@@ -31,7 +31,7 @@ const sortByName = (itemA: any, itemB: any) => {
   return 0;
 };
 
-  const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
+const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
 
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
@@ -46,39 +46,39 @@ const sortByName = (itemA: any, itemB: any) => {
   return (
     <>
       <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
-        </HeroConf>
-      <PageSection id="about"  type="even" className="pv6">
-        <CtaButtons className="pt5"/>
+      </HeroConf>
+      <PageSection id="about" type="even" className="pv6">
+        <CtaButtons className="pt5" />
       </PageSection>
       <PageSection id="speakers">
-      <div className={styles.banner}>
+        <div className={styles.banner}>
           <h1 className={styles.subtitle}>{Resources.pages.speakers}</h1>
         </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className="tc bg-near-white" id="sponsors">
-      <div className={styles.banner}>
-        <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
+        <div className={styles.banner}>
+          <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sponsors}</h1>
           <div className="pt5">
-          <ActionButton type="secondary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} target="_blank"/>
+            <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
           </div>
         </div>
         <Sponsors sponsors={conferenceSponsors} />
       </PageSection>
       {isTicketSaleEnabled && (
         <PageSection className={styles.centeredColumn} id="tickets" type="odd">
-                    <div className={styles.banner}>
-          <h1 className={styles.subtitle}>{Resources.pages.tickets}</h1>
-        </div>
+          <div className={styles.banner}>
+            <h1 className={styles.subtitle}>{Resources.pages.tickets}</h1>
+          </div>
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
       {isScheduleEnabled && (
         <PageSection id="schedule" className="pv5">
           <div className={styles.banner}>
-          <h1 className={styles.subtitle}>{Resources.pages.schedule}</h1>
-        </div>
+            <h1 className={styles.subtitle}>{Resources.pages.schedule}</h1>
+          </div>
           <Schedule activities={conferenceActivities} />
         </PageSection>
       )}
@@ -87,7 +87,7 @@ const sortByName = (itemA: any, itemB: any) => {
           <h2 className={styles.tag}>{Resources.pages.team}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sloganTeam}</h1>
         </div>
-        <Team team={conferenceOrganizers}  className="pt4"/>
+        <Team team={conferenceOrganizers} className="pt4" />
       </PageSection>
       <PageSection id="location" type="full">
         <MapsLocation address={conferenceInfo.locationFullAddress} />
@@ -137,6 +137,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
           <Route path="/schedule" component={SchedulePage} />
+          <Route path="/sponsorship" render={() => <SponsorsPage />} />
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}

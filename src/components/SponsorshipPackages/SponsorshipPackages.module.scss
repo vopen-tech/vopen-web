@@ -3,10 +3,12 @@
 .sponsorship {
   @extend %container;
   padding: 20px;
+  color: $primaryColor;
 }
 
 .banner {
   @extend %banner;
+  color: $primaryColor;
 }
 
 .tag {

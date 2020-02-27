@@ -23,7 +23,7 @@ export default class SponsorshipPackages extends React.PureComponent<any, any> {
         <div className={styles.banner}>
           <h2 className={styles.tag}>{Resources.pages.sponsorship}</h2>
           <h1 className={styles.title}>{Resources.titles.sponsorship}</h1>
-          <div className="pt5">
+          <div className="pt4">
           <ActionButton type="secondary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} target="_blank"/>
           </div>
         </div>

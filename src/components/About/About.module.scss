@@ -24,7 +24,7 @@
   @extend %images;
   background-image: url("../images/homepage-1.jpg");
   height: 430px;
-  color: var(--accentColor);
+  color: var(--secondaryColor);
 }
 
 .textSection {
@@ -37,36 +37,9 @@
     font-size: 24px;
     line-height: 35px;
     padding: 50px;
-    background-color: var(--accentColor);
+    background-color: var(--secondaryColor);
     width: 80%;
     margin: 0;
-  }
-}
-
-.textPast {
-  @extend .textSection;
-
-  .textAbout {
-    @extend .textAbout;
-    background-color: var(--secondaryColor);
-    width: 100%;
-    margin-left: 150px;
-    margin-right: -150px;
-  }
-
-  .trianglePast {
-    @extend %dottedTriangle;
-    width: 150px;
-    height: 155px;
-    bottom: 0;
-    left: 0;
-
-    span {
-      @extend %triangle;
-      bottom: 0;
-      border-bottom: 155px solid var(--backgroundColor);
-      border-right: 150px solid transparent;
-    }
   }
 }
 
@@ -77,13 +50,5 @@ only screen and (max-width: 1120px) {
       width: 100%;
       font-size: 18px;
     }
-  }
-  .textPast {
-    .textAbout {
-      margin: 0;
-    }
-  }
-  .triangle, .trianglePast {
-    display: none;
   }
 }

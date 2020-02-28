@@ -38,8 +38,8 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   return (
     <>
       <HeroConf conferenceInfo={conferenceInfo} type="odd" />
-      <PageSection id="about" type="even" className="pt6">
-        <CtaButtons className="pt4" />
+      <PageSection id="about" type="even" className="pt6-l pt5">
+        <CtaButtons className="pt4-l pt0" />
       </PageSection>
       <PageSection id="speakers">
         <div className={styles.banner}>

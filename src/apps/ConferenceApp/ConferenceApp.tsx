@@ -14,7 +14,6 @@ import {
   MapsLocation,
   Loading,
   ActionButton
-
 } from "../../components";
 import { ConductPage, SchedulePage, SponsorsPage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
@@ -31,31 +30,27 @@ const sortByName = (itemA: any, itemB: any) => {
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
-
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
-  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
-
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
 
   return (
     <>
-      <HeroConf to="#about" subtitle={conferenceTitle} title={Resources.titles.homePage} type="odd">
-        </HeroConf>
-      <PageSection id="about"  type="even" className="pt6">
-        <CtaButtons className="pt4"/>
+      <HeroConf to="#about" conferenceInfo={conferenceInfo} type="odd" />
+      <PageSection id="about" type="even" className="pt6">
+        <CtaButtons className="pt4" />
       </PageSection>
       <PageSection id="speakers">
-      <div className={styles.banner}>
-        <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
+        <div className={styles.banner}>
+          <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h1>
         </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className="tc bg-near-white" id="sponsors">
-      <div className={styles.banner}>
-        <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
+        <div className={styles.banner}>
+          <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
           <h1 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h1>
           <div className="pt4">
             <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
@@ -133,8 +128,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}
-          <Footer>
-          </Footer>
+          <Footer></Footer>
         </div>
       </Router>
     );

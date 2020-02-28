@@ -17,6 +17,7 @@ export default class HeroConf extends React.PureComponent<Props, State> {
     const Resources = resourcesService.getResources();
     const cssClasses = classNames(type === "even" && styles.evenSection, type === "odd" && styles.oddSection, className);
     const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
+    const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
 
     return (
       <div className={cssClasses}>
@@ -34,9 +35,7 @@ export default class HeroConf extends React.PureComponent<Props, State> {
                 </div>
               </div>
               <div className={styles.textPast}>
-                <div>
-                  <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />
-                </div>
+                {isTicketSaleEnabled && <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />}
                 <div className="flex flex-wrap">
                   <div className={styles.textAbout}>
                     <p className={styles.time}>{conferenceInfo.date}</p>

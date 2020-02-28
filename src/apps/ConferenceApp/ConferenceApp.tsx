@@ -37,7 +37,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <HeroConf to="#about" conferenceInfo={conferenceInfo} type="odd" />
+      <HeroConf conferenceInfo={conferenceInfo} type="odd" />
       <PageSection id="about" type="even" className="pt6">
         <CtaButtons className="pt4" />
       </PageSection>

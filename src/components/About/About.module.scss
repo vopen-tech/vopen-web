@@ -22,7 +22,7 @@
 
 .image {
   @extend %images;
-  background-image: url("../images/homepage-1.jpg");
+  background-image: url("/images/homepage-1.jpg");
   height: 430px;
   color: var(--secondaryColor);
 }

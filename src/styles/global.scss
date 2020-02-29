@@ -7,6 +7,10 @@ body,
   min-height: 100%;
   scroll-behavior: smooth;
   font-size: 14px;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 body {

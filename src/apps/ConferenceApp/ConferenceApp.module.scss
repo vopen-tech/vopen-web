@@ -1,6 +1,8 @@
 @import "../../styles/styles";
 
 .conferenceApp {
+  @extend %flexColumn;
+  flex: 1;
   position: relative;
   width: 100%;
 

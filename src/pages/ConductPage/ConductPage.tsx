@@ -6,7 +6,7 @@ export default class ConductPage extends React.PureComponent {
   render() {
     const Resources = resourcesService.getResources();
     return (
-      <div className={styles.conduct}>
+      <div className={styles.conductPage}>
         <h3 className={styles.title}>{Resources.pages.codeOfConduct}</h3>
         <p className={styles.text}>
           El acoso incluye y no se limita a comentarios ofensivos verbales relacionadas al género, identidad y/o expresión de género, orientación sexual,

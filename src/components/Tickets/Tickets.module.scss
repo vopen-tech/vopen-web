@@ -10,12 +10,12 @@
   .ticket {
     @extend %flexColumn;
     background: var(--backgroundColor);
-    
     border-radius: 20px;
     align-items: center;
     flex: 1;
     margin: 20px 10px 50px 10px;
     max-width: 400px;
+    overflow: hidden;
 
     .title {
       font-size: 28px;
@@ -104,8 +104,6 @@
 
   .enabledTicket {
     @extend .ticket;
-    border: solid 2px var(--secondaryColor);
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.25s ease-in-out 0s;
 
     &:hover {

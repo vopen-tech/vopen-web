@@ -32,6 +32,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   const Resources = resourcesService.getResources();
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
+  const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
 
@@ -43,15 +44,15 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       </PageSection>
       <PageSection id="speakers">
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
-          <h1 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h1>
+          <h1 className={styles.tag}>{Resources.pages.speakers}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h2>
         </div>
         <Speakers speakers={conferenceSpeakers} />
       </PageSection>
       <PageSection className="tc bg-near-white" id="sponsors">
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.sponsors}</h2>
-          <h1 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h1>
+          <h1 className={styles.tag}>{Resources.pages.sponsors}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h2>
           <div className="pt4">
             <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
           </div>
@@ -68,10 +69,14 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
       )}
       <PageSection id="team">
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.team}</h2>
-          <h1 className={styles.subtitle}>{Resources.titles.sloganTeam}</h1>
+          <h1 className={styles.tag}>{Resources.pages.team}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganTeam}</h2>
         </div>
         <Team team={conferenceOrganizers} className="pt4" />
+        <div className={styles.banner}>
+          <h1 className={styles.tag}>{Resources.titles.teamGlobal}</h1>
+        </div>
+        <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">
         <MapsLocation address={conferenceInfo.locationFullAddress} />

@@ -11,20 +11,13 @@ export default class Banner extends React.PureComponent<IProps, IState> {
 
   render() {
     const { title, subtitle, children, className, type } = this.props;
-    const cssClasses = classNames(
-      type === "even" && styles.evenSection,
-      type === "odd" && styles.oddSection,
-      className
-    );
-
+    const cssClasses = classNames(type === "even" && styles.evenSection, type === "odd" && styles.oddSection, className);
 
     return (
       <div className={cssClasses}>
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{subtitle}</h2>
-          <h1 className={styles.title}>
-            {title}
-          </h1>
+          <h1 className={styles.tag}>{subtitle}</h1>
+          <h2 className={styles.title}>{title}</h2>
           {children && <div className={styles.children}>{children}</div>}
         </div>
       </div>

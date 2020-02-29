@@ -34,12 +34,16 @@ export default class HeroConf extends React.PureComponent<Props, State> {
                   <p className={styles.bajada}>{Resources.info.mission}</p>
                 </div>
               </div>
-              <div className={styles.textActions}>         
-                <div>{isTicketSaleEnabled && <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />} </div>
+              <div className={styles.textPast}>
+                <div className="flex flex-wrap">
+                  {isTicketSaleEnabled && <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />}
+                </div>
                 <div className="flex flex-wrap">
                   <div className={styles.textData}>
                     <p className={styles.time}>{conferenceInfo.date}</p>
-                    <p><a href="/#location">{conferenceInfo.locationName}</a></p>
+                    <p>
+                      <a href="/#location">{conferenceInfo.locationName}</a>{" "}
+                    </p>
                   </div>
                 </div>
               </div>

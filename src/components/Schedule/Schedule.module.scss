@@ -51,7 +51,7 @@
 
   .trackHeader {
     flex: none;
-    padding: 20px 55px;
+    padding: 1.1rem 3.5rem;
     cursor: pointer;
     outline: none;
     align-items: center;
@@ -224,7 +224,8 @@ only screen and (max-width: 900px) {
   }
   .dayTracks {
     .trackHeader {
-    padding: 20px 30px;
+      font-size: 1.2rem;
+    padding: 1rem;
     }
   }
   .dayActivities {

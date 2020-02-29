@@ -82,6 +82,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      flex-wrap: wrap;
 
 
       .textData {
@@ -164,11 +165,11 @@
         width: 100%;
       }
 
-      .textPast {
+      .textActions {
         flex-direction: column;
         margin-top: -45px;
 
-        .textAbout {
+        .textData {
           padding: 30px;
         }
       }

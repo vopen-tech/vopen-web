@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   Header,
@@ -93,18 +93,28 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
 
   async componentDidMount() {
     const { conferenceId } = this.props;
+    const { conferenceData, globalData } = this.state;
 
     if (!conferenceId) {
       console.error("No conference ID set up");
     }
 
-    const [conferenceData, globalData] = await Promise.all([backendService.fetchConference(conferenceId), backendService.fetchConference("vopen-global-2019")]);
-    this.setState({ conferenceData, globalData });
+    if (!conferenceData || !globalData) {
+      const [conferenceData, globalData] = await Promise.all([
+        backendService.fetchConference(conferenceId),
+        backendService.fetchConference("vopen-global-2019")
+      ]);
+      this.setState({ conferenceData, globalData });
+    }
+
+    // Update conference data
+    console.log("hi");
   }
 
   render() {
     const { conferenceData, globalData } = this.state;
 
+    console.log("hi", conferenceData, globalData);
     if (!conferenceData || !globalData) {
       return <Loading />;
     }
@@ -133,7 +143,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}
-          <Footer></Footer>
+          <Footer />
         </div>
       </Router>
     );

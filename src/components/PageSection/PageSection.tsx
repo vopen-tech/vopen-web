@@ -13,6 +13,7 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
   render() {
     const { children, id, className, type } = this.props;
     const cssClasses = classNames(
+      styles.pageSection,
       type === "even" && styles.evenSection,
       type === "odd" && styles.oddSection,
       type === "full" && styles.fullSection,
@@ -22,9 +23,7 @@ export default class PageSection extends React.PureComponent<IProps, IState> {
 
     return (
       <div id={id} className={cssClasses}>
-        <div className={styles.body}>
-          {children}
-          </div>
+        <div className={styles.body}>{children}</div>
       </div>
     );
   }

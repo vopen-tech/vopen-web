@@ -3,6 +3,10 @@
 .globalApp {
   color: var(--primaryColor);
   position: relative;
+
+  @extend %flexColumn;
+  flex: 1;
+  position: relative;
   width: 100%;
 }
 

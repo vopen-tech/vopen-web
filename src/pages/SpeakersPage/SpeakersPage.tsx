@@ -12,7 +12,7 @@ export default class SpeakersPage extends React.PureComponent<Props> {
     const Resources = resourcesService.getResources();
 
     return (
-      <div>
+      <>
         <div className={styles.banner}>
           <h1 className={styles.tag}>{Resources.pages.speakers}</h1>
           <h2 className={styles.title}>{Resources.titles.speakersPage}</h2>
@@ -21,7 +21,7 @@ export default class SpeakersPage extends React.PureComponent<Props> {
           </div>
         </div>
         <Speakers speakers={speakers} />
-      </div>
+      </>
     );
   }
 }

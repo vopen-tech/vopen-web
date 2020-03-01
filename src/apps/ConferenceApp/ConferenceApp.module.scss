@@ -3,6 +3,7 @@
 .conferenceApp {
   position: relative;
   width: 100%;
+  flex: 1;
 
   .externalNavLink {
     border: solid 1px var(--secondaryColor);

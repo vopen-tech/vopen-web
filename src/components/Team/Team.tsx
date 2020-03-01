@@ -2,7 +2,7 @@ import React from "react";
 import { resourcesService } from "../../services";
 import classNames from "classnames";
 import SocialIcon from "../SocialIcon";
-import {  ActionButton} from "../../components";
+import { ActionButton } from "../../components";
 import constants from "../../constants";
 
 import { IProps, IState } from "./types";
@@ -21,7 +21,6 @@ export default class Team extends React.PureComponent<IProps, IState> {
     className: ""
   };
 
-
   render() {
     const { className, team, type } = this.props;
     const Resources = resourcesService.getResources();
@@ -30,8 +29,8 @@ export default class Team extends React.PureComponent<IProps, IState> {
     if (!team || !team.length) {
       return (
         <div className={cssClasses}>
-          <div className="nt5 pb5">
-          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank"/>
+          <div className="pb5">
+            <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank" />
           </div>
         </div>
       );

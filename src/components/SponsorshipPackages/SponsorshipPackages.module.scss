@@ -23,7 +23,7 @@
 
 .image {
   @extend %images;
-  background-image: url("../images/sponsorship-page.jpg");
+  background-image: url("/images/sponsorship-page.jpg");
   height: 430px;
   color: var(--secondaryColor);
   width: 80%;
@@ -35,7 +35,7 @@
 
 .image2 {
   @extend %images;
-  background-image: url("../images/oportunity-1.jpg");
+  background-image: url("/images/oportunity-1.jpg");
   height: 240px;
   color: var(--secondaryColor);
   width: 100%;
@@ -45,7 +45,7 @@
 }
 .image3 {
   @extend %images;
-  background-image: url("../images/oportunity-2.jpg");
+  background-image: url("/images/oportunity-2.jpg");
   height: 200px;
   color: var(--secondaryColor);
   width: 100%;
@@ -56,7 +56,7 @@
 }
 .image4 {
   @extend %images;
-  background-image: url("../images/oportunity-3.jpg");
+  background-image: url("/images/oportunity-3.jpg");
   height: 240px;
   color: var(--secondaryColor);
   width: 100%;

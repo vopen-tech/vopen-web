@@ -22,14 +22,14 @@
 
 .image2 {
   @extend %images;
-  background-image: url("../images/homepage-3.jpg");
+  background-image: url("/images/homepage-3.jpg");
   height: 370px;
   color: var(--accentColor);
 }
 
 .image3 {
   @extend %images;
-  background-image: url("../images/homepage-2.jpg");
+  background-image: url("/images/homepage-2.jpg");
   height: 300px;
   color: transparent;
 }

@@ -11,8 +11,7 @@
   @extend %title;
 }
 .speakers {
-  @extend %pageSection;
-  @extend %flexColumn;
+  @extend %container;
   align-items: center;
   position: relative;
   z-index: auto;

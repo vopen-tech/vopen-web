@@ -1,31 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   Header,
   Footer,
   NavLink,
   PageSection,
-  Banner,
-  About,
+  HeroConf,
+  CtaButtons,
   Sponsors,
   Speakers,
-  Schedule,
-  InfoIcon,
   Team,
   Tickets,
   MapsLocation,
-  ActionButton,
-  SponsorshipPackages,
-  LanguageSelector,
-  Loading
+  Loading,
+  ActionButton
 } from "../../components";
-import { ConductPage, SchedulePage } from "../../pages";
+import { ConductPage, SchedulePage, SponsorsPage } from "../../pages";
 import { backendService, resourcesService, siteService } from "../../services";
 
 import { IProps, IState } from "./types";
 import styles from "./ConferenceApp.module.scss";
 import { IEdition } from "../../types/IEdition";
-import constants from "../../constants";
 
 const sortByName = (itemA: any, itemB: any) => {
   if (itemA.name < itemB.name) return -1;
@@ -35,58 +30,52 @@ const sortByName = (itemA: any, itemB: any) => {
 
 const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
-
-  const conferenceTitle = conferenceInfo.name.replace("vOpen", "").trim();
-  const conferenceDate = conferenceInfo.date || Resources.banner.soon;
-  const conferenceLocation = conferenceInfo.locationName || Resources.banner.soon;
-
   const isTicketSaleEnabled = conferenceInfo.editionTickets && conferenceInfo.editionTickets.length > 0;
-  const conferenceTicketSaleStatus = isTicketSaleEnabled ? Resources.banner.ticketsOnSale : Resources.banner.ticketsSignUp;
-  const conferenceTicketsLink = isTicketSaleEnabled ? "/#tickets" : constants.rsvpUrl;
-
   const conferenceOrganizers = conferenceInfo.organizers ? conferenceInfo.organizers.sort(sortByName) : [];
   const globalOrganizers = globalInfo.organizers ? globalInfo.organizers.sort(sortByName) : [];
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
-  const conferenceActivities = conferenceInfo.activities || {};
-  const isScheduleEnabled = conferenceActivities.days && conferenceActivities.days.length > 0;
 
   return (
     <>
-      <Banner to="#about" title={conferenceTitle}>
-        <InfoIcon type="location" title={conferenceLocation} linkUrl="/#location" />
-        <InfoIcon type="date" title={conferenceDate} subtitle={""} />
-        <InfoIcon type="speakers" title={Resources.banner.speakersTitle} subtitle={Resources.banner.speakersDescription} linkUrl="/#speakers" />
-        <InfoIcon type="tickets" title={Resources.banner.ticketsTitle} subtitle={conferenceTicketSaleStatus} linkUrl={conferenceTicketsLink} />
-      </Banner>
-      <PageSection id="about" title="About">
-        <About />
+      <HeroConf conferenceInfo={conferenceInfo} type="odd" />
+      <PageSection id="about" type="even" className="pt6-l pt5">
+        <CtaButtons className="pt4-l pt0" />
       </PageSection>
-      <PageSection id="speakers" title="Speakers" type="odd">
-        <Speakers speakers={conferenceSpeakers} type="odd" />
-      </PageSection>
-      <PageSection className={styles.centeredColumn} id="sponsors" title="Sponsors">
-        <Sponsors sponsors={conferenceSponsors} />
-        <div className={styles.centeredText}>
-          <ActionButton type="tertiary" text={Resources.buttons.wantToBeSponsors} url={constants.sponsorsCallUrl} />
+      <PageSection id="speakers">
+        <div className={styles.banner}>
+          <h1 className={styles.tag}>{Resources.pages.speakers}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganSpeakers}</h2>
         </div>
-        <SponsorshipPackages type="odd" />
+        <Speakers speakers={conferenceSpeakers} />
+      </PageSection>
+      <PageSection className="tc bg-near-white" id="sponsors">
+        <div className={styles.banner}>
+          <h1 className={styles.tag}>{Resources.pages.sponsors}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganSponsors}</h2>
+          <div className="pt4">
+            <ActionButton type="secondary" text={Resources.buttons.learnMore} url="/sponsorship" target="_self" />
+          </div>
+        </div>
+        <Sponsors sponsors={conferenceSponsors} />
       </PageSection>
       {isTicketSaleEnabled && (
-        <PageSection className={styles.centeredColumn} id="tickets" title={Resources.pages.tickets} type="primary">
+        <PageSection className={styles.centeredColumn} id="tickets" type="odd">
+          <div className={styles.banner}>
+            <h1 className={styles.subtitle}>{Resources.pages.tickets}</h1>
+          </div>
           <Tickets tickets={conferenceInfo.editionTickets} />
         </PageSection>
       )}
-      {isScheduleEnabled && (
-        <PageSection id="schedule" title={Resources.pages.schedule}>
-          <Schedule activities={conferenceActivities} />
-        </PageSection>
-      )}
-      <PageSection id="team" title={Resources.pages.team} type="odd">
-        <Team team={conferenceOrganizers} type="odd" />
-        <h4 className={styles.centeredText} style={{ margin: "35px 0 50px 0" }}>
-          {Resources.titles.globalTeam}
-        </h4>
+      <PageSection id="team">
+        <div className={styles.banner}>
+          <h1 className={styles.tag}>{Resources.pages.team}</h1>
+          <h2 className={styles.subtitle}>{Resources.titles.sloganTeam}</h2>
+        </div>
+        <Team team={conferenceOrganizers} className="pt4" />
+        <div className={styles.banner}>
+          <h1 className={styles.tag}>{Resources.titles.teamGlobal}</h1>
+        </div>
         <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">
@@ -104,47 +93,57 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
 
   async componentDidMount() {
     const { conferenceId } = this.props;
+    const { conferenceData, globalData } = this.state;
 
     if (!conferenceId) {
       console.error("No conference ID set up");
     }
 
-    const [conferenceData, globalData] = await Promise.all([backendService.fetchConference(conferenceId), backendService.fetchConference("vopen-global-2019")]);
-    this.setState({ conferenceData, globalData });
+    if (!conferenceData || !globalData) {
+      const [conferenceData, globalData] = await Promise.all([
+        backendService.fetchConference(conferenceId),
+        backendService.fetchConference("vopen-global-2019")
+      ]);
+      this.setState({ conferenceData, globalData });
+    }
+
+    // Update conference data
+    console.log("hi");
   }
 
   render() {
     const { conferenceData, globalData } = this.state;
 
+    console.log("hi", conferenceData, globalData);
     if (!conferenceData || !globalData) {
       return <Loading />;
     }
 
     const Resources = resourcesService.getResources();
 
+    const conferenceActivities = conferenceData.activities || {};
+    const isScheduleEnabled = conferenceActivities.days && conferenceActivities.days.length > 0;
+
     return (
       <Router>
         <div className={styles.conferenceApp}>
-          <Header>
-            <NavLink to="/#schedule" />
+          <Header type="odd">
+            {isScheduleEnabled && <NavLink to="/schedule">{Resources.pages.schedule}</NavLink>}
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
-            <NavLink className={styles.externalNavLink} to="//vopen.tech">
+            <NavLink to="/conduct"> {Resources.pages.codeOfConduct}</NavLink>
+            <NavLink className={Resources.buttons.wantToBeSpeaker} to="//vopen.tech">
               Global
             </NavLink>
-            <LanguageSelector />
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />
-          <Route path="/schedule" component={SchedulePage} />
+          <Route path="/sponsorship" render={() => <SponsorsPage />} />
+          <Route path="/schedule" render={() => <SchedulePage activities={conferenceActivities} />} />
           <Route path="/conduct" component={ConductPage} />
           <Route path="/team" component={Team} />
           {/* End body */}
-          <Footer>
-            <NavLink activeClassName={styles.navActive} className={styles.navLink} to="/conduct">
-              {Resources.pages.codeOfConduct}
-            </NavLink>
-          </Footer>
+          <Footer />
         </div>
       </Router>
     );

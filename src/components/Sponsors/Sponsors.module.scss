@@ -1,13 +1,7 @@
 @import "../../styles/styles";
 
 .sponsors {
-  @extend %pageSection;
-  @extend %flexColumn;
-  position: relative;
-  z-index: 1;
-
-  width: 100%;
-}
+  @extend %container;
 
 .title {
   text-align: center;
@@ -15,98 +9,69 @@
 
 .sponsorsRow {
   @extend %flexRow;
-  flex-wrap: wrap;
   justify-content: center;
-}
-
-.sponsor {
-  width: 300px;
-  height: auto;
-  margin: 0 50px 100px 50px;
-  padding: 0;
-
-  display: inline-block;
-
-  font-size: 21px;text-decoration: none;
-  color: white;
-  text-decoration: none !important;
-
-  .sponsorImage {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .sponsorLegend {
-    width: 100%;
-    height: 35px;
-
-    display: none;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-  }
-
-  &.diamond {
-    width: 450px;
-
-    .sponsorImage {
-      height: 200px;
-    }
+  flex-wrap: wrap;
+  a {
+    padding: 30px 15px;
+    text-decoration: none;
 
     .sponsorLegend {
-      display: inline-flex;
-      background-color: $secondaryFontColor;
+      text-align: center;
+      font-size: 1rem;
+      text-transform: uppercase;
     }
-  }
-
-  &.gold {
-    width: 400px;
-
-    .sponsorImage {
-      height: 150px;
-    }
-
-    .sponsorLegend {
-      display: inline-flex;
-      background-color: goldenrod;
-    }
-  }
-
-  &.silver {
-    width: 350px;
-
-    .sponsorImage {
+    .sponsor {
+      @extend %flexRow;
+      width: 270px;
       height: 100px;
-    }
-
-    .sponsorLegend {
-      display: inline-flex;
-      background-color: silver;
-    }
-  }
-
-  &.digital {
-    width: 300px;
-
-    .sponsorImage {
-      height: 50px;
-    }
-
-    .sponsorLegend {
-      display: inline-flex;
-      background-color: darkseagreen
+      padding: 15px;
+      margin-bottom: 10px;
+      justify-content: center;
+      border-style: solid;
+      border-width: 1px;
+      background-color: var(--backgroundColor);
+      img {
+        vertical-align: middle;
+        -webkit-filter: grayscale(100%); 
+        filter: grayscale(100%);
+      }
+    
+      &:hover {
+        img {
+        -webkit-filter: grayscale(0); 
+        filter: grayscale(0%);
+      }
+      }
+      &.diamond {
+        border-color: #7bdfea;
+      }
+      &.gold {
+        width: 230px;
+        border-color: #daa520;
+      }
+      &.silver {
+        width: 200px;
+        border-color: #cccccc;
+      }
+      &.digital {
+        width: 180px;
+        border-color: darkseagreen;
+      }
+      &.other {
+        width: 160px;
+        border-color: #fafafa;
+      }
     }
   }
 }
+
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
     .sponsor {
       margin-right: 0;
     }
+}
 }

@@ -1,6 +1,9 @@
 import React from "react";
+import { resourcesService } from "../../services";
 import classNames from "classnames";
 import SocialIcon from "../SocialIcon";
+import {  ActionButton} from "../../components";
+import constants from "../../constants";
 
 import { IProps, IState } from "./types";
 import styles from "./Team.module.scss";
@@ -18,14 +21,18 @@ export default class Team extends React.PureComponent<IProps, IState> {
     className: ""
   };
 
+
   render() {
     const { className, team, type } = this.props;
+    const Resources = resourcesService.getResources();
     const cssClasses = classNames(styles.team, type === "odd" && styles.odd, className);
 
     if (!team || !team.length) {
       return (
         <div className={cssClasses}>
-          <span style={{ marginTop: 50, marginBottom: 50 }}>Próximamente</span>
+          <div className="nt5 pb5">
+          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank"/>
+          </div>
         </div>
       );
     }
@@ -34,7 +41,7 @@ export default class Team extends React.PureComponent<IProps, IState> {
       <div className={cssClasses}>
         {(team || []).map(item => (
           <div className={styles.person} key={item.name}>
-            <img className={styles.personImage} src={item.imageUrl} />
+            <span className={styles.personImage} style={{ backgroundImage: `url(${item.imageUrl})` }}></span>
             <h6 className={styles.personName}>{item.name}</h6>
             {item.jobTitle && <p className={styles.personJobInfo}>{item.jobTitle}</p>}
             {item.company && <p className={styles.personJobInfo}>{item.company}</p>}

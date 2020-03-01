@@ -1,13 +1,60 @@
-$primaryBackgroundColor: #1d116e;
-$secondaryBackgroundColor: #4883f6;
-$tertiaryBackgroundColor: #f2f2f2;
-$quaternaryBackgroundColor: gainsboro;
+/* We use CSS variables because we want to change them
+ * dynamically later on, depending on the country we are at.
+ */
+:root {
 
-$primaryFontColor: #ffff;
-$secondaryFontColor: #7bdfea;
-$tertiaryFontColor: #1d116e;
+  /* BASE */
+  --backgroundColor: #ffffff;
+  --primaryColor: #1d115d;
+  --disabledColor: #ededed;
 
-$titleFontColor: #4883f6;
-$secondaryTitleFontColor:  #ffff;
-$highlightColor: #FCD116;
-$nonHighlightedColor: #d3d1e0;
+  /* Default variables and values (the global site will use these values) */
+  --secondaryColor:  #7bdfea;
+  --secondary_rgb:  123,223,234;
+  --accentColor: #ffc400;
+  --tertiaryBackgroundColor: #{'rgba(var(--secondary_rgb), 0.2)'};
+  --imageSrc: url("/images/hero-gr.jpg");
+
+  /* Country specific values 
+   * For this to work you need to create country variables that "match" default variables
+   * and are prefixed by the country prefix
+   * E.g. I want to change the accent color in Chile, 
+   * - Default variable name: "--accentColor" 
+   * - Chile's country prefix: "cl"
+   * ---> "--cl--accentColor"
+   */
+  --ar-secondaryColor: #ffc400;
+  --ar-secondary_rgb: 255,196,0;
+  --ar-accentColor: #7bdfea;
+  --ar-imageSrc: url("/images/hero-ar.jpg");
+
+  /* Chile */
+  --cl-secondaryColor: #ff494f;
+  --cl-secondary_rgb: 255,30,38;
+  --cl-accentColor: #7bdfea;
+  --cl-imageSrc: url("/images/hero-gr.jpg");
+
+  /* Uruguay */
+  --uy-secondaryColor: #6899fc;
+  --uy-secondary_rgb: 104,153,252;
+  --uy-accentColor: #7bdfea;
+  --uy-imageSrc: url("/images/hero-uy.jpg");
+
+  /* México */
+  --mx-secondaryColor: #ff494f;
+  --mx-secondary_rgb: 255,30,38;
+  --mx-accentColor: #6db733;
+  --mx-imageSrc: url("/images/hero-gr.jpg");
+
+  /* Colombia */
+  --co-secondaryColor: #ff494f;
+  --co-secondary_rgb: 255,30,38;
+  --co-accentColor: #ffc400;
+  --co-imageSrc: url("/images/hero-gr.jpg");
+
+  /* Peru */
+  --pe-secondaryColor:#ff494f;
+  --pe-secondary_rgb:255,30,38;
+  --pe-accentColor:  #7bdfea;
+  --pe-imageSrc: url("/images/hero-gr.jpg");
+}

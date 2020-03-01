@@ -3,16 +3,41 @@
 .executiveTeamPage {
   @extend %pageSection;
   @extend %flexColumn;
+
   flex: 1;
+  justify-content: center;
+}
+
+.executiveTeam {
+  flex: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 35px;
+}
+
+.tag {
+  @extend %tag;
 }
 
 .title {
-  @extend %pageTitle;
+  @extend %title;
+  width: 80%;
+  margin: 0 auto;
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-
- 
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+  .title {
+    width: 100%;
+  }
 }

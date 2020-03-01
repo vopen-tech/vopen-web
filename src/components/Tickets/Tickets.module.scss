@@ -1,76 +1,109 @@
 @import "../../styles/styles";
 
 .tickets {
-  @extend %pageSection;
+  @extend %container;
   @extend %flexRow;
-
-  align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  padding: 0 20px;
+  color: var(--primaryColor);
 
   .ticket {
     @extend %flexColumn;
-
+    background: var(--backgroundColor);
+    border-radius: 20px;
     align-items: center;
     flex: 1;
-    margin: 0 10px;
-    max-width: 500px;
+    margin: 20px 10px 50px 10px;
+    max-width: 400px;
+    overflow: hidden;
 
     .title {
       font-size: 28px;
-      padding: 10px 0 20px 0;
+      padding: 3rem 2rem 2rem;
       text-align: center;
       text-transform: uppercase;
+      width: 100%;
+      border-bottom: dashed 1px var(--primaryColor);
+
+      p {
+        margin: 0;
+      }
+
+      .price {
+        font-size: 3rem;
+        font-weight: bold;
+      }
     }
 
     .ticketDate {
-      font-size: 18px;
+      font-size: 1rem;
       text-align: center;
-      margin: 0 0 20px 0;
-      font-style: italic;
+      margin: 20px 0 0;
       text-transform: uppercase;
     }
 
     .list {
       list-style-type: none;
-      margin: 30px 10px;
-      padding: 0 20px;
+      margin: 0;
+      padding: 30px;
+      width: 100%;
+      position: relative;
+
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: -23px;
+        width: 46px;
+        height: 46px;
+        z-index: 11;
+        border-radius: 50%;
+        background-color: var(--primaryColor);
+      }
+
+      &:after {
+        right: -23px;
+      }
+
+      &:before {
+        left: -23px;
+      }
 
       .item {
         font-size: 24px;
-        padding: 10px 0;
+        padding: 3px 0;
 
         .itemIcon {
           margin: 0 10px 0 0;
+          font-size: 1rem;
         }
 
         .itemText {
           display: inline;
-          font-size: 21px;
+          font-size: 1rem
         }
       }
     }
 
     .buttons {
       @extend %flexRow;
-
       justify-content: center;
+      border-top: dashed 1px var(--primaryColor);
+      width: 100%;
+      padding: 30px 0;
     }
   }
 
   .disabledTicket {
     @extend .ticket;
-
     cursor: default;
-    opacity: 0.5;
     pointer-events: none;
+    background: rgba(#ffffff, 0.8);
+    color: rgba(#1d115d, 0.5);
   }
 
   .enabledTicket {
     @extend .ticket;
-
-    border: solid 2px $tertiaryBackgroundColor;
-    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.25s ease-in-out 0s;
 
     &:hover {
@@ -78,14 +111,23 @@
     }
 
     .title {
-      background-color: $tertiaryBackgroundColor;
-      color: $primaryBackgroundColor;
+      background-color: var(--tertiaryBackgroundColor);
+      color: var(--primaryColor);
       width: 100%;
+      .type {
+        color: var(--secondaryColor);
+      }
+    }
+    .list {
+      .itemIcon {
+        color: var(--secondaryColor);
+      }
     }
   }
 }
 
-@media only screen and (max-device-width: 1215px), only screen and (max-width: 1215px) {
+@media only screen and (max-device-width: 1215px),
+only screen and (max-width: 1215px) {
   .tickets {
     flex-direction: column;
   }

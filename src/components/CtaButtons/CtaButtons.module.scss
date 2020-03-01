@@ -1,0 +1,42 @@
+@import "../../styles/styles";
+
+.evenSection,
+.oddSection {
+
+  .ctabuttons {
+    @extend %container;
+    padding: 0 20px;
+
+  }
+  .action {
+    border-style: solid;
+    border-width: 2px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    }
+  }
+
+.evenSection {
+  .action {
+    background-color: var(--backgroundColor);
+    border-color: var(--primaryColor);
+
+    &:hover {
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
+    }
+  }
+}
+
+.oddSection {
+  .action {
+    background-color: var(--primaryColor);
+    border-color: var(--primaryColor);
+
+    &:hover {
+      background-color: var(--secondaryColor);
+      color: var(--primaryColor);
+    }
+  }
+}

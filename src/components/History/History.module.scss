@@ -1,0 +1,96 @@
+@import "../../styles/styles";
+
+.history {
+  @extend %container;
+  padding: 0 20px;
+}
+
+.triangle {
+  @extend %dottedTriangle;
+  width: 20%;
+  height: 157px;
+  bottom: 0;
+  right: 0;
+
+  span {
+    @extend %triangle;
+    bottom: 0;
+    border-bottom: 157px solid var(--backgroundColor);
+    border-left: 230px solid transparent;
+  }
+}
+
+.image2 {
+  @extend %images;
+  background-image: url("/images/homepage-3.jpg");
+  height: 370px;
+  color: var(--accentColor);
+}
+
+.image3 {
+  @extend %images;
+  background-image: url("/images/homepage-2.jpg");
+  height: 300px;
+  color: transparent;
+}
+
+.textSection {
+  margin-top: -50px;
+  z-index: 1;
+  position: relative;
+  display: flex;
+
+  .textAbout {
+    font-size: 24px;
+    line-height: 35px;
+    padding: 50px;
+    background-color: var(--accentColor);
+    width: 80%;
+    margin: 0;
+  }
+}
+
+.textPast {
+  @extend .textSection;
+
+  .textAbout {
+    @extend .textAbout;
+    background-color: var(--accentColor);
+    width: 100%;
+    margin-left: 150px;
+    margin-right: -150px;
+  }
+
+  .trianglePast {
+    @extend %dottedTriangle;
+    width: 150px;
+    height: 155px;
+    bottom: 0;
+    left: 0;
+
+    span {
+      @extend %triangle;
+      bottom: 0;
+      border-bottom: 155px solid var(--backgroundColor);
+      border-right: 150px solid transparent;
+    }
+  }
+}
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
+  .textSection {
+    .textAbout {
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+  .textPast {
+    .textAbout {
+      margin: 0;
+    }
+  }
+  .triangle, .trianglePast {
+    display: none;
+  }
+}

@@ -13,13 +13,8 @@
   }
 
   &:hover {
-    background-color: rgba($secondaryFontColor, 0.25);
+    background-color: var(--disabledColor);
     border-radius: 50%;
-  }
-
-  &.odd {
-    -webkit-filter: hue-rotate(23deg) saturate(100) brightness(0.55);
-    filter: hue-rotate(23deg) saturate(100) brightness(0.55);
   }
 }
 
@@ -44,8 +39,8 @@
 }
 
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
 
   .socialIcon {
     margin-right: 5px;

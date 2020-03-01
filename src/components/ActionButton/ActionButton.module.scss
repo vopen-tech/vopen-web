@@ -4,57 +4,57 @@
   appearance: none;
   cursor: pointer;
   display: inline-block;
-  font-size: 21px;
+  font-size: 18px;
   height: auto;
-  margin: 0 25px 25px 0;
-  padding: 25px;
+  margin: 0;
+  padding: 15px 25px;
   text-align: center;
   text-decoration: none;
-  text-shadow: 1px 1px black;
   text-transform: uppercase;
   transition: background-color 0.25s ease-out;
   width: auto;
+  font-weight: 700;
 
   &:last-of-type {
     margin-right: 0;
   }
 
   &.primary {
-    border: solid 2px $secondaryFontColor;
-    color: $secondaryTitleFontColor;
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
 
     &:hover {
-      background-color: $secondaryFontColor;
+      background-color: var(--secondaryColor);
     }
   }
 
   &.secondary {
-    border: solid 2px $secondaryBackgroundColor;
-    color: $secondaryTitleFontColor;
+    background-color: var(--accentColor);
+    color: var(--primaryColor);
 
     &:hover {
-      background-color: $secondaryBackgroundColor;
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
     }
   }
 
   &.tertiary {
-    background-color: $primaryBackgroundColor;
-    color: $secondaryTitleFontColor;
-    padding: 27px;
+    background-color: var(--primaryColor);
+    color: var(--backgroundColor);
 
     &:hover {
-      background-color: rgba($primaryBackgroundColor, 0.95);
+      background-color: rgba(var(--primaryColor), 0.95);
     }
   }
 
   &.disabled {
-    border: solid 2px $secondaryBackgroundColor;
-    opacity: 0.5;
+    background-color: var(--disabledColor);
+    color: rgba(var(--primaryColor), 0.5);
     pointer-events: none;
   }
 }
 
-@media only screen and (max-device-width: 900px), only screen and (max-width: 900px) {
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
   .actionButton {
     margin-right: 0;
   }

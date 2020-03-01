@@ -32,7 +32,7 @@ export default class SponsorshipPackage extends React.PureComponent<Props> {
       gold: [
         Resources.sponsorshipPackages.offer1,
         Resources.sponsorshipPackages.offer2,
-        Resources.sponsorshipPackages.offer3b,
+        Resources.sponsorshipPackages.offer3,
         Resources.sponsorshipPackages.offer5,
         Resources.sponsorshipPackages.offer6,
         Resources.sponsorshipPackages.offer9,
@@ -42,7 +42,7 @@ export default class SponsorshipPackage extends React.PureComponent<Props> {
       silver: [
         Resources.sponsorshipPackages.offer1,
         Resources.sponsorshipPackages.offer2,
-        Resources.sponsorshipPackages.offer3c,
+        Resources.sponsorshipPackages.offer3,
         Resources.sponsorshipPackages.offer6,
         Resources.sponsorshipPackages.offer9
       ],

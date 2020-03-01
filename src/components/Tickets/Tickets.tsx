@@ -40,12 +40,11 @@ export default class Tickets extends React.PureComponent<Props, State> {
     return (
       <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
-          {ticketInfo.name}
-          <br />
-          {ticketInfo.price}
+          <p className={styles.type}>{ticketInfo.name}</p>      
+          <p className={styles.price}>{ticketInfo.price}</p>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>
         <ul className={styles.list}>
-          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
@@ -55,7 +54,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url} />
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url}  target="_blank"/>
           ))}
         </div>
       </div>
@@ -69,13 +68,12 @@ export default class Tickets extends React.PureComponent<Props, State> {
 
     return (
       <div key={ticketInfo.name} className={styles.disabledTicket}>
-        <div className={styles.title}>
-          {ticketInfo.name}
-          <br />
-          {ticketInfo.price}
+                <div className={styles.title}>
+                <p className={styles.type}>{ticketInfo.name}</p>      
+          <p className={styles.price}>{ticketInfo.price}</p>
+          <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>
         <ul className={styles.list}>
-          <div className={styles.ticketDate}>{ticketEndDateText}</div>
           {this.getBenefits().map((benefit: string) => (
             <li key={benefit} className={styles.item}>
               <i className={`${styles.itemIcon} fas fa-check`} />
@@ -83,7 +81,9 @@ export default class Tickets extends React.PureComponent<Props, State> {
             </li>
           ))}
         </ul>
-        <ActionButton type="disabled" text={buttonText} />
+        <div className={styles.buttons}>
+        <ActionButton type="disabled" text={buttonText} target="_blank"/>
+        </div>
       </div>
     );
   }

@@ -1,13 +1,12 @@
 @import "../../styles/styles";
 
 .globalApp {
-  flex: 1;
-  background-color: $primaryBackgroundColor;
-  color: $primaryFontColor;
-  display: flex;
-  flex-direction: column;
+  color: var(--primaryColor);
   position: relative;
-  z-index: 1;
+
+  @extend %flexColumn;
+  flex: 1;
+  position: relative;
   width: 100%;
 }
 
@@ -20,12 +19,11 @@
 }
 
 .flag {
-  width: 75px;
-  margin: 0 75px 25px 0;
+  width: 40px;
+  margin: 0 20px 0 0;
   cursor: pointer;
-  border: solid 4px navy;
   border-radius: 50%;
-  
+
   &:last-of-type {
     margin-right: 0;
   }
@@ -35,20 +33,21 @@
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
-    .flags {
-      text-align: center;
-      margin: 0 0 0 25px;
-    }
-    
-    .flag {
-      margin: 0 25px 25px 0;
-      width: 50px;
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+  .dn-ms {
+    display: none;
+  }
+  .flags {
+    text-align: center;
+    margin: 0 0 0 25px;
+  }
 
-      &:last-of-type {
-        margin-right: 25px;
-      }
+  .flag {
+    margin: 0 15px 15px 0;
+    width: 30px;
+
+    &:last-of-type {
+      margin-right: 25px;
     }
+  }
 }

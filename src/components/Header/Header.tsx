@@ -1,7 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import { NavLink } from "react-router-dom";
-import { BackgroundTriangle, VOpenLogo } from "..";
+import { Props } from "./types";
+import { LanguageSelector, VOpenLogo } from "..";
 
 import styles from "./Header.module.scss";
 
@@ -29,22 +30,30 @@ export default class Header extends React.PureComponent<any, any> {
     this.setState({ isNavMenuOpen: !isNavMenuOpen });
   };
 
+  static defaultProps: Partial<Props> = {
+    className: undefined,
+    type: "even"
+  };
+
   render() {
-    const { children } = this.props;
+    const { children, className, type } = this.props;
     const { isNavMenuOpen } = this.state;
 
-    const navMenuCssIcon = classNames(styles.navMenu, isNavMenuOpen && styles.isNavMenuOpen);
+    const cssClasses = classNames(styles.header, type === "even" && styles.evenSection, type === "odd" && styles.oddSection, className);
+    const navMenuCssClasses = classNames(styles.navMenu, isNavMenuOpen && styles.isNavMenuOpen);
     const iconCssClasses = classNames(styles.navMenuIcon, "fas fa-bars");
 
     return (
-      <div className={styles.header}>
-        <BackgroundTriangle showLightBlueTriangle={true} backgroundColor="#1d116e" />
+      <div className={cssClasses}>
         <nav className={styles.nav}>
-          <NavLink className={styles.home} to="/">
-            <VOpenLogo className={styles.logo} />
-          </NavLink>
+          <div className="flex items-center">
+            <NavLink className={styles.home} to="/">
+              <VOpenLogo className={styles.logo} />
+            </NavLink>
+            <LanguageSelector />
+          </div>
           <div className={styles.navOptions}>{children}</div>
-          <div className={navMenuCssIcon}>
+          <div className={navMenuCssClasses}>
             <i className={iconCssClasses} role="presentation" tabIndex={0} onClick={this.handleNavMenuClick} />
             {isNavMenuOpen && <div className={styles.navOptions}>{children}</div>}
           </div>

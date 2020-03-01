@@ -27,12 +27,12 @@ export default class About extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { className, text, url } = this.props;
+    const { className, text, url, target } = this.props;
     const classType = this.getClassType();
     const cssClasses = classNames(styles.actionButton, classType, className);
 
     return (
-      <a className={cssClasses} href={url} target="_blank">
+      <a className={cssClasses} href={url} target={target}>
         {text}
       </a>
     );

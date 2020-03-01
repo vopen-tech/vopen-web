@@ -40,8 +40,14 @@ function getConferenceId(): string {
   return toReturn;
 }
 
+function getConferenceCountry() {
+  const conferenceId = getConferenceId();
+  return conferenceId.split("-")[1] || "global";
+}
+
 export default {
   getGlobalConferenceId,
+  getConferenceCountry,
   getConferenceId,
   getSiteLanguage,
   setSiteLanguage

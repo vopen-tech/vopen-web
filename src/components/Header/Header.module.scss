@@ -2,23 +2,47 @@
 
 .header {
   @extend %flexRow;
+  justify-content: space-between;
+  padding: 2rem 1rem;
+  align-items: center;
   width: 100%;
+  height: 95px;
+  flex: none;
+
+  &.isNavMenuOpen {
+    .navMenuIcon {
+      color: var(--backgroundColor);
+    }
+    .navOptions {
+      background-color: var(--primaryColor);
+    }
+  }
+
+  .logo {
+    fill: var(--backgroundColor);
+    margin-right: 20px;
+    width: 100px;
+    transition: fill 0.25s ease-in-out 0s;
+    margin-right: 20px;
+
+    &:hover {
+      fill: var(--secondaryColor);
+    }
+  }
 
   .nav {
+    @extend %container;
     position: relative;
     z-index: 2;
-    width: calc(100% - 100px);
-    height: calc(150px - 100px);
-    padding: 50px;
-  
     display: flex;
-    flex-direction: row;
+    width: 100%;
   }
 
   .navOptions {
     flex: 1;
     @extend %flexRow;
     justify-content: flex-end;
+    align-items: center;
   }
 
   .navMenu {
@@ -28,63 +52,96 @@
     display: none;
     cursor: pointer;
 
-    .navMenuIcon {
-      outline: 0;
-      font-size: 28px;
-      padding: 10px 15px;
-      margin: -10px 0 0 0;
-      color: $primaryFontColor;
-      transition: color 0.25s ease-in-out 0s;
-
-      &:hover {
-        color: rgba($secondaryBackgroundColor, 0.80);
-      }
-    }
-
     &.isNavMenuOpen {
       .navMenuIcon {
-        background-color: darken($primaryBackgroundColor, 10%);
-        color: rgba($secondaryBackgroundColor, 0.80);
+        color: var(--primaryColor);
       }
 
       .navOptions {
         @extend %flexColumn;
+        position: absolute;
+        top: 100%;
         padding: 10px;
-        background-color: darken($primaryBackgroundColor, 10%);
+        width: auto;
 
         a {
           border: none;
         }
       }
     }
-  }
 
-  .home {
-    flex: none;
-    justify-content: flex-start;
-    margin-bottom: 20px;
-  }
+    .navMenuIcon {
+      outline: 0;
+      font-size: 20px;
+      padding: 10px 15px;
+      margin: 0;
+      transition: color 0.25s ease-in-out 0s;
 
-  .logo {
-    width: 100px;
-    fill: $primaryFontColor;
-    transition: fill 0.25s ease-in-out 0s;
-
-    &:hover {
-      fill: $primaryBackgroundColor;
+      &:hover {
+        color: var(--secondaryColor);
+      }
     }
   }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+.header.oddSection {
+  background-color: var(--primaryColor);
+  width: 100%;
 
+  .navMenu {
+    .navMenuIcon {
+      color: var(--backgroundColor);
+    }
+
+    &.isNavMenuOpen {
+      .navMenuIcon {
+        color: var(--backgroundColor);
+      }
+
+      .navOptions {
+        background-color: var(--primaryColor);
+        border: solid 1px var(--backgroundColor);
+      }
+    }
+  }
+
+  .logo {
+    fill: var(--backgroundColor);
+    margin-right: 20px;
+  }
+}
+
+.header.evenSection {
+  background-color: var(--backgroundColor);
+  width: 100%;
+
+  .navMenu {
+    .navMenuIcon {
+      color: var(--primaryColor);
+    }
+
+    &.isNavMenuOpen {
+      .navMenuIcon {
+        color: var(--primaryColor);
+      }
+
+      .navOptions {
+        background-color: var(--backgroundColor);
+        border: solid 1px var(--primaryColor);
+      }
+    }
+  }
+
+  .logo {
+    fill: var(--primaryColor);
+  }
+}
+
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
   .header {
     .nav {
-      width: calc(100% - 50px);
-      padding-left: 25px;
-      padding-right: 25px;
+      width: 100%;
+      padding-left: 15px;
 
       .navOptions {
         display: none;

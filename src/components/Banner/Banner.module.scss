@@ -1,33 +1,19 @@
 @import "../../styles/styles";
 
+.evenSection,
+.oddSection {
 .banner {
-  @extend %flexColumn;
-  @extend %pageSection;
-  
-  min-height: 696px;
-  width: calc(100% - 70px);
-  padding: 35px;
-  align-items: center;
-  justify-content: center;
+  @extend %banner;
+}
+
+.tag {
+  @extend %tag;
 }
 
 .title {
-  flex: 1 1 0%;
-  @extend %flexColumn;
-  justify-content: flex-end;
-  font-size: 87px;
-  color: $secondaryFontColor;
-
-  .logo {
-    width: 350px;
-    margin-right: 10px;
-    fill: $primaryFontColor;
-    display: block;
-  }
-
-  .year {
-    color: $highlightColor;
-  }
+  @extend %title;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .actions {
@@ -38,47 +24,24 @@
 }
 
 .children {
-  flex: none;
   @extend %flexRow;
   margin: 40px 0 0 0;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-
-.goDown {
-  flex: none;
-  margin: 40px 0 0 0;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  padding: 5px;
-  display: flex;
-  border: solid 1px $primaryFontColor;
-
-  .arrowDown {
-    width: 30px;
-    height: 30px;
-  }
-
-  &:hover {
-    border-color: $secondaryFontColor;
-
-    polyline {
-      stroke: $secondaryFontColor !important;
-    }
-  }
 }
 
-@media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
 
+.oddSection {
+  background-color: var(--primaryColor);
+}
+
+  @media only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
+    .banner {
     .title {
-      padding-top: 100px;
+      width: 100%;
     }
-
-    .actions, .children {
-      flex-direction: column;
-    }
-}
+  }
+  }

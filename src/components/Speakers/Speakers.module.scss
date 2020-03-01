@@ -1,27 +1,26 @@
 @import "../../styles/styles";
 
+.banner {
+  @extend %banner;
+}
+
+.tag {
+  @extend %tag;
+}
+.title {
+  @extend %title;
+}
 .speakers {
-  @extend %pageSection;
-  @extend %flexColumn;
+  @extend %container;
   align-items: center;
-  
   position: relative;
   z-index: auto;
-
   width: 100%;
   justify-content: center;
 }
 
-.title {
-  text-align: center;
-}
-
-.speakersList {
-  margin-top: 50px;
-}
-
 @media 
-  only screen and (max-device-width: 900px),
-  only screen and (max-width: 900px) {
+  only screen and (max-device-width: 1120px),
+  only screen and (max-width: 1120px) {
     
 }

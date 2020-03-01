@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading } from "../../components";
+import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading, Slider } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
 import { ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
 import { resourcesService, backendService } from "../../services";
-
 import styles from "./GlobalApp.module.scss";
+import { IEdition } from "../../types/IEdition";
 
-const Home = () => {
+const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition;}) => {
   const Resources = resourcesService.getResources();
 
   return (
@@ -23,7 +23,8 @@ const Home = () => {
       <PageSection id="about">
         <About />
         <History />
-        <CtaButtons  className="pv5"/>
+        <CtaButtons  className="pv5-l pv4"/>
+        <Slider conferenceInfo={conferenceInfo} />
       </PageSection>
     </>
   );
@@ -31,8 +32,10 @@ const Home = () => {
 
 export default class GlobalApp extends React.PureComponent {
   state: any = {
-    legacyGlobalData: undefined
+    conferenceData: undefined,
+    legacyGlobalData: undefined,
   };
+
 
   async componentDidMount() {
     const legacyGlobalData = await backendService.fetchConference("vopen-global-legacy");

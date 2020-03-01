@@ -11,6 +11,7 @@ export { default as Loading } from "./Loading";
 export { default as MapsLocation } from "./MapsLocation";
 export { default as NavLink } from "./NavLink";
 export { default as HeroConf } from "./HeroConf";
+export { default as Slider } from "./Slider";
 export { default as PageSection } from "./PageSection";
 export { default as PastEditions } from "./PastEditions";
 export { default as SocialIcon } from "./SocialIcon";

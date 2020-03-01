@@ -1,0 +1,59 @@
+@import "../../styles/styles";
+
+.slider {
+  @extend %container;
+  padding: 0 20px;
+    .dataSlider {
+        background-color: var(--primaryColor);
+        color: var(--backgroundColor);
+        padding: 30px;
+        h3 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          margin-top: 0;
+        }
+        p {
+          margin: 5px 0;
+            font-size: 1.2rem;
+        }
+        .timeSlider {
+        font-weight: bold;
+        }
+        .urlSlider {
+            margin-top: 40px;
+            a {
+                color:  var(--secondaryColor);
+            }
+            
+        }
+    }
+    .triangleSlider {
+        @extend %dottedTriangle;
+        width: 120px;
+        height: 67px;
+        top: 0;
+        left: -120px;
+      
+        span {
+          @extend %triangle;
+          top: 0;
+          border-top: 67px solid var(--backgroundColor);
+          border-right: 120px solid transparent;
+        }
+      }
+      .imageSlider {
+        @extend %images;
+        background-image: url("/images/nextconf-1.jpg");
+        height: 270px;
+        color: var(--primaryColor);
+        &::before {
+          display: none;
+        }
+      }
+
+
+
+@media only screen and (max-device-width: 1120px),
+only screen and (max-width: 1120px) {
+}
+}

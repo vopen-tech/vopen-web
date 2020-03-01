@@ -11,7 +11,7 @@ export default class Header extends React.PureComponent<any, any> {
     isNavMenuOpen: false
   };
 
-  componentWillMount() {
+  componentDidMount() {
     window.addEventListener("scroll", this.handleWindowScroll);
   }
 

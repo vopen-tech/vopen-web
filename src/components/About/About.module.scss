@@ -45,10 +45,14 @@
 
 @media only screen and (max-device-width: 1120px),
 only screen and (max-width: 1120px) {
+  .triangle {
+    display: none;;
+  }
   .textSection {
     .textAbout {
       width: 100%;
       font-size: 18px;
+      padding: 40px;
     }
   }
 }

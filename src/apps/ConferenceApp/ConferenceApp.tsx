@@ -72,10 +72,8 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <h1 className={styles.tag}>{Resources.pages.team}</h1>
           <h2 className={styles.subtitle}>{Resources.titles.sloganTeam}</h2>
         </div>
-        <Team team={conferenceOrganizers} className="pt4" />
-        <div className={styles.banner}>
-          <h1 className={styles.tag}>{Resources.titles.teamGlobal}</h1>
-        </div>
+        <Team team={conferenceOrganizers} />
+          <h1 className={styles.teamGlobal}>{Resources.titles.teamGlobal}</h1>
         <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">

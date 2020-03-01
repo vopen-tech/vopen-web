@@ -44,7 +44,7 @@ export default class History extends React.PureComponent<any, any> {
             </div>
           </div>
         </div>
-        <div className="w-20-l w-100 pl4-l pl0 mt5-l mt3 h4">
+        <div className="w-20-l w-100 pl4-l ph2 tl-l tc mt5-l mt3 h4">
           <p className="f4">{Resources.info.today}</p>
           <p className="f5">
             <a href="http://netconf.global" target="_blank" rel="noopener" className="navy hover-yellow">

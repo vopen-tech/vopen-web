@@ -1,6 +1,7 @@
 @import "../../styles/styles";
 
 .conferenceApp {
+  flex: 1;
   position: relative;
   width: 100%;
   flex: 1;
@@ -25,8 +26,12 @@
     }
     .tag {
       @extend %tag;
-      text-transform: uppercase;
     }
+  }
+
+  .teamGlobal {
+      text-align: center;
+      text-transform: uppercase;
   }
 
   @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {

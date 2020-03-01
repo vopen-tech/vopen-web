@@ -3,75 +3,89 @@
 .sponsors {
   @extend %container;
 
-.title {
-  text-align: center;
-}
+  .title {
+    text-align: center;
+  }
 
-.sponsorsRow {
-  @extend %flexRow;
-  justify-content: center;
-  flex-wrap: wrap;
-  a {
-    padding: 30px 15px;
-    text-decoration: none;
+  .sponsorsRow {
+    @extend %flexRow;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .sponsorLegend {
-      text-align: center;
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-    .sponsor {
-      @extend %flexRow;
-      width: 270px;
-      height: 100px;
-      padding: 15px;
-      margin-bottom: 10px;
-      justify-content: center;
-      border-style: solid;
-      border-width: 1px;
-      background-color: var(--backgroundColor);
-      img {
-        vertical-align: middle;
-        -webkit-filter: grayscale(100%); 
-        filter: grayscale(100%);
+    a {
+      padding: 30px 15px;
+      text-decoration: none;
+
+      .sponsorLegend {
+        text-align: center;
+        font-size: 1rem;
+        text-transform: uppercase;
       }
-    
-      &:hover {
+
+      .sponsor {
+        @extend %flexRow;
+        width: 270px;
+        height: 100px;
+        padding: 15px;
+        margin-bottom: 10px;
+        justify-content: center;
+        border-style: solid;
+        border-width: 1px;
+        background-color: var(--backgroundColor);
+
         img {
-        -webkit-filter: grayscale(0); 
-        filter: grayscale(0%);
+          vertical-align: middle;
+          -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+        }
+
+        &:hover {
+          img {
+            -webkit-filter: grayscale(0);
+            filter: grayscale(0%);
+          }
+        }
+
+        &.diamond {
+          border-color: #7bdfea;
+        }
+
+        &.gold {
+          width: 230px;
+          border-color: #daa520;
+        }
+
+        &.silver {
+          width: 200px;
+          border-color: #cccccc;
+        }
+
+        &.digital {
+          width: 180px;
+          border-color: darkseagreen;
+        }
+
+        &.other {
+          width: 160px;
+          border-color: #fafafa;
+        }
       }
-      }
-      &.diamond {
-        border-color: #7bdfea;
-      }
-      &.gold {
-        width: 230px;
-        border-color: #daa520;
-      }
-      &.silver {
-        width: 200px;
-        border-color: #cccccc;
-      }
-      &.digital {
-        width: 180px;
-        border-color: darkseagreen;
-      }
-      &.other {
-        width: 160px;
-        border-color: #fafafa;
+    }
+
+
+
+    @media only screen and (max-device-width: 1120px),
+    only screen and (max-width: 1120px) {
+      a {
+
+        .sponsor {
+          padding: 15px 0;
+
+          &.other {
+            width: 100%;
+          }
+        }
       }
     }
   }
-}
-
-
-@media 
-  only screen and (max-device-width: 1120px),
-  only screen and (max-width: 1120px) {
-
-    .sponsor {
-      margin-right: 0;
-    }
-}
 }

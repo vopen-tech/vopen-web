@@ -8,6 +8,7 @@
 
 .tag {
   @extend %tag;
+  text-transform: capitalize;
 }
 
 .title {

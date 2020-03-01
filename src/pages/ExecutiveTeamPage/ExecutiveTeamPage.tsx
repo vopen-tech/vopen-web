@@ -48,12 +48,12 @@ export default class ExecutiveTeamPage extends React.PureComponent {
     const Resources = resourcesService.getResources();
 
     return (
-      <div>
+      <div className={styles.executiveTeamPage}>
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.team}</h2>
-          <h1 className={styles.title}>{Resources.titles.sloganTeam}</h1>
+          <h1 className={styles.tag}>{Resources.pages.team}</h1>
+          <h2 className={styles.title}>{Resources.titles.sloganTeam}</h2>
         </div>
-        <Team team={team} />
+        <Team className={styles.executiveTeam} team={team} />
       </div>
     );
   }

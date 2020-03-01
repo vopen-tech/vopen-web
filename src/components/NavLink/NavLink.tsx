@@ -3,6 +3,13 @@ import classNames from "classnames";
 import { NavLink as Link, NavLinkProps as LinkProps } from "react-router-dom";
 import styles from "./NavLink.module.scss";
 
+const hrefNavigate = () => {
+  setTimeout(() => {
+    // Just a little help to really navigate with href
+    window.location.href = window.location.href;
+  }, 50);
+};
+
 export default class NavLink extends React.PureComponent<LinkProps> {
   render() {
     const { children, className, to } = this.props;
@@ -19,10 +26,13 @@ export default class NavLink extends React.PureComponent<LinkProps> {
     }
 
     if (isInternalLink) {
+      const url = to.toString().split("#");
+      const pathname = url[0];
+      const hash = `#${url[1]}`;
       return (
-        <a className={cssClasses} href={to.toString()}>
+        <Link className={cssClasses} activeClassName={styles.navActive} to={{ pathname, hash }} onClick={hrefNavigate}>
           {children}
-        </a>
+        </Link>
       );
     }
 

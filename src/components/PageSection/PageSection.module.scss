@@ -1,11 +1,16 @@
 @import "../../styles/styles";
 
+.pageSection {
+  width: 100%;
+}
+
 .oddSection {
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
 }
 
-.oddSection, .evenSection {
+.oddSection,
+.evenSection {
   .body {
     position: relative;
     z-index: 1;
@@ -13,14 +18,17 @@
   }
 }
 .fullSection {
+  width: 100%;
+  background-color: #eee;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+
   .body {
     position: relative;
     z-index: 1;
   }
 }
 
-
 @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
-
-
 }

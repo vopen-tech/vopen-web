@@ -37,32 +37,27 @@ export default class Header extends React.PureComponent<any, any> {
 
   render() {
     const { children, className, type } = this.props;
-    const cssClasses = classNames(
-      type === "even" && styles.evenSection,
-      type === "odd" && styles.oddSection,
-      className
-    );
     const { isNavMenuOpen } = this.state;
-    const navMenuCssIcon = classNames(styles.navMenu, isNavMenuOpen && styles.isNavMenuOpen);
+
+    const cssClasses = classNames(styles.header, type === "even" && styles.evenSection, type === "odd" && styles.oddSection, className);
+    const navMenuCssClasses = classNames(styles.navMenu, isNavMenuOpen && styles.isNavMenuOpen);
     const iconCssClasses = classNames(styles.navMenuIcon, "fas fa-bars");
 
     return (
       <div className={cssClasses}>
-        <div className={styles.header}>
         <nav className={styles.nav}>
           <div className="flex items-center">
-          <NavLink className={styles.home} to="/">
-            <VOpenLogo className={styles.logo} />
-          </NavLink>
-          <LanguageSelector />
+            <NavLink className={styles.home} to="/">
+              <VOpenLogo className={styles.logo} />
+            </NavLink>
+            <LanguageSelector />
           </div>
           <div className={styles.navOptions}>{children}</div>
-          <div className={navMenuCssIcon}>
+          <div className={navMenuCssClasses}>
             <i className={iconCssClasses} role="presentation" tabIndex={0} onClick={this.handleNavMenuClick} />
             {isNavMenuOpen && <div className={styles.navOptions}>{children}</div>}
           </div>
         </nav>
-        </div>
       </div>
     );
   }

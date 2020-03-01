@@ -12,16 +12,16 @@ export default class SpeakersPage extends React.PureComponent<Props> {
     const Resources = resourcesService.getResources();
 
     return (
-      <div>
+      <>
         <div className={styles.banner}>
-          <h2 className={styles.tag}>{Resources.pages.speakers}</h2>
-          <h1 className={styles.title}>{Resources.titles.speakersPage}</h1>
+          <h1 className={styles.tag}>{Resources.pages.speakers}</h1>
+          <h2 className={styles.title}>{Resources.titles.speakersPage}</h2>
           <div className="pt4">
-          <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank"/>
+            <ActionButton type="secondary" text={Resources.buttons.wantToBeSpeaker} url={constants.speakerCallUrl} target="_blank" />
           </div>
-   </div>
-        <Speakers speakers={speakers}/>
-      </div>
+        </div>
+        <Speakers speakers={speakers} />
+      </>
     );
   }
 }

@@ -3,8 +3,8 @@
 .conductPage {
   @extend %pageSection;
   @extend %flexColumn;
+  flex: 1;
 }
-
 
 .title {
   @extend %subtitle;
@@ -20,10 +20,7 @@
   color: var(--primaryColor);
 }
 
-@media 
-  only screen and (max-device-width: 1120px),
-  only screen and (max-width: 1120px) {
-
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
   .text {
     column-count: 1;
     padding: 0;

@@ -1,13 +1,12 @@
 @import "../../styles/styles";
 
 .footer {
-  flex: none;
-  width: 100%;
+  @extend %container;
   height: 85px;
-  padding: 28px;
+  padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 
   .separator:before {
     content: " | ";

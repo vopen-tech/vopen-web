@@ -4,9 +4,12 @@
   @extend %container;
   padding: 0 20px;
     .dataSlider {
+
         background-color: var(--primaryColor);
         color: var(--backgroundColor);
         padding: 30px;
+        position: relative;
+
         h3 {
           font-size: 1.5rem;
           margin-bottom: 10px;
@@ -25,6 +28,16 @@
                 color:  var(--secondaryColor);
             }
             
+        }
+        .flags {
+          position: absolute;
+          bottom: 30px;
+          right: 30px
+        }
+        
+        .flag {
+          width: 30px;
+          cursor: pointer;
         }
     }
     .triangleSlider {

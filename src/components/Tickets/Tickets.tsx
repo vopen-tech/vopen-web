@@ -40,7 +40,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
     return (
       <div key={ticketInfo.name} className={styles.enabledTicket}>
         <div className={styles.title}>
-          <p className={styles.type}>{ticketInfo.name}</p>      
+          <p className={styles.type}>{ticketInfo.name}</p>
           <p className={styles.price}>{ticketInfo.price}</p>
           <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>
@@ -54,7 +54,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
         </ul>
         <div className={styles.buttons}>
           {ticketInfo.buyLinks.map(link => (
-            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url}  target="_blank"/>
+            <ActionButton className={styles.button} key={link.url} text={link.label || Resources.buttons.register} url={link.url} target="_blank" />
           ))}
         </div>
       </div>
@@ -68,8 +68,8 @@ export default class Tickets extends React.PureComponent<Props, State> {
 
     return (
       <div key={ticketInfo.name} className={styles.disabledTicket}>
-                <div className={styles.title}>
-                <p className={styles.type}>{ticketInfo.name}</p>      
+        <div className={styles.title}>
+          <p className={styles.type}>{ticketInfo.name}</p>
           <p className={styles.price}>{ticketInfo.price}</p>
           <div className={styles.ticketDate}>{ticketEndDateText}</div>
         </div>
@@ -82,7 +82,7 @@ export default class Tickets extends React.PureComponent<Props, State> {
           ))}
         </ul>
         <div className={styles.buttons}>
-        <ActionButton type="disabled" text={buttonText} target="_blank"/>
+          <ActionButton type="disabled" text={buttonText} target="_blank" />
         </div>
       </div>
     );

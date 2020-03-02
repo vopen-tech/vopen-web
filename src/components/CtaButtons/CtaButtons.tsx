@@ -25,26 +25,26 @@ export default class CtaButtons extends React.PureComponent<Props, State> {
     <div className={styles.ctabuttons}>
       <div className="flex flex-wrap nl3 nr3">
         <div className="w-third-l w-100 pa3">
-          <div className={styles.action} onClick={()=> window.open(constants.speakerCallUrl)}>
+          <button className={styles.action} onClick={()=> window.open(constants.speakerCallUrl)}>
             <h1 className="ttu f2 mv0">{Resources.buttons.wantToBeSpeaker}</h1>
             <p className="ttu f5 mv0">
               {Resources.buttons.as} {Resources.pages.speakers}
             </p>
-          </div>
+          </button>
         </div>
         <div className="w-third-l w-100 pa3">
-          <div className={styles.action} onClick={()=> window.open(constants.sponsorsCallUrl)}>
+          <button className={styles.action} onClick={()=> window.open(constants.sponsorsCallUrl)}>
             <h1 className="ttu f2 mv0">{Resources.buttons.wantToBeSponsors}</h1>
             <p className="ttu f5 mv0">
               {Resources.buttons.as} {Resources.pages.sponsors}
             </p>
-          </div>
+            </button>
         </div>
         <div className="w-third-l w-100 pa3">
-          <div className={styles.action} onClick={()=> window.open(constants.rsvpUrl)}>
+          <button className={styles.action} onClick={()=> window.open(constants.rsvpUrl)}>
             <h1 className="ttu f2 mv0">{Resources.buttons.wantToReceiveNews}</h1>
             <p className="ttu f5 mv0">{Resources.buttons.toNews}</p>
-          </div>
+            </button>
         </div>
       </div>
     </div>

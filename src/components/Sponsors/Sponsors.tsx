@@ -14,8 +14,8 @@ const Sponsor = ({ sponsor, sponsorClassName }: ISponsorProps) => {
   const cssClasses = classNames(styles.sponsor, sponsorClassName);
   
   return (
-    <a href={`${sponsor.url}?ref=vopen`} target="_blank">
-      <span className={cssClasses} ><img className={styles.sponsorImage} src={sponsor.imageUrl} /></span>
+    <a href={`${sponsor.url}?ref=vopen`} target="_blank" rel="noopner">
+      <span className={cssClasses} ><img className={styles.sponsorImage} src={sponsor.imageUrl} alt="sponsor"/></span>
       <div className={styles.sponsorLegend}>{sponsor.type}</div>
     </a>
   );

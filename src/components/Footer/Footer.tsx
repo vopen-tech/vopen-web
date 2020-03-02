@@ -27,11 +27,11 @@ export default class Footer extends React.PureComponent<any, any> {
           </div>
         </div>
         <div className="flex">
-          <SocialIcon iconType="Twitter" url="https://twitter.com/vopentech" />
-          <SocialIcon iconType="Linkedin" url="https://linkedin.com/company/vopentech" />
+          <SocialIcon iconType="Twitter" url="https://twitter.com/vopentech"/>
+          <SocialIcon iconType="Linkedin" url="https://linkedin.com/company/vopentech"/>
           <SocialIcon iconType="Facebook" url="https://facebook.com/vopentech" />
-          <SocialIcon iconType="Instagram" url="https://instagram.com/vopentech" />
-          <SocialIcon iconType="Youtube" url="https://youtube.com/vopentech" />
+          <SocialIcon iconType="Instagram" url="https://instagram.com/vopentech"  />
+          <SocialIcon iconType="Youtube" url="https://youtube.com/vopentech"  />
         </div>
       </footer>
     );

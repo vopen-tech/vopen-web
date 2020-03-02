@@ -48,7 +48,7 @@ export default class Header extends React.PureComponent<any, any> {
         <nav className={styles.nav}>
           <div className="flex items-center">
             <NavLink className={styles.home} to="/">
-              <VOpenLogo className={styles.logo} />
+              <VOpenLogo className={styles.logo} aria-label="vOpen"/>
             </NavLink>
             <LanguageSelector />
           </div>

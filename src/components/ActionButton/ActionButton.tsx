@@ -32,7 +32,7 @@ export default class About extends React.PureComponent<Props, State> {
     const cssClasses = classNames(styles.actionButton, classType, className);
 
     return (
-      <a className={cssClasses} href={url} target={target}>
+      <a className={cssClasses} href={url} target={target} rel="noopener">
         {text}
       </a>
     );

@@ -24,7 +24,7 @@ export default class MapsLocation extends React.PureComponent<IProps, IState> {
         <a href="/#">
           <ArrowBottom className={styles.arrowUp} />
         </a>
-        <iframe width={width} height={height} src={src} frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0} />
+        <iframe title="map" width={width} height={height} src={src} frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0} />
       </div>
     );
   }

@@ -1,0 +1,93 @@
+{
+  "pages": {
+    "schedule": "Agenda",
+    "speakers": "Speakers",
+    "sponsors": "Sponsors",
+    "sponsorship": "Sponsorship",
+    "team": "Equipo",
+    "tickets": "Entradas",
+    "codeOfConduct": "Código de conducta"
+  },
+  "buttons": {
+    "wantToBeSponsors": "Apóyanos",
+    "wantToBeSpeaker": "súmate",
+    "learnMore": "entérate como",
+    "wantToReceiveNews": "suscríbete",
+    "register": "regístrate",
+    "as": "cómo",
+    "toNews": "a las novedades",
+    "buy": "Comprar",
+    "soon": "Próximamente",
+    "soldOut": "Entradas agotadas",
+    "visit": "Visita"
+  },
+  "banner": {
+    "soon": "Próximamente",
+    "speakersDescription": "Los mejores expertos",
+    "ticketsTitle": "Obtén tus tickets",
+    "ticketsOnSale": "Entradas disponibles",
+    "ticketsSignUp": "Anótate para conseguir tu lugar"
+  },
+  "info": {
+    "welcome": "¡Bienvenid@s a vOpen! El ciclo de eventos de tecnología en Latinoamérica.",
+    "mission": "vOpen busca conectar a entusiastas, estudiantes, profesionales, referentes técnicos y organizaciones de todo el mundo que utilicen la tecnología como medio para concretar sus objetivos.",
+    "history": "Nuestra historia comenzó como .NET Conf, y durante los últimos 5 años llevamos adelante conferencias en 4 países.",
+    "today": "Entérate sobre lo que pasó en las ediciones anteriores",
+    "sponsorship": "Ofrecemos distintos paquetes de sponsorship y también puede elaborar su paquete personalizado basado en las distintas oportunidades ofrecidas. Si tiene ideas únicas o nuevas propuestas, háganos saber y trabajaremos juntos para satisfacer sus necesidades de marketing y negocio.",
+    "companies": "empresas",
+    "expositors": "expositores",
+    "attendees": "asistentes",
+    "editions": "ediciones"
+  },
+  "titles": {
+    "homePage": "El lugar perfecto para hacer networking",
+    "speakersPage": "Más de 200 referentes técnicos compartieron su conocimiento",
+    "sponsorPage": "Más de 150 sponsors nos acompañan",
+    "teamGlobal": "Equipo Global",
+    "pastEditions": "Ediciones anteriores",
+    "sloganTeam": "Comprometidos a realizar grandes eventos",
+    "sloganSponsors": "Si esta interesado en patrocinar nuestra conferencia",
+    "sloganSpeakers": "Referentes técnicos dispuestos a compartir su conocimiento",
+    "sponsorship": "Un evento de tecnología sin fines de lucro"
+  },
+  "subtitles": {
+    "homePage": "Referentes técnicos, Comunidades, Grandes Empresas"
+  },
+  "sponsorshipPackages": {
+    "title": "Nuestras oportunidades",
+    "offer1": "Logo en Mailing, Sitio web y Redes Sociales",
+    "offer2": "Logo en Vídeo Resumen",
+    "offer3": "Logo en pantallas durante conferencia",
+    "offer4": "Logo en Playeras y Atril",
+    "offer5": "Stand en conferencia",
+    "offer6": "Tickets para la conferencia",
+    "offer7": "Rollups durante conferencia",
+    "offer8": "Swag en la bolsa de bienvenida",
+    "offer9": "Push Notifications en App",
+    "offer10": "Base de Datos de Asistentes",
+    "offer11": "Difusión ofertas laborales",
+    "offer12": "Presencia en medios gráficos",
+    "offer13": "Entrevista patrocinada",
+    "offer14": "Invitación VIP a cena",
+    "offer15": "Speaker representando la empresa",
+    "offer16": "First come, first served: Auspicio del Almuerzo",
+    "offer17": "Espacio de Coworking brandeado",
+    "offer18": "Presencia digital en todas las ediciones (5 países)"
+  },
+  "tickets": {
+    "benefit1": "Acceso a los dos días de la Conferencia",
+    "benefit1b": "Acceso completo a la conferencia",
+    "benefit2": "Bolsa de Bienvenida con Swag",
+    "benefit3": "Playera de la conferencia",
+    "benefit4": "Tickets de Almuerzo",
+    "benefit5": "Coffee break",
+    "benefit6": "Acceso al After Party",
+    "benefit7": "Acceso a los workshops (first come, first served)",
+    "benefit8": "Certificado de Asistencia"
+  },
+  "ticketInfo": {
+    "until": "Hasta el",
+    "orSoldOut": "o agotar stock",
+    "soldOut": "Sold out"
+  }
+}

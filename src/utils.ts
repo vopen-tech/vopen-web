@@ -13,7 +13,7 @@ function getAllCssVariablesInRoot(): string[] {
       if (cssRule.selectorText === ":root") {
         // Save only the items that start with "--" (i.e. CSS Variables);
         const cssVariables: string[] = Array.from(cssRule.style).filter((name: any) => name.startsWith("--")) as any;
-        cssVariables.forEach(cssVariable => (result[cssVariable] = cssVariable))
+        cssVariables.forEach(cssVariable => (result[cssVariable] = cssVariable));
       }
     });
   });
@@ -23,7 +23,6 @@ function getAllCssVariablesInRoot(): string[] {
 
 function overrideCssVariablesValuesWithCountryValues() {
   const conferenceCountry = siteService.getConferenceCountry();
-  console.log(`Country: ${conferenceCountry}`);
 
   if (!conferenceCountry || conferenceCountry === "global") {
     // Do nothing
@@ -43,6 +42,4 @@ function overrideCssVariablesValuesWithCountryValues() {
     });
 }
 
-export {
-  overrideCssVariablesValuesWithCountryValues
-}
+export { overrideCssVariablesValuesWithCountryValues };

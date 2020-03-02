@@ -10,7 +10,10 @@ overrideCssVariablesValuesWithCountryValues();
 
 const conferenceId = siteService.getConferenceId();
 const globalConferenceId = siteService.getGlobalConferenceId();
+
 console.log(`Conference ID: ${conferenceId}`);
+console.log(`Country: ${siteService.getConferenceCountry()}`);
+console.log(`Language: ${siteService.getSiteLanguage()}`);
 
 const WebsiteApp: any = conferenceId !== globalConferenceId ? ConferenceApp : GlobalApp;
 ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));

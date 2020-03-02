@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
   Header,
@@ -73,7 +73,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
           <h2 className={styles.subtitle}>{Resources.titles.sloganTeam}</h2>
         </div>
         <Team team={conferenceOrganizers} />
-          <h1 className={styles.teamGlobal}>{Resources.titles.teamGlobal}</h1>
+        <h1 className={styles.teamGlobal}>{Resources.titles.teamGlobal}</h1>
         <Team team={globalOrganizers} type="odd" />
       </PageSection>
       <PageSection id="location" type="full">
@@ -104,15 +104,11 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
       ]);
       this.setState({ conferenceData, globalData });
     }
-
-    // Update conference data
-    console.log("hi");
   }
 
   render() {
     const { conferenceData, globalData } = this.state;
 
-    console.log("hi", conferenceData, globalData);
     if (!conferenceData || !globalData) {
       return <Loading />;
     }

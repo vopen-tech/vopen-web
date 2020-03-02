@@ -1,5 +1,6 @@
 import siteService from "./siteService";
 import enUs from "../resources/en-US.json";
+import esMX from "../resources/es-MX.json";
 import esAr from "../resources/es-AR.json";
 
 function getResources() {
@@ -8,6 +9,8 @@ function getResources() {
   switch (currentLanguage) {
     case "en-US":
       return enUs;
+    case "es-MX":
+      return esMX;
     case "es-AR":
     default:
       return esAr;

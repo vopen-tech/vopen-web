@@ -7,7 +7,10 @@ import styles from "./LanguageSelector.module.scss";
 
 export default class LanguageSelector extends React.PureComponent<IProps, IState> {
   static defaultProps: Partial<IProps> = {
-    languages: [{ label: "ES", value: "es-AR" }, { label: "EN", value: "en-US" }]
+    languages: [
+      { label: "ES", value: "es" },
+      { label: "EN", value: "en-US" }
+    ]
   };
 
   state = {
@@ -16,10 +19,16 @@ export default class LanguageSelector extends React.PureComponent<IProps, IState
 
   handleActiveLanguageChange = (e: React.MouseEvent<HTMLDivElement>) => {
     const { activeLanguage } = this.state;
-    const newActiveLanguage = e.currentTarget.dataset["language"] as string;
+    let newActiveLanguage = e.currentTarget.dataset["language"] as string;
 
     if (activeLanguage === newActiveLanguage) {
       return;
+    }
+
+    // Regionalize spanish websites
+    if (newActiveLanguage.startsWith("es")) {
+      const country = siteService.getConferenceCountry();
+      newActiveLanguage = `es-${country.toUpperCase()}`;
     }
 
     this.setState({ activeLanguage: newActiveLanguage });
@@ -38,7 +47,7 @@ export default class LanguageSelector extends React.PureComponent<IProps, IState
         {languages.map(item => (
           <div
             key={item.value}
-            className={classNames(styles.language, activeLanguage === item.value && styles.active)}
+            className={classNames(styles.language, activeLanguage.startsWith(item.value) && styles.active)}
             data-language={item.value}
             onClick={this.handleActiveLanguageChange}
           >

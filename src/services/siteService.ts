@@ -1,9 +1,10 @@
 function getSiteLanguage(): string {
-  return (window.localStorage && window.localStorage.getItem("siteLanguage")) || "es-AR";
+  return (window.localStorage && window.localStorage.getItem("siteLanguage")) || "en-US";
 }
 
 function setSiteLanguage(language: string): void {
   if (window.localStorage) {
+    console.log(`Site language: ${language}`);
     window.localStorage.setItem("siteLanguage", language);
   }
 }

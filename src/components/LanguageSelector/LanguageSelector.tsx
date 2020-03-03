@@ -9,30 +9,27 @@ export default class LanguageSelector extends React.PureComponent<IProps, IState
   static defaultProps: Partial<IProps> = {
     languages: [
       { label: "ES", value: "es" },
-      { label: "EN", value: "en-US" }
+      { label: "EN", value: "en" }
     ]
   };
 
   state = {
-    activeLanguage: siteService.getSiteLanguage()
+    activeLanguageAndRegion: siteService.getSiteLanguageAndRegion()
   };
 
   handleActiveLanguageChange = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { activeLanguage } = this.state;
+    const { activeLanguageAndRegion } = this.state;
     let newActiveLanguage = e.currentTarget.dataset["language"] as string;
 
-    if (activeLanguage === newActiveLanguage) {
+    if (activeLanguageAndRegion.startsWith(newActiveLanguage)) {
       return;
     }
 
-    // Regionalize spanish websites
-    if (newActiveLanguage.startsWith("es")) {
-      const country = siteService.getConferenceCountry();
-      newActiveLanguage = `es-${country.toUpperCase()}`;
-    }
-
-    this.setState({ activeLanguage: newActiveLanguage });
+    // Update the site language
     siteService.setSiteLanguage(newActiveLanguage);
+
+    const newActiveLanguageAndRegion = siteService.getSiteLanguageAndRegion();
+    this.setState({ activeLanguageAndRegion: newActiveLanguageAndRegion });
 
     // Reload the page
     window.location.reload();
@@ -40,14 +37,14 @@ export default class LanguageSelector extends React.PureComponent<IProps, IState
 
   render() {
     const { languages } = this.props;
-    const { activeLanguage } = this.state;
+    const { activeLanguageAndRegion } = this.state;
 
     return (
       <div className={styles.languageSelector}>
         {languages.map(item => (
           <div
             key={item.value}
-            className={classNames(styles.language, activeLanguage.startsWith(item.value) && styles.active)}
+            className={classNames(styles.language, activeLanguageAndRegion.startsWith(item.value) && styles.active)}
             data-language={item.value}
             onClick={this.handleActiveLanguageChange}
           >

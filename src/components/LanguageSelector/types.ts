@@ -5,5 +5,5 @@ export interface IProps {
 }
 
 export interface IState {
-  activeLanguage: string;
+  activeLanguageAndRegion: string;
 }

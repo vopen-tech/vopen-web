@@ -1,5 +1,15 @@
-function getSiteLanguage(): string {
-  return (window.localStorage && window.localStorage.getItem("siteLanguage")) || "en-US";
+function getSiteLanguageAndRegion(): string {
+  const language = (window.localStorage && window.localStorage.getItem("siteLanguage")) || "en";
+
+  if (language === "en") {
+    return "en-US";
+  }
+
+  // Region is recalculated based on the website/country
+  const country = getConferenceCountry();
+  const languageAndRegion = `es-${country.toUpperCase()}`;
+
+  return languageAndRegion;
 }
 
 function setSiteLanguage(language: string): void {
@@ -50,6 +60,6 @@ export default {
   getGlobalConferenceId,
   getConferenceCountry,
   getConferenceId,
-  getSiteLanguage,
+  getSiteLanguageAndRegion,
   setSiteLanguage
 };

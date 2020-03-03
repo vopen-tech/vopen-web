@@ -4,9 +4,9 @@ import esMX from "../resources/es-MX.json";
 import esAr from "../resources/es-AR.json";
 
 function getResources() {
-  const currentLanguage = siteService.getSiteLanguage();
+  const currentLanguageAndRegion = siteService.getSiteLanguageAndRegion();
 
-  switch (currentLanguage) {
+  switch (currentLanguageAndRegion) {
     case "en-US":
       return enUs;
     case "es-MX":
@@ -18,9 +18,9 @@ function getResources() {
 }
 
 function getDateFormatted(date: string, format?: any) {
-  const language = siteService.getSiteLanguage();
+  const languageAndRegion = siteService.getSiteLanguageAndRegion();
   const dateFormat = format || { day: "2-digit", month: "2-digit" };
-  return new Date(date).toLocaleDateString(language, dateFormat);
+  return new Date(date).toLocaleDateString(languageAndRegion, dateFormat);
 }
 
 export default { getResources, getDateFormatted };

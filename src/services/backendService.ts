@@ -6,7 +6,7 @@ const apiBasePath = "https://api.vopen.tech/api";
 
 async function fetchConference(conferenceId: string): Promise<IEdition | undefined> {
   const url = `${apiBasePath}/v1/editions/${conferenceId}`;
-  const activeSiteLanguage = siteService.getSiteLanguage();
+  const activeSiteLanguage = siteService.getSiteLanguageAndRegion();
   const config: AxiosRequestConfig = {
     headers: {
       // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language

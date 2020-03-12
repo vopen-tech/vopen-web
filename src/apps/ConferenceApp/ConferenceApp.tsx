@@ -121,6 +121,9 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
     return (
       <Router>
         <div className={styles.conferenceApp}>
+          <div style={{ padding: "15px", color: "white", backgroundColor: "brown" }}>
+            {Resources.info.coronavirus}
+          </div>
           <Header type="odd">
             {isScheduleEnabled && <NavLink to="/schedule">{Resources.pages.schedule}</NavLink>}
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>

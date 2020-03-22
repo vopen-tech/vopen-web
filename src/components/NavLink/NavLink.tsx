@@ -10,12 +10,16 @@ const hrefNavigate = () => {
   }, 50);
 };
 
-export default class NavLink extends React.PureComponent<LinkProps> {
+interface Props extends LinkProps {
+  isButton?: boolean;
+}
+
+export default class NavLink extends React.PureComponent<Props> {
   render() {
-    const { children, className, to } = this.props;
+    const { children, className, to, isButton } = this.props;
     const isExternalUrl = to.toString().indexOf("//") === 0 || to.toString().indexOf("http") === 0;
     const isInternalLink = to.toString().indexOf("/#") === 0;
-    const cssClasses = classNames(styles.navLink, className);
+    const cssClasses = classNames(styles.navLink, isButton && styles.button, className);
 
     if (isExternalUrl) {
       return (

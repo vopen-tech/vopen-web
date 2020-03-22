@@ -129,9 +129,7 @@ export default class ConferenceApp extends React.PureComponent<IProps, IState> {
             <NavLink to="/#speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/#sponsors">{Resources.pages.sponsors}</NavLink>
             <NavLink to="/conduct"> {Resources.pages.codeOfConduct}</NavLink>
-            <NavLink className={Resources.buttons.wantToBeSpeaker} to="//vopen.tech">
-              Global
-            </NavLink>
+            <NavLink to="//vopen.tech" isButton={true}>Global</NavLink>
           </Header>
           {/* Body */}
           <Route exact path="/" render={() => <Home conferenceInfo={conferenceData} globalInfo={globalData} />} />

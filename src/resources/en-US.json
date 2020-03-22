@@ -1,5 +1,6 @@
 {
   "pages": {
+    "blog": "Blog",
     "schedule": "Schedule",
     "speakers": "Speakers",
     "sponsors": "Sponsors",
@@ -9,6 +10,7 @@
     "codeOfConduct": "Code of Conduct"
   },
   "buttons": {
+    "joinUs": "Join us",
     "wantToBeSponsors": "support us",
     "wantToBeSpeaker": "join",
     "learnMore": "learn more",

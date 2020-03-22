@@ -8,28 +8,35 @@
   flex: 1;
   position: relative;
   width: 100%;
-}
 
-.flags {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
 
-.flag {
-  width: 40px;
-  margin: 0 20px 0 0;
-  cursor: pointer;
-  border-radius: 50%;
-
-  &:last-of-type {
-    margin-right: 0;
+  .bannerContent {
+    display: flex;
+    flex-direction: column;
   }
 
-  &:hover {
-    opacity: 0.5;
+  .flags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flag {
+    width: 40px;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+    border: solid 3px;
+    border-radius: 50%;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
   }
 }
 

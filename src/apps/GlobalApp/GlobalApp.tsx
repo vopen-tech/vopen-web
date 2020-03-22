@@ -2,8 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
-import { ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
+import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
 import { resourcesService, backendService } from "../../services";
+import Constants from "../../constants";
 
 import styles from "./GlobalApp.module.scss";
 
@@ -23,7 +24,7 @@ const Home = () => {
       <PageSection id="about">
         <About />
         <History />
-        <CtaButtons  className="pv5-l pv4"/>
+        <CtaButtons className="pv5-l pv4" />
       </PageSection>
     </>
   );
@@ -55,10 +56,12 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsors">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
-            <NavLink to="https://goo.gl/forms/hzPXdO4Aa0jGUjW72">{Resources.buttons.wantToBeSpeaker}</NavLink>
+            <NavLink to={Constants.countryRequestUrl}>{Resources.buttons.joinUs}</NavLink>
+            {/* <NavLink to="/blog" isButton={true}>Blog</NavLink> */}
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />
+          <Route path="/blog" component={BlogPage} />
           <Route path="/conduct" component={ConductPage} />
           <Route path="/speakers" render={() => <SpeakersPage speakers={legacyGlobalData.speakers as any} />} />
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />

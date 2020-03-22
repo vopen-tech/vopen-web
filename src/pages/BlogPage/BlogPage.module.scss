@@ -1,0 +1,27 @@
+@import "../../styles/styles";
+
+.conductPage {
+  @extend %pageSection;
+  @extend %container;
+  flex: 1;
+}
+
+.title {
+  @extend %subtitle;
+  padding: 3rem 0 2rem;
+  color: var(--primaryColor);
+}
+
+.text {
+  font-size: 21px;
+  column-count: 2;
+  padding: 0 20px 100px;
+  color: var(--primaryColor);
+}
+
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+  .text {
+    column-count: 1;
+    padding: 0;
+  }
+}

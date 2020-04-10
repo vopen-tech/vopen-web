@@ -1,8 +1,8 @@
 const constants = {
-  speakerCallUrl: "https://forms.gle/J5QRS51Q6EAGpPkd6",
-  sponsorsCallUrl: "https://forms.gle/gnNLJDikano17dEd8",
-  rsvpUrl: "https://forms.gle/GhLZQVjmrz3jiAtt7",
-  countryRequestUrl: "https://goo.gl/forms/hzPXdO4Aa0jGUjW72"
+  speakerCallUrl: "https://forms.gle/knXD5HcBpYvz4XGDA",
+  sponsorsCallUrl: "https://forms.gle/GVeDph25ET2RXKcG8",
+  rsvpUrl: "https://forms.gle/jpackr1z3NoGnpyt7",
+  countryRequestUrl: "https://forms.gle/F2cT1dN5EkYYjE6t9",
 };
 
 export default constants;

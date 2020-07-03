@@ -3,23 +3,25 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
 import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage } from "../../pages";
+import { IEdition } from "../../types/IEdition";
 import { resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
 
 import styles from "./GlobalApp.module.scss";
 
-const Home = () => {
+const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
 
   return (
     <>
       <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even">
-        <div className={styles.flags}>
+        {/* <div className={styles.flags}>
           <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
           <FlagChile className={styles.flag} onClick={() => window.open("//cl.vopen.tech", "_blank")} />
           <FlagMexico className={styles.flag} onClick={() => window.open("//mx.vopen.tech", "_blank")} />
           <FlagUruguay className={styles.flag} onClick={() => window.open("//uy.vopen.tech", "_blank")} />
-        </div>
+        </div> */}
+        {/* <Slider conferenceInfo={conferenceInfo} /> */}
       </Banner>
       <PageSection id="about">
         <About />
@@ -32,7 +34,8 @@ const Home = () => {
 
 export default class GlobalApp extends React.PureComponent {
   state: any = {
-    legacyGlobalData: undefined
+    conferenceData: undefined,
+    legacyGlobalData: undefined,
   };
 
   async componentDidMount() {

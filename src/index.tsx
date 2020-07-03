@@ -15,8 +15,14 @@ console.log(`Conference ID: ${conferenceId}`);
 console.log(`Country: ${siteService.getConferenceCountry()}`);
 console.log(`Language: ${siteService.getSiteLanguageAndRegion()}`);
 
-const WebsiteApp: any = conferenceId !== globalConferenceId ? ConferenceApp : GlobalApp;
-ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
+// Redirect to global vopen site if you are in a local site
+const isLocalhost = window.location.host.indexOf("localhost") !== -1;
+if (!isLocalhost && conferenceId !== globalConferenceId) {
+  window.location.replace("https://vopen.tech");
+} else {
+  const WebsiteApp: any = conferenceId !== globalConferenceId ? ConferenceApp : GlobalApp;
+  ReactDOM.render(<WebsiteApp conferenceId={conferenceId} />, document.getElementById("root"));
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

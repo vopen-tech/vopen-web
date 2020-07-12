@@ -40,7 +40,11 @@
     "expositors": "expositores",
     "attendees": "asistentes",
     "editions": "ediciones",
-    "coronavirus": "A la luz de la situación global debido al COVID-19, estamos monitoreando activamente las orientaciones de salud pública en relación a los eventos presenciales. No tomaremos ninguna decisión a la ligera, pero haremos cambios en la Agenda si es recomendado por las autoridades de salud pública. Nuestra máxima prioridad es la salud y el bienestar de todas/os."
+    "coronavirus": "A la luz de la situación global debido al COVID-19, estamos monitoreando activamente las orientaciones de salud pública en relación a los eventos presenciales. No tomaremos ninguna decisión a la ligera, pero haremos cambios en la Agenda si es recomendado por las autoridades de salud pública. Nuestra máxima prioridad es la salud y el bienestar de todas/os.",
+    "days": "días",
+    "hours": "horas",
+    "minutes": "minutos",
+    "seconds": "segundos"
   },
   "titles": {
     "homePage": "El lugar perfecto para hacer networking",

@@ -20,7 +20,7 @@ function setSiteLanguage(language: string): void {
 }
 
 function getGlobalConferenceId() {
-  return "vopen-global-2019";
+  return "vopen-global-2020";
 }
 
 function getConferenceId(): string {
@@ -56,10 +56,16 @@ function getConferenceCountry() {
   return conferenceId.split("-")[1] || "global";
 }
 
+function mustSetUpCountDown() {
+  // We might want to enalble/disable it demand
+  return true;
+}
+
 export default {
   getGlobalConferenceId,
   getConferenceCountry,
   getConferenceId,
   getSiteLanguageAndRegion,
-  setSiteLanguage
+  setSiteLanguage,
+  mustSetUpCountDown
 };

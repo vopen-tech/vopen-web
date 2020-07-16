@@ -22,6 +22,10 @@ const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) 
         return Resources.info.minutes;
       case 'seconds':
         return Resources.info.seconds;
+      case 'areYouReady':
+        return Resources.info.areYouReady;
+      case 'vOpenGlobalConference':
+        return Resources.titles.vOpenGlobalConference;
       default:
         return key;
     }
@@ -31,7 +35,7 @@ const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) 
     <>
       {
         siteService.mustSetUpCountDown() &&
-        <CountDown getTranslation={getTranslation} deadline={new Date(2020, 10, 3, 9, 0, 0)} current={new Date()}/>
+        <CountDown getTranslation={getTranslation} deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()}/>
       }
       <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even">
         {/* <div className={styles.flags}>

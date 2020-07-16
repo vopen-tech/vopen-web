@@ -44,7 +44,8 @@
     "days": "days",
     "hours": "hours",
     "minutes": "minutes",
-    "seconds": "seconds"
+    "seconds": "seconds",
+    "areYouReady": "Are you ready?"
   },
   "titles": {
     "homePage": "The perfect place for networking",
@@ -55,7 +56,8 @@
     "sloganTeam": "Committed to making a great event",
     "sloganSponsors": "If you are interested in sponsoring our conference",
     "sloganSpeakers": "Tech experts willing to share their knowledge",
-    "sponsorship": "A non-profit event focused on technology and innovation"
+    "sponsorship": "A non-profit event focused on technology and innovation",
+    "vOpenGlobalConference": "vOpen 2020 - OnLine Conference"
   },
   "subtitles": {
     "homePage": "Tech experts, Communities, Large Companies"

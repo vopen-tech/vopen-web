@@ -6,8 +6,8 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
   private countDownInterval: any = null;
 
   static defaultProps: Partial<IProps> = {
-    deadline: new Date(2020, 10, 3, 9, 0, 0),
-    current: new Date()
+    deadline: new Date(2020, 9, 3, 9, 0, 0),
+    current: new Date(),
   };
 
   state: IState = {
@@ -30,20 +30,28 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
 
   render() {
     return (
-      <ul className={styles.list}>
-        <li className={styles.item}>
-          <span id="days">{this.state.days}</span>{this.props.getTranslation('days')}
-        </li>
-        <li className={styles.item}>
-          <span id="hours">{this.state.hours}</span>{this.props.getTranslation('hours')}
-        </li>
-        <li className={styles.item}>
-          <span id="minutes">{this.state.minutes}</span>{this.props.getTranslation('minutes')}
-        </li>
-        <li className={styles.item}>
-          <span id="seconds">{this.state.seconds}</span>{this.props.getTranslation('seconds')}
-        </li>
-      </ul>
+      <>
+        <span className={styles.title}>{this.props.getTranslation("vOpenGlobalConference")}</span>
+        <ul className={styles.list}>
+          <li className={styles.item}>
+            <span id="days">{this.state.days}</span>
+            {this.props.getTranslation("days")}
+          </li>
+          <li className={styles.item}>
+            <span id="hours">{this.state.hours}</span>
+            {this.props.getTranslation("hours")}
+          </li>
+          <li className={styles.item}>
+            <span id="minutes">{this.state.minutes}</span>
+            {this.props.getTranslation("minutes")}
+          </li>
+          <li className={styles.item}>
+            <span id="seconds">{this.state.seconds}</span>
+            {this.props.getTranslation("seconds")}
+          </li>
+        </ul>
+        <span className={styles.title}>{this.props.getTranslation("areYouReady")}</span>
+      </>
     );
   }
 

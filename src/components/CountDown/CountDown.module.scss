@@ -2,14 +2,14 @@
 
 .title {
   @extend %title;
-  width: 100%;
-  margin: 0 auto;
+  width: 50%;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .list {
   box-sizing: border-box;
   margin: 0 auto;
-  padding: 0.5rem;
   text-align: center;
   align-items: center;
 }
@@ -18,11 +18,31 @@
   display: inline-block;
   font-size: 2em;
   list-style-type: none;
-  padding: 2em;
+  padding: 0 1em 0 1em;
   text-transform: uppercase;
 }
 
 .item span {
   display: block;
   font-size: 6rem;
+}
+
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+  .title {
+    width: 100%;
+    font-size: 2em;
+  }
+
+  .list {
+    display: flex;
+    padding: 0;
+  }
+
+  .item {
+    font-size: 1em;
+  }
+
+  .item span {
+    font-size: 3rem;
+  }
 }

@@ -1,7 +1,6 @@
 export interface IProps {
   deadline: Date,
-  current: Date,
-  getTranslation: Function
+  current: Date
 }
 
 export interface IState {

@@ -12,30 +12,11 @@ import styles from "./GlobalApp.module.scss";
 const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
 
-  const getTranslation = (key: string): string => {
-    switch (key) {
-      case 'days':
-        return Resources.info.days;
-      case 'hours':
-        return Resources.info.hours;
-      case 'minutes':
-        return Resources.info.minutes;
-      case 'seconds':
-        return Resources.info.seconds;
-      case 'areYouReady':
-        return Resources.info.areYouReady;
-      case 'vOpenGlobalConference':
-        return Resources.titles.vOpenGlobalConference;
-      default:
-        return key;
-    }
-  }
-
   return (
     <>
       {
         siteService.mustSetUpCountDown() &&
-        <CountDown getTranslation={getTranslation} deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()}/>
+        <CountDown deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()}/>
       }
       <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even">
         {/* <div className={styles.flags}>

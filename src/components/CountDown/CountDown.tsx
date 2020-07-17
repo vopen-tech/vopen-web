@@ -1,9 +1,12 @@
 import React from "react";
 import { IProps, IState } from "./types";
 import styles from "./CountDown.module.scss";
+import constants from "../../constants";
+import { resourcesService } from "../../services";
 
 export default class CountDown extends React.PureComponent<IProps, IState> {
   private countDownInterval: any = null;
+  private resources: any = resourcesService.getResources();
 
   static defaultProps: Partial<IProps> = {
     deadline: new Date(2020, 9, 3, 9, 0, 0),
@@ -31,29 +34,37 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
   render() {
     return (
       <>
-        <span className={styles.title}>{this.props.getTranslation("vOpenGlobalConference")}</span>
+        <span className={styles.title}>{this.resources.titles.vOpenGlobalConference}</span>
         <ul className={styles.list}>
           <li className={styles.item}>
             <span id="days">{this.state.days}</span>
-            {this.props.getTranslation("days")}
+            {this.resources.info.days}
           </li>
           <li className={styles.item}>
-            <span id="hours">{this.state.hours}</span>
-            {this.props.getTranslation("hours")}
+            <span id="hours">{this._formatToTwoDigits(this.state.hours)}</span>
+            {this.resources.info.hours}
           </li>
           <li className={styles.item}>
-            <span id="minutes">{this.state.minutes}</span>
-            {this.props.getTranslation("minutes")}
+            <span id="minutes">{this._formatToTwoDigits(this.state.minutes)}</span>
+            {this.resources.info.minutes}
           </li>
           <li className={styles.item}>
-            <span id="seconds">{this.state.seconds}</span>
-            {this.props.getTranslation("seconds")}
+            <span id="seconds">{this._formatToTwoDigits(this.state.seconds)}</span>
+            {this.resources.info.seconds}
           </li>
         </ul>
-        <span className={styles.title}>{this.props.getTranslation("areYouReady")}</span>
+        <span className={styles.title}>{this.resources.info.areYouReady}</span>
+        <div className="w-third-l w-100 pa3">
+          <div className={styles.action} onClick={()=> window.open(constants.speakerCallUrl)}>
+            <h1 className="ttu f2 mv0">{this.resources.titles.callForSpeakers}</h1>
+          </div>
+        </div>
       </>
     );
   }
+
+  private _formatToTwoDigits = (segment: number): string =>
+    segment < 10 ? `0${segment}` : segment.toString();
 
   private _setCountDownInterval(): void {
     this.countDownInterval = setInterval(() => {
@@ -64,9 +75,11 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
     }, 1000);
   }
 
-  private _getDiffInTimeFormat = (target: Date, current: Date): any => this._convertMilisecondsToTime(this._getDiffInMiliseconds(target, current));
+  private _getDiffInTimeFormat = (target: Date, current: Date): any => 
+    this._convertMilisecondsToTime(this._getDiffInMiliseconds(target, current));
 
-  private _getDiffInMiliseconds = (target: Date, current: Date): number => Math.abs(target.getTime() - current.getTime());
+  private _getDiffInMiliseconds = (target: Date, current: Date): number => 
+    Math.abs(target.getTime() - current.getTime());
 
   private _convertMilisecondsToTime(duration: number): any {
     var seconds = Math.floor((duration / 1000) % 60);

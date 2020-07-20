@@ -14,8 +14,8 @@ script:
 
 before_deploy:
   - rm -rf public src node_modules
-  # Copy all the built files to website as the build folder is ignored
-  - mkdir website && cp -r ./build/* ./website 
+  # Copy all the built files to the root folder as the build folder is ignored
+  - cp -r ./build/* . 
 
 deploy:
   - provider: azure_web_apps

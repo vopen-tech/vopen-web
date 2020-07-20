@@ -20,12 +20,14 @@ jobs:
         with:
           node-version: "12.13.0"
 
-      - name: npm install, build, and test
-        run: |
-          npm ci
-          npm run build --if-present
-          npm run test --if-present
-          npm prune --production
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build artifact
+        run: npm run build
+
+      - name: Prepare package to deploy
+        run: npm prune --production
 
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v1

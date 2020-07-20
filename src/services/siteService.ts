@@ -56,10 +56,15 @@ function getConferenceCountry() {
   return conferenceId.split("-")[1] || "global";
 }
 
+function mustSetUpCountDown() {
+  return true;
+}
+
 export default {
   getGlobalConferenceId,
   getConferenceCountry,
   getConferenceId,
   getSiteLanguageAndRegion,
-  setSiteLanguage
+  setSiteLanguage,
+  mustSetUpCountDown
 };

@@ -40,7 +40,12 @@
     "expositors": "expositores",
     "attendees": "asistentes",
     "editions": "ediciones",
-    "coronavirus": "A la luz de la situación global debido al COVID-19, estamos monitoreando activamente las orientaciones de salud pública en relación a los eventos presenciales. No tomaremos ninguna decisión a la ligera, pero haremos cambios en la Agenda si es recomendado por las autoridades de salud pública. Nuestra máxima prioridad es la salud y el bienestar de todas/os."
+    "coronavirus": "A la luz de la situación global debido al COVID-19, estamos monitoreando activamente las orientaciones de salud pública en relación a los eventos presenciales. No tomaremos ninguna decisión a la ligera, pero haremos cambios en la Agenda si es recomendado por las autoridades de salud pública. Nuestra máxima prioridad es la salud y el bienestar de todas/os.",
+    "days": "días",
+    "hours": "horas",
+    "minutes": "minutos",
+    "seconds": "segundos",
+    "areYouReady": "¿Estás listo?"
   },
   "titles": {
     "homePage": "El lugar perfecto para hacer networking",
@@ -51,7 +56,9 @@
     "sloganTeam": "Comprometidos a realizar grandes eventos",
     "sloganSponsors": "Si esta interesado en patrocinar nuestra conferencia",
     "sloganSpeakers": "Referentes técnicos dispuestos a compartir su conocimiento",
-    "sponsorship": "Un evento de tecnología sin fines de lucro"
+    "sponsorship": "Un evento de tecnología sin fines de lucro",
+    "vOpenGlobalConference": "vOpen 2020 - Conferencia virtual",
+    "callForSpeakers": "Envíanos tu charla"
   },
   "subtitles": {
     "homePage": "Referentes técnicos, Comunidades, Grandes Empresas"

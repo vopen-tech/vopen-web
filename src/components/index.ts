@@ -20,5 +20,6 @@ export { default as Speakers } from "./Speakers";
 export { default as Schedule } from "./Schedule";
 export { default as Team } from "./Team";
 export { default as Tickets } from "./Tickets";
+export { default as CountDown } from "./CountDown";
 
 export * from "./SVGs";

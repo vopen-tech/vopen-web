@@ -40,7 +40,12 @@
     "expositors": "Expositors",
     "attendees": "Attendees",
     "editions": "Editions",
-    "coronavirus": "In light of the global situation due to the COVID-19, we are actively monitoring public health guidance in relation to in-person events. We won't take any decision lightly, but we will make any changes in the Schedule if recommended by the public authorities. Our top priority is the health and well-being of everyone."
+    "coronavirus": "In light of the global situation due to the COVID-19, we are actively monitoring public health guidance in relation to in-person events. We won't take any decision lightly, but we will make any changes in the Schedule if recommended by the public authorities. Our top priority is the health and well-being of everyone.",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "seconds": "seconds",
+    "areYouReady": "Are you ready?"
   },
   "titles": {
     "homePage": "The perfect place for networking",
@@ -51,7 +56,9 @@
     "sloganTeam": "Committed to making a great event",
     "sloganSponsors": "If you are interested in sponsoring our conference",
     "sloganSpeakers": "Tech experts willing to share their knowledge",
-    "sponsorship": "A non-profit event focused on technology and innovation"
+    "sponsorship": "A non-profit event focused on technology and innovation",
+    "vOpenGlobalConference": "vOpen 2020 - Virtual Conference",
+    "callForSpeakers": "Submit your talk"
   },
   "subtitles": {
     "homePage": "Tech experts, Communities, Large Companies"

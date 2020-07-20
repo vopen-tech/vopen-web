@@ -104,26 +104,26 @@ echo Handling node.js deployment.
 selectNodeVersion
 
 # 2. Install npm packages
-if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
-  cd "$DEPLOYMENT_TARGET"
-  echo "Running $NPM_CMD install"
-  eval $NPM_CMD install
-  exitWithMessageOnError "npm install failed"
-  cd - > /dev/null
-fi
+# if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
+#   cd "$DEPLOYMENT_TARGET"
+#   echo "Running $NPM_CMD install"
+#   eval $NPM_CMD install
+#   exitWithMessageOnError "npm install failed"
+#   cd - > /dev/null
+# fi
 
 # 3. Build React App
-if [ -e "%DEPLOYMENT_SOURCE%\node_modules"]; then
-  cd "$DEPLOYMENT_TARGET"
-  echo "Building React App"
-  eval $NPM_CMD run build
-  exitWithMessageOnError "npm run build failed"
-  cd - > /dev/null
-fi
+# if [ -e "%DEPLOYMENT_SOURCE%\node_modules"]; then
+#   cd "$DEPLOYMENT_TARGET"
+#   echo "Building React App"
+#   eval $NPM_CMD run build
+#   exitWithMessageOnError "npm run build failed"
+#   cd - > /dev/null
+# fi
 
 # 4. KuduSync
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
-  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
+  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE/build" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
   exitWithMessageOnError "Kudu Sync failed"
 fi
 

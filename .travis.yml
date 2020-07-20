@@ -1,0 +1,37 @@
+language: node_js
+
+sudo: true # give us 7.5GB and >2 bursted cores.
+git:
+  depth: false
+
+node_js:
+  - 12
+
+cache: npm
+
+script:
+  - npm run build
+
+before_deploy:
+  - rm -rf public src node_modules
+  - cp -r ./build/* .
+
+deploy:
+  - provider: azure_web_apps
+    verbose: true
+    skip_cleanup: true
+    on: $GLOBAL_WEBSITE_BRANCH
+    site: $GLOBAL_WEBSITE_SITE # site to deploy
+    slot: $GLOBAL_WEBSITE_SLOT # site's slot to use
+    username: $AZURE_DEPLOYER_USERNAME
+    password: $AZURE_DEPLOYER_PASS
+    verbose: true
+  - provider: azure_web_apps
+    verbose: true
+    skip_cleanup: true
+    on: $CONFERENCES_WEBSITE_BRANCH
+    site: $CONFERENCES_WEBSITE_SITE # site to deploy
+    slot: $CONFERENCES_WEBSITE_SLOT # site's slot to use
+    username: $AZURE_DEPLOYER_USERNAME
+    password: $AZURE_DEPLOYER_PASS
+    verbose: true

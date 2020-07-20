@@ -127,7 +127,7 @@ selectNodeVersion
 # 4. KuduSync
 echo "- KuduSync: Copying files to wwwroot.."
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
-  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE/build" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
+  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE/website" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
   cp "$DEPLOYMENT_SOURCE/web.config" "$DEPLOYMENT_TARGET/web.config"
   exitWithMessageOnError "KuduSync failed"
 fi

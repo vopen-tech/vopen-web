@@ -33,7 +33,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
 
   render() {
     return (
-      <>
+      <div className={styles.countdown}>
         <span className={styles.title}>{this.resources.titles.vOpenGlobalConference}</span>
         <ul className={styles.list}>
           <li className={styles.item}>
@@ -59,7 +59,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
             <h1 className="ttu f2 mv0">{this.resources.titles.callForSpeakers}</h1>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 

@@ -27,9 +27,9 @@ jobs:
         run: npm run build
 
       - name: "Deploy to Azure Web App"
-        uses: azure/webapps-deploy@v1
+        uses: azure/webapps-deploy@v2
         with:
           app-name: "vopen-prod-global-win-app"
           slot-name: "production"
           publish-profile: ${{ secrets.AzureAppService_PublishProfile_f3a194de462c4b2c97e26d92ef7efd32 }}
-          package: .
+          package: build

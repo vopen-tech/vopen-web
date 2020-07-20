@@ -10,6 +10,7 @@ node_js:
 cache: npm
 
 script:
+  - rm -rf build
   - npm run build
 
 before_deploy:

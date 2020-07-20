@@ -55,7 +55,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
         </ul>
         <span className={styles.title}>{this.resources.info.areYouReady}</span>
         <div className="w-third-l w-100 pa3">
-          <div className={styles.action} onClick={()=> window.open(constants.speakerCallUrl)}>
+          <div className={styles.action} onClick={() => window.open(constants.globalSpeakerCallUrl)}>
             <h1 className="ttu f2 mv0">{this.resources.titles.callForSpeakers}</h1>
           </div>
         </div>
@@ -63,8 +63,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
     );
   }
 
-  private _formatToTwoDigits = (segment: number): string =>
-    segment < 10 ? `0${segment}` : segment.toString();
+  private _formatToTwoDigits = (segment: number): string => (segment < 10 ? `0${segment}` : segment.toString());
 
   private _setCountDownInterval(): void {
     this.countDownInterval = setInterval(() => {
@@ -75,11 +74,9 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
     }, 1000);
   }
 
-  private _getDiffInTimeFormat = (target: Date, current: Date): any => 
-    this._convertMilisecondsToTime(this._getDiffInMiliseconds(target, current));
+  private _getDiffInTimeFormat = (target: Date, current: Date): any => this._convertMilisecondsToTime(this._getDiffInMiliseconds(target, current));
 
-  private _getDiffInMiliseconds = (target: Date, current: Date): number => 
-    Math.abs(target.getTime() - current.getTime());
+  private _getDiffInMiliseconds = (target: Date, current: Date): number => Math.abs(target.getTime() - current.getTime());
 
   private _convertMilisecondsToTime(duration: number): any {
     var seconds = Math.floor((duration / 1000) % 60);

@@ -27,10 +27,9 @@
     "typescript": "^3.4.4"
   },
   "scripts": {
-    "start": "node app.js",
-    "build": "react-scripts build",
-    "dev": "react-scripts start",
-    "dev:conference": "REACT_APP_CONFERENCE_APP=vopen-uy-2019 react-scripts start"
+    "start": "react-scripts start",
+    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-uy-2019 react-scripts start",
+    "build": "react-scripts build"
   },
   "engines": {
     "node": "12.x"

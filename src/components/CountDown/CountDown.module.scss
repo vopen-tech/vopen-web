@@ -34,12 +34,15 @@
   text-align: center;
   cursor: pointer;
 
-  background-color: var(--backgroundColor);
-  border-color: var(--primaryColor);
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
 
   &:hover {
-    background-color: var(--primaryColor);
-    color: var(--backgroundColor);
+    background-color: var(--primaryColorHovered);
+  }
+
+  &:active {
+    border-color: var(--primaryColorHovered);
   }
 }
 

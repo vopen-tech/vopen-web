@@ -51,13 +51,12 @@
 
     background-color: var(--primaryColor);
     color: var(--backgroundColor);
+    text-shadow: none;
 
     &:hover {
-      background-color: var(--primaryColorHovered);
-    }
-
-    &:active {
-      border-color: var(--primaryColorHovered);
+      background-color: var(--backgroundColor);
+      border-color: var(--backgroundColor);
+      color: var(--primaryColor);
     }
   }
 }

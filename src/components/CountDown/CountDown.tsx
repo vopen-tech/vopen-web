@@ -54,6 +54,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
           </li>
         </ul>
         <span className={styles.title}>{this.resources.info.areYouReady}</span>
+        <span className={styles.title}>{this.resources.info.deadLineText}</span>
         <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={() => window.open(constants.globalSpeakerCallUrl)}>
             <h1 className="ttu f2 mv0">{this.resources.titles.callForSpeakers}</h1>

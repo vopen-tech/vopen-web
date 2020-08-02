@@ -45,7 +45,8 @@
     "hours": "hours",
     "minutes": "minutes",
     "seconds": "seconds",
-    "areYouReady": "Are you ready?"
+    "areYouReady": "Are you ready?",
+    "deadLineText": "Saturday, October 3 2020"
   },
   "titles": {
     "homePage": "The perfect place for networking",

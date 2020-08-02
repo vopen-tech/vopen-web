@@ -45,7 +45,8 @@
     "hours": "horas",
     "minutes": "minutos",
     "seconds": "segundos",
-    "areYouReady": "¿Estás listo?"
+    "areYouReady": "¿Estás listo?",
+    "deadLineText": "Sábado 3 de Octubre de 2020"
   },
   "titles": {
     "homePage": "El lugar perfecto para hacer networking",

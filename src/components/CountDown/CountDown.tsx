@@ -3,6 +3,7 @@ import { IProps, IState } from "./types";
 import styles from "./CountDown.module.scss";
 import constants from "../../constants";
 import { resourcesService } from "../../services";
+import NavLink from "../NavLink";
 
 export default class CountDown extends React.PureComponent<IProps, IState> {
   private countDownInterval: any = null;
@@ -37,7 +38,9 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
         <h2 className={styles.header}>
           <span>vOpen 2020</span>
           <br />
-          <span>{this.resources.titles.vOpenGlobalConference}</span>
+          <NavLink className={styles.conference} to={"/conference"}>
+            {this.resources.titles.vOpenGlobalConference}
+          </NavLink>
         </h2>
         <h3 className={styles.subHeader}>{this.resources.info.deadLineText}</h3>
         <ul className={styles.list}>

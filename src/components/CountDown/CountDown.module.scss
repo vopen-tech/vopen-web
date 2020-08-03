@@ -1,5 +1,10 @@
 @import "../../styles/styles";
 
+%shadow {
+  color: rgb(236, 236, 236);
+  text-shadow: 1px 1px black;
+}
+
 .countdown {
   display: flex;
   flex-direction: column;
@@ -13,13 +18,33 @@
   background-position: center;
   background-size: cover;
 
-  color: rgb(236, 236, 236);
-  text-shadow: 1px 1px black;
-
   .title {
     @extend %title;
+    @extend %shadow;
+    font-weight: 500;
     padding-top: 1em;
     padding-bottom: 1em;
+    color: rgb(236, 236, 236);
+    text-shadow: 1px 1px black;
+  }
+
+  .header {
+    @extend %title;
+    @extend %shadow;
+    line-height: 1em;
+    padding: 0 0 1em 0;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .subHeader {
+    @extend %title;
+    @extend %shadow;
+    padding: 0 0 1em 0;
+    margin: 0;
+    font-weight: 500;
+    color: rgb(236, 236, 236);
+    text-shadow: 1px 1px black;
   }
 
   .list {
@@ -30,6 +55,7 @@
   }
 
   .item {
+    @extend %shadow;
     display: inline-block;
     font-size: 2em;
     list-style-type: none;

@@ -46,7 +46,7 @@
     "minutes": "minutes",
     "seconds": "seconds",
     "areYouReady": "Are you ready?",
-    "deadLineText": "Saturday, October 3 2020"
+    "deadLineText": "Saturday, October 3, 2020"
   },
   "titles": {
     "homePage": "The perfect place for networking",
@@ -58,7 +58,7 @@
     "sloganSponsors": "If you are interested in sponsoring our conference",
     "sloganSpeakers": "Tech experts willing to share their knowledge",
     "sponsorship": "A non-profit event focused on technology and innovation",
-    "vOpenGlobalConference": "vOpen 2020 - Virtual Conference",
+    "vOpenGlobalConference": "Virtual Conference",
     "callForSpeakers": "Submit your talk"
   },
   "subtitles": {

@@ -34,7 +34,12 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
   render() {
     return (
       <div className={styles.countdown}>
-        <span className={styles.title}>{this.resources.titles.vOpenGlobalConference}</span>
+        <h2 className={styles.header}>
+          <span>vOpen 2020</span>
+          <br />
+          <span>{this.resources.titles.vOpenGlobalConference}</span>
+        </h2>
+        <h3 className={styles.subHeader}>{this.resources.info.deadLineText}</h3>
         <ul className={styles.list}>
           <li className={styles.item}>
             <span id="days">{this.state.days}</span>
@@ -54,7 +59,6 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
           </li>
         </ul>
         <span className={styles.title}>{this.resources.info.areYouReady}</span>
-        <span className={styles.title}>{this.resources.info.deadLineText}</span>
         <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={() => window.open(constants.globalSpeakerCallUrl)}>
             <h1 className="ttu f2 mv0">{this.resources.titles.callForSpeakers}</h1>

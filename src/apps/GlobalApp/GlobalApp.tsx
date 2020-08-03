@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading, CountDown } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
-import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, Conference } from "../../pages";
+import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, VirtualConferencePage } from "../../pages";
 import { IEdition } from "../../types/IEdition";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
@@ -62,6 +62,9 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink to="/team">{Resources.pages.team}</NavLink>
             <NavLink to={Constants.countryRequestUrl}>{Resources.buttons.joinUs}</NavLink>
             {/* <NavLink to="/blog" isButton={true}>Blog</NavLink> */}
+            <NavLink isButton to="/conference">
+              {Resources.pages.virtualConference}
+            </NavLink>
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />
@@ -70,7 +73,7 @@ export default class GlobalApp extends React.PureComponent {
           <Route path="/speakers" render={() => <SpeakersPage speakers={legacyGlobalData.speakers as any} />} />
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
           <Route path="/team" component={ExecutiveTeamPage} />
-          <Route path="/conference" component={Conference} />
+          <Route path="/conference" component={VirtualConferencePage} />
           {/* End body */}
           <Footer>
             <NavLink to="/conduct">{Resources.pages.codeOfConduct}</NavLink>

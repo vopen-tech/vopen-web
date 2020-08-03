@@ -1,0 +1,10 @@
+@import "../../styles/styles";
+
+.pageSection {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  justify-content: center;
+  flex: 1;
+  padding-bottom: 0;
+}

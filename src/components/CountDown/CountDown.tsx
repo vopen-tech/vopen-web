@@ -38,9 +38,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
         <h2 className={styles.header}>
           <span>vOpen 2020</span>
           <br />
-          <NavLink className={styles.conference} to={"/conference"}>
-            {this.resources.titles.vOpenGlobalConference}
-          </NavLink>
+          <span>{this.resources.titles.vOpenGlobalConference}</span>
         </h2>
         <h3 className={styles.subHeader}>{this.resources.info.deadLineText}</h3>
         <ul className={styles.list}>

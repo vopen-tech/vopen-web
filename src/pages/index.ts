@@ -4,4 +4,4 @@ export { default as ExecutiveTeamPage } from "./ExecutiveTeamPage";
 export { default as SchedulePage } from "./SchedulePage";
 export { default as SpeakersPage } from "./SpeakersPage";
 export { default as SponsorsPage } from "./SponsorsPage";
-export { default as Conference } from "./Conference";
+export { default as VirtualConferencePage } from "./VirtualConferencePage";

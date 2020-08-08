@@ -1,0 +1,39 @@
+@import "../../../styles/styles";
+
+.sponsorshipPackage {
+  @extend %flexColumn;
+
+  margin: 35px 0 0 0;
+  min-height: 300px;
+
+  .title {
+    margin: 0 35px;
+    text-align: center;
+  }
+
+  .price {
+    margin: 0;
+  }
+
+  .packageList {
+    columns: 2;
+    margin: 35px 35px 0 35px;
+    padding: 0;
+  }
+
+  .packageListItem {
+    font-size: 21px;
+    list-style: none;
+    margin: 0 0 10px 0;
+  }
+}
+
+@media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+  .sponsorshipPackage {
+    height: 700px;
+
+    .packageList {
+      columns: 1;
+    }
+  }
+}

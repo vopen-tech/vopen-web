@@ -21,5 +21,6 @@ export { default as Schedule } from "./Schedule";
 export { default as Team } from "./Team";
 export { default as Tickets } from "./Tickets";
 export { default as CountDown } from "./CountDown";
+export { default as SponsorshipPackages2020 } from "./SponsorshipPackages2020";
 
 export * from "./SVGs";

@@ -1,5 +1,5 @@
 import React from "react";
-import { SponsorshipPackages, Sponsors } from "../../components";
+import { SponsorshipPackages2020 as SponsorshipPackages, Sponsors } from "../../components";
 import { resourcesService } from "../../services";
 
 import { Props } from "./types";

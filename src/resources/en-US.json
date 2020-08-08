@@ -86,6 +86,22 @@
     "offer17": "Branched Coworking Space",
     "offer18": "Digital sponsor in all vOpen conferences"
   },
+  "sponsorshipPackages2020": {
+    "offer1": "Logo in Web Site",
+    "offer2": "Logo in Mailing",
+    "offer3": "Social Network diffusion",
+    "offer4": "Logo in conference's opening and closing",
+    "offer5": "Sponsored gift",
+    "offer6": "Promotional time (video) during streaming",
+    "offer7": "Logo in speaker's slides during presentation",
+    "offer8": "Sponsored Kahoot game",
+    "offer9": "Logo in Official App",
+    "offer10": "Push Notificaciones",
+    "offer11": "Sponsored Speakers pannel",
+    "offer12": "Logo in streamed talks",
+    "offer13": "Attendees database",
+    "purchasable": "Purchasable"
+  },
   "tickets": {
     "benefit1": "Two-days access to the Conference",
     "benefit1b": "Full access to the Conference",

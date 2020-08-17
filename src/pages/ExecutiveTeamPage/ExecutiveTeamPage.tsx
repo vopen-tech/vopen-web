@@ -1,49 +1,68 @@
 import React from "react";
 import { Team } from "../../components";
 import { IUser } from "../../types/IUser";
-import { resourcesService } from "../../services";
+import { resourcesService, backendService } from "../../services";
 import styles from "./ExecutiveTeamPage.module.scss";
 
-const team: IUser[] = [
-  {
-    id: "Fabian Imaz",
-    name: "Fabian Imaz",
-    imageUrl: "http://uy.netconf.global/Content/images/demo/organizers/FabianImaz.jpg",
-    socialLinks: [
-      { type: "Twitter", url: "https://twitter.com/fabianimaz" },
-      { type: "Linkedin", url: "http://uy.linkedin.com/in/siderys" }
-    ]
-  },
-  {
-    id: "Fabian Fernandez",
-    name: "Fabian Fernandez",
-    imageUrl: "https://i.imgur.com/vXLIy95.jpg",
-    socialLinks: [
-      { type: "Twitter", url: "https://twitter.com/kzfabi" },
-      { type: "Linkedin", url: "http://uy.linkedin.com/in/kzfabi" }
-    ]
-  },
-  {
-    id: "Pablo Di Loreto",
-    name: "Pablo Di Loreto",
-    imageUrl: "http://uy.netconf.global/Content/images/demo/organizers/pablodiloreto.jpg",
-    socialLinks: [
-      { type: "Twitter", url: "https://twitter.com/pablodiloreto" },
-      { type: "Linkedin", url: "http://uy.linkedin.com/in/pablodiloreto" }
-    ]
-  },
-  {
-    id: "Mariano Vazquez",
-    name: "Mariano Vazquez",
-    imageUrl: "http://ar.netconf.global/Content/images/demo/organizers/marianovazquez.jpg",
-    socialLinks: [
-      { type: "Twitter", url: "https://twitter.com/nanovazquez87" },
-      { type: "Linkedin", url: "http://uy.linkedin.com/in/nanovazquez" }
-    ]
-  }
-];
+// const team: IUser[] = [
+//   {
+//     id: "Fabian Imaz",
+//     name: "Fabian Imaz",
+//     imageUrl: "http://uy.netconf.global/Content/images/demo/organizers/FabianImaz.jpg",
+//     socialLinks: [
+//       { type: "Twitter", url: "https://twitter.com/fabianimaz" },
+//       { type: "Linkedin", url: "http://uy.linkedin.com/in/siderys" }
+//     ]
+//   },
+//   {
+//     id: "Fabian Fernandez",
+//     name: "Fabian Fernandez",
+//     imageUrl: "https://i.imgur.com/vXLIy95.jpg",
+//     socialLinks: [
+//       { type: "Twitter", url: "https://twitter.com/kzfabi" },
+//       { type: "Linkedin", url: "http://uy.linkedin.com/in/kzfabi" }
+//     ]
+//   },
+//   {
+//     id: "Pablo Di Loreto",
+//     name: "Pablo Di Loreto",
+//     imageUrl: "http://uy.netconf.global/Content/images/demo/organizers/pablodiloreto.jpg",
+//     socialLinks: [
+//       { type: "Twitter", url: "https://twitter.com/pablodiloreto" },
+//       { type: "Linkedin", url: "http://uy.linkedin.com/in/pablodiloreto" }
+//     ]
+//   },
+//   {
+//     id: "Mariano Vazquez",
+//     name: "Mariano Vazquez",
+//     imageUrl: "http://ar.netconf.global/Content/images/demo/organizers/marianovazquez.jpg",
+//     socialLinks: [
+//       { type: "Twitter", url: "https://twitter.com/nanovazquez87" },
+//       { type: "Linkedin", url: "http://uy.linkedin.com/in/nanovazquez" }
+//     ]
+//   }
+// ];
 
 export default class ExecutiveTeamPage extends React.PureComponent {
+  state: any = {
+    team: [] as IUser[],
+  };
+
+  async componentDidMount() {
+    const edition = await backendService.fetchConference("vopen-global-2020");
+    if(edition && edition.organizers) {
+      const team = edition.organizers.map(organizer => {
+        organizer.jobTitle = undefined;
+        organizer.description = undefined;
+        organizer.company = undefined;
+
+        return organizer;
+      });
+
+      this.setState({ team });
+    }
+  }
+
   render() {
     const Resources = resourcesService.getResources();
 
@@ -53,7 +72,7 @@ export default class ExecutiveTeamPage extends React.PureComponent {
           <h1 className={styles.tag}>{Resources.pages.team}</h1>
           <h2 className={styles.title}>{Resources.titles.sloganTeam}</h2>
         </div>
-        <Team className={styles.executiveTeam} team={team} />
+        <Team className={styles.executiveTeam} team={this.state.team} />
       </div>
     );
   }

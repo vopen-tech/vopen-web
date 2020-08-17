@@ -60,11 +60,55 @@ function mustSetUpCountDown() {
   return true;
 }
 
+function setAccessToken(accessToken: string): void {
+  if (window.localStorage) {
+      window.localStorage.setItem("accessToken", accessToken);
+  }
+}
+
+function removeAccessToken(): void {
+  if (window.localStorage) {
+    window.localStorage.removeItem("accessToken");
+  }
+}
+
+function getAccessToken(): string | null {
+  if (window.localStorage) {
+    return window.localStorage.getItem("accessToken");
+  }
+
+  return null;
+}
+
+function setUser(user: any | null): void {
+  if (window.localStorage) {
+    if (user) {
+      window.localStorage.setItem("user", JSON.stringify(user));
+    } else {
+      window.localStorage.removeItem("user");
+    }
+  }
+}
+
+function getUser(): any | null {
+  const user = window.localStorage.getItem("user");
+  if(user) {
+    return JSON.parse(user);
+  }
+
+  return null;
+}
+
 export default {
   getGlobalConferenceId,
   getConferenceCountry,
   getConferenceId,
   getSiteLanguageAndRegion,
   setSiteLanguage,
-  mustSetUpCountDown
+  mustSetUpCountDown,
+  getAccessToken,
+  setAccessToken,
+  removeAccessToken,
+  setUser,
+  getUser
 };

@@ -2,13 +2,25 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading, CountDown } from "../../components";
 import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
-import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, VirtualConferencePage } from "../../pages";
+import {
+  BlogPage,
+  ConductPage,
+  SpeakersPage,
+  SponsorsPage,
+  ExecutiveTeamPage,
+  VirtualConferencePage,
+  LoginOidc,
+  LogoutOidc } from "../../pages";
 import { IEdition } from "../../types/IEdition";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
 
 import styles from "./GlobalApp.module.scss";
 import { IUser } from "../../types/IUser";
+
+const loginUrl: string = "<<< TO_BE_DEFINED >>>";
+const logoutUrl: string = "<<< TO_BE_DEFINED >>>";
+const useLogin: boolean = false;
 
 const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
@@ -45,10 +57,10 @@ export default class GlobalApp extends React.PureComponent {
     const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
     const editionPromise = backendService.fetchConference("vopen-global-2020");
     const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
-
+    const user = siteService.getUser();
     const team = edition && edition.organizers ? edition.organizers : [] as IUser[];
 
-    this.setState({ legacyGlobalData, team });
+    this.setState({ legacyGlobalData, team, user });
   }
 
   render() {
@@ -72,6 +84,7 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink isButton to="/conference">
               {Resources.pages.virtualConference}
             </NavLink>
+            {useLogin && this._getUserComponent(Resources.buttons.login, Resources.buttons.logout)}
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />
@@ -81,6 +94,22 @@ export default class GlobalApp extends React.PureComponent {
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
           <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]}/>} />
           <Route path="/conference" component={VirtualConferencePage} />
+          <Route
+            path="/login"
+            component={() => {
+              window.location.href = loginUrl;
+              return null;
+            }}
+          />
+          <Route
+            path="/logout"
+            component={() => {
+              window.location.href = logoutUrl;
+              return null;
+            }}
+          />
+          <Route path="/login-oidc" component={LoginOidc} />
+          <Route path="/logout-oidc" component={LogoutOidc} />
           {/* End body */}
           <Footer>
             <NavLink to="/conduct">{Resources.pages.codeOfConduct}</NavLink>
@@ -88,5 +117,18 @@ export default class GlobalApp extends React.PureComponent {
         </div>
       </Router>
     );
+  }
+
+  _getUserComponent(loginText: string, logoutText: string) {
+    if (this.state.user) {
+      return (
+        <>
+          <span>{this.state.user.displayName}</span>
+          <NavLink to="/logout">{logoutText}</NavLink>
+        </>
+      );
+    } else {
+      return <NavLink to="/login">{loginText}</NavLink>;
+    }
   }
 }

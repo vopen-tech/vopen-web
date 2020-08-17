@@ -22,7 +22,9 @@
     "buy": "Buy",
     "soon": "Soon available",
     "soldOut": "Sold out",
-    "visit": "Visit"
+    "visit": "Visit",
+    "login": "Log In",
+    "logout": "Log Out"
   },
   "banner": {
     "soon": "Soon",

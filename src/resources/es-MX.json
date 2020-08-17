@@ -22,7 +22,9 @@
     "buy": "Comprar",
     "soon": "Próximamente",
     "soldOut": "Entradas agotadas",
-    "visit": "Visita"
+    "visit": "Visita",
+    "login": "Acceso",
+    "logout": "Salir"
   },
   "banner": {
     "soon": "Próximamente",

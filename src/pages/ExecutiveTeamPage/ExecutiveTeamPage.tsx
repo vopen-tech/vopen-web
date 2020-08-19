@@ -1,7 +1,7 @@
 import React from "react";
 import { Team } from "../../components";
-import { IUser } from "../../types/IUser";
-import { resourcesService, backendService } from "../../services";
+import { Props } from "./types";
+import { resourcesService } from "../../services";
 import styles from "./ExecutiveTeamPage.module.scss";
 
 // const team: IUser[] = [
@@ -43,26 +43,7 @@ import styles from "./ExecutiveTeamPage.module.scss";
 //   }
 // ];
 
-export default class ExecutiveTeamPage extends React.PureComponent {
-  state: any = {
-    team: [] as IUser[],
-  };
-
-  async componentDidMount() {
-    const edition = await backendService.fetchConference("vopen-global-2020");
-    if(edition && edition.organizers) {
-      const team = edition.organizers.map(organizer => {
-        organizer.jobTitle = undefined;
-        organizer.description = undefined;
-        organizer.company = undefined;
-
-        return organizer;
-      });
-
-      this.setState({ team });
-    }
-  }
-
+export default class ExecutiveTeamPage extends React.PureComponent<Props> {
   render() {
     const Resources = resourcesService.getResources();
 
@@ -72,7 +53,7 @@ export default class ExecutiveTeamPage extends React.PureComponent {
           <h1 className={styles.tag}>{Resources.pages.team}</h1>
           <h2 className={styles.title}>{Resources.titles.sloganTeam}</h2>
         </div>
-        <Team className={styles.executiveTeam} team={this.state.team} />
+        <Team className={styles.executiveTeam} team={this.props.team} />
       </div>
     );
   }

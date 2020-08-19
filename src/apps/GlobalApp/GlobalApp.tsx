@@ -42,10 +42,10 @@ export default class GlobalApp extends React.PureComponent {
   };
 
   async componentDidMount() {
-    const legacyGlobalData = await backendService.fetchConference("vopen-global-legacy");
     const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
     const editionPromise = backendService.fetchConference("vopen-global-2020");
-    const [legacyGlobalData, edition] = await Promise.all(legacyGlobalDataPromise, editionPromise);
+    const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
+
     const team = edition && edition.organizers ? edition.organizers : [] as IUser[];
 
     this.setState({ legacyGlobalData, team });

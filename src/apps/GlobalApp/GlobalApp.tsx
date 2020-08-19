@@ -8,6 +8,7 @@ import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
 
 import styles from "./GlobalApp.module.scss";
+import { IUser } from "../../types/IUser";
 
 const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
@@ -37,15 +38,21 @@ export default class GlobalApp extends React.PureComponent {
   state: any = {
     conferenceData: undefined,
     legacyGlobalData: undefined,
+    team: [] as IUser[]
   };
 
   async componentDidMount() {
-    const legacyGlobalData = await backendService.fetchConference("vopen-global-legacy");
-    this.setState({ legacyGlobalData });
+    const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
+    const editionPromise = backendService.fetchConference("vopen-global-2020");
+    const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
+
+    const team = edition && edition.organizers ? edition.organizers : [] as IUser[];
+
+    this.setState({ legacyGlobalData, team });
   }
 
   render() {
-    const { legacyGlobalData } = this.state;
+    const { legacyGlobalData, team } = this.state;
 
     if (!legacyGlobalData) {
       return <Loading />;
@@ -72,7 +79,7 @@ export default class GlobalApp extends React.PureComponent {
           <Route path="/conduct" component={ConductPage} />
           <Route path="/speakers" render={() => <SpeakersPage speakers={legacyGlobalData.speakers as any} />} />
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
-          <Route path="/team" component={ExecutiveTeamPage} />
+          <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]}/>} />
           <Route path="/conference" component={VirtualConferencePage} />
           {/* End body */}
           <Footer>

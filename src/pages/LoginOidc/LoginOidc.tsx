@@ -2,24 +2,31 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { Props } from "./types";
 import { siteService } from "../../services";
+import { Loading } from "../../components";
 
 export default class LoginOidc extends React.PureComponent<Props, any> {
+  state = {
+    redirect: false,
+  };
+
   componentDidMount() {
     this._setSession();
   }
 
   render() {
-    return <Redirect to="/" />;
+    return this.state.redirect ? 
+      <Redirect to="/" /> : 
+      <Loading />;
   }
 
   _setSession() {
     const queryString = this.props.location.search;
     const params = new URLSearchParams(queryString);
-    const token = params.get("token");
+    const idToken = params.get("id_token");
 
-    if (token) {
-      siteService.setAccessToken(token);
-      this._setUser(token);
+    if (idToken) {
+      siteService.setAccessToken(idToken);
+      this._setUser(idToken);
     }
   }
 
@@ -29,8 +36,10 @@ export default class LoginOidc extends React.PureComponent<Props, any> {
         var user = JSON.parse(atob(token.split(".")[1]));
         siteService.setUser(user);
       } catch (error) {
-        // ignore
+        console.log(JSON.stringify(error));
       }
+
+      this.setState({ redirect: true });
     }
   }
 }

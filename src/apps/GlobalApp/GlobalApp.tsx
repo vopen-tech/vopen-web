@@ -18,9 +18,8 @@ import Constants from "../../constants";
 import styles from "./GlobalApp.module.scss";
 import { IUser } from "../../types/IUser";
 
-const loginUrl: string = "<<< TO_BE_DEFINED >>>";
-const logoutUrl: string = "<<< TO_BE_DEFINED >>>";
-const useLogin: boolean = false;
+const loginUrl: string = "https://vopentechweb.b2clogin.com/vopentechweb.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_signinsignup&client_id=2bb15913-064f-4bd9-8850-04d5b2a96869&nonce=defaultNonce&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Flogin-oidc&scope=openid&response_type=id_token&prompt=login&response_mode=query";
+const useLogin: boolean = true;
 
 const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
   const Resources = resourcesService.getResources();
@@ -101,13 +100,6 @@ export default class GlobalApp extends React.PureComponent {
               return null;
             }}
           />
-          <Route
-            path="/logout"
-            component={() => {
-              window.location.href = logoutUrl;
-              return null;
-            }}
-          />
           <Route path="/login-oidc" component={LoginOidc} />
           <Route path="/logout-oidc" component={LogoutOidc} />
           {/* End body */}
@@ -123,8 +115,8 @@ export default class GlobalApp extends React.PureComponent {
     if (this.state.user) {
       return (
         <>
-          <span>{this.state.user.displayName}</span>
-          <NavLink to="/logout">{logoutText}</NavLink>
+          <span>{`${this.state.user.given_name}`}</span>
+          <NavLink to="/logout-oidc">{logoutText}</NavLink>
         </>
       );
     } else {

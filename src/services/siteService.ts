@@ -60,11 +60,32 @@ function mustSetUpCountDown() {
   return true;
 }
 
+function getSession(): any | null {
+  const session = window.localStorage.getItem("session");
+  if(session) {
+    return JSON.parse(session);
+  }
+
+  return null;
+}
+
+function setSession(session: any | null): void {
+  if (window.localStorage) {
+    if (session) {
+      window.localStorage.setItem("session", JSON.stringify(session));
+    } else {
+      window.localStorage.removeItem("session");
+    }
+  }
+}
+
 export default {
   getGlobalConferenceId,
   getConferenceCountry,
   getConferenceId,
   getSiteLanguageAndRegion,
   setSiteLanguage,
-  mustSetUpCountDown
+  mustSetUpCountDown,
+  getSession,
+  setSession
 };

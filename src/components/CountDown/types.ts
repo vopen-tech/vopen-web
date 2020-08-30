@@ -1,6 +1,7 @@
 export interface IProps {
   deadline: Date,
-  current: Date
+  current: Date,
+  register: Function
 }
 
 export interface IState {

@@ -1,52 +1,44 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Header, Footer, NavLink, PageSection, Banner, About, History, CtaButtons, Loading, CountDown } from "../../components";
-import { FlagArgentina, FlagChile, FlagMexico, FlagUruguay } from "../../components/SVGs";
-import { BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, VirtualConferencePage } from "../../pages";
-import { IEdition } from "../../types/IEdition";
+import { Header, Footer, NavLink, Loading } from "../../components";
+import { Home, BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, VirtualConferencePage, LoginOidc, LogoutOidc } from "../../pages";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
 
 import styles from "./GlobalApp.module.scss";
 import { IUser } from "../../types/IUser";
 
-const Home: React.SFC<any> = ({ conferenceInfo }: { conferenceInfo: IEdition }) => {
-  const Resources = resourcesService.getResources();
+const useLogin: boolean = true;
 
-  return (
-    <>
-      {siteService.mustSetUpCountDown() && <CountDown deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()} />}
-      <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even">
-        {/* <div className={styles.flags}>
-          <FlagArgentina className={styles.flag} onClick={() => window.open("//ar.vopen.tech", "_blank")} />
-          <FlagChile className={styles.flag} onClick={() => window.open("//cl.vopen.tech", "_blank")} />
-          <FlagMexico className={styles.flag} onClick={() => window.open("//mx.vopen.tech", "_blank")} />
-          <FlagUruguay className={styles.flag} onClick={() => window.open("//uy.vopen.tech", "_blank")} />
-        </div> */}
-        {/* <Slider conferenceInfo={conferenceInfo} /> */}
-      </Banner>
-      <PageSection id="about">
-        <About />
-        <History />
-        <CtaButtons className="pv5-l pv4" />
-      </PageSection>
-    </>
-  );
-};
+type IProps = {
+  session: any | null,
+  showError: boolean,
+  dispatch: Function
+}
 
-export default class GlobalApp extends React.PureComponent {
+class GlobalApp extends React.PureComponent<IProps> {
   state: any = {
     conferenceData: undefined,
     legacyGlobalData: undefined,
-    team: [] as IUser[]
+    team: [] as IUser[],
   };
 
   async componentDidMount() {
     const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
     const editionPromise = backendService.fetchConference("vopen-global-2020");
     const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
-
-    const team = edition && edition.organizers ? edition.organizers : [] as IUser[];
+    if(!this.props.session){
+      const session = siteService.getSession();
+      if(session) {
+        this.props.dispatch({
+          type: 'LOGIN',
+          payload: session
+        });
+      }
+    }
+    
+    const team = edition && edition.organizers ? edition.organizers : ([] as IUser[]);
 
     this.setState({ legacyGlobalData, team });
   }
@@ -72,6 +64,7 @@ export default class GlobalApp extends React.PureComponent {
             <NavLink isButton to="/conference">
               {Resources.pages.virtualConference}
             </NavLink>
+            {useLogin && this._getUserComponent(Resources.buttons.login, Resources.buttons.logout)}
           </Header>
           {/* Body */}
           <Route exact path="/" component={Home} />
@@ -79,8 +72,17 @@ export default class GlobalApp extends React.PureComponent {
           <Route path="/conduct" component={ConductPage} />
           <Route path="/speakers" render={() => <SpeakersPage speakers={legacyGlobalData.speakers as any} />} />
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
-          <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]}/>} />
+          <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]} />} />
           <Route path="/conference" component={VirtualConferencePage} />
+          <Route
+            path="/login"
+            component={() => {
+              window.location.href = Constants.loginUrl;
+              return null;
+            }}
+          />
+          <Route path="/login-oidc" component={LoginOidc} />
+          <Route path="/logout-oidc" component={LogoutOidc} />
           {/* End body */}
           <Footer>
             <NavLink to="/conduct">{Resources.pages.codeOfConduct}</NavLink>
@@ -89,4 +91,26 @@ export default class GlobalApp extends React.PureComponent {
       </Router>
     );
   }
+
+  _getUserComponent(loginText: string, logoutText: string) {
+    if (this.props.session && !this.props.showError) {
+      return (
+        <>
+          <span className={styles.user}>{`${this.props.session.user.given_name}`}</span>
+          <NavLink to="/logout-oidc">{logoutText}</NavLink>
+        </>
+      );
+    } else {
+      return <NavLink to="/login">{loginText}</NavLink>;
+    }
+  }
 }
+
+let mapStateToProps = (state: any) => {
+  return {
+    session: state.session.session,
+    showError: state.session.showError
+  }
+}
+
+export default connect(mapStateToProps)(GlobalApp);

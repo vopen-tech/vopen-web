@@ -22,7 +22,9 @@
     "buy": "Buy",
     "soon": "Soon available",
     "soldOut": "Sold out",
-    "visit": "Visit"
+    "visit": "Visit",
+    "login": "Log In",
+    "logout": "Log Out"
   },
   "banner": {
     "soon": "Soon",
@@ -47,7 +49,9 @@
     "minutes": "minutes",
     "seconds": "seconds",
     "areYouReady": "Are you ready?",
-    "deadLineText": "Saturday, October 3, 2020"
+    "deadLineText": "Saturday, October 3, 2020",
+    "newUser": "Thanks for registering.\nYou will get info about the conference and upcoming talks soon.\nStay connected!!!",
+    "errorLogin": "Opps!!! Something went wrong login you in. You might wat to try again!"
   },
   "titles": {
     "homePage": "The perfect place for networking",
@@ -60,7 +64,8 @@
     "sloganSpeakers": "Tech experts willing to share their knowledge",
     "sponsorship": "A non-profit event focused on technology and innovation",
     "vOpenGlobalConference": "Virtual Conference",
-    "callForSpeakers": "Submit your talk"
+    "callForSpeakers": "Submit your talk",
+    "register": "Register"
   },
   "subtitles": {
     "homePage": "Tech experts, Communities, Large Companies"

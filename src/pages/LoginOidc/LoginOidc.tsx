@@ -1,10 +1,11 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
-import { Props } from "./types";
-import { siteService } from "../../services";
+import { IProps } from "./types";
 import { Loading } from "../../components";
+import { siteService } from "../../services";
 
-export default class LoginOidc extends React.PureComponent<Props, any> {
+class LoginOidc extends React.PureComponent<IProps> {
   state = {
     redirect: false,
   };
@@ -23,23 +24,43 @@ export default class LoginOidc extends React.PureComponent<Props, any> {
     const queryString = this.props.location.search;
     const params = new URLSearchParams(queryString);
     const idToken = params.get("id_token");
+    const error = params.get("error");
 
-    if (idToken) {
-      siteService.setAccessToken(idToken);
-      this._setUser(idToken);
+    if(error || !idToken) {
+      const errorDescription = params.get("error_description");
+      this._handleError(error, errorDescription);
+    } else {
+      this._handleSuccess(idToken);
     }
+
+    this.setState({ redirect: true });
   }
 
-  _setUser(token: string) {
-    if (token) {
-      try {
-        var user = JSON.parse(atob(token.split(".")[1]));
-        siteService.setUser(user);
-      } catch (error) {
-        console.log(JSON.stringify(error));
+  _handleError(error: string | null, errorDescription: string | null) {
+    this.props.dispatch({
+      type: 'LOGIN_FAILED',
+      payload: {
+        error,
+        errorDescription
       }
+    });
+  }
 
-      this.setState({ redirect: true });
-    }
+  _handleSuccess(idToken: string) {
+    const user = JSON.parse(atob(idToken.split(".")[1]));
+    const session ={
+      user,
+      idToken,
+      isNew: true // from claims
+    };
+
+    siteService.setSession(session);
+
+    this.props.dispatch({
+      type: 'LOGIN',
+      payload: session
+    });
   }
 }
+
+export default connect()(LoginOidc);

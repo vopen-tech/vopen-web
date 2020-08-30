@@ -49,7 +49,9 @@
     "minutes": "minutos",
     "seconds": "segundos",
     "areYouReady": "¿Estás listo?",
-    "deadLineText": "Sábado 3 de Octubre de 2020"
+    "deadLineText": "Sábado 3 de Octubre de 2020",
+    "newUser": "Gracias por registrarte.\nEn breve recibirás información sobre las charlas y la agenda del evento.\nEstaté atento!!!",
+    "errorLogin": "Opps!!! Tuvimos un problema validanto tu identidad. Intenta nuevamente!"
   },
   "titles": {
     "homePage": "El lugar perfecto para hacer networking",
@@ -62,7 +64,8 @@
     "sloganSpeakers": "Referentes técnicos dispuestos a compartir su conocimiento",
     "sponsorship": "Un evento de tecnología sin fines de lucro",
     "vOpenGlobalConference": "Conferencia virtual",
-    "callForSpeakers": "Envíanos tu charla"
+    "callForSpeakers": "Envíanos tu charla",
+    "register": "Regístrate"
   },
   "subtitles": {
     "homePage": "Referentes técnicos, Comunidades, Grandes Empresas"

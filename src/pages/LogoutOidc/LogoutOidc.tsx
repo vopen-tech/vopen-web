@@ -1,17 +1,19 @@
 import React from "react";
+import { connect } from 'react-redux';
 import { Redirect } from "react-router-dom";
-import { siteService } from "../../services";
+import { IProps } from "./types";
 import { Loading } from "../../components";
+import { siteService } from "../../services";
 
 
-export default class LogoutOidc extends React.PureComponent {
+class LogoutOidc extends React.PureComponent<IProps> {
   state = {
     redirect: false,
   };
 
   componentDidMount() {
-    siteService.removeAccessToken();
-    siteService.setUser(null);
+    siteService.setSession(null);
+    this.props.dispatch({type: 'LOGOUT'});
     this.setState({ redirect: true });
   }
 
@@ -21,3 +23,5 @@ export default class LogoutOidc extends React.PureComponent {
       <Loading />;
   }
 }
+
+export default connect()(LogoutOidc);

@@ -60,43 +60,23 @@ function mustSetUpCountDown() {
   return true;
 }
 
-function setAccessToken(accessToken: string): void {
-  if (window.localStorage) {
-      window.localStorage.setItem("accessToken", accessToken);
-  }
-}
-
-function removeAccessToken(): void {
-  if (window.localStorage) {
-    window.localStorage.removeItem("accessToken");
-  }
-}
-
-function getAccessToken(): string | null {
-  if (window.localStorage) {
-    return window.localStorage.getItem("accessToken");
+function getSession(): any | null {
+  const session = window.localStorage.getItem("session");
+  if(session) {
+    return JSON.parse(session);
   }
 
   return null;
 }
 
-function setUser(user: any | null): void {
+function setSession(session: any | null): void {
   if (window.localStorage) {
-    if (user) {
-      window.localStorage.setItem("user", JSON.stringify(user));
+    if (session) {
+      window.localStorage.setItem("session", JSON.stringify(session));
     } else {
-      window.localStorage.removeItem("user");
+      window.localStorage.removeItem("session");
     }
   }
-}
-
-function getUser(): any | null {
-  const user = window.localStorage.getItem("user");
-  if(user) {
-    return JSON.parse(user);
-  }
-
-  return null;
 }
 
 export default {
@@ -106,9 +86,6 @@ export default {
   getSiteLanguageAndRegion,
   setSiteLanguage,
   mustSetUpCountDown,
-  getAccessToken,
-  setAccessToken,
-  removeAccessToken,
-  setUser,
-  getUser
+  getSession,
+  setSession
 };

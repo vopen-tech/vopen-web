@@ -1,4 +1,4 @@
-const redirectUri = "http%3A%2F%2Fvopen.tech%2Flogin-oidc";
+const redirectUri = "https%3A%2F%2Fvopen.tech%2Flogin-oidc";
 const clientId = "2bb15913-064f-4bd9-8850-04d5b2a96869";
 const constants = {
   globalSpeakerCallUrl: "https://sessionize.com/vopen-2020/",

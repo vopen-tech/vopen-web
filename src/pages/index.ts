@@ -8,3 +8,4 @@ export { default as VirtualConferencePage } from "./VirtualConferencePage";
 export { default as LoginOidc } from "./LoginOidc";
 export { default as LogoutOidc } from "./LogoutOidc";
 export { default as Home } from "./Home";
+export { default as UserPage } from "./UserPage";

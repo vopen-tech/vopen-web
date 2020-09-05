@@ -1,0 +1,21 @@
+@import "../../styles/styles";
+
+.speakersPage {
+  @extend %pageSection;
+  @extend %flexColumn;
+
+  justify-content: center;
+  flex: 1;
+}
+
+.banner {
+  @extend %banner;
+}
+
+.tag {
+  @extend %tag;
+}
+.title {
+  @extend %title;
+}
+

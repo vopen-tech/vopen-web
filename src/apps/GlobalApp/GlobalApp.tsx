@@ -1,8 +1,19 @@
 import React from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Header, Footer, NavLink, Loading } from "../../components";
-import { Home, BlogPage, ConductPage, SpeakersPage, SponsorsPage, ExecutiveTeamPage, VirtualConferencePage, LoginOidc, LogoutOidc } from "../../pages";
+import {
+  Home,
+  UserPage,
+  BlogPage,
+  ConductPage,
+  SpeakersPage,
+  SponsorsPage,
+  ExecutiveTeamPage,
+  VirtualConferencePage,
+  LoginOidc,
+  LogoutOidc,
+} from "../../pages";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
 
@@ -12,10 +23,10 @@ import { IUser } from "../../types/IUser";
 const useLogin: boolean = true;
 
 type IProps = {
-  session: any | null,
-  showError: boolean,
-  dispatch: Function
-}
+  session: any | null;
+  showError: boolean;
+  dispatch: Function;
+};
 
 class GlobalApp extends React.PureComponent<IProps> {
   state: any = {
@@ -28,16 +39,16 @@ class GlobalApp extends React.PureComponent<IProps> {
     const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
     const editionPromise = backendService.fetchConference("vopen-global-2020");
     const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
-    if(!this.props.session){
+    if (!this.props.session) {
       const session = siteService.getSession();
-      if(session) {
+      if (session) {
         this.props.dispatch({
-          type: 'LOGIN',
-          payload: session
+          type: "LOGIN",
+          payload: session,
         });
       }
     }
-    
+
     const team = edition && edition.organizers ? edition.organizers : ([] as IUser[]);
 
     this.setState({ legacyGlobalData, team });
@@ -74,6 +85,7 @@ class GlobalApp extends React.PureComponent<IProps> {
           <Route path="/sponsors" component={() => <SponsorsPage sponsors={legacyGlobalData.sponsors as any} />} />
           <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]} />} />
           <Route path="/conference" component={VirtualConferencePage} />
+          <Route path="/user" component={UserPage} />
           <Route
             path="/login"
             component={() => {
@@ -96,7 +108,7 @@ class GlobalApp extends React.PureComponent<IProps> {
     if (this.props.session && !this.props.showError) {
       return (
         <>
-          <span className={styles.user}>{`${this.props.session.user.given_name}`}</span>
+          <NavLink to='/user' className={styles.user}>{`${this.props.session.user.given_name}`}</NavLink>
           <NavLink to="/logout-oidc">{logoutText}</NavLink>
         </>
       );
@@ -110,7 +122,7 @@ let mapStateToProps = (state: any) => {
   return {
     session: state.session.session,
     showError: state.session.showError
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(GlobalApp);

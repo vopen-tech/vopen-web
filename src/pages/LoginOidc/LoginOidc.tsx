@@ -8,6 +8,7 @@ import { siteService } from "../../services";
 class LoginOidc extends React.PureComponent<IProps> {
   state = {
     redirect: false,
+    path: '/'
   };
 
   componentDidMount() {
@@ -16,7 +17,7 @@ class LoginOidc extends React.PureComponent<IProps> {
 
   render() {
     return this.state.redirect ? 
-      <Redirect to="/" /> : 
+      <Redirect to={this.state.path} /> :
       <Loading />;
   }
 
@@ -25,15 +26,20 @@ class LoginOidc extends React.PureComponent<IProps> {
     const params = new URLSearchParams(queryString);
     const idToken = params.get("id_token");
     const error = params.get("error");
+    let path = '/';
 
     if(error || !idToken) {
       const errorDescription = params.get("error_description");
       this._handleError(error, errorDescription);
     } else {
       this._handleSuccess(idToken);
+      path = '/user';
     }
 
-    this.setState({ redirect: true });
+    this.setState({ 
+      redirect: true,
+      path
+    });
   }
 
   _handleError(error: string | null, errorDescription: string | null) {

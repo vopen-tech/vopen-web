@@ -1,9 +1,7 @@
 import React from "react";
 import { IProps, IState } from "./types";
 import styles from "./CountDown.module.scss";
-import constants from "../../constants";
 import { resourcesService } from "../../services";
-import NavLink from "../NavLink";
 
 export default class CountDown extends React.PureComponent<IProps, IState> {
   private countDownInterval: any = null;

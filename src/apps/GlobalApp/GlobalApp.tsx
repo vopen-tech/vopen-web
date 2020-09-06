@@ -12,7 +12,7 @@ import {
   ExecutiveTeamPage,
   VirtualConferencePage,
   LoginOidc,
-  LogoutOidc,
+  LogoutOidc
 } from "../../pages";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
@@ -70,7 +70,7 @@ class GlobalApp extends React.PureComponent<IProps> {
             <NavLink to="/speakers">{Resources.pages.speakers}</NavLink>
             <NavLink to="/sponsors">{Resources.pages.sponsorship}</NavLink>
             <NavLink to="/team">{Resources.pages.team}</NavLink>
-            <NavLink to={Constants.countryRequestUrl}>{Resources.buttons.joinUs}</NavLink>
+            {/* <NavLink to={Constants.countryRequestUrl}>{Resources.buttons.joinUs}</NavLink> */}
             {/* <NavLink to="/blog" isButton={true}>Blog</NavLink> */}
             <NavLink isButton to="/conference">
               {Resources.pages.virtualConference}
@@ -90,6 +90,13 @@ class GlobalApp extends React.PureComponent<IProps> {
             path="/login"
             component={() => {
               window.location.href = Constants.loginUrl;
+              return null;
+            }}
+          />
+          <Route
+            path="/edit-profile"
+            component={() => {
+              window.location.href = Constants.editProfileUrl;
               return null;
             }}
           />

@@ -20,7 +20,7 @@ function setSiteLanguage(language: string): void {
 }
 
 function getGlobalConferenceId() {
-  return "vopen-global-2019";
+  return "vopen-global-2020";
 }
 
 function getConferenceId(): string {

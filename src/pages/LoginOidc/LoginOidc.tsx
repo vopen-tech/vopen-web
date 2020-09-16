@@ -33,7 +33,7 @@ class LoginOidc extends React.PureComponent<IProps> {
       this._handleError(error, errorDescription);
     } else {
       this._handleSuccess(idToken);
-      path = '/user';
+      path = '/conference';
     }
 
     this.setState({ 

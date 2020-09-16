@@ -1,5 +1,4 @@
-// const loginRedirectUri = "https%3A%2F%2Fvopen.tech%2Flogin-oidc";
-const loginRedirectUri = "http://localhost:3000/login-oidc";
+const loginRedirectUri = "https%3A%2F%2Fvopen.tech%2Flogin-oidc";
 const clientId = "2bb15913-064f-4bd9-8850-04d5b2a96869";
 const b2cBaseUrl = "https://vopentechweb.b2clogin.com/vopentechweb.onmicrosoft.com/oauth2/v2.0/authorize?";
 const constants = {

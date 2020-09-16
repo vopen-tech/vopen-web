@@ -11,20 +11,6 @@ export default class Footer extends React.PureComponent<any, any> {
       <footer className={styles.footer}>
         <div className="flex items-center">
           <VOpenIso className={styles.logo} to="/" />
-          <div className={styles.countries}>
-            <a className="link navy ph3 db-" href="//ar.vopen.tech" target="_blank">
-              Argentina
-            </a>
-            <a className="link navy ph3 db" href="//cl.vopen.tech" target="_blank">
-              Chile
-            </a>
-            <a className="link navy ph3 db" href="//mx.vopen.tech" target="_blank">
-              México
-            </a>
-            <a className="link navy ph3 db" href="//uy.vopen.tech" target="_blank">
-              Uruguay
-            </a>
-          </div>
         </div>
         <div className="flex">
           <SocialIcon iconType="Twitter" url="https://twitter.com/vopentech" />

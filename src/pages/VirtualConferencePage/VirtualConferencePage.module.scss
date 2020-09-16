@@ -1,10 +1,47 @@
 @import "../../styles/styles";
 
-.pageSection {
+.conferenceApp {
   @extend %pageSection;
   @extend %flexColumn;
 
-  justify-content: center;
   flex: 1;
-  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+  flex: 1;
+
+  .externalNavLink {
+    border: solid 1px var(--secondaryColor);
+
+    &:hover,
+    &:link:hover {
+      color: var(--backgroundColor);
+      background-color: var(--secondaryColor);
+    }
+  }
+
+  .banner {
+    @extend %container;
+    padding: 3rem 0 2rem;
+    .subtitle {
+      @extend %subtitle;
+      width: 70%;
+      margin: 0 auto;
+    }
+    .tag {
+      @extend %tag;
+    }
+  }
+
+  .teamGlobal {
+      text-align: center;
+      text-transform: uppercase;
+  }
+
+  @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
+    .banner {
+      .subtitle {
+        width: 90%;
+      }
+    }
+  }
 }

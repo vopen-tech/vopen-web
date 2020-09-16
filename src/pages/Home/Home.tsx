@@ -14,6 +14,26 @@ function withToast(Component: typeof React.Component) {
   };
 }
 
+const tags = [
+  "#GCP",
+  "#AWS",
+  "#Azure",
+  "#AlibabaCloud",
+  "#DevOps",
+  "#AI",
+  "#BusinessIntelligence",
+  "#Talent",
+  "#IoT",
+  "#TDD",
+  "#NodeJS",
+  "#NetCore",
+  "#Java",
+  "#ReactJS",
+  "#Android",
+  "#Architecture",
+  "#Networking"
+];
+
 class Home extends React.PureComponent<IProps> {
   render() {
     const Resources = resourcesService.getResources();
@@ -30,6 +50,13 @@ class Home extends React.PureComponent<IProps> {
         {siteService.mustSetUpCountDown() && (
           <CountDown deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()} register={() => (window.location.href = Constants.loginUrl)} />
         )}
+        <div className={styles.tags}>
+          {tags.map((tag) => (
+            <div key={tag} className={styles.tag}>
+              {tag}
+            </div>
+          ))}
+        </div>
         <Banner to="#about" title={Resources.titles.homePage} subtitle={Resources.subtitles.homePage} type="even"></Banner>
         <PageSection id="about">
           <About />

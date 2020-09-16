@@ -19,6 +19,23 @@
     color: black;
     text-align: center;
   }
+
+  .tags {
+    @extend %flexRow;
+    font-size: 24px;
+    margin: 60px 0;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .tag {
+      background-color: var(--primaryColor);
+      color: var(--backgroundColor);
+      border-radius: 10px;
+      margin: 15px;
+      padding: 5px;
+    }
+  }
 }
 
 @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {

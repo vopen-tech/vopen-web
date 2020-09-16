@@ -35,10 +35,10 @@
   },
   "info": {
     "welcome": "¡Bienvenid@s a vOpen! El ciclo de eventos de tecnología en Latinoamérica.",
-    "mission": "vOpen busca conectar a entusiastas, estudiantes, profesionales, referentes técnicos y organizaciones de todo el mundo que utilicen la tecnología como medio para concretar sus objetivos.",
-    "history": "Nuestra historia comenzó como .NET Conf, y durante los últimos 5 años llevamos adelante conferencias en 4 países.",
+    "mission": "vOpen conecta entusiastas, estudiantes, profesionales, referentes técnicos y organizaciones de todo el mundo que utilicen la tecnología como medio para concretar sus objetivos.",
+    "history": "Nuestra historia comenzó como .NET Conf, y durante los últimos 5 años llevamos adelante conferencias en 4 países, diversificando las temáticas: #GCP, #AWS, #Azure, #AlibabaCloud, #DevOps, #AI, #BusinessIntelligence, #Talent, #IoT, y muchos temas más!",
     "today": "Enterate de que pasó en las ediciones anteriores",
-    "sponsorship": "Ofrecemos distintos paquetes de sponsorship y también puede elaborar su paquete personalizado basado en las distintas oportunidades ofrecidas. Si tiene ideas únicas o nuevas propuestas, háganos saber y trabajaremos juntos para satisfacer sus necesidades de marketing y negocio.",
+    "sponsorship": "Gracias al apoyo de +200 organizaciones, vOpen llega en forma gratuita a muchas personas. Revisa los paquetes de patrocinio que te permitirán difundir tu marca empleadora y tus capacidades tecnológicas.",
     "companies": "empresas",
     "expositors": "expositores",
     "attendees": "asistentes",
@@ -48,9 +48,9 @@
     "hours": "horas",
     "minutes": "minutos",
     "seconds": "segundos",
-    "areYouReady": "¿Estás listo?",
+    "areYouReady": "¿Estás list@?",
     "deadLineText": "Sábado 3 de Octubre de 2020",
-    "newUser": "Gracias por registrarte.\nEn breve recibirás información sobre las charlas y la agenda del evento.\nEstaté atento!!!",
+    "newUser": "Gracias por registrarte.\nEn breve recibirás información sobre las charlas y la agenda del evento.\nEstate atento!!!",
     "errorLogin": "Opps!!! Tuvimos un problema validanto tu identidad. Intenta nuevamente!"
   },
   "titles": {
@@ -63,7 +63,7 @@
     "sloganSponsors": "Si esta interesado en patrocinar nuestra conferencia",
     "sloganSpeakers": "Referentes técnicos dispuestos a compartir su conocimiento",
     "sponsorship": "Un evento de tecnología sin fines de lucro",
-    "vOpenGlobalConference": "Conferencia virtual",
+    "vOpenGlobalConference": "Conferencia de Tecnología",
     "callForSpeakers": "Proponé tu charla",
     "register": "Regístrate",
     "editProfile": "Edita tus datos"

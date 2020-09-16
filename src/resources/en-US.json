@@ -36,9 +36,9 @@
   "info": {
     "welcome": "Welcome to vOpen! One of the most important community organized set of technology events in Latin America.",
     "mission": "Our mission is to connect students, professionals, technical experts and organizations from around the globe to share knowledge, experiences and promote technological innovation.",
-    "history": "Our history started as .NET Conf, a conference that started five years ago and was held in 4 countries.",
+    "history": "Our history started as .NET Conf, and during the last 5 years we have carried out the conference in 4 countries, expanding to different topics: #GCP, #AWS, #Azure, #AlibabaCloud, #DevOps, #AI, #BusinessIntelligence, #Talent, #IoT, and much more.",
     "today": "Find out what happened in previous editions",
-    "sponsorship": "We offer different sponsorship packages, and you can also prepare your own based on the different opportunities offered. If you have unique needs or new ideas, let us know and we will work together to meet your marketing and business needs.",
+    "sponsorship": "Thanks to +200 organizations, vOpen is able to reach to many people for free. Check out our sponsorship packages that fit better for your business and your tech capabilities.",
     "companies": "Companies",
     "expositors": "Expositors",
     "attendees": "Attendees",
@@ -63,7 +63,7 @@
     "sloganSponsors": "If you are interested in sponsoring our conference",
     "sloganSpeakers": "Tech experts willing to share their knowledge",
     "sponsorship": "A non-profit event focused on technology and innovation",
-    "vOpenGlobalConference": "Virtual Conference",
+    "vOpenGlobalConference": "Technology Conference",
     "callForSpeakers": "Submit your talk",
     "register": "Register",
     "editProfile": "Edit your profile"

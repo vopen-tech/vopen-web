@@ -8,7 +8,7 @@ const sponsors = [
   { sponsor: "hexacta", password: "vqpvp9kf" },
   { sponsor: "algeiba", password: "gB7wdM9x" },
   { sponsor: "vopen", password: "vopen-2020" },
-  { sponsor: "mug", password: "mug" }
+  { sponsor: "mug", password: "mugsXWRDjBG" }
 ];
 
 function getSiteLanguageAndRegion(): string {

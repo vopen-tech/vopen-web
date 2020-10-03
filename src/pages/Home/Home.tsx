@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { useToasts } from "react-toast-notifications";
-import { siteService, resourcesService } from "../../services";
+import { backendService, siteService, resourcesService } from "../../services";
 import { IProps } from "./types";
 import { PageSection, Banner, About, History, CtaButtons, CountDown } from "../../components";
 import Constants from "../../constants";
@@ -35,6 +35,7 @@ const tags = [
 ];
 
 class Home extends React.PureComponent<IProps> {
+
   render() {
     const Resources = resourcesService.getResources();
 

@@ -1,18 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 import { SchedulePage } from "../../pages";
-import {
-  PageSection,
-  HeroConf,
-  Sponsors,
-  Speakers,
-  Loading
-} from "../../components";
+import { PageSection, HeroConf, Sponsors, Speakers, Loading, Notifications } from "../../components";
 import { backendService, resourcesService, siteService } from "../../services";
 import { IEdition } from "../../types/IEdition";
 import { IProps, IState } from "./types";
 import styles from "./VirtualConferencePage.module.scss";
+import { INotification } from "../../types/INotification";
 
-const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: IEdition; globalInfo: IEdition }) => {
+const Home: React.SFC<any> = ({ conferenceInfo, session, notifications }: { conferenceInfo: IEdition; session: any; notifications: INotification[] }) => {
   const Resources = resourcesService.getResources();
   const conferenceSpeakers = conferenceInfo.speakers || [];
   const conferenceSponsors = conferenceInfo.sponsors || [];
@@ -20,7 +16,12 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <HeroConf conferenceInfo={conferenceInfo} type="odd" />
+      <HeroConf conferenceInfo={conferenceInfo} session={session} type="odd" />
+      {session && (
+        <PageSection id="notifications">
+          <Notifications notifications={notifications} isSponsor={false}/>
+        </PageSection>
+      )}
       <PageSection id="schedule">
         <SchedulePage activities={conferenceActivities} />
       </PageSection>
@@ -38,7 +39,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
   );
 };
 
-export default class VirtualConferencePage extends React.PureComponent<IProps, IState> {
+class VirtualConferencePage extends React.PureComponent<IProps, IState> {
   state: IState = {
     conferenceData: undefined,
     globalData: undefined,
@@ -68,12 +69,21 @@ export default class VirtualConferencePage extends React.PureComponent<IProps, I
       return <Loading />;
     }
 
-    const Resources = resourcesService.getResources();    
+    const Resources = resourcesService.getResources();
 
     return (
       <div className={styles.conferenceApp}>
-        <Home conferenceInfo={conferenceData} globalInfo={globalData} />
+        <Home conferenceInfo={conferenceData} session={this.props.session} notifications={this.props.notifications || []}/>
       </div>
     );
   }
 }
+
+let mapStateToProps = (state: any) => {
+  return {
+    notifications: state.notifications.notifications,
+    session: state.session.session,
+  };
+};
+
+export default connect(mapStateToProps)(VirtualConferencePage);

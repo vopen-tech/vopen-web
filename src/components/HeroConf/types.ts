@@ -5,6 +5,7 @@ export interface Props {
   className?: string;
   children: React.ReactNode;
   type?: "odd" | "even";
+  session: any | undefined;
 }
 
 export interface State {}

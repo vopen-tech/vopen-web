@@ -1,3 +1,15 @@
+const sponsors = [
+  { sponsor: "endava", password: "kX5SSs8x" },
+  { sponsor: "southworks", password: "tGCYsy5X" },
+  { sponsor: "itprove", password: "8HdmeQ79" },
+  { sponsor: "nareia", password: "nVBq36h3" },
+  { sponsor: "softvision", password: "s57crx87" },
+  { sponsor: "baufest", password: "sXWRDjBG" },
+  { sponsor: "hexacta", password: "vqpvp9kf" },
+  { sponsor: "algeiba", password: "gB7wdM9x" },
+  { sponsor: "vopen", password: "vopen-2020" },
+];
+
 function getSiteLanguageAndRegion(): string {
   const language = (window.localStorage && window.localStorage.getItem("siteLanguage")) || "en";
 
@@ -79,6 +91,21 @@ function setSession(session: any | null): void {
   }
 }
 
+function loginSponsor(sponsor: string, password: string): boolean {
+  const index = sponsors.findIndex((s) => s.sponsor == sponsor && s.password == password);
+  if(index != -1) {
+    window.localStorage.setItem("sponsor", sponsor);
+
+    return true;
+  }
+
+  return false;
+}
+
+function getSponsor(): string | null {
+  return  window.localStorage.getItem("sponsor");
+}
+
 export default {
   getGlobalConferenceId,
   getConferenceCountry,
@@ -87,5 +114,7 @@ export default {
   setSiteLanguage,
   mustSetUpCountDown,
   getSession,
-  setSession
+  setSession,
+  loginSponsor,
+  getSponsor
 };

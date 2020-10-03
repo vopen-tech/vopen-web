@@ -12,7 +12,8 @@ import {
   ExecutiveTeamPage,
   VirtualConferencePage,
   LoginOidc,
-  LogoutOidc
+  LogoutOidc,
+  SponsorNotification,
 } from "../../pages";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
@@ -52,6 +53,8 @@ class GlobalApp extends React.PureComponent<IProps> {
     const team = edition && edition.organizers ? edition.organizers : ([] as IUser[]);
 
     this.setState({ legacyGlobalData, team });
+
+    this._setIntervalForNotifications()
   }
 
   render() {
@@ -86,6 +89,7 @@ class GlobalApp extends React.PureComponent<IProps> {
           <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]} />} />
           <Route path="/conference" component={VirtualConferencePage} />
           <Route path="/user" component={UserPage} />
+          <Route path="/sponsor/notifications" component={SponsorNotification} />
           <Route
             path="/login"
             component={() => {
@@ -115,7 +119,7 @@ class GlobalApp extends React.PureComponent<IProps> {
     if (this.props.session && !this.props.showError) {
       return (
         <>
-          <NavLink to='/user' className={styles.user}>{`${this.props.session.user.given_name}`}</NavLink>
+          <NavLink to="/user" className={styles.user}>{`${this.props.session.user.given_name}`}</NavLink>
           <NavLink to="/logout-oidc">{logoutText}</NavLink>
         </>
       );
@@ -123,12 +127,28 @@ class GlobalApp extends React.PureComponent<IProps> {
       return <NavLink to="/login">{loginText}</NavLink>;
     }
   }
+
+  async _setIntervalForNotifications() {
+    await this._loadNotifications();
+
+    setInterval(async () => await this._loadNotifications(), 60000);
+  }
+
+  async _loadNotifications() {
+    const notifications = await backendService.getNotifications();
+
+    this.props.dispatch({
+      type: "NOTIFICATIONS_UPDATED",
+      payload: notifications,
+    });
+  }
 }
 
 let mapStateToProps = (state: any) => {
   return {
     session: state.session.session,
-    showError: state.session.showError
+    showError: state.session.showError,
+    notifications: state.notifications.notifications,
   };
 };
 

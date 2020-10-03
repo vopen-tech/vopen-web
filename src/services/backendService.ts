@@ -5,7 +5,7 @@ import { INotification } from "../types/INotification";
 
 const apiBasePath = "https://api.vopen.tech/api";
 // const notificationsApiBasePath = "http://localhost:7071/api";
-const notificationsApiBasePath = "https://vopennotifications.azurewebsites.net/api/attendee/notifications?code=N4NxCshxzaqHSaMEKvEWJ4pCrXTbcM5ovvuuJZM/wcWE1uNsZM/vXg==";
+const notificationsApiBasePath = "https://vopennotifications.azurewebsites.net/api";
 
 async function fetchConference(conferenceId: string): Promise<IEdition | undefined> {
   const url = `${apiBasePath}/v1/editions/${conferenceId}`;
@@ -44,7 +44,7 @@ async function pushNotification(notification: INotification): Promise<INotificat
 
 async function getSponsorNotification(sponsor: string): Promise<INotification[] | undefined> {
   try {
-    const url = `${notificationsApiBasePath}/sponsors/${sponsor}/notifications`;
+    const url = `${notificationsApiBasePath}/sponsors/${sponsor}/notifications?code=N4NxCshxzaqHSaMEKvEWJ4pCrXTbcM5ovvuuJZM/wcWE1uNsZM/vXg==`;
     const result = await axios.get(url);
     return result.data as INotification[];
   } catch (error) {
@@ -55,7 +55,7 @@ async function getSponsorNotification(sponsor: string): Promise<INotification[] 
 
 async function getNotifications(): Promise<INotification[] | undefined> {
   try {
-    const url = `${notificationsApiBasePath}/attendee/notifications`;
+    const url = `${notificationsApiBasePath}/attendee/notifications?code=N4NxCshxzaqHSaMEKvEWJ4pCrXTbcM5ovvuuJZM/wcWE1uNsZM/vXg==`;
     const result = await axios.get(url);
     return result.data as INotification[];
   } catch (error) {

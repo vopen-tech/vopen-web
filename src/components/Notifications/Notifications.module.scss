@@ -1,0 +1,73 @@
+@import "../../styles/styles";
+
+.notificationsSection {
+  @extend %container;
+  padding: 0 50px;
+
+  .table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .notifications {
+    align-self: center;
+    border-collapse: collapse;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    table-layout: fixed;
+    // td {
+    //   padding: 10px 0;
+    //   font-size: 1rem;
+    //   font-weight: 500;
+    //   vertical-align: middle;
+    //   text-align: center;
+    //   width: 15%;
+    //   text-transform: uppercase;
+    // }
+  
+    // th {
+    //   font-size: 1.5rem;
+    //   font-weight: 700;
+    //   padding: 1rem 0;
+    //   text-align: center;
+    //   text-transform: uppercase;
+    //   width: 15%;
+    //   border-bottom: 1px solid var(--primaryColor);
+
+    //   &:first-child {
+    //     text-align: left;
+    //     color: var(--accentColor);
+    //     background-color: transparent;
+    //   }
+    //   &:nth-child(2) {
+    //     text-align: center;
+    //     color: var(--accentColor);
+    //     background-color: transparent;
+    //     width: 40%;
+    //   }
+    //   &:nth-child(3) {
+    //     text-align: center;
+    //     color: var(--accentColor);
+    //     background-color: transparent;
+    //   }
+    // }
+  }
+}
+
+.banner {
+  @extend %container;
+  padding: 5rem 0 2rem;
+  .subtitle {
+    @extend %subtitle;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .tag {
+    @extend %tag;
+    text-transform: uppercase;
+  }
+
+}
+

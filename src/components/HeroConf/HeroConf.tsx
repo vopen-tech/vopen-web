@@ -9,7 +9,7 @@ import styles from "./HeroConf.module.scss";
 export default class HeroConf extends React.PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
     className: undefined,
-    type: "odd"
+    type: "odd",
   };
 
   render() {
@@ -21,33 +21,47 @@ export default class HeroConf extends React.PureComponent<Props, State> {
 
     return (
       <div className={cssClasses}>
-      <div className={styles.hero}>
-        <div className="flex flex-wrap">
-          <div className="w-100">
-            <div className={styles.info}>
-              <div className="self-center">
-                <div className="flex flex-wrap items-center justify-centerself-center">
-                  <VOpenLogo className={styles.logo} />
-                  <h1 className={styles.tag}>{conferenceTitle}</h1>
+        <div className={styles.hero}>
+          <div className="flex flex-wrap">
+            <div className="w-100">
+              <div className={styles.info}>
+                <div className="self-center">
+                  <div className="flex flex-wrap items-center justify-centerself-center">
+                    <VOpenLogo className={styles.logo} />
+                    <h1 className={styles.tag}>{conferenceTitle}</h1>
+                  </div>
+                  <h2 className={styles.title}>{Resources.titles.homePage}</h2>
+                  <p className={styles.bajada}>{Resources.info.mission}</p>
                 </div>
-                <h2 className={styles.title}>{Resources.titles.homePage}</h2>
-                <p className={styles.bajada}>{Resources.info.mission}</p>
+                {this.props.session && (
+                  <div className="self-center">
+                    <ActionButton
+                      className={styles.track}
+                      type="secondary"
+                      text={"Track Business"}
+                      url="https://bit.ly/vopen-20-tracknegocio"
+                      target="_blank"
+                    />
+                    <ActionButton className={styles.track} type="secondary" text={"Track Techie"} url="https://bit.ly/vopen-20-tracktechie" target="_blank" />
+                  </div>
+                )}
               </div>
-            </div>
-            <div className={styles.textActions}>         
-              <div>{isTicketSaleEnabled && <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />} </div>
-              <div className="flex flex-wrap">
-                <div className={styles.textData}>
-                  <p className={styles.time}>{conferenceInfo.date}</p>
-                  <p><a href="/#location">{conferenceInfo.locationName}</a></p>
+              <div className={styles.textActions}>
+                <div>{isTicketSaleEnabled && <ActionButton type="primary" text={Resources.banner.ticketsTitle} url="/#tickets" target="_self" />} </div>
+                <div className="flex flex-wrap">
+                  <div className={styles.textData}>
+                    <p className={styles.time}>{conferenceInfo.date}</p>
+                    <p>
+                      <a href="/#location">{conferenceInfo.locationName}</a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+          {children}
         </div>
-        {children}
       </div>
-    </div>
     );
   }
 }

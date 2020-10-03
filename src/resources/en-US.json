@@ -8,7 +8,8 @@
     "team": "Team",
     "tickets": "Tickets",
     "codeOfConduct": "Code of Conduct",
-    "virtualConference": "vOpen 2020"
+    "virtualConference": "vOpen 2020",
+    "notifications": "Notifications"
   },
   "buttons": {
     "joinUs": "Join us",
@@ -65,7 +66,7 @@
     "sponsorship": "A non-profit event focused on technology and innovation",
     "vOpenGlobalConference": "Technology Conference",
     "callForSpeakers": "Submit your talk",
-    "register": "Register",
+    "register": "Register / Enter",
     "editProfile": "Edit your profile"
   },
   "subtitles": {

@@ -54,7 +54,7 @@ class LoginOidc extends React.PureComponent<IProps> {
 
   _handleSuccess(idToken: string) {
     const user = JSON.parse(atob(idToken.split(".")[1]));
-    const session ={
+    const session = {
       user,
       idToken,
       isNew: true // from claims

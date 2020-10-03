@@ -33,7 +33,7 @@ async function fetchConference(conferenceId: string): Promise<IEdition | undefin
 
 async function pushNotification(notification: INotification): Promise<INotification | undefined> {
   try {
-    const url = `${notificationsApiBasePath}/sponsors/${notification.sponsor}/notifications`;
+    const url = `${notificationsApiBasePath}/sponsors/${notification.sponsor}/notifications?code=N4NxCshxzaqHSaMEKvEWJ4pCrXTbcM5ovvuuJZM/wcWE1uNsZM/vXg==`;
     const result = await axios.post(url, notification);
     return result.data as INotification;
   } catch (error) {

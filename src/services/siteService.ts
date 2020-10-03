@@ -8,6 +8,7 @@ const sponsors = [
   { sponsor: "hexacta", password: "vqpvp9kf" },
   { sponsor: "algeiba", password: "gB7wdM9x" },
   { sponsor: "vopen", password: "vopen-2020" },
+  { sponsor: "mug", password: "mug" }
 ];
 
 function getSiteLanguageAndRegion(): string {
@@ -92,7 +93,7 @@ function setSession(session: any | null): void {
 }
 
 function loginSponsor(sponsor: string, password: string): boolean {
-  const index = sponsors.findIndex((s) => s.sponsor == sponsor && s.password == password);
+  const index = sponsors.findIndex((s) => s.sponsor.toLowerCase() == sponsor.toLowerCase() && s.password.toLowerCase() == password.toLowerCase());
   if(index != -1) {
     window.localStorage.setItem("sponsor", sponsor);
 

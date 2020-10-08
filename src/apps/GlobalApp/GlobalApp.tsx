@@ -89,7 +89,7 @@ class GlobalApp extends React.PureComponent<IProps> {
           <Route path="/team" component={() => <ExecutiveTeamPage team={team as IUser[]} />} />
           <Route path="/conference" component={VirtualConferencePage} />
           <Route path="/user" component={UserPage} />
-          <Route path="/sponsor/notifications" component={SponsorNotification} />
+          {/* <Route path="/sponsor/notifications" component={SponsorNotification} /> */}
           <Route
             path="/login"
             component={() => {

@@ -1,9 +1,9 @@
 {
   "pages": {
     "blog": "Blog",
-    "schedule": "Schedule",
-    "speakers": "Speakers",
-    "sponsors": "Sponsors",
+    "schedule": "Take a look at 2020 edition's schedule",
+    "speakers": "Join us as speaker!",
+    "sponsors": "Join us as sponsor!",
     "sponsorship": "Sponsorship",
     "team": "Team",
     "tickets": "Tickets",
@@ -13,11 +13,11 @@
   },
   "buttons": {
     "joinUs": "Join us",
-    "wantToBeSponsors": "support us",
-    "wantToBeSpeaker": "join",
+    "wantToBeSponsors": "Call for Sponsors",
+    "wantToBeSpeaker": "Call for Speakers",
     "learnMore": "learn more",
     "wantToReceiveNews": "subscribe",
-    "register": "register",
+    "register": "Register to the event",
     "as": "as",
     "toNews": "to news",
     "buy": "Buy",

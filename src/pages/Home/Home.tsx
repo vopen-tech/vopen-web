@@ -54,6 +54,8 @@ class Home extends React.PureComponent<IProps> {
         {siteService.mustSetUpCountDown() && (
           <CountDown deadline={deadlineDate} current={currentDate} register={() => (window.location.href = Constants.loginUrl)} />
         )}
+        {/* <CtaButtons className="pv5-l pv4" /> */}
+        {/* Tags section */}
         <div className={styles.tags}>
           {tags.map((tag) => (
             <div key={tag} className={styles.tag}>
@@ -65,7 +67,6 @@ class Home extends React.PureComponent<IProps> {
         <PageSection id="about">
           <About />
           <History />
-          <CtaButtons className="pv5-l pv4" />
         </PageSection>
       </div>
     );

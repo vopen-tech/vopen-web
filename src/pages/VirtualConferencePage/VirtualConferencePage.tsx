@@ -17,11 +17,11 @@ const Home: React.SFC<any> = ({ conferenceInfo, session, notifications }: { conf
   return (
     <>
       <HeroConf conferenceInfo={conferenceInfo} session={session} type="odd" />
-      {session && (
+      {/* {session && (
         <PageSection id="notifications">
           <Notifications notifications={notifications} isSponsor={false}/>
         </PageSection>
-      )}
+      )} */}
       <PageSection id="schedule">
         <SchedulePage activities={conferenceActivities} />
       </PageSection>

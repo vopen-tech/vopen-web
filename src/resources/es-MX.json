@@ -1,9 +1,9 @@
 {
   "pages": {
     "blog": "Blog",
-    "schedule": "Agenda",
-    "speakers": "Speakers",
-    "sponsors": "Sponsors",
+    "schedule": "Reviví la agenda de la edición 2020",
+    "speakers": "Suma tu charla!",
+    "sponsors": "Sumate como patrocinador!",
     "sponsorship": "Sponsorship",
     "team": "Equipo",
     "tickets": "Entradas",
@@ -13,11 +13,11 @@
   },
   "buttons": {
     "joinUs": "Join",
-    "wantToBeSponsors": "Apóyanos",
-    "wantToBeSpeaker": "súmate",
+    "wantToBeSponsors": "Call for Sponsors",
+    "wantToBeSpeaker": "Call for Speakers",
     "learnMore": "entérate como",
     "wantToReceiveNews": "suscríbete",
-    "register": "regístrate",
+    "register": "Regístrate al evento",
     "as": "como",
     "toNews": "a las novedades",
     "buy": "Comprar",

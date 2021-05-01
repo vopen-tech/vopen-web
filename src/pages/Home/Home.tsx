@@ -46,10 +46,13 @@ class Home extends React.PureComponent<IProps> {
       this.props.dispatch({ type: "LOGIN_FAILED_MESSAGE_SHOWN" });
     }
 
+    const deadlineDate = new Date("2021-11-20T12:00:00.000Z"); // 11/20/2021 9:00 (GMT -3)
+    const currentDate = new Date();
+
     return (
       <div className={styles.home}>
         {siteService.mustSetUpCountDown() && (
-          <CountDown deadline={new Date(2020, 9, 3, 9, 0, 0)} current={new Date()} register={() => (window.location.href = Constants.loginUrl)} />
+          <CountDown deadline={deadlineDate} current={currentDate} register={() => (window.location.href = Constants.loginUrl)} />
         )}
         <div className={styles.tags}>
           {tags.map((tag) => (

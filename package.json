@@ -36,7 +36,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-uy-2019 react-scripts start",
+    "start:conference": "REACT_APP_CONFERENCE_APP=vopen-global-2020 react-scripts start",
     "build": "react-scripts build"
   },
   "engines": {

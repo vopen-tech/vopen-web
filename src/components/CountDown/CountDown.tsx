@@ -48,7 +48,7 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
     return (
       <div className={styles.countdown}>
         <h2 className={styles.header}>
-          <span>vOpen 2020</span>
+          <span>vOpen 2021</span>
           <br />
           <span>{this.resources.titles.vOpenGlobalConference}</span>
         </h2>

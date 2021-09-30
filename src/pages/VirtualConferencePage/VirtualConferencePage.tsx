@@ -56,7 +56,7 @@ class VirtualConferencePage extends React.PureComponent<IProps, IState> {
     if (!conferenceData || !globalData) {
       const [conferenceData, globalData] = await Promise.all([
         backendService.fetchConference(conferenceId),
-        backendService.fetchConference("vopen-global-2020"),
+        backendService.fetchConference("vopen-global-2021"),
       ]);
       this.setState({ conferenceData, globalData });
     }
@@ -81,7 +81,7 @@ class VirtualConferencePage extends React.PureComponent<IProps, IState> {
 
 let mapStateToProps = (state: any) => {
   return {
-    notifications: state.notifications.notifications,
+    // notifications: state.notifications.notifications,
     session: state.session.session,
   };
 };

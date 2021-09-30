@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import session from './session';
-import notifications from './notifications';
+// import notifications from './notifications';
 
 const reducers = combineReducers({
     session,
-    notifications
+    // notifications
 })
 
 export default reducers;

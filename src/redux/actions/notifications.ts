@@ -1,10 +1,11 @@
-import { siteService } from "../../services";
+// import { siteService } from "../../services";
 
 export const loadUserProfile = () => {
-  const session = siteService.getSession();
+  // const session = siteService.getSession();
 
   return {
     type: "LOGIN",
-    payload: session,
+    // payload: session,
+    payload: {},
   };
 };

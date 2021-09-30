@@ -13,7 +13,7 @@ import {
   VirtualConferencePage,
   LoginOidc,
   LogoutOidc,
-  SponsorNotification,
+  // SponsorNotification,
 } from "../../pages";
 import { siteService, resourcesService, backendService } from "../../services";
 import Constants from "../../constants";
@@ -38,7 +38,7 @@ class GlobalApp extends React.PureComponent<IProps> {
 
   async componentDidMount() {
     const legacyGlobalDataPromise = backendService.fetchConference("vopen-global-legacy");
-    const editionPromise = backendService.fetchConference("vopen-global-2020");
+    const editionPromise = backendService.fetchConference("vopen-global-2021");
     const [legacyGlobalData, edition] = await Promise.all([legacyGlobalDataPromise, editionPromise]);
     if (!this.props.session) {
       const session = siteService.getSession();
@@ -54,7 +54,7 @@ class GlobalApp extends React.PureComponent<IProps> {
 
     this.setState({ legacyGlobalData, team });
 
-    this._setIntervalForNotifications()
+    // this._setIntervalForNotifications()
   }
 
   render() {
@@ -128,27 +128,27 @@ class GlobalApp extends React.PureComponent<IProps> {
     }
   }
 
-  async _setIntervalForNotifications() {
-    await this._loadNotifications();
+  // async _setIntervalForNotifications() {
+  //   await this._loadNotifications();
 
-    setInterval(async () => await this._loadNotifications(), 60000);
-  }
+  //   setInterval(async () => await this._loadNotifications(), 60000);
+  // }
 
-  async _loadNotifications() {
-    const notifications = await backendService.getNotifications();
+  // async _loadNotifications() {
+  //   const notifications = await backendService.getNotifications();
 
-    this.props.dispatch({
-      type: "NOTIFICATIONS_UPDATED",
-      payload: notifications,
-    });
-  }
+  //   this.props.dispatch({
+  //     type: "NOTIFICATIONS_UPDATED",
+  //     payload: notifications,
+  //   });
+  // }
 }
 
 let mapStateToProps = (state: any) => {
   return {
     session: state.session.session,
     showError: state.session.showError,
-    notifications: state.notifications.notifications,
+    // notifications: state.notifications.notifications,
   };
 };
 

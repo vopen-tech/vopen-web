@@ -21,7 +21,7 @@ class SponsorNotification extends React.PureComponent<IProps> {
 
     if (sponsor) {
       this.setState({ sponsor, authenticated: true }, () => {
-        this._loadNotifications();
+        // this._loadNotifications();
       });
     }
   }
@@ -74,21 +74,21 @@ class SponsorNotification extends React.PureComponent<IProps> {
 
     if (validSponsor) {
       this.setState({ authenticated: true, error: null }, () => {
-        this._loadNotifications();
+        // this._loadNotifications();
       });
     } else {
       this.setState({ error: "Invalid login" });
     }
   }
 
-  async _loadNotifications() {
-    const notifications = await backendService.getSponsorNotification(this.state.sponsor);
+  // async _loadNotifications() {
+  //   const notifications = await backendService.getSponsorNotification(this.state.sponsor);
 
-    this.props.dispatch({
-      type: "SPONSOR_NOTIFICATIONS_UPDATED",
-      payload: notifications,
-    });
-  }
+  //   this.props.dispatch({
+  //     type: "SPONSOR_NOTIFICATIONS_UPDATED",
+  //     payload: notifications,
+  //   });
+  // }
 
   async _onPostMessage() {
     try {
@@ -103,8 +103,8 @@ class SponsorNotification extends React.PureComponent<IProps> {
         reads: undefined,
       };
 
-      await backendService.pushNotification(notification);
-      this._loadNotifications();
+      // await backendService.pushNotification(notification);
+      // this._loadNotifications();
     } catch (error) {
       console.log(error);
     }
@@ -113,7 +113,7 @@ class SponsorNotification extends React.PureComponent<IProps> {
 
 let mapStateToProps = (state: any) => {
   return {
-    notifications: state.notifications.sponsorNotifications
+    // notifications: state.notifications.sponsorNotifications
   };
 };
 

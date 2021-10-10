@@ -77,14 +77,14 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
             <h1 className="ttu f2 mv0">{this.resources.buttons.register}</h1>
           </div>
         </div>
-        <div className="w-third-l w-100 pa3">
+        {/* <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={() => window.open(constants.globalSpeakerCallUrl)}>
             <h1 className="ttu f2 mv0">{this.resources.buttons.wantToBeSpeaker}</h1>
             <p className="ttu f5 mv0">
               {this.resources.buttons.as} {this.resources.pages.speakers}
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={() => window.open(constants.globalSponsorsCallUrl)}>
             <h1 className="ttu f2 mv0">{this.resources.buttons.wantToBeSponsors}</h1>

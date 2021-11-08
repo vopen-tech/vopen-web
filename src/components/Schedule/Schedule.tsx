@@ -101,11 +101,16 @@ export default class Schedule extends React.PureComponent<Props, State> {
     if (!selectedTrack) {
       return null;
     }
-
+    
     return (
       <div className={styles.dayActivities}>
+        <span className={styles.utc}>
+          {'Timezone UTC' + (- ((new Date().getTimezoneOffset()) / 60))}
+        </span>
         {selectedTrack.activities.map((activity: IEditionActivity) => {
-          const timeArray = new Date(activity.date).toLocaleTimeString().split(":");
+          const date = new Date(activity.date);
+          const timeArray = date.toLocaleTimeString().split(":");
+
           const activityTime = `${timeArray[0]}:${timeArray[1]}`;
           const activityPresenters = activity.presenters.map(item => item.name).join(", ");
           const activityTags = activity.tags && activity.tags.split(",").map(item => item.trim());

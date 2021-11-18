@@ -38,11 +38,9 @@ export default class HeroConf extends React.PureComponent<Props, State> {
                     <ActionButton
                       className={styles.track}
                       type="secondary"
-                      text={"Track Business"}
-                      url="https://bit.ly/vopen-20-tracknegocio"
-                      target="_blank"
-                    />
-                    <ActionButton className={styles.track} type="secondary" text={"Track Techie"} url="https://bit.ly/vopen-20-tracktechie" target="_blank" />
+                      text={"Track Techie"}
+                      url="https://www.youtube.com/watch?v=0NoKGa4JnFw"
+                      target="_blank" />
                   </div>
                 )}
               </div>

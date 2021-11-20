@@ -38,11 +38,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <HeroConf conferenceInfo={conferenceInfo} type="odd" />
-      <PageSection id="about" type="even" className="pt6-l pt5">
-        <CtaButtons className="pt4-l pt0" />
-      </PageSection>
-      <PageSection id="video" type="even" className="pt6-l pt5">
+      <HeroConf conferenceInfo={conferenceInfo} type="odd">
         <div>
           <iframe 
             width="560" 
@@ -53,6 +49,9 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowFullScreen></iframe>
         </div>
+      </HeroConf>
+      <PageSection id="about" type="even" className="pt6-l pt5">
+        <CtaButtons className="pt4-l pt0" />
       </PageSection>
       <PageSection id="speakers">
         <div className={styles.banner}>

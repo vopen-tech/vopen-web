@@ -37,6 +37,11 @@
       text-transform: uppercase;
   }
 
+  .video {
+    @extend %container;
+    padding: 0 50px;
+  }
+
   @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {
     .banner {
       .subtitle {

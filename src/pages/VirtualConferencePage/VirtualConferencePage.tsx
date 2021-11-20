@@ -23,7 +23,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, session, notifications }: { conf
         </PageSection>
       )} */}
       <PageSection id="video">
-        <div>
+        <div className={styles.video}>
           <iframe 
             width="560" 
             height="315" 

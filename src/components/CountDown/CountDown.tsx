@@ -52,25 +52,45 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
           <br />
           <span>{this.resources.titles.vOpenGlobalConference}</span>
         </h2>
-        <h3 className={styles.subHeader}>{this.resources.info.deadLineText}</h3>
-        <ul className={styles.list}>
-          <li className={styles.item}>
-            <span id="days">{this.state.days}</span>
-            {this.resources.info.days}
-          </li>
-          <li className={styles.item}>
-            <span id="hours">{formatToTwoDigits(this.state.hours)}</span>
-            {this.resources.info.hours}
-          </li>
-          <li className={styles.item}>
-            <span id="minutes">{formatToTwoDigits(this.state.minutes)}</span>
-            {this.resources.info.minutes}
-          </li>
-          <li className={styles.item}>
-            <span id="seconds">{formatToTwoDigits(this.state.seconds)}</span>
-            {this.resources.info.seconds}
-          </li>
-        </ul>
+
+        {
+          (this.props.current > this.props.deadline) && (
+            <iframe 
+              width="560" 
+              height="315" 
+              src="https://www.youtube.com/embed/yHhWCmmGCUU" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen></iframe>
+          )
+        }
+        {
+          (this.props.current <= this.props.deadline) && (
+            <div>
+              <h3 className={styles.subHeader}>{this.resources.info.deadLineText}</h3>
+              <ul className={styles.list}>
+                <li className={styles.item}>
+                  <span id="days">{this.state.days}</span>
+                  {this.resources.info.days}
+                </li>
+                <li className={styles.item}>
+                  <span id="hours">{formatToTwoDigits(this.state.hours)}</span>
+                  {this.resources.info.hours}
+                </li>
+                <li className={styles.item}>
+                  <span id="minutes">{formatToTwoDigits(this.state.minutes)}</span>
+                  {this.resources.info.minutes}
+                </li>
+                <li className={styles.item}>
+                  <span id="seconds">{formatToTwoDigits(this.state.seconds)}</span>
+                  {this.resources.info.seconds}
+                </li>
+              </ul>
+            </div>
+          )
+        }
+
         <span className={styles.title}>{this.resources.info.areYouReady}</span>
         <div className="w-third-l w-100 pa3">
           <div className={styles.action} onClick={() => this.props.register()}>

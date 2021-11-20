@@ -52,19 +52,7 @@ class Home extends React.PureComponent<IProps> {
     return (
       <div className={styles.home}>
         {
-          (currentDate > deadlineDate) && (
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/yHhWCmmGCUU" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen></iframe>
-          )
-        }
-        {
-          (currentDate <= deadlineDate) && siteService.mustSetUpCountDown() && (
+          siteService.mustSetUpCountDown() && (
             <CountDown deadline={deadlineDate} current={currentDate} register={() => (window.location.href = Constants.loginUrl)} />
           )
         }

@@ -38,18 +38,7 @@ const Home: React.SFC<any> = ({ conferenceInfo, globalInfo }: { conferenceInfo: 
 
   return (
     <>
-      <HeroConf conferenceInfo={conferenceInfo} type="odd">
-        <div>
-          <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/yHhWCmmGCUU" 
-            title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen></iframe>
-        </div>
-      </HeroConf>
+      <HeroConf conferenceInfo={conferenceInfo} type="odd" />
       <PageSection id="about" type="even" className="pt6-l pt5">
         <CtaButtons className="pt4-l pt0" />
       </PageSection>

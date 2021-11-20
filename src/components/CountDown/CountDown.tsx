@@ -55,14 +55,16 @@ export default class CountDown extends React.PureComponent<IProps, IState> {
 
         {
           (this.props.current > this.props.deadline) && (
-            <iframe 
-              width="560" 
-              height="315" 
-              src="https://www.youtube.com/embed/yHhWCmmGCUU" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen></iframe>
+            <div>
+              <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/yHhWCmmGCUU" 
+                title="YouTube video player" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen></iframe>
+            </div>
           )
         }
         {

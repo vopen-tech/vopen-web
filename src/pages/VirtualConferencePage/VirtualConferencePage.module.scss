@@ -21,7 +21,7 @@
 
   .banner {
     @extend %container;
-    padding: 3rem 0 2rem;
+    padding: 0 0 2rem;
     .subtitle {
       @extend %subtitle;
       width: 70%;
@@ -39,7 +39,8 @@
 
   .video {
     @extend %container;
-    padding: 0 50px;
+    display: flex;
+    margin-top: 80px;
   }
 
   @media only screen and (max-device-width: 1120px), only screen and (max-width: 1120px) {

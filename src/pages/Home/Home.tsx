@@ -46,7 +46,7 @@ class Home extends React.PureComponent<IProps> {
       this.props.dispatch({ type: "LOGIN_FAILED_MESSAGE_SHOWN" });
     }
 
-    const deadlineDate = new Date("2021-11-20T12:00:00.000Z"); // 11/20/2021 9:00 (GMT -3)
+    const deadlineDate = new Date("2021-11-18T12:00:00.000Z"); // 11/20/2021 9:00 (GMT -3)
     const currentDate = new Date();
 
     return (
